@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".vtion.fragments.DialogVisionPrivacyPolicy"
+    android:orientation="vertical">
+
+   <!-- <com.github.barteksc.pdfviewer.PDFView
+        android:id="@+id/pdfView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        />-->
+
+    <WebView
+        android:id="@+id/webview_privacy_policy"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <TextView
+        android:id="@+id/button_done"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/margin_8"
+        android:layout_marginRight="@dimen/margin_8"
+        android:layout_marginBottom="@dimen/margin_15"
+        android:background="@drawable/round_corner_button"
+        android:fontFamily="@font/open_sans_regular"
+        android:paddingTop="@dimen/margin_5"
+        android:paddingBottom="@dimen/margin_5"
+        android:text="@string/OKAY"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/blak_bluedark"
+        android:textSize="@dimen/size_6"
+        android:textStyle="bold" />
+</LinearLayout>

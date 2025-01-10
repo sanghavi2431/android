@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/rectangle_shape"
+    android:padding="@dimen/margin_1"
+    android:layout_margin="@dimen/_15sdp"
+    android:elevation="@dimen/_4sdp"
+    android:orientation="vertical"
+    android:layout_gravity="center_horizontal"
+    >
+
+    <ImageView
+        android:id="@+id/close_dialog_sos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:visibility="gone"
+        android:src="@drawable/yellow_close"/>
+
+    <ImageView
+        android:layout_width="@dimen/_51sdp"
+        android:layout_height="@dimen/_32sdp"
+       android:src="@drawable/sos_popup_icon"
+        android:layout_gravity="center"
+        />
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_margin="@dimen/_10sdp"
+            >
+
+
+
+<LinearLayout
+    android:id="@+id/woloo_image"
+    android:layout_width="@dimen/_90sdp"
+    android:layout_height="@dimen/_90sdp"
+    android:orientation="vertical"
+    android:background="@drawable/new_button_background"
+    android:elevation="@dimen/_4sdp"
+    android:layout_gravity="center"
+    android:layout_margin="@dimen/_10sdp"
+    android:paddingLeft="@dimen/_15sdp"
+    android:paddingRight="@dimen/_15sdp"
+    android:paddingTop="@dimen/_10sdp"
+   >
+
+
+<ImageView
+    android:layout_width="@dimen/_47sdp"
+    android:layout_height="@dimen/_33sdp"
+    android:scaleType="fitXY"
+    android:layout_gravity="center"
+    android:layout_marginTop="@dimen/_5sdp"
+    android:src="@drawable/woloo_sos_logo"
+    />
+
+    <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/button_text_style"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:text="Contact Us"
+        />
+
+
+</LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/police_image"
+                android:layout_width="@dimen/_90sdp"
+                android:layout_height="@dimen/_90sdp"
+                android:orientation="vertical"
+                android:background="@drawable/new_button_background"
+                android:elevation="@dimen/_4sdp"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/_10sdp"
+                android:paddingLeft="@dimen/_15sdp"
+                android:paddingRight="@dimen/_15sdp"
+                android:paddingTop="@dimen/_10sdp"
+                >
+
+
+                <ImageView
+
+                    android:layout_width="@dimen/_33sdp"
+                    android:layout_height="@dimen/_33sdp"
+                    android:scaleType="fitXY"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:src="@drawable/police_sos_logo"
+                    />
+                <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/police_contact"
+                    style="@style/button_text_style"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    />
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_margin="@dimen/_10sdp"
+       >
+
+
+        <LinearLayout
+            android:id="@+id/hospital_image"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="@dimen/_90sdp"
+            android:orientation="vertical"
+            android:background="@drawable/new_button_background"
+            android:elevation="@dimen/_4sdp"
+            android:layout_gravity="center"
+            android:paddingLeft="@dimen/_15sdp"
+            android:paddingRight="@dimen/_15sdp"
+            android:paddingTop="@dimen/_10sdp"
+            android:layout_margin="@dimen/_10sdp"
+            >
+
+
+
+
+            <ImageView
+
+                android:layout_width="@dimen/_33sdp"
+                android:layout_height="@dimen/_33sdp"
+                android:scaleType="fitXY"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:src="@drawable/hospital_sos_logo"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/hospital_contact"
+                style="@style/button_text_style"
+                android:layout_marginBottom="@dimen/_5sdp"
+
+                />
+
+        </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/fire_image"
+                android:layout_width="@dimen/_90sdp"
+                android:layout_height="@dimen/_90sdp"
+                android:orientation="vertical"
+                android:background="@drawable/new_button_background"
+                android:elevation="@dimen/_4sdp"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/_10sdp"
+                android:paddingLeft="@dimen/_15sdp"
+                android:paddingRight="@dimen/_15sdp"
+                android:paddingTop="@dimen/_10sdp"
+                >
+
+
+            <ImageView
+
+                android:layout_width="@dimen/_33sdp"
+                android:layout_height="@dimen/_33sdp"
+                android:scaleType="fitXY"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:src="@drawable/emergency_sos_logo"
+                />
+
+                <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fire_contact"
+                    style="@style/button_text_style"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    />
+
+
+
+            </LinearLayout>
+
+            </LinearLayout>
+
+
+    <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Please Use the SOS feature\n when in an emergency"
+        style="@style/button_text_style"
+        android:layout_marginBottom="@dimen/_15sdp"/>
+
+        </LinearLayout>
+
+
+

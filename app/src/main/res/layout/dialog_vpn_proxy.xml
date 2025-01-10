@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="@dimen/margin_5"
+    android:layout_marginRight="@dimen/margin_5">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view_internet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/search_background"
+        card_view:cardCornerRadius="@dimen/_18sdp"
+        card_view:cardElevation="@dimen/_4sdp"
+        android:layout_margin="@dimen/_15sdp"
+        card_view:cardMaxElevation="10dp">
+
+        <LinearLayout
+            android:layout_width="@dimen/margin_100"
+            android:layout_height="@dimen/margin_50"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/margin_8"
+            android:paddingRight="@dimen/margin_8">
+
+            <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                android:id="@+id/tv_connection_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_10"
+                android:gravity="center"
+                android:text="@string/no_internet_connection_"
+                android:textColor="@color/no_internet_text"
+                android:textSize="@dimen/size_8" />
+
+
+            <Button
+                android:id="@+id/btn_tap_to_retry"
+                style="@style/button_text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/yellow_rectangle_shape"
+                android:elevation="@dimen/_4sdp"
+                android:gravity="center"
+                android:paddingLeft="@dimen/_15sdp"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingRight="@dimen/_15sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:text="@string/subscription_validation_okay"
+                android:textColor="@color/black"
+                android:layout_margin="@dimen/_15sdp"/>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>

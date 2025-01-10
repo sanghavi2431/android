@@ -1,0 +1,76 @@
+<resources>
+
+    <!--Values from xxhdpi-->
+
+
+    <!-- Margins and height, width -->
+    <dimen name="margin_1">2.3dp</dimen>
+    <dimen name="margin_2">4.6dp</dimen>
+    <dimen name="margin_3">6.9dp</dimen>
+    <dimen name="margin_4">9.2dp</dimen>
+    <dimen name="margin_5">11.5dp</dimen>
+    <dimen name="margin_6">13.8dp</dimen>
+    <dimen name="margin_7">16.1dp</dimen>
+    <dimen name="margin_8">16.8dp</dimen>
+    <dimen name="margin_9">20.7dp</dimen>
+    <dimen name="margin_10">23dp</dimen>
+    <dimen name="margin_11">25.3dp</dimen>
+    <dimen name="margin_12">27.6dp</dimen>
+    <dimen name="margin_13">29.9dp</dimen>
+    <dimen name="margin_14">32.2dp</dimen>
+    <dimen name="margin_15">34.5dp</dimen>
+    <dimen name="margin_17">39.1dp</dimen>
+    <dimen name="margin_18">41.4dp</dimen>
+    <dimen name="margin_20">46dp</dimen>
+    <dimen name="margin_22">50.6dp</dimen>
+    <dimen name="margin_25">57.5dp</dimen>
+    <dimen name="margin_26">59.8dp</dimen>
+    <dimen name="margin_27">62.1dp</dimen>
+    <dimen name="margin_30">69dp</dimen>
+    <dimen name="margin_32">73.6dp</dimen>
+    <dimen name="margin_35">80.5dp</dimen>
+    <dimen name="margin_40">92dp</dimen>
+    <dimen name="margin_43">98.9dp</dimen>
+    <dimen name="margin_45">103.5dp</dimen>
+    <dimen name="margin_50">115dp</dimen>
+    <dimen name="margin_51">117.3dp</dimen>
+    <dimen name="margin_53">121.9dp</dimen>
+    <dimen name="margin_55">126.5dp</dimen>
+    <dimen name="margin_60">138dp</dimen>
+    <dimen name="margin_64">147.2dp</dimen>
+    <dimen name="margin_70">161dp</dimen>
+    <dimen name="margin_80">184dp</dimen>
+    <dimen name="margin_85">195.5dp</dimen>
+    <dimen name="margin_90">207dp</dimen>
+    <dimen name="margin_95">218.5dp</dimen>
+    <dimen name="margin_110">253dp</dimen>
+    <dimen name="margin_115">264.5dp</dimen>
+    <dimen name="margin_120">276dp</dimen>
+    <dimen name="margin_130">299dp</dimen>
+    <dimen name="margin_150">345dp</dimen>
+
+    <!-- Text Size -->
+    <dimen name="textSize_14sp">14sp</dimen>
+    <dimen name="size_1">2.3sp</dimen>
+    <dimen name="size_2">4.6sp</dimen>
+    <dimen name="size_3">6.9sp</dimen>
+    <dimen name="size_4">9.2sp</dimen>
+    <dimen name="size_5">11.5sp</dimen>
+    <dimen name="size_6">13.8sp</dimen>
+    <dimen name="size_7">16.1sp</dimen>
+    <dimen name="size_8">16.8sp</dimen>
+    <dimen name="size_9">20.7sp</dimen>
+    <dimen name="size_10">23sp</dimen>
+    <dimen name="size_11">25.3sp</dimen>
+    <dimen name="size_12">27.6sp</dimen>
+    <dimen name="size_14">32.2sp</dimen>
+    <dimen name="size_15">34.5sp</dimen>
+    <dimen name="size_17">39.1sp</dimen>
+    <dimen name="size_20">46sp</dimen>
+    <dimen name="size_21">48.3sp</dimen>
+    <dimen name="size_30">69sp</dimen>
+    <dimen name="size_33">75.9sp</dimen>
+    <dimen name="size_50">115sp</dimen>
+    <dimen name="size_65">149.5sp</dimen>
+    <integer name="curve_radius">3</integer>
+</resources>

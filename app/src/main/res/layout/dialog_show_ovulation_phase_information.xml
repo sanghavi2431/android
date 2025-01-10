@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/white">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/search_background"
+        android:layout_alignParentTop="true"
+        app:layout_scrollFlags="scroll|enterAlways">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_2"
+            android:layout_marginBottom="@dimen/margin_2">
+
+
+            <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                android:layout_centerHorizontal="true"
+                android:layout_alignBaseline="@+id/close_dialog_info"
+                android:id="@+id/tvTitle"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="@dimen/size_9"
+                android:text="About the Cycle"
+                android:textColor="@color/black"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <ImageView
+                android:id="@+id/close_dialog_info"
+                android:src="@drawable/yellow_close"
+                android:layout_marginRight="@dimen/margin_3"
+                android:layout_width="@dimen/margin_12"
+                android:layout_height="@dimen/margin_12"
+                android:layout_alignParentRight="true"
+                app:tint="@color/black" />
+
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/margin_5">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/menstrual_cup"
+                    android:padding="@dimen/margin_2"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Menstruation cycle"
+                    android:textSize="@dimen/margin_7"
+                    android:gravity="center"
+                    android:textColor="#F8646B"
+                    android:layout_margin="@dimen/margin_5"/>
+            </LinearLayout>
+
+
+    <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/button_text_style"
+        android:background="@drawable/rectangle_shape"
+        android:elevation="@dimen/_4sdp"
+        android:text="@string/info_menstruation"
+       />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/fetus"
+                android:padding="@dimen/margin_2"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Pregnancy cycle"
+                android:textSize="@dimen/margin_7"
+                android:gravity="center"
+                android:textColor="#ED8524"
+                android:layout_margin="@dimen/margin_5"/>
+    </LinearLayout>
+
+    <TextView
+        android:text="@string/info_high_fertility"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/button_text_style"
+        android:background="@drawable/rectangle_shape"
+        android:elevation="@dimen/_4sdp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <ImageView
+           android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/fertilization"
+            android:padding="@dimen/margin_2"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="Ovulation cycle"
+        android:textSize="@dimen/margin_7"
+        android:gravity="center"
+        android:textColor="#2ABDC4"
+        android:layout_margin="@dimen/margin_5"/>
+        </LinearLayout>
+
+    <TextView
+        android:text="@string/info_ovulation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/button_text_style"
+        android:background="@drawable/rectangle_shape"
+        android:elevation="@dimen/_4sdp"/>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

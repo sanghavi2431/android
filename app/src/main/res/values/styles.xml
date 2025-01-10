@@ -1,0 +1,368 @@
+<resources>
+
+    <style name="NewDialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowTitleStyle">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+
+    <style name="CustomAlertDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:windowBackground">@drawable/dialog_background</item>
+    </style>
+
+    <style name="AppTheme_New" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here -->
+    </style>
+
+    <style name="CustomDialogTime" parent="@android:style/Theme.Translucent.NoTitleBar">
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:background">@color/transparent</item>
+    </style>
+
+
+    <style name="DialogFragmentAnimation" parent="@android:style/Theme.Panel">
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowAnimationStyle">@style/DialogAnimation</item>
+        <item name="android:radius">16dp</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/slide_up</item>
+        <item name="android:windowExitAnimation">@anim/slide_bottom</item>
+    </style>
+
+    <style name="MyDialogTheme" parent="Theme.AppCompat.Dialog.Alert">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <!-- ******************************************    NEW THEME   ***********************************************************  -->
+
+    <style name="logo_text_style">
+        <item name="android:textColor">@color/button_text_color</item>
+        <item name="android:textSize">24dp</item>
+    </style>
+
+
+    <style name="screen_header_text_style">
+        <item name="android:textColor">@color/button_text_color</item>
+        <item name="android:textSize">@dimen/_24sdp</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:layout_gravity">left</item>
+    </style>
+
+    <style name="screen_header_text_style_big_center">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/_18sdp</item>
+        <item name="android:layout_margin">@dimen/_2sdp</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+
+    <style name="screen_header_text_style_15_center">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/_15sdp</item>
+        <item name="android:layout_margin">@dimen/_2sdp</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+
+
+    <style name="screen_header_text_style_big_center_nomargin">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/_15sdp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="screen_header_text_style_big">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/_18sdp</item>
+        <item name="android:gravity">left</item>
+    </style>
+
+
+    <style name="rs_text">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/_18sdp</item>
+        <item name="android:paddingTop">@dimen/_10sdp</item>
+        <item name="android:paddingBottom">@dimen/_10sdp</item>
+        <item name="android:layout_marginLeft">@dimen/_10sdp</item>
+        <item name="android:layout_marginRight">@dimen/_10sdp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="boarding_text_style">
+        <item name="android:textSize">@dimen/_15sdp</item>
+        <item name="android:textColor">@color/chip_color</item>
+        <item name="android:padding">@dimen/_10sdp</item>
+        <item name="android:layout_margin">@dimen/_15sdp</item>
+        <item name="android:layout_gravity">left</item>
+    </style>
+
+    <style name="boarding_text_style_center">
+        <item name="android:textSize">@dimen/_15sdp</item>
+        <item name="android:textColor">@color/chip_color</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="big_price_text">
+        <item name="android:textSize">@dimen/_30sdp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="policy_text_style_center">
+        <item name="android:textSize">@dimen/_10sdp</item>
+        <item name="android:textColor">@color/chip_color</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="ten_black_left">
+        <item name="android:textSize">@dimen/_10sdp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:gravity">left</item>
+    </style>
+
+
+    <style name="edit_text_style">
+        <item name="background">@drawable/new_edit_text_background</item>
+        <item name="android:textSize">17dp</item>
+       <item name="android:textColor">@color/edit_text</item>
+        <item name="android:textColorHint">@color/edit_text_hint</item>
+        <item name="android:padding">15dp</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:gravity">left</item>
+    </style>
+
+
+    <style name="otp_text_style">
+        <item name="background">@drawable/new_edit_text_background</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:textColor">@color/edit_text</item>
+        <item name="android:textColorHint">@color/edit_text_hint</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="button_text_style">
+        <item name="android:textSize">@dimen/_10sdp</item>
+        <item name="android:textColor">@color/button_lable</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingTop">@dimen/_10sdp</item>
+        <item name="android:paddingBottom">@dimen/_10sdp</item>
+    </style>
+
+    <style name="offers_text_style">
+        <item name="android:textSize">@dimen/_8sdp</item>
+        <item name="android:textColor">@color/start_theme_color</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingTop">@dimen/_10sdp</item>
+        <item name="android:paddingBottom">@dimen/_10sdp</item>
+    </style>
+
+    <style name="overlay_style">
+        <item name="android:textSize">@dimen/_12sdp</item>
+        <item name="android:textColor">@color/start_theme_color</item>
+    </style>
+
+    <style name="overlay_style_middle">
+        <item name="android:textSize">@dimen/_27sdp</item>
+        <item name="android:textColor">@color/start_theme_color</item>
+    </style>
+
+    <style name="score_text_style">
+        <item name="android:textSize">@dimen/_6sdp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="date_text_style">
+        <item name="android:textSize">@dimen/_9sdp</item>
+        <item name="android:textColor">@color/button_lable</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingTop">@dimen/_10sdp</item>
+        <item name="android:paddingBottom">@dimen/_10sdp</item>
+    </style>
+
+    <style name="hyperlink_text_style">
+        <item name="android:textSize">13dp</item>
+        <item name="android:textColor">@color/hyper_link</item>
+        <item name="android:gravity">left</item>
+    </style>
+
+
+    <style name="paragraph_text_style">
+        <item name="android:textSize">12dp</item>
+        <item name="android:textColor">@color/edit_text</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:layout_margin">5dp</item>
+    </style>
+
+    <style name="bottom_woloo_host_header_style">
+        <item name="android:textColor">@color/button_text_color</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:layout_marginTop">@dimen/_10sdp</item>
+        <item name="android:layout_marginRight">@dimen/_10sdp</item>
+        <item name="android:layout_marginBottom">@dimen/_5sdp</item>
+        <item name="android:padding">1.5dp</item>
+        <item name="android:textColorHint">@color/black</item>
+    </style>
+
+    <style name="points_text_header_style">
+        <item name="android:textColor">@color/points_text</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:padding">1.5dp</item>
+        <item name="android:textColorHint">@color/black</item>
+        <item name="android:layout_marginRight">@dimen/_10sdp</item>
+        <item name="android:layout_marginBottom">@dimen/_5sdp</item>
+        <item name="android:layout_marginTop">@dimen/_5sdp</item>
+    </style>
+
+    <style name="bottom_woloo_host_address_style">
+        <item name="android:textColor">@color/button_text_color</item>
+        <item name="android:textSize">@dimen/_7ssp</item>
+        <item name="android:layout_marginRight">@dimen/_10sdp</item>
+        <item name="android:layout_marginBottom">@dimen/_5sdp</item>
+        <item name="android:padding">1.5dp</item>
+        <item name="android:textColorHint">@color/black</item>
+    </style>
+
+    <style name="bottom_woloo_host_button_style">
+        <item name="android:textColor">@color/button_text_color</item>
+        <item name="android:textSize">@dimen/_8ssp</item>
+        <item name="android:layout_marginRight">@dimen/_10sdp</item>
+        <item name="android:layout_marginBottom">@dimen/_10sdp</item>
+        <item name="android:textColorHint">@color/black</item>
+    </style>
+
+    <style name="small_gray_style">
+        <item name="android:textColor">@color/text_back</item>
+        <item name="android:textSize">@dimen/_10ssp</item>
+        <item name="android:padding">@dimen/_2sdp</item>
+    </style>
+
+    <style name="dialog_style">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/_11ssp</item>
+        <item name="android:paddingTop">@dimen/_5sdp</item>
+        <item name="android:paddingBottom">@dimen/_5sdp</item>
+        <item name="android:paddingLeft">@dimen/_15sdp</item>
+        <item name="android:paddingRight">@dimen/_15sdp</item>
+        <item name="android:layout_margin">@dimen/_15sdp</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <style name="dialog_style_big">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="android:paddingTop">@dimen/_5sdp</item>
+        <item name="android:paddingBottom">@dimen/_5sdp</item>
+        <item name="android:paddingLeft">@dimen/_15sdp</item>
+        <item name="android:paddingRight">@dimen/_15sdp</item>
+        <item name="android:layout_margin">@dimen/_15sdp</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <style name="small_button_style">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/_8ssp</item>
+        <item name="android:paddingTop">@dimen/_3sdp</item>
+        <item name="android:paddingBottom">@dimen/_3sdp</item>
+        <item name="android:gravity">center</item>
+        <item name="singleLine">true</item>
+    </style>
+
+    <style name="host_details_header_style">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textColorHint">@color/black</item>
+        <item name="android:textSize">@dimen/_13ssp</item>
+        <item name="android:paddingTop">@dimen/_3sdp</item>
+        <item name="android:paddingBottom">@dimen/_3sdp</item>
+        <item name="android:layout_margin">@dimen/_5sdp</item>
+        <item name="singleLine">true</item>
+    </style>
+
+    <style name="host_details_sub_header_style">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textColorHint">@color/black</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:gravity">left</item>
+        <item name="android:layout_margin">@dimen/_5sdp</item>
+        <item name="singleLine">true</item>
+    </style>
+
+
+    <style name="refer_3_host_style">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:gravity">left</item>
+        <item name="singleLine">true</item>
+    </style>
+
+    <style name="review_style">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/_8ssp</item>
+        <item name="android:paddingTop">@dimen/_3sdp</item>
+        <item name="android:paddingBottom">@dimen/_3sdp</item>
+        <item name="android:gravity">left</item>
+    </style>
+
+    <style name="bottom_navigation_style">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/_8ssp</item>
+        <item name="android:paddingTop">@dimen/_1sdp</item>
+        <item name="android:paddingBottom">@dimen/_1sdp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_margin">@dimen/_5sdp</item>
+    </style>
+
+    <style name="screen_header_text_style_big_left">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/_18sdp</item>
+        <item name="android:gravity">left</item>
+    </style>
+
+    <style name="screen_sub_header_text_left">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/_9sdp</item>
+        <item name="android:gravity">left</item>
+    </style>
+
+    <style name="screen_sub_header_text_center">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/_9sdp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+
+
+    <style name="edit_text_style_host">
+        <item name="background">@drawable/new_edit_text_background</item>
+        <item name="android:textSize">17dp</item>
+        <item name="android:textColor">@color/edit_text</item>
+        <item name="android:textColorHint">@color/edit_text_hint</item>
+        <item name="android:padding">15dp</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:gravity">left</item>
+    </style>
+
+    <style name="white_text_center">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/_10sdp</item>
+    </style>
+
+</resources>

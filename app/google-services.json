@@ -1,0 +1,133 @@
+{
+  "project_info": {
+    "project_number": "620752914415",
+    "firebase_url": "https://woloo-44ef1.firebaseio.com",
+    "project_id": "woloo-44ef1",
+    "storage_bucket": "woloo-44ef1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:620752914415:android:7ff28921bb6a4e4ae4581a",
+        "android_client_info": {
+          "package_name": "in.woloo.www"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "620752914415-4b90lfeprnceaoflhtiustd22l1j65vo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "in.woloo.www",
+            "certificate_hash": "c67e2ff046ef71e99693d34fccadb747ea62e34d"
+          }
+        },
+        {
+          "client_id": "620752914415-6adk8pmgq1m5bu6fft7cqi87urdhvmfb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "in.woloo.www",
+            "certificate_hash": "0fb7f67e5bd038c393437a68f7020b38a655aceb"
+          }
+        },
+        {
+          "client_id": "620752914415-b5iqmg4kpqjlbtvrlr9kfbpvneg1u814.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "in.woloo.www",
+            "certificate_hash": "b2020265d5b9783e6bcf02af79f06a50fa889503"
+          }
+        },
+        {
+          "client_id": "620752914415-8j3gmhbn3q4akp5ilm9iu3otfmr9igf6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyJDAP9AhZDNDvFxB82N816xjWG9Lmji0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "620752914415-8j3gmhbn3q4akp5ilm9iu3otfmr9igf6.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "620752914415-6viba2688lt7ns2qrjm8crjger713guq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "in.wolooindia.www"
+              }
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-1285708505854613~4598656458"
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:620752914415:android:7ff28921bb6a4e4ae4581a",
+        "android_client_info": {
+          "package_name": "in.woloo.www.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "620752914415-4b90lfeprnceaoflhtiustd22l1j65vo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "in.woloo.www.debug",
+            "certificate_hash": "c67e2ff046ef71e99693d34fccadb747ea62e34d"
+          }
+        },
+        {
+          "client_id": "620752914415-6adk8pmgq1m5bu6fft7cqi87urdhvmfb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "in.woloo.www.debug",
+            "certificate_hash": "0fb7f67e5bd038c393437a68f7020b38a655aceb"
+          }
+        },
+        {
+          "client_id": "620752914415-b5iqmg4kpqjlbtvrlr9kfbpvneg1u814.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "in.woloo.www.debug",
+            "certificate_hash": "b2020265d5b9783e6bcf02af79f06a50fa889503"
+          }
+        },
+        {
+          "client_id": "620752914415-8j3gmhbn3q4akp5ilm9iu3otfmr9igf6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyJDAP9AhZDNDvFxB82N816xjWG9Lmji0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "620752914415-8j3gmhbn3q4akp5ilm9iu3otfmr9igf6.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "620752914415-6viba2688lt7ns2qrjm8crjger713guq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "in.wolooindia.www"
+              }
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-1285708505854613~4598656458"
+    }
+  ],
+  "configuration_version": "1"
+}

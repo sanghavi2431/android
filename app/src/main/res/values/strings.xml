@@ -1,0 +1,501 @@
+<resources>
+    <string name="app_name">Woloo</string>
+
+    <string name="menu_home">Home</string>
+    <string name="refer_friend">Refer a Friend</string>
+    <string name="buy_subscription">Buy Membership</string>
+    <string name="invite_friend">Invite A Friend</string>
+    <string name="refer">Refer</string>
+    <string name="my_account">My Account</string>
+    <string name="woloo_gift_card">Woloo Gift-Card</string>
+    <string name="become_a_woloo_host">Become A Woloo Host</string>
+    <string name="logout">Logout</string>
+    <string name="upload_image">Do you want to add Profile Image?</string>
+    <string name="change_image">Do you want to change Profile Picture?</string>
+
+    <string name="about_woloo_info">Woloo-India\'s first and only by-woman-for-woman Omni-channel(Loo-Commerce) hygiene service &amp; Product retail business that provides world class hygiene-access to woman.</string>
+    <string name="about_woloo_womans_powder_room">Woloo-Womens Powder-Room, is Retail store chain for women Hygiene/Personal Care &amp; Beauty products with a set of world class (Safe &amp; Hygienic) washrooms for woman of all ages &amp; diversity for their hygiene dignity along with a cafe.</string>
+    <string name="about_woloo_app_info">Woloo App enables Women customer to locate &amp; use the nearest washroom facility by purchasing the a monthly Membership of Rs. 99/- &amp; can also purchase merchandise from a uniquely curated product &amp; brand mix.</string>
+    <string name="terms_and_condition">Terms &amp; Condition</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="subscription_dialog_msg">Wow! You already have a Woloo Membership. Your Membership expires on 2021-10-28</string>
+    <string name="my_account_woloo_money">Woloo Money</string>
+    <string name="my_account_woloo_points">Woloo Points</string>
+    <string name="my_account_redeem_your_points">Redeem</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="profile_info_name">Name</string>
+    <string name="profile_info_email">Email</string>
+    <string name="profile_info_mobile_no">Mobile no</string>
+    <string name="save">Save</string>
+    <string name="profile_info_change_password">Change Password</string>
+    <string name="add_money">Add Money</string>
+    <string name="select_amount">Select the amount</string>
+    <string name="gift_card_hundred">Rs. 100</string>
+    <string name="gift_card_five_hundred">Rs. 500</string>
+    <string name="gift_card_thousands">Rs. 1000</string>
+    <string name="gift_card_rupees">\u20B9</string>
+    <string name="gift_card_amount">Enter amount manually</string>
+    <string name="gift_card_mobile">Receiver Mobile No.</string>
+    <string name="send">Send</string>
+    <string name="gift_card_how_it_works">How it works</string>
+    <string name="gift_card_purchase_subscription">Purchase the Membership</string>
+    <string name="gift_card_locate_sanitisation_area">Locate the sanitisation area on app</string>
+    <string name="gift_card_show_code">Show the code Woloo Powder</string>
+    <string name="dear_woloo_host">Dear Woloo Host.</string>
+    <string name="become_host_msg">Woloo offers you a great opportunity to earn extra money &amp; also provide loads of customers if you have a Clean &amp; Hygienic washroom facility at your outlet.</string>
+    <string name="yes_i_am_interested">Yes! I am interested</string>
+    <string name="refer_woloo_host_msg">Refer a restaurant or retail outlet that you feel could be Woloo Host \n &amp; \n Earn up to 100 points</string>
+    <string name="details_of_the_reffered_Woloo_host">Details of the referred Woloo Host</string>
+    <string name="submit">Submit</string>
+    <string name="wah_title">WAH [Woloo Assurance Hygiene] World\'s first Global Standard Guide &amp; Certification Initiative </string>
+    <string name="wah_msg">The mission of WAH is to provide a compliance guide &amp; certificate for Woloo-Host [restaurants/QSRs &amp; other retail facilities] to improve the standard of hygiene of their toilet facilities</string>
+    <string name="wah_scan_code">Scan the code on WAH sticker\n for \nExclusive offers by Woloo-Host</string>
+    <string name="gobindaas">#GoBindass</string>
+    <string name="clean_hygienic_toilets">Clean &amp; Hygienic Toilets</string>
+    <string name="beauty_changing_room">Beauty &amp; Changing Room</string>
+    <string name="safe_space">Safe Space</string>
+    <string name="assisted_facility">Assisted Facility for Specially</string>
+    <string name="cafe">cafe</string>
+    <string name="feeding_room">Feeding Room</string>
+    <string name="diaper_changing_room">Diaper Changing Facility</string>
+    <string name="convinience_shop">Convenience Shop</string>
+    <string name="start_free_trial_msg">Locate &amp; use clean, hygienic &amp; safe washrooms anywhere you go!</string>
+    <string name="start_free_trial">Start Free Trial</string>
+
+
+    <string name="no_internet_connection_">Please check your internet connection and try again</string>
+    <string name="tap_to_retry">Tap to retry</string>
+    <string name="lbl_exit">Exit</string>
+    <string name="error_vpn_message">App has detected that you are connected to internet via a VPN, proxy, or “un-blocker” service.</string>
+    <string name="slow_internet_connection_">Slow internet connection, please wait</string>
+    <string name="no_result_found">No data found</string>
+    <string name="welcome_woloo">Welcome to Woloo!</string>
+    <string name="send_otp">Send OTP</string>
+    <string name="enter_email_mobile">Enter your Mobile Number*</string>
+    <string name="login_with">Login with</string>
+    <string name="facebook">Facebook</string>
+    <string name="google">Google</string>
+    <string name="powered_by_text">Powered By Jetsynthesys</string>
+    <string name="skip">SKIP</string>
+    <string name="title_menu">Menu</string>
+    <string name="welcome_txt">Welcome,</string>
+
+    <string name="otp_message">Please enter the verification code below sent on your </string>
+    <string name="not_you"><u>Not You?</u></string>
+    <string name="did_not_receive_otp">Didn\'t receive OTP code?</string>
+    <string name="underline_resend_code"><u>Resend Code</u></string>
+    <string name="verify_proceed">Verify &amp; Proceed</string>
+    <string name="go_bindas">#Gobindas</string>
+    <string name="next">NEXT</string>
+
+    <string name="beauty_and_changing_room">Beauty &amp; Changing Room</string>
+    <string name="assisted_facility_for_abled">Assisted facility for specially abled</string>
+    <string name="choose_payment">Choose Payment</string>
+    <string name="card">Card</string>
+    <string name="net_banking">Net Banking</string>
+    <string name="upi">UPI</string>
+    <string name="wallets">Wallets</string>
+    <string name="peer_club">PEE\'RS CLUB</string>
+    <string name="peer_club_membership">PEE\'RS CLUB MEMBERSHIP</string>
+    <string name="elite">ELiTE</string>
+    <string name="yearly_membership">Yearly Membership</string>
+    <string name="buy_now_for_one_month_additional_subscription">Buy now and get one month of additional Membership free.</string>
+    <string name="gst">GST 18%</string>
+    <string name="total">Total</string>
+    <string name="subscription_msg">Membership will be renewed automatically if not cancelled at least 48 hours before the next Membership cycle.</string>
+    <string name="card_holder_name">Card Holder Name</string>
+    <string name="card_number">Card Number</string>
+    <string name="month">MM</string>
+    <string name="year">YY</string>
+    <string name="cvv">CVV</string>
+    <string name="choose_another_payment">"Choose Another Payment "</string>
+    <string name="rate_your_experience">Rate your experience</string>
+    <string name="tell_us_improve">Tell us where we can improve</string>
+    <string name="tell_us_what_you_love">Tell us what you love</string>
+    <string name="add_review">Add Review</string>
+    <string name="any_other_feedback">Any other feedback</string>
+    <string name="type_here">Type here..</string>
+    <string name="monthly">Monthly</string>
+    <string name="what_we_offer">What we Offer:</string>
+    <string name="woloo_premium">Woloo Premium</string>
+    <string name="notification">Notifications</string>
+    <string name="inv_contacts">Invite Contacts</string>
+    <string name="entermessage">Message</string>
+    <string name="quarterly">Quarterly</string>
+    <string name="half_yearly">Half-Yearly</string>
+    <string name="yearly">YEARLY</string>
+    <string name="invite_your_friend">Invite\nyour Friends</string>
+    <string name="earn_profit">Earn more than 100 points after each friends’s use woloo store</string>
+    <string name="invite_now">Invite Now</string>
+    <string name="photos">Photos</string>
+    <string name="reviwes">Reviews</string>
+    <string name="share">Share</string>
+    <string name="bookmark">Bookmark</string>
+    <string name="or">or</string>
+    <string name="giftSubscription">Gift Membership</string>
+
+    <string name="splash_text">Locate &amp; use clean,\nhygienic &amp; safe\nwashrooms anywhere\nyou go</string>
+    <string name="tag_hint_text">Search tag or select from bleow</string>
+    <string name="thank_you_for_share_review">Thank you\nfor sharing your review</string>
+    <string name="okay">Okay</string>
+    <string name="OKAY">OKAY</string>
+    <string name="congratulations">Congratulations</string>
+    <string name="nearest_walk">Nearest Walks</string>
+    <string name="news">News</string>
+    <string name="articals">Articles</string>
+    <string name="woloo_store">Woloo-Hosts near you</string>
+    <string name="scan_qr_code">Scan QR Code</string>
+    <string name="error">Error</string>
+
+    <!--Slow internet-->
+    <string name="network">Network</string>
+    <string name="slow_internet_connection_header">Slow Internet Connection</string>
+    <string name="moderate_bandwidth_msg">Taking longer than usual. Please wait...</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="enter_points_manually">Enter points manually*</string>
+    <string name="mobile_number">Receiver Mobile No.*</string>
+    <string name="become_a_woloo_host_msg2">If you are a Premium Restaurant, QSR, Café, or any other retail business outlet with a safe &amp; hygienic washroom, here is an opportunity for you to attract more customers &amp; also earn extra money. All you need to do is upgrade your existing washroom as per Woloo standards &amp; be a part of our loo discovery network on Woloo app.</string>
+    <string name="become_a_woloo_host_msg1">Woloo brings a tech enabled loo-discovery platform app that helps women to locate the nearest washroom, whenever they are away from their home or office.</string>
+    <string name="become_a_woloo_host_msg1_new">Woloo brings a tech enabled loo-discovery app that helps women to locate the nearest washroom, whenever they are away from their home or office.
+
+    \n\nIf you are a premium restaurant, QSR, Cafe, or any other retail business outlet with a safe and hygienic washroom, here is an opportunity for you to attract more customers and also earn extra income. All you need to do is upgrade your existing washroom as per Woloo standards &amp; be a part of our loo discovery network on the Woloo App.</string>
+    <string name="open_time">Open Time: </string>
+    <string name="covid_free">Covid Free</string>
+    <string name="clean_and_hygiene">Clean &amp; Hygiene</string>
+    <string name="name_validation">Please enter your name</string>
+    <string name="address_validation">Please enter your address</string>
+    <string name="city_validation">Please enter your city</string>
+    <string name="zipcode_validation">Please enter your zipcode</string>
+    <string name="location_validation">Please grant location service</string>
+    <string name="woloo_picture_validation">Please upload Woloo photo</string>
+    <string name="edit_profile">Edit Profile</string>
+
+    <!--<string name="facebook_app_id">467986800489507</string>-->
+    <!--    <string name="facebook_app_id">1826227980885262</string>-->
+    <!-- <string name="facebook_app_id">147717441546547</string>--><!--Added by Aarati-->
+    <!--<string name="facebook_app_id">470087358968368</string>--><!--Added by Aarati-->
+    <string name="facebook_app_id">3780099212205055</string><!--Added by Aarati-->
+    <!-- <string name="facebook_client_id">a747aa6c89922d9db9b0ecf849bbdebc</string>-->
+    <string name="loading">Loading…</string>
+    <string name="guest">Guest</string>
+    <string name="search_by_location">Search by Location</string>
+    <string name="cancel_login">The operation was canceled</string>
+    <string name="error_login">There was an error entering</string>
+    <string name="fb_login_protocol_scheme">fb467986800489507</string>
+
+    <string name="notification_channel_id">default</string>
+    <string name="subscription_validation_okay">Okay</string>
+    <string name="subscription_validation">Membership is only available for woman.\n\n Do you want to update your profile?</string>
+    <string name="subscription_validation_profile">Membership is only available for woman.Please update your profile.</string>
+    <string name="qr_success_thank_you">Thank You</string>
+    <string name="my_history">My History</string>
+    <string name="expired">Membership Expired</string>
+    <string name="read_more">&amp;#8230; Read More</string>
+
+    <string name="payment_successfull">Your payment was successful</string>
+    <string name="point_format">Point: %s</string>
+    <string name="subscription_not_expired_validation">You already subscribed for the same plan</string>
+    <string name="no_woloo_found">Sorry, couldn’t find any Woloo Host near you</string>
+    <string name="no_woloo_found_at_moment">Sorry, couldn’t find any Woloo Host near you at this moment</string>
+    <string name="no_woloo_found_bookmark">Sorry, couldn’t find any Bookmarked Woloo Host near you</string>
+    <string name="click_search_no_woloo_found">Click on search to find Woloo Hosts in a different location</string>
+
+    <string name="lbl_update_play_message">Please update Google Play services on your device to use the app.</string>
+    <string name="exit_app">Exit App</string>
+
+    <string name="message_not_authorize">App will not work as this device is not Certified by Google Android.</string>
+    <string name="close">close</string>
+
+    <string name="update_text">Please update the application from Play Store!</string>
+    <string name="lbl_update_available">Update Available</string>
+    <string name="not_now">Not Now</string>
+    <string name="update">Update</string>
+    <string name="benefits">Benefits</string>
+    <string name="text1">To become a Woloo Host, you need to have WAH (Woloo Assurance of Hygiene) certification. All Woloo washrooms are certified in association with the Toilet Board Coalition (A Global non-profit enterprise working under World Bank to improve sanitation standards across 40+ countries) &amp; the Woloo Assurance of Hygiene (WAH) based on safety, hygiene &amp; accessibility parameters.</string>
+    <string name="text2">Woloo Assurance of Hygiene (WAH) is a symbol of commitment to every Woloo customer towards providing Safe, Hygienic &amp; Accessible washrooms. The mission of WAH is to provide a compliance guide &amp; certification for Woloo-Hosts (restaurants/QSR &amp; other facilities) to improve the standard of hygiene &amp; their toilet facility.</string>
+    <string name="criteria">Criteria</string>
+    <string name="criteria_text_1">In order to be WAH (Woloo Assurance of Hygiene) certified, the Host must fulfil the following pre-requisites:</string>
+    <string name="criteria_text_2"><b>Location accessibility: </b>The Woloo Host’s retail facility must be well located. The washroom must be easily accessible and conveniently located.</string>
+    <string name="criteria_text_3"><b>Safety &amp; Security: </b>The Woloo Host’s facility must be safe and secure for women customers.</string>
+    <string name="criteria_text_4"><b>Hygiene &amp; Cleanliness: </b>The Woloo Host must ensure that high standards of hygiene and cleanliness are maintained at all times &amp; should be the top priority.</string>
+    <string name="criteria_text_5"><b>Quality of Fitting &amp; Facilities: </b>The fittings in the toilet must be of high quality and should be well maintained.</string>
+    <string name="criteria_text_6"><b>Hospitality &amp; Courtesy: </b>The host must ensure courteous and comfortable hospitality standards towards all customers.</string>
+    <string name="quality_of_fitting_facilities">Quality of Fitting &amp; Facilities</string>
+    <string name="hospitality_courtesy">Hospitality &amp; Courtesy</string>
+    <string name="hygiene_cleanliness">Hygiene &amp; Cleanliness</string>
+    <string name="safety_security">Safety &amp; Security</string>
+    <string name="pre_requisites_for_wah_certification">Pre-requisites for WAH Certification</string>
+    <string name="yes_i_am_intrested">I am Interested</string>
+    <string name="Benefits_of_referring_text">Refer a Woloo Host and earn up to 50 points\n for each referral. Redeem these points while\n you shop on the Woloo platform </string>
+    <string name="Benefits_of_referring_text2">You can refer only upto</string>
+    <string name="referred_woloo_host">Referred Woloo Host</string>
+    <string name="phone_validation">Please enter phone number</string>
+    <string name="wah_certificate_text">Compiles with the requirements of <br></br>Woloo Assurance Of Hygiene (WAH) Guidelines</string>
+    <string name="wah_certificate_text2">Date of Certification</string>
+    <string name="expire_date_text">Your Voucher shall\nexpire on\n--/--/----</string>
+    <string name="expired_text"><br>Oops!</br><br> Voucher/Membership has expired</br></string>
+    <string name="renew">Renew</string>
+    <string name="discontinue_pee_s_club_membership">Discontinue Pee’s Club Membership</string>
+    <string name="discontinue_text">Even if you choose to cancel your current membership, you can still use the app benefits until the end of current billing period on Jun, 31 2021</string>
+    <string name="continue_to_cancle">contact woloo to cancel</string>
+    <string name="we_will_be_back_soon">We will be back soon!</string>
+    <string name="maintaince_text">Woloo is getting some tune up &amp; some care. We will be back soon.</string>
+    <string name="maintaince_text_2">Thank you for your patience!</string>
+    <string name="WAH_text3">This certificate certifies that the mentioned outlet complies with requirements defined as per WAH Guide release in 2020 However this certificate does not gurantee any incidental breach of hygiene service by this outlet.</string>
+    <string name="message_text">Gift a Woloo Pee’rs Club Membership to your friends &amp; family and show that you care!</string>
+    <string name="Add_Point_text">Show that you care by gifting a Woloo Gift-Card to your loved ones &amp; help them enjoy the Woloo Experience.</string>
+    <string name="you_have_not_visited_any_woloo_host_yet">You have not visited any Woloo Host yet</string>
+    <string name="cancel_subscription">Cancel Subscription</string>
+    <string name="reason_to_cancel">Reason to Cancel *</string>
+    <string name="comment_remark">Comment/Remark *</string>
+    <string name="write_your_comment_remark">Write your Comment/Remark</string>
+    <string name="mention_your_period_date">Please mention your last period date</string>
+    <string name="your_cycle_length_in_days">Your Cycle Length? (In Days)</string>
+    <string name="your_period_length_in_days">Your Period Length? (In Days)</string>
+
+    <!--Boarding activity string-->
+    <string name="boarding_slider_one_title">Locate a Loo Nearby</string>
+    <string name="boarding_slider_one_para">Do not fear drinking water to avoid going to a loo. Locate nearest clean, safe &amp; hygienic washrooms whenever you are travelling and away from home.</string>
+
+    <string name="boarding_slider_two_title">Track your Menstrual cycle</string>
+    <string name="boarding_slider_two_para">A companion to not just track, but also manage your Periods cycle month-on-month for a safe, health and better life.
+</string>
+
+    <string name="boarding_slider_three_title">Shopping made Convenient</string>
+    <string name="boarding_slider_three_para">Purchase with ease your favourite women’s hygiene, personal care &amp; beauty products @ Woloo Store.</string>
+    <!--Interested Topic Screen-->
+    <string name="interested_screen_title">Select the Topics you are interested</string>
+    <string name="next_button_title_interested_screen">Next</string>
+    <string name="blog_detail_text_paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. \n \n Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?</string>
+    <string name="daily_log">Daily Log</string>
+    <string name="bleeding">Bleeding</string>
+    <string name="no_data_available">No Data Available</string>
+    <string name="no_symptoms">Please configure your period symptoms</string>
+    <string name="mood">Mood</string>
+    <string name="sex">Sex</string>
+    <string name="habits">habits</string>
+    <string name="premenstruation">premenstruation</string>
+    <string name="diseasesandmedication">diseases-and-medication</string>
+    <string name="menstruation">menstruation</string>
+    <string name="banner_woloo_host_location_count">We have %1$d woloo host(s) available in your location</string>
+    <string name="banner_woloo_host_offers_count">We have %1$d woloo host(s) available with the Offers</string>
+    <string name="banner_woloo_host_subtitle">We provide the best service to keep your Health and Hygiene intact. Click to know more.</string>
+    <string name="trending_blog">Trending Blogs</string>
+    <string name="thirst_reminder">THIRST REMINDER</string>
+    <string name="thirst_reminder_confirmation">Do you want a thirst reminder?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="copy">COPY</string>
+    <string name="edit_cycle_note"><b>NOTE</b> : Calculation of periodic tracking is based on an Algorithm, so might not be accurate in some cases has body can behave differently.</string>
+    <string name="every">Every</string>
+    <string name="hrs">Hrs</string>
+    <string name="thirst_reminder_confirmation_value">You\'ll be getting reminder for every %1$d Hour(s)</string>
+    <string name="set_frequency">Set Frequency</string>
+    <string name="message_no_blogs">Sorry, currently there are no articles under this category. Our team is working on the same and will be updating this section soon!</string>
+    <string name="cancel_reminder">Cancel reminder</string>
+
+    <string name="no_internet_connection">No internet connection</string>
+    <!-- Strings used for fragments for navigation -->
+
+    <string name="label_wheelchair">Wheelchair</string>
+    <string name="label_washroom">Washroom</string>
+    <string name="label_feeding_room">Feeding room</string>
+    <string name="label_sanitizer">Sanitizer</string>
+    <string name="label_coffee">Coffee available</string>
+    <string name="label_makeup">Makeup available</string>
+    <string name="label_sanitary_pads">Sanitary Pads</string>
+    <string name="label_unisex">Unisex</string>
+    <string name="label_separate">Gender-specific</string>
+
+    <string name="label_first_name">First Name*</string>
+    <string name="label_last_name">Last Name*</string>
+    <string name="label_email">Email*</string>
+    <string name="label_phone">Phone*</string>
+    <string name="label_street_address">Address*</string>
+    <string name="label_city">City*</string>
+    <string name="label_state">State/Province/Region*</string>
+    <string name="label_zip">ZIP/Postal Code*</string>
+    <string name="label_dob">Date of birth*</string>
+
+    <string name="label_source">Source Location</string>
+    <string name="label_dest">Destination Location</string>
+    <string name="hygiene_score">Hygiene Score</string>
+    <string name="gift_voucher">Gift Voucher</string>
+
+    <!-- Added By Aarati-->
+    <string name="title_activity_vition_user_data">VitionUserDataActivity</string>
+
+
+    <string name="info_ovulation"><b>Understanding Your Ovulation Cycle:</b>
+        \nOvulation typically occurs around the midpoint of your menstrual cycle.
+        Recognizing the signs can help with family planning or conception.
+
+        \n\n<b>Signs of Ovulation:</b>
+
+\nIncreased cervical mucus (clear and stretchy).
+\n1.Mild abdominal pain (mittelschmerz).
+\n2.Elevated basal body temperature.
+        \n\n<b>Timing for Conception:</b>
+        \nThe fertile window is typically six days leading up to ovulation and the day of ovulation itself.
+
+        \n\n<b>Tips for Tracking Ovulation:</b>
+
+\n1.Use ovulation predictor kits for accurate tracking.
+\n2.Monitor changes in your body.
+\n3.Maintain a healthy lifestyle to support reproductive health.</string>
+
+
+    <string name="info_high_fertility"><b>Understanding Your Pregnancy Cycle:</b>
+        \nThe pregnancy cycle typically lasts about 40 weeks and is divided into three trimesters.
+
+        \n\n<b>First Trimester (Weeks 1-12):</b>
+        \nThis is a crucial period for fetal development.
+        You may experience symptoms like nausea, fatigue, and mood swings.
+        Its important to schedule your first prenatal visit during this time.
+
+\n\n<b>Second Trimester (Weeks 13-26):</b>
+        \nOften considered the easiest trimester, many women experience increased energy and reduced nausea.
+        This is the time for routine screenings and ultrasounds.
+
+        \n\n<b>Third Trimester (Weeks 27-40):</b>
+        As your body prepares for labor, you might feel more discomfort. Regular check-ups will monitor your and your baby’s health.
+
+\n\n<b>Tips for a Healthy Pregnancy:</b>
+
+\n1.Stay hydrated and maintain a balanced diet.
+\n2.Attend all prenatal appointments.
+\n3.Engage in safe physical activities.
+\n4.Consider joining prenatal classes for support and education.</string>
+
+    <string name="info_menstruation"><b>Understanding Your Menstruation Cycle:</b>
+        \nThe average menstrual cycle lasts about 28 days, but it can vary from 21 to 35 days.
+        Tracking your cycle helps in understanding your body’s rhythms.
+
+\n\n<b>Menstrual Phase (Days 1-5):</b>
+        \nThis is when you have your period, and the lining of the uterus sheds.
+
+        \n\n<b>Follicular Phase (Days 1-13):</b>
+        \nHormones stimulate the growth of follicles in the ovaries, leading to the maturation of an egg.
+
+        \n\n<b>Ovulation (Day 14):</b>
+        \nAround the middle of your cycle, the matured egg is released, which is the optimal time for conception.
+
+\n\n<b>Luteal Phase (Days 15-28):</b>
+        \nIf the egg isn’t fertilized, hormone levels drop, leading to the next menstrual phase.
+
+        \n\n<b>Tips for Managing Your Cycle:</b>
+
+\n1.Keep track of your cycle to anticipate symptoms.
+\n2.Stay active and maintain a balanced diet.
+\n3.Use pain relief methods if you experience cramps.</string>
+
+
+    <string name="agree">Accept</string>
+    <string name="disagree">Deny</string>
+
+    <string name="terms_one">By clicking on Agree &amp; Continue , I agree to the terms &amp; conditions,</string>
+    <string name="terms_two">Privacy Policy</string>
+    <string name="terms_three"> &amp; to the</string>
+    <string name="terms_four"> Terms of Use</string>
+
+
+    <string name="consent_sign"><b>Accessibility Service: Woloo uses Accessibility services permission with active consent of the end-user. The Accessibility permissions are used for analysing the application usage on this device as part of an opt-in market research panel.</b></string>
+
+    <string name="sign_two">\n<b>Woloo collects list of Applications installed in the user Mobile on a regular basis. The installed application list is used for
+
+analytics &amp; for DMP based monetization.</b></string>
+
+    <string name="sign_three">\nVia this application Woloo can:
+
+\n\n1. Collect on regular basis the list of All the applications in my phone.
+
+\n\n2. For specific apps ONLY, Woloo will collect detailed app usage behaviour.
+</string>
+
+
+    <string name="terms_details_one">
+       With a vision to provide hygiene dignity to all women, Woloo brings a tech enabled loo-discovery mobile App that helps women to locate the nearest clean &amp; hygienic washrooms, whenever they are away from their home or office. Woloo, curates, aggregates &amp; certifies these washrooms hosted by restaurants, Cafes &amp; all kinds of retail Stores.
+\n\n<b>Accessibility Service : Woloo uses Accessibility services permission with active consent of the end-user. The Accessibility permissions are used for analysing the application usage on this device as part of an opt-in market research panel.</b>
+\n\n<b>Woloo collects a list of Applications installed in the user Mobile on a regular basis. The installed application list is used for analytics and for DMP based monetization. </b>
+\n\n\nTo facilitate this Woloo application collects:
+  \n1. Location information to understand the city of usage.
+  \n2. The Mobile number to contact the user if required;
+ \n3. List of apps installed in the mobile phone on a regular basis;
+       \n4. Usage behaviour of the user of relevant apps only;
+ \n5. Audio, Video OTT and e-commerce app usage details; and
+ \n6. Ads seen in social apps.
+
+
+\n\nWoloo offers this service via two options
+\n\n1)     Free - we will need accessibility permission and the data will be used for market research, Data management platform -DMP, generating analytics of mobile application usage and consumption behaviour etc. Woloo offers 365 days of subscription free for the user in this plan. By choosing the free option, the user declares  “I understand that by downloading, installing this application and by agreeing to the terms and conditions, I have voluntarily agreed to provide my usage data for the above mentioned purpose. I understand that transferring data to VTION’s backend from the application may use data connectivity from my phone, either cellular or Wi-Fi. This will be minimum in quantum and will be part of my usage on mobile data plan/Wi-Fi plan as the case maybe. I am compensated with a suitable incentive of the free service for 365 days. I agree that till I continue to keep the application on my phone and hereby consent to Woloo for usage of my data even after I uninstall the application”.
+\n\n2)     Paid- In the paid version the user gets an initial 7 days of subscription for free. Later he can purchase the subscription on a monthly basis for INR 99 and yearly INR 365.
+
+\n\nAll the data provided by our users are uploaded to secure servers in India on the cloud that is controlled by woloo . The application communicates with the server on https://a.vtion.in domain. Payload details on what the application sends into servers can be requested by contacting us at support@woloo.in. We also have a ‘Wipeout’ policy which will delete all Personally Identifiable Information associated with a user’s account. To do the same please contact us on support@woloo.in
+
+\n\nThe information collected will be analysed and shared as part of industry reports in an anonymised form. Further this information will be also uploaded in various Data Management Platforms (DMP) for third party advertisement purposes. For a complete overview of how we use the data shared by a user please go over our Terms of Use and Privacy Policy.
+
+\nAs a user you hereby declare and accept the following:
+  \n\n “I understand that transferring data to VTION’s backend from the application may use data connectivity from my phone, either cellular or Wi-Fi. This will be minimum in quantum and will be part of my usage on mobile data plan/Wi-Fi plan as the case maybe. I am compensated with a suitable incentive of the free service for 365 days. I agree that till I continue to keep the application on my phone and hereby consent to Woloo for usage of my data even after I uninstall the application”.
+
+   </string>
+
+
+    <string name="woloo_contact">Woloo Support</string>
+    <string name="hospital_contact">Hospital</string>
+    <string name="police_contact">Police</string>
+    <string name="fire_contact">Fire</string>
+
+
+    <!-- ******************************************    NEW THEME   ***********************************************************  -->
+
+
+    <string name="world_of_loo">W o r l d&#160;&#160;O f&#160;&#160;L o o</string>
+    <string name="mobile_hint">Enter your Mobile Number</string>
+    <string name="login_button">Login with OTP</string>
+
+    <string name="woloo_host_name">Capital SOCIAL</string>
+    <string name="woloo_host_address">[Ground Floor, The Capital, Unit 3, G Block Rd, G Block BKC, Bandra Kurla Complex, Bandra East, Mumbai, Maharashtra 400051]</string>
+    <string name="woloo_host_button">650-700</string>
+    <string name="navigate">Navigate</string>
+    <string name="back">Back</string>
+    <string name="share_now">Share Now</string>
+    <string name="amenities">Amenities</string>
+    <string name="woloo_member_since">Woloo Member Since-Jun 2021</string>
+    <string name="add_your_review">Add Your Review</string>
+    <string name="write_review">Write Your Review</string>
+    <string name="become_woloo_text">Join the Woloo Family and turn your loo into a Woloo today!</string>
+    <string name="host_name">Host Name</string>
+    <string name="host_phone_number">Host Phone Number</string>
+    <string name="host_address">Host Address</string>
+    <string name="host_photos">Add Host Photos</string>
+    <string name="next_button">Next</string>
+    <string name="skip_button">Skip</string>
+    <string name="track_periods">Track your Periods</string>
+    <string name="shopping_easy">Shopping made Easy</string>
+
+    <string name="terms_note">Terms and Conditions related to the using woloo app and website</string>
+    <string name="gender_string">Select Your Gender (M/F/Others)</string>
+
+    <string-array name="gender_array">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+    </string-array>
+
+    <string name="check_out">Check out the Woloo host you have successfully navigated in the past</string>
+    <string name="check_out_offers">Check out lucrative offers available at Woloo Hosts around you</string>
+    <string name="check_out_gift_card">Show that you care, by gifting a Woloo Gift-Card to your loved ones!</string>
+    <string name="bookmarked_hosts">Bookmarked Hosts</string>
+    <string name="see_more">See More</string>
+    <string name="refer_a_woloo_host">Refer A Woloo Host</string>
+    <string name="refer_woloo_text">Refer a business to become a Woloo host and earn 50 points instantly!</string>
+    <string name="owner_phone_number">Owners Phone Number</string>
+    <string name="check_out_bookmarks">Check out the Woloo hosts you have Bookmarked.This helps you visit them again!</string>
+    <string name="check_out_refer">Refer your friend to Woloo and get 100 Woloo points!</string>
+    <string name="check_out_topics">What are your interests like?</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="privacy_terms">Please read our <u>Terms &amp; Conditions</u> and our <u>Privacy Policy</u></string>
+
+</resources>

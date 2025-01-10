@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".more.dailylogscreen.DailyLogsScreenActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/start_theme_color"
+        android:layout_alignParentTop="true"
+        app:layout_scrollFlags="scroll|enterAlways">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_2"
+            android:layout_marginBottom="@dimen/margin_2">
+
+
+            <ImageView
+                android:id="@+id/toolbarBackArrow"
+                android:src="@drawable/ic_left_arrow"
+                android:alpha="0.8"
+                android:layout_marginLeft="@dimen/margin_3"
+                android:layout_width="@dimen/margin_12"
+                android:layout_height="@dimen/margin_20"/>
+
+            <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                android:layout_marginTop="@dimen/margin_5"
+                android:layout_centerHorizontal="true"
+                android:layout_alignBaseline="@+id/toolbarBackArrow"
+                android:id="@+id/tvTitle"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="@dimen/size_10"
+                android:text="Menstruation Log"
+                android:textColor="@color/black"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+    <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toptitle"
+        android:layout_below="@+id/toolbar"
+        android:text="Please mention the Symptoms during post/pre and during menstruation to effectively track the cycle"
+        android:textSize="@dimen/size_6"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif"
+        android:textColor="@color/color_gray"
+        android:textAllCaps="false"
+        android:textAlignment="center"
+        android:layout_marginLeft="@dimen/margin_9"
+        android:layout_marginRight="@dimen/margin_9"
+        android:layout_marginBottom="@dimen/margin_2"
+        android:layout_marginTop="@dimen/margin_2"/>
+    <ScrollView
+        android:id="@+id/scrolldailyLog"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_below="@+id/toptitle">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/dailyLogRel">
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/dailyLogRecycler"
+                android:layout_marginTop="@dimen/margin_5" />
+
+        </RelativeLayout>
+    </ScrollView>
+    <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/dailyLogSave"
+        android:text="Save"
+        android:layout_below="@+id/dailyLogRecycler"
+        android:textAlignment="center"
+       style="@style/button_text_style"
+        android:layout_margin="@dimen/_20sdp"
+        android:background="@drawable/yello_rectangle_shape"
+        />
+</LinearLayout>

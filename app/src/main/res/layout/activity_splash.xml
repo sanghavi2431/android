@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/start_theme_color"
+    tools:context=".application_kotlin.presentation.activities.login.SplashScreenActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_weight="1"
+      >
+
+
+        <ImageView
+            android:id="@+id/iv_app_logo"
+            android:layout_width="@dimen/_195sdp"
+            android:layout_height="@dimen/_138sdp"
+            android:src="@drawable/woloo_kotlin_logo"
+            android:layout_marginTop="@dimen/_155sdp"
+            android:layout_marginBottom="@dimen/_42sdp"
+            android:layout_gravity="center"
+            />
+
+
+        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+            android:id="@+id/tv_splash_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/logo_text_style"
+            android:gravity="center"
+            android:text="@string/splash_text"
+            android:layout_marginBottom="@dimen/_15sdp"/>
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/loading_animation"
+        android:layout_width="@dimen/margin_20"
+        android:layout_height="@dimen/margin_20"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/margin_3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/margin_3"
+        android:layout_above="@+id/frm_splash"
+        app:lottie_fileName="trail_loading.json"
+        app:lottie_loop="true"
+        android:visibility="visible"
+        app:lottie_colorFilter="@color/app_background"
+        app:lottie_autoPlay="true"
+        tools:ignore="MissingClass" />
+
+
+        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+            android:id="@+id/tv_skip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="@string/skip"
+            style="@style/button_text_style"
+            android:background="@drawable/new_button_background"
+            android:layout_margin="@dimen/_15sdp"
+            android:visibility="gone"
+            android:elevation="@dimen/_5sdp"/>
+
+
+
+        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+            android:id="@+id/tv_next"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/next"
+           style="@style/button_text_style"
+            android:background="@drawable/new_button_background"
+            android:layout_margin="@dimen/_15sdp"
+            android:visibility="gone"
+            android:elevation="@dimen/_5sdp"
+           />
+
+
+    </LinearLayout>
+
+</LinearLayout>

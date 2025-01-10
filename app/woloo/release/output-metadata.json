@@ -1,0 +1,20 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "in.woloo.www",
+  "variantName": "wolooRelease",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "attributes": [],
+      "versionCode": 21600,
+      "versionName": "2.16.0",
+      "outputFile": "app-woloo-release.apk"
+    }
+  ],
+  "elementType": "File"
+}

@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/start_theme_color"
+    android:id="@+id/rlParentLayout"
+    android:paddingTop="@dimen/margin_35"
+    tools:context=".application_kotlin.presentation.activities.login.OtpVerificationActivity"
+    tools:ignore="MissingDefaultResource">
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/ivLogo"
+                android:layout_width="@dimen/_195sdp"
+                android:layout_height="@dimen/_138sdp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/woloo_kotlin_logo" />
+
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:padding="@dimen/margin_10">
+            <LinearLayout
+                android:id="@+id/otp_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/size_8"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+
+                <in.woloo.www.application_kotlin.utilities.CenturiGothicBoldEditText
+                    android:id="@+id/editTextOne"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:inputType="number"
+                    android:digits="1234567890"
+                    android:maxLength="1"
+                    style="@style/otp_text_style"
+                    android:background="@drawable/otp_text_background"
+                    android:nextFocusRight="@+id/editText_two">
+                    <requestFocus />
+                </in.woloo.www.application_kotlin.utilities.CenturiGothicBoldEditText>
+
+
+                <in.woloo.www.application_kotlin.utilities.CenturiGothicBoldEditText
+                    android:id="@+id/editTextTwo"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:inputType="number"
+                    android:digits="1234567890"
+                    android:background="@drawable/otp_text_background"
+                    android:maxLength="1"
+                    style="@style/otp_text_style"/>
+
+                <in.woloo.www.application_kotlin.utilities.CenturiGothicBoldEditText
+                    android:id="@+id/editTextThree"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:inputType="number"
+                    android:digits="1234567890"
+                    style="@style/otp_text_style"
+                    android:background="@drawable/otp_text_background"
+                    android:maxLength="1"/>
+
+                <in.woloo.www.application_kotlin.utilities.CenturiGothicBoldEditText
+                    android:id="@+id/editTextFour"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:inputType="number"
+                    android:digits="1234567890"
+                    android:background="@drawable/otp_text_background"
+                    android:maxLength="1"
+                    style="@style/otp_text_style"/>
+
+
+            </LinearLayout>
+
+
+            <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                android:id="@+id/txtProceed"
+                style="@style/button_text_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/otp_layout"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:background="@drawable/new_button_background"
+                android:elevation="@dimen/_5sdp"
+                android:text="@string/submit" />
+
+            <LinearLayout
+                android:id="@+id/timer_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtProceed"
+                android:orientation="horizontal"
+                android:gravity="center">
+                <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                    android:text="Resend OTP in "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/screen_sub_header_text_center"
+
+                    />
+
+                <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                    android:id="@+id/timer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/screen_sub_header_text_center"
+                    android:text="00"
+                    />
+            </LinearLayout>
+
+            <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                android:id="@+id/tv_resendcode"
+                android:text="Resend"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/screen_sub_header_text_center"
+                android:layout_below="@+id/timer_layout"
+                android:gravity="center_horizontal"
+                android:layout_margin="@dimen/_1sdp"
+                android:padding="@dimen/_5sdp"
+                />
+
+
+
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/start_theme_color"
+        android:visibility="gone"
+        tools:context=".application_kotlin.presentation.activities.login.OtpVerificationActivity">
+
+
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:layout_width="@dimen/margin_45"
+                    android:layout_height="@dimen/margin_35"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="@dimen/margin_3"
+                    android:src="@drawable/ic_ellipse"
+                    android:visibility="gone"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_75sdp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/woloo_kotlin_logo"/>
+
+            </FrameLayout>
+
+            <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="15.3sp"
+                android:gravity="center_horizontal"
+                android:text="OTP Verification"
+                android:visibility="gone"
+                style="@style/screen_header_text_style"/>
+
+            <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+                android:id="@+id/tv_message"
+                android:text="@string/otp_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/button_text_style"
+                android:visibility="gone"/>
+
+            <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                android:id="@+id/tv_notyou"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/hyperlink_text_style"
+                android:autoLink="web"
+                android:linksClickable="true"
+                android:text="@string/not_you"
+                android:layout_margin="5dp"
+                android:visibility="gone"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/size_8"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+
+                <in.woloo.www.application_kotlin.utilities.CenturiGothicBoldEditText
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:inputType="number"
+                    android:digits="1234567890"
+                    android:maxLength="1"
+                    style="@style/otp_text_style"
+                    android:background="@drawable/otp_text_background"
+                    android:nextFocusRight="@+id/editText_two">
+                    <requestFocus />
+                </in.woloo.www.application_kotlin.utilities.CenturiGothicBoldEditText>
+
+
+                <in.woloo.www.application_kotlin.utilities.CenturiGothicBoldEditText
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:inputType="number"
+                    android:digits="1234567890"
+                    android:background="@drawable/otp_text_background"
+                    android:maxLength="1"
+                    style="@style/otp_text_style"/>
+
+                <in.woloo.www.application_kotlin.utilities.CenturiGothicBoldEditText
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:inputType="number"
+                    android:digits="1234567890"
+                    style="@style/otp_text_style"
+                    android:background="@drawable/otp_text_background"
+                    android:maxLength="1"/>
+
+                <in.woloo.www.application_kotlin.utilities.CenturiGothicBoldEditText
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:inputType="number"
+                    android:digits="1234567890"
+                    android:background="@drawable/otp_text_background"
+                    android:maxLength="1"
+                    style="@style/otp_text_style"/>
+
+
+            </LinearLayout>
+
+
+            <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                style="@style/edit_text_style"
+                android:text="@string/did_not_receive_otp"
+                android:alpha="0.7"
+                android:textSize="@dimen/margin_5"
+                android:visibility="gone"/>
+
+            <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/new_edit_text_background"
+                android:layout_gravity="center"
+                android:text="@string/verify_proceed"
+                android:layout_margin="20dp"
+                style="@style/button_text_style"/>
+
+
+
+
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
+

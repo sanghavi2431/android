@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <item
+        android:id="@+id/navigation_dash_home"
+        android:icon="@drawable/home_icon_click_event"
+        android:title="@string/menu_home"
+
+        />
+
+    <item
+        android:id="@+id/navigation_inviteFriend"
+        android:icon="@drawable/shop_icon_bottom_nav"
+        android:title="Shop"
+        />
+
+
+    <item
+        android:id="@+id/navigation_location"
+        android:icon="@drawable/location_icon_bottom_nav"
+        android:title="Loo Locator"
+        />
+
+    <item
+        android:id="@+id/navigation_more"
+        android:icon="@drawable/user_icon_bottom_nav"
+        android:title="@string/Profile"
+        />
+
+</menu>

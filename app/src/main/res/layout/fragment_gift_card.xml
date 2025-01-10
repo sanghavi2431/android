@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".more.giftcard.GiftCardFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/giftAmountLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/header_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/white">
+                <LinearLayout
+                    android:id="@+id/ivBack"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_5sdp"
+                    android:gravity="center">
+
+                    <ImageView
+
+                        android:layout_width="@dimen/_10sdp"
+                        android:layout_height="@dimen/_10sdp"
+                        android:layout_marginLeft="@dimen/margin_3"
+                        android:layout_marginTop="@dimen/margin_3"
+                        android:layout_marginBottom="@dimen/margin_3"
+                        android:adjustViewBounds="true"
+                        android:rotation="90"
+                        android:src="@drawable/down_arrow_bottom_bar"
+                        />
+                    <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        style="@style/small_gray_style"
+                        android:text="@string/back"
+                        android:gravity="center"
+                        android:layout_margin="@dimen/_2sdp"/>
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center">
+
+                    <ImageView
+                        android:id="@+id/screen_image"
+                        android:layout_width="@dimen/_45sdp"
+                        android:layout_height="@dimen/_45sdp"
+                        android:layout_margin="@dimen/_15sdp"
+                        android:src="@drawable/gift_cart_icon"/>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                            android:id="@+id/screen_header"
+                            style="@style/screen_header_text_style_big"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_2sdp"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:layout_marginEnd="@dimen/_2sdp"
+                            android:layout_marginBottom="@dimen/_2sdp"
+                            android:text="Woloo Gift-Card" />
+                        <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/check_out_gift_card"
+                            android:textSize="@dimen/_9ssp"
+                            android:textColor="@color/black"
+                            android:layout_below="@+id/screen_header"
+                            android:layout_marginRight="@dimen/_15sdp"
+                            android:id="@+id/screen_description"
+                            />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:padding="@dimen/_2sdp">
+
+                    <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                        android:id="@+id/tvHundred"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/gift_card_hundred"
+                        style="@style/rs_text"
+                        android:layout_margin="@dimen/_2sdp"
+                        android:background="@drawable/yello_rectangle_shape"
+                        android:elevation="@dimen/_4sdp"
+                       />
+
+                    <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                        android:id="@+id/tvFiveHundred"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        style="@style/rs_text"
+                        android:background="@drawable/yello_rectangle_shape"
+                        android:text="@string/gift_card_five_hundred"
+                        android:layout_margin="@dimen/_2sdp"
+                        android:elevation="@dimen/_4sdp"/>
+
+                    <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                        android:id="@+id/tvThousand"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        style="@style/rs_text"
+                        android:background="@drawable/yello_rectangle_shape"
+                        android:text="@string/gift_card_thousands"
+                        android:layout_margin="@dimen/_2sdp"
+                        android:elevation="@dimen/_4sdp"/>
+
+
+
+            </LinearLayout>
+
+
+
+                <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularEditText
+                    android:id="@+id/etAmount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/become_host_edit_text_background"
+                    style="@style/boarding_text_style"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_15sdp"
+                    android:elevation="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:maxLines="1"
+                    android:digits="1234567890"
+                    android:hint="@string/enter_points_manually" />
+
+
+                <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularEditText
+                    android:id="@+id/etMobileNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/become_host_edit_text_background"
+                    style="@style/boarding_text_style"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_15sdp"
+                    android:elevation="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:maxLines="1"
+                    android:digits="1234567890"
+                    android:hint="@string/mobile_number"
+                    android:maxLength="10"
+                    />
+
+
+
+
+                <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularEditText
+                    android:id="@+id/etMessage"
+                    android:minLines="3"
+                    android:hint="Enter a Thoughtful Message*"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/become_host_edit_text_background"
+                    style="@style/boarding_text_style"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_15sdp"
+                    android:elevation="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:gravity="top"
+                   />
+
+
+
+
+
+                <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                    android:id="@+id/tvSubmit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/yello_rectangle_shape"
+                    style="@style/button_text_style"
+                    android:layout_margin="@dimen/_15sdp"
+                    android:text="@string/send" />
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="normal"
+                    android:layout_margin="@dimen/margin_10"
+                    android:textSize="@dimen/size_10"
+                    android:textColor="@color/text_color_five"
+                    android:letterSpacing="0.01"
+                    android:lineSpacingExtra="-4sp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/gift_card_how_it_works" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="@dimen/margin_20"
+                    android:layout_marginRight="@dimen/margin_20">
+
+                    <ImageView
+                        android:layout_width="@dimen/margin_7"
+                        android:layout_height="@dimen/margin_7"
+                        android:src="@drawable/ic_gift_card_works"/>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="normal"
+                        android:textSize="@dimen/size_6"
+                        android:textColor="#ffffff"
+                        android:lineSpacingExtra="6.7sp"
+                        android:layout_marginLeft="@dimen/margin_2"
+                        android:text="@string/gift_card_purchase_subscription" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginLeft="@dimen/margin_20"
+                    android:layout_marginRight="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/margin_5"
+                    android:layout_marginBottom="@dimen/margin_5"
+                    android:background="@color/seperator_line_color_one"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="@dimen/margin_20"
+                    android:layout_marginRight="@dimen/margin_20">
+
+                    <ImageView
+                        android:layout_width="@dimen/margin_7"
+                        android:layout_height="@dimen/margin_7"
+                        android:src="@drawable/ic_gift_card_works"/>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="normal"
+                        android:textSize="@dimen/size_6"
+                        android:textColor="#ffffff"
+                        android:lineSpacingExtra="6.7sp"
+                        android:layout_marginLeft="@dimen/margin_2"
+                        android:text="@string/gift_card_locate_sanitisation_area" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginLeft="@dimen/margin_20"
+                    android:layout_marginRight="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/margin_5"
+                    android:layout_marginBottom="@dimen/margin_5"
+                    android:background="@color/seperator_line_color_one"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="@dimen/margin_20"
+                    android:layout_marginLeft="@dimen/margin_20"
+                    android:layout_marginRight="@dimen/margin_20">
+
+                    <ImageView
+                        android:layout_width="@dimen/margin_7"
+                        android:layout_height="@dimen/margin_7"
+                        android:src="@drawable/ic_gift_card_works"/>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="normal"
+                        android:textSize="@dimen/size_6"
+                        android:textColor="#ffffff"
+                        android:lineSpacingExtra="6.7sp"
+                        android:layout_marginLeft="@dimen/margin_2"
+                        android:layout_marginBottom="@dimen/margin_25"
+                        android:text="@string/gift_card_show_code" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

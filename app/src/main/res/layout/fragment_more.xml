@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context=".more.fragments.MoreFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bottom_rounded_corners"
+                android:elevation="@dimen/_5sdp">
+
+            <ImageView
+                android:layout_width="@dimen/_62sdp"
+                android:layout_height="@dimen/_44sdp"
+                android:src="@drawable/woloo_kotlin_logo"
+                android:layout_centerInParent="true"
+                android:layout_margin="@dimen/_10sdp"/>
+
+            </RelativeLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/search_background"
+                app:cardCornerRadius="@dimen/_18sdp"
+                android:elevation="@dimen/_4sdp"
+                android:layout_margin="@dimen/_15sdp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <in.woloo.www.utils.CircleImageView
+        android:id="@+id/civProfileImage"
+        android:layout_width="@dimen/_62sdp"
+        android:layout_height="@dimen/_62sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:src="@drawable/using_woloo_at_particular_host_icon"/>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Profile Name"
+            android:id="@+id/tvName"
+            style="@style/bottom_woloo_host_header_style"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:background="@color/chip_color"
+            android:layout_marginRight="@dimen/_10sdp"
+          />
+        <RelativeLayout
+            android:id="@+id/credit_history_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+            android:id="@+id/tvWolooPoints"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="230 Woloo Points"
+            style="@style/points_text_header_style"
+            />
+
+            <ImageView
+                android:layout_width="@dimen/_12sdp"
+                android:layout_height="@dimen/_12sdp"
+                android:layout_centerInParent="true"
+                android:layout_toRightOf="@+id/tvWolooPoints"
+                android:src="@drawable/onclick_icon_profile" />
+
+
+        </RelativeLayout>
+
+
+
+
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/iv_edit"
+        android:layout_width="@dimen/_15sdp"
+        android:layout_height="@dimen/_15sdp"
+        android:src="@drawable/pencil_icon_profile"
+        android:layout_margin="@dimen/_10sdp"
+       />
+
+</LinearLayout>
+                <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                    android:id="@+id/tvWolooPremium"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Membership Active"
+                    style="@style/small_button_style"
+                    android:elevation="@dimen/_4sdp"
+                    android:background="@drawable/woloo_host_limit_bg"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_15sdp"
+                    android:padding="@dimen/_5sdp"
+                    />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginLeft="@dimen/_15sdp"
+                        android:layout_marginRight="@dimen/_15sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp">
+                        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                            android:id="@+id/tvMobileNumber"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/number"
+                            android:layout_weight="1"
+                            android:background="@drawable/image_woloo_host_bg"
+                            style="@style/small_button_style"
+                            android:layout_marginRight="@dimen/_4sdp"
+                            />
+                        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                            android:id="@+id/tvCity"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/city"
+                            android:layout_weight="1"
+                            android:singleLine="true"
+                            android:background="@drawable/image_woloo_host_bg"
+                            style="@style/small_button_style"
+                            android:layout_marginRight="@dimen/_2sdp"
+                            android:layout_marginLeft="@dimen/_2sdp"/>
+                        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                            android:id="@+id/tvGender"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/gender"
+                            android:layout_weight="1"
+                            android:background="@drawable/image_woloo_host_bg"
+                            style="@style/small_button_style"
+                            android:layout_marginLeft="@dimen/_2sdp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+                
+            </androidx.cardview.widget.CardView>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:layout_marginRight="@dimen/_15sdp"
+                android:background="@color/start_theme_color"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvMenus"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clipToPadding="false"
+                    android:paddingBottom="@dimen/_80sdp"
+                    tools:listitem="@layout/more_menu_item"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_wolooPremium"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_4"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tvWolooPremiumTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:ellipsize="end"
+                    android:gravity="center_horizontal"
+                    android:maxLines="1"
+                    android:text="@string/woloo_premium"
+                    android:textColor="#6a6a6a"
+                    android:textSize="@dimen/size_6"
+                    android:textStyle="bold" />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:ellipsize="end"
+                    android:gravity="center_horizontal"
+                    android:maxLines="2"
+                    android:textAllCaps="true"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/size_6"
+                    android:textStyle="bold"
+                    tools:text="Long long text so long text so so long" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+
+
+</LinearLayout>

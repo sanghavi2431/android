@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ivBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/_5sdp"
+        android:gravity="center"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+
+            android:layout_width="@dimen/_10sdp"
+            android:layout_height="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/margin_3"
+            android:layout_marginTop="@dimen/margin_3"
+            android:layout_marginBottom="@dimen/margin_3"
+            android:adjustViewBounds="true"
+            android:rotation="90"
+            android:src="@drawable/down_arrow_bottom_bar"
+            />
+        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            style="@style/small_gray_style"
+            android:text="@string/back"
+            android:gravity="center"
+            android:layout_margin="@dimen/_2sdp"/>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/start_theme_color"
+        tools:ignore="MissingConstraints">
+
+        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            style="@style/host_details_sub_header_style"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:padding="@dimen/_5sdp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:text="Categories"/>
+
+        <RelativeLayout
+            android:id="@+id/seemorelayout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="right|center_vertical">
+        
+        <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+            android:id="@+id/seemoretext"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            style="@style/button_text_style"
+            android:padding="@dimen/_5sdp"
+            android:text="See More"
+            android:layout_gravity="center"
+            />
+        <ImageView
+            android:id="@+id/seemoreimg"
+            android:layout_width="@dimen/_14sdp"
+            android:layout_height="@dimen/_14sdp"
+            android:src="@drawable/categories_see_more"
+            android:padding="@dimen/_2sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:layout_toRightOf="@+id/seemoretext"
+            android:layout_centerVertical="true"/>
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

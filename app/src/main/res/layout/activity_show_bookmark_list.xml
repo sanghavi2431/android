@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+xmlns:tools="http://schemas.android.com/tools"
+android:background="@color/white"
+tools:context=".application_kotlin.presentation.activities.loo_discovery.BookmarkListActivity">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="@dimen/margin_15"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:id="@+id/header_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white">
+        <LinearLayout
+            android:id="@+id/ivBack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/_5sdp"
+            android:gravity="center">
+
+            <ImageView
+
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/margin_3"
+                android:layout_marginTop="@dimen/margin_3"
+                android:layout_marginBottom="@dimen/margin_3"
+                android:adjustViewBounds="true"
+                android:rotation="90"
+                android:src="@drawable/down_arrow_bottom_bar"
+                />
+            <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                style="@style/small_gray_style"
+                android:text="@string/back"
+                android:gravity="center"
+                android:layout_margin="@dimen/_2sdp"/>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:id="@+id/screen_image"
+                android:layout_width="@dimen/_45sdp"
+                android:layout_height="@dimen/_45sdp"
+                android:layout_margin="@dimen/_15sdp"
+                android:src="@drawable/bookmark_icon_host_details"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                    android:id="@+id/screen_header"
+                    style="@style/screen_header_text_style_big"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_2sdp"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:layout_marginEnd="@dimen/_2sdp"
+                    android:layout_marginBottom="@dimen/_2sdp"
+                    android:text="Bookmarks" />
+                <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/check_out_bookmarks"
+                    android:textSize="@dimen/_9ssp"
+                    android:textColor="@color/black"
+                    android:layout_below="@+id/screen_header"
+                    android:layout_marginRight="@dimen/_15sdp"
+                    android:id="@+id/screen_description"
+                    />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/bookmarks_layout"
+        android:visibility="gone">
+        <ImageView
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:src="@drawable/bookmark_icon_host_details"
+            android:layout_margin="@dimen/_15sdp"
+            android:layout_gravity="center"/>
+        <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/bookmarked_hosts"
+            style="@style/bottom_woloo_host_header_style"
+            android:gravity="center_vertical"
+            />
+        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/see_more"
+            android:gravity="center_vertical"
+            android:textColor="@color/percent_transperent_black"
+            android:textSize="@dimen/_8ssp"
+            android:layout_margin="@dimen/_10sdp"/>
+        <ImageView
+            android:layout_width="@dimen/_11sdp"
+            android:layout_height="@dimen/_11sdp"
+            android:src="@drawable/onclick_icon_profile"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="@dimen/_15sdp"/>
+    </LinearLayout>
+
+    <in.woloo.www.utils.EmptyRecyclerView
+        android:id="@+id/bookmark_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/margin_20"
+        tools:listitem="@layout/my_history_item"/>
+
+    <LinearLayout
+        android:id="@+id/ll_nodatafound"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="#C1C1C1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="visible">
+
+        <ImageView
+            android:layout_width="@dimen/margin_40"
+            android:layout_height="@dimen/margin_30"
+            android:layout_gravity="center"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/ic_cloudnew"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_margin="@dimen/margin_5"
+            android:padding="@dimen/margin_5"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:alpha="0.5"
+            android:textSize="@dimen/margin_6"
+            android:text="@string/you_have_not_visited_any_woloo_host_yet"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</LinearLayout>
+
+
+</RelativeLayout>

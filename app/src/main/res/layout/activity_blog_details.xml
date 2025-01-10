@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".more.trendingblog.BlogDetailsActivity">
+    <RelativeLayout
+        android:id="@+id/topImageBlogDtlRel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/topImageBlogDtl"
+            android:background="@drawable/two_round_corner_rect"
+            android:src="@drawable/blog_image_one"
+            android:scaleType="fitXY"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/titleBlogDtlRel"
+        android:layout_below="@+id/topImageBlogDtlRel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_5"
+        android:layout_marginRight="@dimen/margin_5">
+        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+            android:layout_width="@dimen/margin_100"
+            android:layout_height="wrap_content"
+            android:id="@+id/textTitleBlogDtl"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="@dimen/margin_5"
+            android:paddingRight="@dimen/margin_5"
+            android:text="10 Simple changes that leads to weight loss in a short period of time"
+            android:gravity="left"
+            android:textSize="@dimen/size_8"
+           
+            android:textStyle="bold"
+            android:textColor="@color/color_gray"
+
+            />
+
+        <RelativeLayout
+            android:id="@+id/coinRel"
+            android:layout_width="@dimen/margin_30"
+            android:layout_height="@dimen/margin_12"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/margin_5"
+            android:background="@drawable/ic_rect_image_on_img">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/subImageOne"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_5"
+                android:src="@drawable/ic_coin"
+                app:tint="@color/blak_bluedark"
+                />
+            <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/subImageTwo"
+                android:layout_toRightOf="@+id/subImageOne"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:textAlignment="center"
+                android:text="10"
+                android:textColor="@color/blak_bluedark"
+                android:textStyle="bold"
+               
+                android:textSize="@dimen/size_6"
+                />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/blogDtlDaysRel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titleBlogDtlRel"
+        android:layout_marginTop="@dimen/margin_2">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:weightSum="2">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/margin_5"
+                android:layout_weight="1">
+                <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/viaBlogText"
+                    android:gravity="left"
+                    android:text="Via Woloo Blogs"
+                    android:layout_gravity="left"
+                    android:textColor="@color/color_gray"
+                    android:textStyle="normal"
+                   
+                    android:textSize="@dimen/size_7"
+                    />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:layout_gravity="center">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/margin_5"
+                    android:layout_weight="1">
+                    <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/blogDtlDaysText"
+                        android:text="2 Days Ago"
+                        android:textStyle="normal"
+                        android:textSize="@dimen/size_6"
+                        android:textColor="@color/color_gray"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center"
+                        android:textAlignment="center"
+                        />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </RelativeLayout>
+    <View
+        android:id="@+id/viewDividerBlogDtl"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_1"
+        android:background="@drawable/recy_shadow_back"
+        android:layout_below="@+id/blogDtlDaysRel"
+        android:layout_marginTop="@dimen/margin_5"
+        android:layout_marginRight="@dimen/margin_5"
+        android:layout_marginLeft="@dimen/margin_5"
+        />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/blogDtlTextAreaRel"
+            android:layout_below="@+id/viewDividerBlogDtl"
+            android:layout_marginTop="@dimen/margin_5">
+            <ScrollView
+                android:id="@+id/textParaScroll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+            <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textDtlArea"
+                android:text="@string/blog_detail_text_paragraph"
+                android:layout_marginLeft="@dimen/margin_5"
+                android:layout_marginRight="@dimen/margin_5"
+                android:textAlignment="viewStart"
+                android:textColor="@color/color_gray"
+                android:textSize="@dimen/size_7"
+                android:textStyle="normal"
+                />
+            </ScrollView>
+
+        </RelativeLayout>
+
+
+
+
+</RelativeLayout>

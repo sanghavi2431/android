@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include layout="@layout/title_bar_new"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_below="@id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_15sdp"
+                    android:elevation="@dimen/_4sdp"
+                    app:cardCornerRadius="@dimen/_25sdp"
+                    android:orientation="vertical"
+                    android:backgroundTint="@color/search_background">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_5sdp">
+
+                        <ImageView
+                            android:layout_width="@dimen/_41sdp"
+                            android:layout_height="@dimen/_41sdp"
+                            android:src="@drawable/woloo_logo_round"
+                            android:layout_gravity="center"/>
+
+
+
+                            <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                                android:id="@+id/tvWolooPoints"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/my_account_woloo_points"
+                                style="@style/screen_header_text_style_15_center"
+                              />
+
+
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/text_back"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginRight="@dimen/_10sdp"
+                           />
+
+
+
+                            <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                                android:id="@+id/tvWolooMoney"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Rs. in Gift Card"
+                                style="@style/screen_header_text_style_big_center_nomargin"
+                                android:layout_margin="@dimen/_10sdp"
+                                android:paddingLeft="@dimen/_15sdp"
+                                android:paddingRight="@dimen/_15sdp"
+                                android:paddingTop="@dimen/_15sdp"
+                                android:paddingBottom="@dimen/_15sdp"
+
+                                android:background="@drawable/rounded_background_white"
+
+                               />
+
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                    <ImageView
+                        android:id="@+id/ivShop"
+                        android:layout_width="@dimen/margin_25"
+                        android:layout_height="@dimen/margin_25"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:elevation="@dimen/margin_10"
+                        android:src="@drawable/ic_my_account_shop"
+                        android:visibility="gone"/>
+
+
+
+                <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Your credit history"
+                    style="@style/screen_header_text_style_big_center_nomargin"
+                    />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/line_host_details"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvCreditHistory"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginBottom="@dimen/_15sdp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                    tools:listitem="@layout/credit_history_item"/>
+
+
+            </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</RelativeLayout>
+

@@ -1,0 +1,4 @@
+include ':collapsiblecalendarview2'
+include ':app'
+rootProject.name = "Woloo"
+

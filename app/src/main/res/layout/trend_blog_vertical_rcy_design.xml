@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/trendBlogVerMainRel"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
+        android:id="@+id/reltopImg"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_70">
+        <ImageView
+            android:id="@+id/blogImg"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_70"
+            android:src="@drawable/blog_image_one"
+            android:scaleType="fitXY"
+            android:background="@drawable/black_rectangle_button"
+            />
+
+        <RelativeLayout
+            android:layout_width="@dimen/margin_30"
+            android:layout_height="@dimen/margin_12"
+            android:layout_alignTop="@+id/blogImg"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/margin_5"
+            android:layout_marginTop="@dimen/margin_5"
+            android:background="@drawable/ic_rect_image_on_img">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/subImageOne"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_5"
+                android:src="@drawable/ic_coin"
+                app:tint="@color/blak_bluedark"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/subImageTwo"
+                android:layout_toRightOf="@+id/subImageOne"
+                android:layout_centerVertical="true"
+              android:layout_alignParentRight="true"
+                android:textAlignment="center"
+                android:text="10"
+                android:textColor="@color/blak_bluedark"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif"
+                android:textSize="@dimen/size_6"
+                />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/blogText"
+        android:layout_below="@+id/reltopImg"
+        android:text="10 Simple changesthat leads to weight loss in a short period of time"
+        android:textSize="@dimen/size_6"
+        android:textAllCaps="false"
+        android:textColor="@color/color_gray"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif"
+        android:gravity="left"
+        android:layout_marginTop="@dimen/margin_5"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/blogTimeText"
+        android:layout_below="@id/blogText"
+        android:text="2 Days Ago"
+        android:textSize="@dimen/size_6"
+        android:textAllCaps="false"
+        android:textColor="@color/color_gray"
+        android:textStyle="normal"
+        android:fontFamily="sans-serif"
+        android:gravity="left"
+        android:layout_marginTop="@dimen/margin_2"
+        />
+    <View
+        android:id="@+id/viewDivider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_1"
+        android:background="@drawable/recy_shadow_back"
+        android:layout_below="@+id/blogTimeText"
+        android:layout_marginTop="@dimen/margin_3"
+
+
+        />
+    <RelativeLayout
+        android:id="@+id/trendblogLastStarimg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/viewDivider"
+        android:layout_marginTop="@dimen/margin_3"
+        android:layout_marginBottom="@dimen/margin_5">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:weightSum="2">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:text="Via Woloo Blogs"
+                    android:layout_gravity="left"
+                    android:textColor="@color/color_gray"
+                    android:textStyle="normal"
+                    android:fontFamily="sans-serif"
+                    android:textSize="@dimen/size_6"/>
+
+            </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:layout_gravity="center">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/starimg"
+                    android:src="@drawable/ic_star_blog"
+                    android:layout_toLeftOf="@+id/heartimg"
+                    app:backgroundTint="@drawable/icon_back_gradient_color"
+
+
+                    />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/heartimg"
+                    android:src="@drawable/ic_heart_blog"
+                    android:layout_toLeftOf="@+id/shareimg"
+                    android:layout_marginLeft="@dimen/margin_5"
+                    app:backgroundTint="@drawable/icon_back_gradient_color"
+
+                    />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/shareimg"
+                    android:src="@drawable/ic_share_blog"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginLeft="@dimen/margin_5"
+                    />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

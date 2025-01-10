@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/transparent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/margin_2"
+        android:paddingBottom="@dimen/margin_5"
+        android:orientation="vertical"
+        android:background="#FFED00"
+        >
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/gift_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/margin_5"
+                android:paddingVertical="@dimen/margin_3"
+                android:weightSum="11">
+
+                <RadioButton
+                    android:id="@+id/radio_gift"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/application_background"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingEnd="@dimen/margin_3"
+                    android:text="@string/gift_voucher"
+                    android:textColor="@color/text_color_one"
+                    android:textSize="@dimen/size_9"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_gift_points"
+                    app:layout_constraintStart_toEndOf="@+id/radio_gift"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_gift_points"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="@dimen/margin_3"
+                    android:text="Rs. 100"
+                    android:textColor="@color/text_color_one"
+                    android:textSize="@dimen/size_9"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+          
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray"/>
+
+            <LinearLayout
+                android:id="@+id/razorpay_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/margin_5"
+                android:paddingVertical="@dimen/margin_3"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:id="@+id/radio_razorpay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/application_background"
+                    android:checked="true"/>
+
+                <ImageView
+                    android:id="@+id/iv_razorpay"
+                    android:layout_width="@dimen/size_50"
+                    android:layout_height="@dimen/size_14"
+                    android:layout_gravity="center"
+                    android:foregroundGravity="left"
+                    android:src="@drawable/razorpay"/>
+            </LinearLayout>
+
+
+        </RadioGroup>
+
+
+
+
+            <TextView
+                android:id="@+id/btn_pay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="@dimen/size_9"
+                android:layout_marginVertical="@dimen/margin_5"
+                android:background="@drawable/black_rectangle_button"
+                android:textColor="@color/text_color_five"
+                android:paddingLeft="@dimen/margin_20"
+                android:paddingRight="@dimen/margin_20"
+                android:paddingVertical="@dimen/margin_3"
+                android:lineSpacingExtra="25.3sp"
+                android:gravity="center"
+                android:textAllCaps="true"
+                android:layout_gravity="center"
+                android:text="Pay" />
+=
+    </LinearLayout>
+</LinearLayout>

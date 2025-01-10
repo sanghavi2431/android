@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/new_button_background"
+    android:orientation="vertical"
+    android:layout_margin="@dimen/_15sdp"
+    android:elevation="@dimen/_4sdp">
+
+    <LinearLayout
+        android:id="@+id/ivBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/_5sdp"
+        android:gravity="center">
+
+        <ImageView
+
+            android:layout_width="@dimen/_10sdp"
+            android:layout_height="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/margin_3"
+            android:layout_marginTop="@dimen/margin_3"
+            android:layout_marginBottom="@dimen/margin_3"
+            android:adjustViewBounds="true"
+            android:rotation="90"
+            android:src="@drawable/down_arrow_bottom_bar"
+            />
+        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            style="@style/small_gray_style"
+            android:text="@string/back"
+            android:gravity="center"
+            android:layout_margin="@dimen/_2sdp"/>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/headTitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/open_sans_semi_bold"
+        android:text="@string/thirst_reminder"
+        android:textAllCaps="true"
+        android:textColor="@color/color_gray"
+        android:textSize="@dimen/size_8"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="#1A414042"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/headTitleText"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/ivClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/ic_close"
+        app:layout_constraintBottom_toBottomOf="@+id/headTitleText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/headTitleText"
+        app:tint="@color/blak_bluedark"
+        android:visibility="gone"/>
+
+    <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Get reminded to drink \nwater"
+        style="@style/screen_header_text_style_big_center"
+        android:layout_marginTop="@dimen/_15sdp"
+        />
+    <View
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_1sdp"
+        android:background="@color/start_theme_color"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/_5sdp"/>
+
+    <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_15sdp"
+        android:text="How frequently do you want to get\nreminded to drink water?"
+        style="@style/button_text_style"/>
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/open_sans_semi_bold"
+        android:text="@string/set_frequency"
+        android:textColor="@color/color_gray"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view3"
+        android:visibility="gone"/>
+
+    <in.woloo.www.application_kotlin.utilities.CenturiGothicBoldEditText
+        android:id="@+id/etThirstFrequency"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+       android:layout_marginLeft="@dimen/_50sdp"
+        android:layout_marginRight="@dimen/_50sdp"
+        android:layout_marginBottom="@dimen/_15sdp"
+        android:padding="@dimen/_15sdp"
+        android:elevation="@dimen/_4sdp"
+        android:background="@drawable/rectangle_shape"
+        android:text="30 Minutes"
+        style="@style/screen_header_text_style_big_center_nomargin"
+        />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="@string/every"
+        android:visibility="gone"
+        android:textColor="@color/color_gray"
+        app:layout_constraintBottom_toBottomOf="@+id/etThirstFrequency"
+        app:layout_constraintEnd_toStartOf="@+id/etThirstFrequency"
+        app:layout_constraintTop_toTopOf="@+id/etThirstFrequency" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/hrs"
+        android:visibility="gone"
+        android:textColor="@color/color_gray"
+        app:layout_constraintBottom_toBottomOf="@+id/etThirstFrequency"
+        app:layout_constraintStart_toEndOf="@+id/etThirstFrequency"
+        app:layout_constraintTop_toTopOf="@+id/etThirstFrequency" />
+
+    <TextView
+        android:id="@+id/tvThirstTimerMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:drawablePadding="4dp"
+        android:fontFamily="@font/open_sans_semi_bold"
+        android:gravity="center"
+        android:visibility="gone"
+        android:text="@string/thirst_reminder_confirmation_value"
+        android:textColor="@color/color_gray"
+        android:textSize="12sp"
+        app:drawableStartCompat="@drawable/ic_info"
+        app:drawableTint="#F09334"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etThirstFrequency" />
+
+    <CheckBox
+        android:id="@+id/cbCancelReminder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:includeFontPadding="false"
+        android:text="@string/cancel_reminder"
+        android:textColor="@color/color_gray"
+        android:textSize="12sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvThirstTimerMessage" />
+
+    <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+        android:id="@+id/tvSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/yello_rectangle_shape"
+        android:layout_gravity="center"
+        android:text="@string/save"
+        android:elevation="@dimen/_4sdp"
+       style="@style/button_text_style"
+        android:paddingRight="@dimen/_25sdp"
+        android:paddingLeft="@dimen/_25sdp"
+        android:paddingTop="@dimen/_5sdp"
+        android:paddingBottom="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_15sdp"/>
+
+</LinearLayout>

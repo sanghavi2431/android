@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/trendBlogVerMainRel"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/rounded_background_white"
+    android:layout_marginTop="@dimen/_10sdp"
+    android:layout_marginBottom="@dimen/_10sdp"
+    android:layout_marginLeft="@dimen/_6sdp"
+    android:layout_marginRight="@dimen/_6sdp"
+    android:elevation="@dimen/_4sdp"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".more.home_shop.ShopBlogsListAdapter">
+
+    <RelativeLayout
+        android:id="@+id/trendblogLastStarimg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_3"
+        android:layout_marginBottom="@dimen/margin_5">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <in.woloo.www.utils.CircleImageView
+                    android:layout_width="@dimen/_38sdp"
+                    android:layout_height="@dimen/_38sdp"
+                    android:src="@color/search_background"
+                    android:layout_margin="@dimen/_10sdp"/>
+
+                <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Woloo Blogs"
+                    android:layout_gravity="center"
+                    style="@style/refer_3_host_style"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/yello_rectangle_shape"
+                        android:text="Follow"
+                        android:paddingTop="@dimen/_2sdp"
+                        android:paddingBottom="@dimen/_2sdp"
+                        android:paddingLeft="@dimen/_10sdp"
+                        android:paddingRight="@dimen/_10sdp"
+                        style="@style/button_text_style"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:visibility="gone"
+                        android:layout_toLeftOf="@+id/shop_now"/>
+
+                    <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                        android:id="@+id/shop_now"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/yello_rectangle_shape"
+                        android:text="Show Now"
+                        android:paddingTop="@dimen/_3sdp"
+                        android:paddingBottom="@dimen/_3sdp"
+                        android:paddingLeft="@dimen/_10sdp"
+                        android:paddingRight="@dimen/_10sdp"
+                        style="@style/button_text_style"
+                        android:gravity="center"
+                        android:layout_toLeftOf="@+id/show_more"/>
+
+
+
+
+                    <ImageView
+                        android:id="@+id/show_more"
+                        android:layout_width="@dimen/_12sdp"
+                        android:layout_height="@dimen/_12sdp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="@dimen/margin_5"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:src="@drawable/show_more"
+                        android:layout_centerVertical="true"/>
+
+                </RelativeLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </RelativeLayout>
+
+
+
+    <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+        android:id="@+id/blogText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/reltopImg"
+        android:layout_marginLeft="@dimen/_15sdp"
+        android:layout_marginRight="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:text="10 Simple changesthat leads to weight loss in a short period of time"
+        style="@style/ten_black_left"
+        android:ellipsize="end"
+        android:maxLines="2"
+        />
+
+    <RelativeLayout
+        android:id="@+id/reltopImg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <ImageView
+            android:id="@+id/blogImg"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_297sdp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/rectangle_shape"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:layout_marginRight="@dimen/_15sdp"/>
+
+        <RelativeLayout
+            android:id="@+id/rlBlogPoints"
+            android:layout_width="@dimen/margin_30"
+            android:layout_height="@dimen/margin_12"
+            android:layout_alignTop="@+id/blogImg"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/margin_5"
+            android:layout_marginRight="@dimen/margin_5"
+            android:background="@drawable/ic_rect_image_on_img"
+            android:backgroundTint="@color/gray"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/subImageOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_5"
+                android:src="@drawable/ic_coin"
+                app:tint="@color/blak_bluedark"
+                />
+
+            <TextView
+                android:id="@+id/subImageTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/subImageOne"
+                android:fontFamily="sans-serif"
+                android:text="10"
+                android:textAlignment="center"
+                android:textColor="@color/blak_bluedark"
+                android:textSize="@dimen/size_6"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+
+
+    <TextView
+        android:id="@+id/blogTimeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/blogText"
+        android:layout_marginTop="@dimen/margin_2"
+        android:fontFamily="sans-serif"
+        android:gravity="left"
+        android:text="2 Days Ago"
+        android:textAllCaps="false"
+        android:textColor="@color/color_gray"
+        android:textSize="@dimen/size_6"
+        android:textStyle="normal"
+        android:visibility="gone"/>
+
+    <View
+        android:id="@+id/viewDivider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_1"
+        android:layout_below="@+id/blogTimeText"
+        android:layout_marginTop="@dimen/margin_3"
+        android:background="@drawable/recy_shadow_back"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="@dimen/_10sdp">
+
+        <ImageView
+            android:id="@+id/heartimg"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:src="@drawable/like_blog" />
+
+        <ImageView
+            android:id="@+id/commentimg"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:src="@drawable/comment_blog"
+            android:visibility="gone"/>
+
+
+        <ImageView
+            android:id="@+id/shareimg"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:src="@drawable/share_blog"
+            />
+
+        <ImageView
+            android:id="@+id/starimg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_star_blog_outline"
+            android:visibility="gone"/>
+    </LinearLayout>
+
+</LinearLayout>

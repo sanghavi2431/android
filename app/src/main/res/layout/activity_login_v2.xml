@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/start_theme_color"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/margin_35"
+    tools:context=".application_kotlin.presentation.activities.login.LoginActivity">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1">
+
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="@dimen/_195sdp"
+        android:layout_height="@dimen/_138sdp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/woloo_kotlin_logo" />
+
+</RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:padding="@dimen/margin_10">
+
+        <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularEditText
+            android:id="@+id/etEmailMobile"
+            style="@style/edit_text_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/new_edit_text_background"
+            android:digits="1234567890+"
+            android:hint="@string/mobile_hint"
+            android:inputType="number"
+            android:maxLines="1"
+            android:singleLine="true" />
+
+        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+            android:id="@+id/txtSendOtp"
+            style="@style/button_text_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/etEmailMobile"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:background="@drawable/new_button_background"
+            android:elevation="@dimen/_5sdp"
+            android:text="@string/login_button" />
+
+</RelativeLayout>
+    
+    <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/privacy_terms"
+        android:padding="@dimen/_2sdp"
+        android:layout_margin="@dimen/_10sdp"
+        android:id="@+id/privacy_terms_text"
+        style="@style/policy_text_style_center"/>
+
+
+</LinearLayout>

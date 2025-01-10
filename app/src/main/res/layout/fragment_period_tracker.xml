@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="false">
+
+            <com.periodTracker.collapsiblecalendarview.widget.CollapsibleCalendar
+                android:id="@+id/collapsibleCalendarView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:buttonLeft_drawableTintColor="@android:color/white"
+                app:buttonRight_drawableTintColor="@android:color/white"
+                app:eventColor="@android:color/white"
+                app:expandIconColor="@android:color/black"
+                app:firstDayOfWeek="sunday"
+                app:primaryColor="@android:color/white"
+                app:selectedItem_textColor="@android:color/black"
+                app:showWeek="true"
+                app:textColor="@android:color/black"
+                app:todayItem_background="@drawable/circle_white_stroke_background"
+                app:todayItem_textColor="@android:color/black" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:padding="8dp"
+                android:src="@drawable/ic_icon_arrow_left"
+                android:tint="@color/color_gray"
+                android:visibility="invisible" />
+
+        </FrameLayout>
+
+        <ScrollView
+            android:id="@+id/main_scrollview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="false">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+
+                    <View
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
+                        android:layout_marginEnd="4dp"
+                        android:background="@drawable/dot"
+                        android:backgroundTint="#F8646B"
+                        />
+
+                    <TextView
+                        android:id="@+id/textView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:text="Period"
+                        android:textSize="12sp"
+                        />
+
+                    <View
+                        android:id="@+id/view"
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
+                        android:layout_marginEnd="4dp"
+                        android:background="@drawable/dot"
+                        android:backgroundTint="#2ABDC4"
+                        />
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ovulation"
+                        android:textSize="12sp"
+                         />
+
+
+                    <View
+                        android:id="@+id/view2"
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
+                        android:layout_marginStart="8dp"
+                        android:background="@drawable/dot"
+                        android:backgroundTint="#ED8524"
+                        />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:text="High Fertility"
+                        android:textSize="12sp"
+                        />
+                    <View
+                        android:id="@+id/view4"
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
+                        android:layout_marginStart="8dp"
+                        android:background="@drawable/dot"
+                        android:backgroundTint="@color/dark_yellow"
+                        />
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:text="Normal"
+                        android:textSize="12sp"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                    android:id="@+id/tvPeriodInformation"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="1dp"
+                    android:fontFamily="@font/open_sans_regular"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    tools:text="Your Last Period Date Was \nYour next period cycle starting on 27, Oct 2021, You are currently in Fertility phase." />
+                <ImageView
+                    android:id="@+id/show_info_dialog"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_info"
+                    android:padding="@dimen/margin_4"
+                    android:layout_margin="@dimen/margin_1"
+                    android:layout_gravity="center"/>
+                </LinearLayout>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <in.woloo.www.more.period_tracker.circular_calender.PeriodCalendarView
+                        android:id="@+id/periodCalendar"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintDimensionRatio="H,1:1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/yellow_rectangle_shape_less_round"
+                    android:padding="@dimen/margin_10">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/margin_10"
+                        android:background="@drawable/yellow_rectangle_shape_less_round"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                android:layout_marginStart="@dimen/margin_5"
+                                android:layout_marginTop="@dimen/margin_5"
+                                android:layout_marginEnd="@dimen/margin_5"
+                                android:layout_marginBottom="@dimen/margin_5"
+                                android:text="@string/daily_log"
+                                android:textColor="@color/gray"
+                                android:textSize="@dimen/size_8"
+                                android:textStyle="bold" />
+
+                            <FrameLayout
+                                android:id="@+id/add_daily_log_fl"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_margin="@dimen/margin_5"
+                                android:background="@drawable/rounded_background_dark_gray"
+                                android:padding="@dimen/margin_2">
+
+                                <ImageView
+                                    android:id="@+id/add_daily_log_Imv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/ic_plus_yellow" />
+                            </FrameLayout>
+
+
+                        </RelativeLayout>
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/dailyLog_Rv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/margin_3"
+                                android:layout_marginEnd="@dimen/margin_3"
+                                android:layout_marginBottom="@dimen/margin_5"
+                                android:orientation="horizontal"
+                                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                            <TextView
+                                android:id="@+id/no_data_available_Tv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_margin="@dimen/margin_5"
+                                android:gravity="center"
+                                android:text="@string/no_symptoms"
+                                android:visibility="gone" />
+                        </FrameLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_10"
+                    android:layout_marginEnd="@dimen/margin_10"
+                    android:layout_marginBottom="@dimen/margin_4"
+                    android:fontFamily="@font/open_sans_semi_bold"
+                    android:text="Blogs"
+                    android:textColor="#414042"
+                    android:textSize="@dimen/size_9"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvBlogs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_10"
+                    android:layout_marginEnd="@dimen/margin_10"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin_45"
+                    android:background="@color/white" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerHorizontal="true"
+    android:layout_centerVertical="true"
+    android:background="@drawable/carousel_bg">
+
+    <RelativeLayout
+        android:id="@+id/banner_one_rel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/margin_2"
+        android:layout_marginTop="@dimen/margin_2"
+        android:layout_marginRight="@dimen/margin_2"
+        android:layout_marginBottom="@dimen/margin_2"
+        android:padding="@dimen/margin_2">
+
+        <TextView
+            android:id="@+id/banTextMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/margin_30"
+            android:fontFamily="@font/open_sans_semi_bold"
+            android:gravity="left"
+            android:padding="@dimen/margin_1"
+            android:textAlignment="textStart"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size_9"
+            android:textStyle="normal"
+            tools:ignore="RtlCompat"
+            tools:text="@string/banner_woloo_host_location_count" />
+
+        <TextView
+            android:id="@+id/banTextSub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/banTextMain"
+            android:layout_marginEnd="@dimen/margin_7"
+            android:fontFamily="@font/open_sans_regular"
+            android:gravity="start"
+            android:textAlignment="textStart"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size_6"
+            android:textStyle="normal"
+            tools:ignore="RtlCompat"
+            tools:text="@string/banner_woloo_host_subtitle" />
+
+        <TextView
+            android:id="@+id/tvCoupon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/banTextMain"
+            android:layout_marginEnd="@dimen/margin_7"
+            android:gravity="start"
+            android:textAlignment="textStart"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size_10"
+            android:textStyle="bold"
+            tools:ignore="RtlCompat"
+            tools:text="TESTCOUPON20" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="@dimen/margin_4"
+            android:background="@color/transparent">
+
+            <ImageView
+                android:id="@+id/trendLocateSrcimg"
+                android:layout_width="54dp"
+                android:layout_height="54dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_new_loo_location"
+                app:tint="@color/transparent_white_90" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCopyCoupon"
+                style="@style/Widget.AppCompat.Button.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_below="@id/trendLocateSrcimg"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="8dp"
+                android:text="@string/copy"
+                android:textSize="12sp"
+                android:visibility="visible"
+                app:icon="@drawable/ic_copy" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+</RelativeLayout>

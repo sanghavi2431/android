@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="@dimen/margin_5"
+    android:layout_marginRight="@dimen/margin_5"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view_internet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/no_internet"
+        card_view:cardCornerRadius="@dimen/margin_2"
+        card_view:cardElevation="10dp"
+        card_view:cardMaxElevation="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/margin_8"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:background="@color/no_internet"
+        android:paddingRight="@dimen/margin_8"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_connection_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/no_internet_connection_"
+            android:layout_marginTop="@dimen/margin_10"
+            android:gravity="center"
+            android:textSize="@dimen/size_8"
+            android:textColor="@color/no_internet_text"
+            />
+
+         <RelativeLayout
+             android:layout_width="match_parent"
+             android:layout_gravity="center"
+             android:layout_marginBottom="@dimen/margin_5"
+             android:layout_height="wrap_content">
+
+             <ImageView
+                 android:id="@+id/img_connection"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:src="@drawable/ic_no_internet"
+                 android:visibility="visible"
+                 android:layout_centerHorizontal="true"
+                 android:layout_marginTop="@dimen/margin_5"
+                 android:adjustViewBounds="true"/>
+
+
+             <Button
+                 android:id="@+id/btn_tap_to_retry"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:background="@android:color/transparent"
+                 android:layout_marginTop="@dimen/margin_5"
+                 android:gravity="center"
+                 android:layout_centerHorizontal="true"
+                 android:layout_below="@+id/img_connection"
+                 android:drawableLeft="@drawable/ic_retry"
+                 android:drawable="@drawable/ic_retry"
+                 android:drawablePadding="@dimen/margin_5"
+                 android:layout_marginBottom="@dimen/margin_3"
+                 android:textColor="@color/no_internet_text"
+                 android:textAllCaps="false"
+                 android:text="@string/tap_to_retry" />
+
+         </RelativeLayout>
+
+
+
+
+    </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>

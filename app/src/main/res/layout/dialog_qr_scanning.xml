@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dialog_background"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+<LinearLayout
+    android:layout_centerInParent="true"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/margin_10"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:background="@drawable/dialog_background">
+
+    <TextView
+        android:text="@string/qr_success_thank_you"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/size_5"
+        android:layout_marginTop="@dimen/size_10"
+        android:layout_marginBottom="@dimen/size_10"
+        android:textSize="@dimen/size_10"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="@color/app_background"
+        android:layout_gravity="center" />
+
+
+    <TextView
+        android:id="@+id/tv_qrcodescanning"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center_horizontal"
+        android:text="QR code Scanned\nsuccessfully"
+        android:textColor="@color/seperator_line_color"
+        android:textSize="@dimen/size_8"
+        android:textStyle="normal" />
+
+
+    <TextView
+        android:id="@+id/btnCloseDialog"
+        android:text="@string/OKAY"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/size_5"
+        android:paddingBottom="@dimen/size_5"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:paddingLeft="@dimen/margin_10"
+        android:paddingRight="@dimen/margin_10"
+        android:layout_marginTop="@dimen/size_10"
+        android:layout_gravity="center"
+        android:background="@drawable/yellow_rectangle_shape"/>
+
+</LinearLayout>
+</RelativeLayout>

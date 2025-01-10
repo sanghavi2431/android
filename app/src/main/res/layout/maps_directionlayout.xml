@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- <com.google.android.material.appbar.AppBarLayout
+         android:id="@+id/appBar"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:theme="@style/ThemeOverlay.AppCompat.ActionBar">
+ -->
+    <!-- Toolbar is the actual app bar with text and the action items -->
+    <androidx.appcompat.widget.Toolbar
+        android:visibility="gone"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        android:background="?attr/colorPrimary"
+        app:layout_scrollFlags="scroll|enterAlways">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_2"
+            android:layout_marginBottom="@dimen/margin_2">
+
+            <ImageView
+                android:id="@+id/ivDirection"
+                android:layout_width="@dimen/margin_14"
+                android:layout_height="@dimen/margin_14"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                app:srcCompat="@drawable/ic_arrow_right" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ivDirection"
+                android:text="760m"
+                android:textColor="#ffffff"></TextView>
+
+
+            <TextView
+                android:id="@+id/imgWlLogo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="@dimen/margin_2"
+                android:layout_marginBottom="@dimen/margin_2"
+                android:text="Kalyani Nagar"
+                android:textColor="@color/text_color_five" />
+
+            <ImageView
+                android:id="@+id/imgSearch"
+                android:layout_width="@dimen/margin_11"
+                android:layout_height="@dimen/margin_11"
+                android:layout_alignParentRight="true"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/margin_7"
+                android:layout_toStartOf="@+id/imgInvit"
+                android:layout_toLeftOf="@+id/imgInvit"
+                android:src="@drawable/ic_search" />
+
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+    <!--    </com.google.android.material.appbar.AppBarLayout>-->
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar">
+
+        <FrameLayout
+            android:id="@+id/frm_contant"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/tool_bottomview"></FrameLayout>
+
+        <RelativeLayout
+            android:visibility="gone"
+            android:id="@+id/tool_bottomview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/toolbar"
+            android:layout_alignParentLeft="true"
+            android:background="@color/transparent"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bottomrounded_corner_theme">
+
+                <TextView
+                    android:id="@+id/tv_nowtext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/ivarrow"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="@dimen/size_3"
+                    android:padding="@dimen/margin_5"
+                    android:text="Then"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/size_6"></TextView>
+
+                <ImageView
+                    android:id="@+id/ivarrow"
+                    android:layout_width="@dimen/margin_14"
+                    android:layout_height="@dimen/margin_14"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:layout_toRightOf="@+id/tv_nowtext"
+                    app:srcCompat="@drawable/ic_arrow_right" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </FrameLayout>
+
+
+    <FrameLayout
+        android:visibility="gone"
+        android:id="@+id/ll_bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:layout_alignParentBottom="true"
+      >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/toprounded_corner_theme">
+
+
+
+
+
+            <ImageView
+                android:layout_margin="@dimen/size_10"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_width="@dimen/size_10"
+                app:srcCompat="@drawable/ic_closed"
+                android:layout_height="@dimen/size_10"></ImageView>
+
+            <RelativeLayout
+                android:layout_marginTop="@dimen/size_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/iv_topbar"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="wrap_content"
+                    android:background="@drawable/rounded_yellow_bg"
+                    android:layout_height="wrap_content"></ImageView>
+
+                <TextView
+                    android:layout_below="@+id/iv_topbar"
+                    android:id="@+id/tv_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/margin_2"
+                    android:layout_marginBottom="@dimen/margin_2"
+                    android:text="5 min"
+                    android:layout_marginRight="@dimen/margin_6"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/size_12"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_alignBaseline="@+id/tv_time"
+                    android:layout_below="@+id/iv_topbar"
+                    android:id="@+id/tv_distance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/margin_2"
+                    android:layout_marginBottom="@dimen/margin_2"
+                    android:layout_toRightOf="@+id/tv_time"
+                    android:text="500 m"
+                    android:textColor="@color/app_background"
+                    android:textSize="@dimen/size_6"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+
+            <ImageView
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_width="@dimen/size_10"
+                android:layout_margin="@dimen/size_10"
+                app:srcCompat="@drawable/ic_direction"
+                android:layout_height="@dimen/size_10"></ImageView>
+        </RelativeLayout>
+
+        <!--
+                <ImageView
+                    android:id="@+id/fabHomeDashboard"
+                    android:layout_width="55dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="@dimen/margin_5"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/ic_home" />
+
+                <in.woloo.www.customview.CurvedBottomNavigationView
+                    android:id="@+id/nav_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_gravity="bottom"
+                    android:visibility="visible"
+                    app:labelVisibilityMode="labeled"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:menu="@menu/bottom_nav_menu" />
+        -->
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/frm_marker_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/transparent_black_90"></FrameLayout>
+
+
+</RelativeLayout>

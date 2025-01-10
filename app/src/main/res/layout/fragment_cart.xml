@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".more.shopping.fragments.CartFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/title_bar_with_cart_search"/>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:fillViewport="true"
+            android:layout_height="wrap_content"
+            android:paddingBottom="80dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+
+
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    >
+                    <RadioGroup
+                        android:id="@+id/radioGroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        >
+
+                        <RadioButton
+                            android:id="@+id/radioAddress"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Ship To (Select Address)"
+                            android:drawableLeft="@drawable/ic_baseline_location_on_24"
+
+
+                            android:checked="true"
+
+                            />
+
+
+                        <RadioButton
+                            android:id="@+id/radioPickup"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="Pickup from store"
+                            android:drawableLeft="@drawable/ic_baseline_store_24"
+                            android:visibility="gone"
+
+
+                            />
+
+                        <TextView
+                            android:id="@+id/pickupNote"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            android:text="( Note: Pickup is not available for bundle product) "
+                            />
+
+                    </RadioGroup>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/places_autocomplete_list_background"
+                    android:orientation="vertical"
+
+
+                    >
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycler_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        />
+
+
+
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:padding="20dp"
+                        android:orientation="vertical"
+                        android:background="@drawable/background_with_shadow"
+                        >
+
+                        <LinearLayout
+                            android:id="@+id/couponLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginBottom="10dp"
+
+                            >
+
+                            <LinearLayout
+                                android:id="@+id/enterCouponLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:background="@drawable/rzp_border"
+                                android:padding="5dp"
+                                android:weightSum="3"
+                                android:gravity="center"
+                                >
+
+                                <EditText
+                                    android:id="@+id/coupon_code_edittext"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="Enter Coupon Code"
+                                    android:padding="5dp"
+                                    android:layout_weight="1"
+                                    android:textSize="14dp"
+                                    android:background="@color/transparent"
+                                    />
+
+                                <TextView
+                                    android:id="@+id/applyCouponCode"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:text="Apply"
+                                    android:textSize="12dp"
+                                    android:textColor="@color/black"
+                                    android:background="@color/quantum_yellow"
+                                    android:layout_weight="2"
+                                    android:gravity="center"
+
+
+
+                                    />
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/appliedCouponLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:weightSum="2"
+                                android:background="@drawable/rzp_border"
+                                android:gravity="center"
+                                android:padding="5dp"
+                                android:visibility="gone"
+                                >
+
+                                <TextView
+                                    android:id="@+id/applied_coupon_textview"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Coupon Applied"
+                                    android:textColor="@color/quantum_pink"
+                                    android:layout_weight="1"
+                                    />
+                                <ImageView
+                                    android:id="@+id/removeCouponCode"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:src="@drawable/ic_baseline_remove_circle_24"
+
+                                    android:layout_weight="1"
+                                    />
+
+
+                            </LinearLayout>
+
+
+
+
+                        </LinearLayout>
+
+
+
+
+
+                        <LinearLayout
+                            android:id="@+id/giftCardSection"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/background_with_shadow"
+                            >
+
+                            <CheckBox
+                                android:id="@+id/useGiftCardCheckbox"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Use Gift Card"
+                                android:textColor="@color/black"
+                                android:layout_weight="1"
+
+                                />
+                            <TextView
+                                android:id="@+id/totalGiftCardValue"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2"
+                            android:layout_margin="5dp"
+
+                            >
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Bag Total"
+                                android:textColor="@color/black"
+                                android:layout_weight="1"
+                                />
+                            <TextView
+                                android:id="@+id/bag_total"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Rs. 0"
+                                android:textColor="@color/black"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2"
+                            android:layout_margin="5dp"
+                            >
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Shipping Charges"
+                                android:textColor="@color/black"
+                                android:layout_weight="1"
+                                />
+                            <TextView
+                                android:id="@+id/shipping_charges"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="FREE"
+                                android:textColor="@color/black"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2"
+                            android:layout_margin="5dp"
+                            >
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Bag Subtotal"
+                                android:textColor="@color/black"
+                                android:layout_weight="1"
+                                />
+                            <TextView
+                                android:id="@+id/bag_subtotal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Rs. 0"
+                                android:textColor="@color/black"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2"
+                            android:layout_margin="5dp"
+                            >
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Total Point Used"
+                                android:textColor="@color/black"
+                                android:layout_weight="1"
+                                />
+                            <TextView
+                                android:id="@+id/total_point_used"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="0 pts."
+                                android:textColor="@color/black"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                />
+
+                        </LinearLayout>
+
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2"
+                            android:layout_margin="5dp"
+                            >
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Coupon Discount"
+                                android:textColor="@color/black"
+                                android:layout_weight="1"
+                                />
+                            <TextView
+                                android:id="@+id/coupon_discount_textview"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textColor="@color/black"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2"
+                            android:layout_margin="5dp"
+                            >
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Gift Card Used"
+                                android:textColor="@color/black"
+                                android:layout_weight="1"
+                                />
+                            <TextView
+                                android:id="@+id/total_gift_card_used"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textColor="@color/black"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2"
+                            android:layout_margin="5dp"
+                            >
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Total Payable"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:layout_weight="1"
+                                />
+                            <TextView
+                                android:id="@+id/total_payable"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textColor="@color/black"
+                                android:layout_weight="1"
+                                android:textStyle="bold"
+                                android:gravity="right"
+                                />
+
+                        </LinearLayout>
+
+
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="-10dp"
+                        android:padding="20dp"
+                        android:background="@drawable/background_with_shadow"
+                        >
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Total Point Left"
+                            android:textColor="@color/black"
+                            android:layout_weight="1"
+                            />
+
+                        <TextView
+                            android:id="@+id/total_point_left"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="right"
+                            android:text="0 pts."
+                            android:textColor="@color/black" />
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:background="@color/cardview_light_background"
+
+        android:layout_alignParentBottom="true"
+
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="@drawable/rzp_border"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Grand Total:"
+                android:gravity="center"
+                android:layout_marginTop="5dp"
+                />
+            <TextView
+                android:id="@+id/final_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Rs.0"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_gravity="center"
+                android:gravity="center"
+
+                />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/checkout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Checkout "
+            android:textSize="16dp"
+            android:textColor="@color/black"
+            android:background="@color/quantum_yellow"
+            android:layout_weight="1"
+            android:gravity="center"
+
+
+
+            />
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ovalutionCycle">#2ABDC4</color>
+    <color name="menturationCycle">#F8646B</color>
+    <color name="pregnancyCycle">#ED8524</color>
+</resources>

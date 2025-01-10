@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_15"
+        android:orientation="vertical">
+
+        <TextView
+            android:text="@string/add_money"
+            android:textSize="@dimen/margin_10"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="@string/select_amount"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margin_7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="3"
+            android:padding="@dimen/margin_10"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_2"
+                android:layout_weight="1">
+
+                <TextView
+                    android:text="@string/gift_card_hundred"
+                    android:textSize="@dimen/size_17"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:background="@drawable/change_photo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/margin_60"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_2"
+                android:layout_weight="1">
+
+                <TextView
+                    android:text="@string/gift_card_five_hundred"
+                    android:textSize="@dimen/size_17"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:background="@drawable/change_photo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/margin_60"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_2"
+                android:layout_weight="1">
+
+                <TextView
+                    android:text="@string/gift_card_thousands"
+                    android:textSize="@dimen/size_17"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:background="@drawable/change_photo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/margin_60"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_10"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:layout_marginRight="@dimen/margin_10"
+            android:background="@drawable/rounded_corner_background"
+            android:orientation="horizontal">
+
+            <TextView
+                android:text="@string/gift_card_rupees"
+                android:textSize="@dimen/size_12"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_margin="@dimen/margin_3"
+                android:layout_width="@dimen/margin_15"
+                android:layout_height="@dimen/margin_15"/>
+
+            <EditText
+                android:id="@+id/etAmount"
+                android:layout_marginLeft="@dimen/margin_2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_15"
+                android:singleLine="true"
+                android:hint="@string/gift_card_amount"
+                android:layout_gravity="center"
+                android:digits="1234567890."
+                android:inputType="number"
+                android:background="@android:color/transparent"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_10"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:layout_marginRight="@dimen/margin_10"
+            android:background="@drawable/rounded_corner_background"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:gravity="center"
+                android:layout_margin="@dimen/margin_3"
+                android:layout_width="@dimen/margin_15"
+                android:layout_height="@dimen/margin_15"/>
+
+            <EditText
+                android:id="@+id/etMobile"
+                android:layout_marginLeft="@dimen/margin_2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_15"
+                android:hint="@string/gift_card_mobile"
+                android:layout_gravity="center"
+                android:maxLength="10"
+                android:inputType="number"
+                android:digits="0123456789"
+                android:background="@android:color/transparent"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnSend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/margin_7"
+            android:paddingBottom="@dimen/margin_7"
+            android:paddingLeft="@dimen/margin_15"
+            android:paddingRight="@dimen/margin_15"
+            android:background="@drawable/rounded_corner_button"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/margin_10"
+            android:text="@string/send"/>
+
+        <TextView
+            android:text="@string/gift_card_how_it_works"
+            android:textSize="@dimen/size_12"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:layout_marginBottom="@dimen/margin_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="@string/gift_card_purchase_subscription"
+            android:textSize="@dimen/size_9"
+            android:layout_marginLeft="@dimen/margin_30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="@string/gift_card_locate_sanitisation_area"
+            android:textSize="@dimen/size_9"
+            android:layout_marginLeft="@dimen/margin_30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="@string/gift_card_show_code"
+            android:textSize="@dimen/size_9"
+            android:layout_marginBottom="@dimen/margin_20"
+            android:layout_marginLeft="@dimen/margin_30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

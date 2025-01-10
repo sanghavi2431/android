@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/llParentLayout"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_115"
+        android:layout_margin="@dimen/margin_5"
+        android:elevation="@dimen/margin_5">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="@color/application_background"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:layout_above="@id/llBottomLayout">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/iv_banner_recycle"
+                    android:layout_width="match_parent"
+                    android:background="@drawable/rounded_corner_top_medium_corner"
+                    android:paddingTop="@dimen/margin_5"
+                    android:paddingBottom="@dimen/margin_5"
+                    android:paddingLeft="@dimen/margin_2"
+                    android:paddingRight="@dimen/margin_2"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rv_store_image"
+                    />
+
+                <ImageView
+                    android:id="@+id/ivWolooStore"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:visibility="gone"
+                    android:background="@color/white"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvPremium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/size_5"
+                        android:padding="@dimen/margin_3"
+                        android:background="@drawable/woloo_premium_shape"
+                        android:text="@string/woloo_premium"/>
+
+                </LinearLayout>
+            </FrameLayout>
+
+
+            <LinearLayout
+                android:id="@+id/llBottomLayout"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:background="@drawable/rounded_corner_medium_layout"
+                android:layout_alignParentBottom="true"
+                android:layout_height="wrap_content">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/margin_5"
+                    android:paddingRight="@dimen/margin_5"
+                    android:paddingBottom="@dimen/margin_2"
+                    >
+
+                    <TextView
+                        android:id="@+id/tvWolooStoreName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="@color/text_color_six"
+                        android:textSize="@dimen/size_8"
+                        android:textStyle="normal" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/margin_5"
+                            android:layout_height="@dimen/margin_5"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_location" />
+
+                        <TextView
+                            android:id="@+id/tvAddress"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:text=""
+                            android:maxLines="2"
+                            android:layout_marginLeft="@dimen/margin_2"
+                            android:ellipsize="end"
+                            android:textColor="@color/text_color_six"
+                            android:textSize="@dimen/size_6"
+                            android:textStyle="normal" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_5"
+                        android:orientation="horizontal">
+
+
+                        <ImageView
+                            android:id="@+id/ivTransportMode"
+                            android:layout_width="@dimen/margin_8"
+                            android:layout_height="@dimen/margin_8"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_car"
+                            app:tint="@color/white" />
+
+                        <TextView
+                            android:id="@+id/tvDistance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/margin_2"
+                            android:text=""
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/size_5"/>
+
+                        <ImageView
+                            android:layout_width="@dimen/margin_5"
+                            android:layout_height="@dimen/margin_5"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/margin_2"
+                            android:src="@drawable/ic_clock"/>
+
+                        <TextView
+                            android:id="@+id/tvRequiredTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/margin_2"
+                            android:text=""
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/size_5"/>
+
+                        <ImageView
+                            android:layout_width="@dimen/margin_5"
+                            android:layout_height="@dimen/margin_5"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/margin_2"
+                            android:src="@drawable/ic_polygon_3"/>
+
+                        <TextView
+                            android:id="@+id/tvRating"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/margin_2"
+                            android:text=""
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/size_5" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/margin_5"
+                    android:layout_marginTop="@dimen/margin_4"
+                    android:gravity="left"
+                    android:layout_marginLeft="@dimen/margin_5"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/ivToilet"
+                        android:layout_width="@dimen/margin_5"
+                        android:layout_height="@dimen/margin_5"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/margin_2"
+                        android:src="@drawable/ic_toilet"/>
+
+                    <ImageView
+                        android:id="@+id/ivWheelChair"
+                        android:layout_width="@dimen/margin_5"
+                        android:layout_height="@dimen/margin_5"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/margin_2"
+                        android:src="@drawable/ic_physically_disable"/>
+
+                    <ImageView
+                        android:id="@+id/ivFeedingRoom"
+                        android:layout_width="@dimen/margin_5"
+                        android:layout_height="@dimen/margin_5"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/margin_2"
+                        android:src="@drawable/ic_mom_feeding_baby"/>
+
+                    <ImageView
+                        android:id="@+id/ivSanitizer"
+                        android:layout_width="@dimen/margin_5"
+                        android:layout_height="@dimen/margin_5"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/margin_2"
+                        android:src="@drawable/ic_hand_sanitizer"/>
+
+                    <ImageView
+                        android:id="@+id/ivCoffee"
+                        android:layout_width="@dimen/margin_5"
+                        android:layout_height="@dimen/margin_5"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/margin_2"
+                        android:src="@drawable/ic_coffee"/>
+
+                    <ImageView
+                        android:id="@+id/ivMakeupRoom"
+                        android:layout_width="@dimen/margin_5"
+                        android:layout_height="@dimen/margin_5"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/margin_2"
+                        android:src="@drawable/ic_makeup"/>
+
+                    <ImageView
+                        android:id="@+id/ivSanitaryPads"
+                        android:layout_width="@dimen/margin_5"
+                        android:layout_height="@dimen/margin_5"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/margin_2"
+                        android:src="@drawable/ic_diaper"
+                        app:tint="@color/white" />
+
+                    <ImageView
+                        android:id="@+id/ivCovidFree"
+                        android:layout_width="@dimen/margin_5"
+                        android:layout_height="@dimen/margin_5"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/margin_2"
+                        android:src="@drawable/ic_covid_free" />
+
+                    <ImageView
+                        android:id="@+id/ivSafeSpace"
+                        android:layout_width="@dimen/margin_5"
+                        android:layout_height="@dimen/margin_5"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/margin_2"
+                        android:src="@drawable/ic_safe_chip" />
+
+                    <ImageView
+                        android:id="@+id/ivCleanHygiene"
+                        android:layout_width="@dimen/margin_5"
+                        android:layout_height="17dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/margin_2"
+                        android:src="@drawable/ic_clean_hygienic_icon" />
+
+                    <ImageView
+                        android:id="@+id/ivSegregatedWashroom"
+                        android:layout_width="@dimen/margin_5"
+                        android:layout_height="17dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/margin_2"
+                        android:src="@drawable/ic_separate_toilet" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_4"
+                    android:layout_marginLeft="@dimen/margin_5"
+                    android:layout_marginBottom="@dimen/margin_5"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/margin_3"
+                        android:layout_height="@dimen/margin_3"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/margin_2"
+                        android:src="@drawable/ic_info"
+                        app:tint="@color/white" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:includeFontPadding="false"
+                        android:layout_marginLeft="@dimen/margin_2"
+                        android:maxLines="2"
+                        android:text="Please use direction to earn Woloo Points"
+                        android:textColor="@color/text_color_six"
+                        android:textSize="@dimen/size_5"
+                        android:textStyle="normal" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

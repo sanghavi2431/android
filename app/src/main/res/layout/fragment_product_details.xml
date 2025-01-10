@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context=".more.shopping.fragments.ShoppingFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/title_bar_with_cart_search"/>
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:scrollbars="none">
+
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:padding="5dp"
+                android:background="@color/places_autocomplete_list_background"
+                android:layout_height="wrap_content">
+
+
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white">
+
+
+
+
+
+
+                    <androidx.viewpager.widget.ViewPager
+                        android:id="@+id/pager"
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        android:layout_alignParentTop="true" />
+                    <me.relex.circleindicator.CircleIndicator
+                        android:id="@+id/indicator"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:background="@color/light_grey"
+                        android:layout_alignParentBottom="true"/>
+
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    android:background="@drawable/background_with_shadow"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+
+                    >
+
+                    <TextView
+                        android:id="@+id/titleTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Product Name"
+                        android:textSize="16dp"
+                        android:layout_weight="1"
+                        android:textStyle="bold"
+                        />
+
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="3dp"
+                        android:orientation="horizontal"
+                        android:weightSum="2"
+                        >
+
+
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+
+                            >
+
+
+
+                            <TextView
+                                android:id="@+id/priceTextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Rs.100"
+
+
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                android:textSize="14dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Inclusive of all Taxes"
+                                android:layout_marginLeft="5dp"
+
+                                android:textColor="@color/quantum_grey"
+                                android:textStyle="bold"
+                                android:textSize="12dp"/>
+
+
+
+
+                        </LinearLayout>
+
+
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/gray"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+
+                        />
+
+                    <RadioGroup
+                        android:id="@+id/radioGroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:id="@+id/radioPointUsed"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Get this for Rs. By using  points"
+                            android:background="@drawable/rounded_corner_background1"
+                            android:layout_margin="10dp"
+                            android:padding="@dimen/margin_5"
+
+
+                            />
+
+
+                        <RadioButton
+                            android:id="@+id/radioFullAmount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Get this for Rs."
+                            android:background="@drawable/rounded_corner_background1"
+                            android:layout_margin="10dp"
+                            android:padding="@dimen/margin_5"
+                            />
+
+                    </RadioGroup>
+
+
+
+
+                </LinearLayout>
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="4"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical"
+                    >
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@color/white">
+
+
+
+
+
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:padding="10dp"
+                            android:background="@color/white"
+                            android:paddingBottom="70dp"
+
+                            android:orientation="vertical">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Product Details"
+                                android:textSize="18dp"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                />
+                            <WebView
+                                android:id="@+id/descTextView"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textIsSelectable="true"
+
+
+                                android:textSize="14dp"
+                                android:layout_marginTop="10dp"
+                                tools:ignore="WebViewLayout" />
+
+
+
+
+
+                        </LinearLayout>
+
+
+
+
+
+
+
+
+
+                    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+                </LinearLayout>
+
+
+
+
+
+
+
+
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+
+        android:layout_alignParentBottom="true"
+        android:padding="10dp"
+        android:weightSum="2">
+
+
+        <LinearLayout
+            android:id="@+id/copyLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:padding="5dp"
+            android:orientation="horizontal"
+
+
+            android:layout_weight="1"
+            android:gravity="left">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Qty: "
+                android:textSize="16dp"
+                android:layout_marginRight="20dp"
+                />
+
+
+            <TextView
+                android:id="@+id/decrementButton"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:text="-"
+                android:textSize="16dp"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:background="@color/quantum_yellow"
+                />
+
+            <EditText
+                android:id="@+id/quantity_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/decrementButton"
+                android:padding="10dp"
+                android:inputType="number"
+                android:text="1"
+                android:digits="1234567890"
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/incrementButton"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_toRightOf="@id/quantity_textview"
+                android:textColor="@color/black"
+                android:background="@color/quantum_yellow"
+                android:text="+"
+                android:textAlignment="center"
+                android:textSize="16dp"
+
+                />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/proceedButton"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/black1_rectangle_shape"
+            android:padding="5dp"
+            android:gravity="center">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="Proceed"
+                android:textColor="@color/white"
+                android:textSize="12dp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

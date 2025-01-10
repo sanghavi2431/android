@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tvTitle"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_60sdp"
+    android:background="@drawable/bottom_rounded_corners"
+    android:backgroundTint="@color/start_theme_color"
+    android:orientation="horizontal"
+    android:gravity="center"
+    >
+    <ImageView
+        android:layout_width="@dimen/_62sdp"
+        android:layout_height="@dimen/_44sdp"
+        android:src="@drawable/woloo_grey_logo"
+        android:layout_gravity="center"/>
+</LinearLayout>

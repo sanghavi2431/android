@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/dialog_background"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/margin_10"
+        android:paddingBottom="@dimen/margin_10">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/margin_5"
+            android:layout_marginRight="@dimen/margin_5"
+            android:gravity="center|top"
+            android:text="@string/cancel_subscription"
+            android:textColor="@color/app_background"
+            android:textSize="@dimen/size_6"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:layout_marginTop="@dimen/margin_10"
+            android:text="@string/reason_to_cancel"
+            android:textColor="@color/app_background"
+            android:textSize="@dimen/size_6"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:layout_marginTop="@dimen/margin_5"
+            android:layout_marginRight="@dimen/margin_10"
+            android:background="@drawable/circle_shape_background_grey"
+            android:padding="@dimen/margin_5"
+            android:text="@string/comment_remark"
+            android:textSize="@dimen/size_6"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:layout_marginRight="@dimen/margin_10"
+            android:background="@drawable/circle_shape_background_grey"
+            android:orientation="vertical"
+            android:padding="@dimen/margin_5">
+
+            <Spinner
+                android:id="@+id/cancel_reason_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:spinnerMode="dropdown" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:layout_marginTop="@dimen/margin_10"
+            android:text="@string/comment_remark"
+            android:textColor="@color/app_background"
+            android:textSize="@dimen/size_6"
+            android:textStyle="bold" />
+
+
+        <EditText
+            android:id="@+id/etRemark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:layout_marginTop="@dimen/margin_5"
+            android:layout_marginRight="@dimen/margin_10"
+            android:background="@drawable/circle_shape_background_grey"
+            android:gravity="top"
+            android:hint="@string/write_your_comment_remark"
+            android:lines="4"
+            android:maxLines="4"
+            android:overScrollMode="always"
+            android:padding="@dimen/margin_5"
+            android:scrollbarStyle="insideInset"
+            android:scrollbars="vertical"
+            android:textSize="@dimen/size_5" />
+
+        <LinearLayout
+            android:id="@+id/ll_keep_my_membership"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margin_5"
+            android:background="@drawable/yellow_rectangle_shape"
+            android:orientation="horizontal"
+            android:padding="@dimen/margin_3">
+
+            <TextView
+                android:id="@+id/llOkayBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:lineSpacingExtra="25.3sp"
+                android:paddingLeft="@dimen/margin_10"
+                android:paddingRight="@dimen/margin_10"
+                android:text="Submit"
+                android:textAllCaps="true"
+                android:textColor="@color/application_background"
+                android:textSize="@dimen/size_8"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_continue_to_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margin_10"
+            android:layout_marginBottom="@dimen/margin_5"
+            android:background="@drawable/yellow_rectangle_shape"
+            android:orientation="horizontal"
+            android:padding="@dimen/margin_3">
+
+            <TextView
+                android:id="@+id/llCancelBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:lineSpacingExtra="25.3sp"
+                android:paddingLeft="@dimen/margin_10"
+                android:paddingRight="@dimen/margin_10"
+                android:text="Close"
+                android:textAllCaps="true"
+                android:textColor="@color/application_background"
+                android:textSize="@dimen/size_8"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</RelativeLayout>

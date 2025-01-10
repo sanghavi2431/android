@@ -1,0 +1,1049 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".more.subscribe.MySubscribtionActivity">
+
+    <include layout="@layout/title_bar" />
+
+    <LinearLayout
+        android:id="@+id/ll_nodatafound"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="#C1C1C1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="@dimen/margin_40"
+            android:layout_height="@dimen/margin_30"
+            android:layout_gravity="center"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/ic_cloudnew" />
+
+        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_5"
+            android:alpha="0.5"
+            android:padding="@dimen/margin_5"
+            android:text="No Active Membership"
+            android:textColor="@color/black"
+            android:textSize="@dimen/margin_6"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/size_33">
+        <LinearLayout
+            android:id="@+id/viewstubs_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ViewStub
+                android:id="@+id/vsCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout="@layout/card_gold" />
+
+            <ViewStub
+                android:id="@+id/vsFutureCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout="@layout/card_gold" />
+        </LinearLayout>
+        </ScrollView>
+
+        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+            android:id="@+id/tv_cancelSubscription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:layout_margin="@dimen/_20sdp"
+            android:background="@drawable/new_button_background"
+            android:gravity="center"
+           style="@style/button_text_style"
+            android:text="Cancel Subscription"
+           />
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/margin_35"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/llParentLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/size_10"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_10"
+                        android:layout_marginRight="@dimen/margin_10"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_10"
+                            android:background="@drawable/rectangle_shape"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="@dimen/margin_51"
+                                android:layout_marginTop="@dimen/margin_5"
+                                android:layout_marginBottom="@dimen/margin_5"
+                                android:orientation="vertical">
+
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="start"
+                                    android:text="Enjoy Woloo's Peer Club Membership."
+                                    android:textColor="@color/application_background"
+                                    android:textSize="@dimen/size_5" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="@dimen/margin_10"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Start Date On "
+                                        android:textColor="@color/text_color_one"
+                                        android:textSize="@dimen/size_5" />
+
+                                    <TextView
+                                        android:id="@+id/tv_startDate"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="16-06-2021"
+                                        android:textColor="@color/text_color_one"
+                                        android:textSize="@dimen/size_5" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="@dimen/margin_5"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="End Date On "
+                                        android:textColor="@color/text_color_one"
+                                        android:textSize="@dimen/size_5" />
+
+                                    <TextView
+                                        android:id="@+id/tv_endDate"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="16-07-2021 "
+                                        android:textColor="@color/text_color_one"
+                                        android:textSize="@dimen/size_5" />
+
+                                </LinearLayout>
+
+
+                                <TextView
+                                    android:id="@+id/purchasedByTv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/margin_5"
+                                    android:text="End Date On "
+                                    android:textColor="@color/text_color_one"
+                                    android:textSize="@dimen/size_5" />
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="@dimen/margin_51"
+                                android:orientation="vertical"
+                                android:visibility="gone">
+
+                                <TextView
+                                    android:id="@+id/tvSubscriptionDetails"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/margin_2"
+                                    android:text=""
+                                    android:textColor="@color/text_color_one"
+                                    android:textSize="@dimen/size_4"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/what_we_offer"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/size_4"
+                                    android:textStyle="normal" />
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/margin_2"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="@dimen/margin_5"
+                                        android:layout_height="@dimen/margin_5"
+                                        android:src="@drawable/ic_toilet_premium" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginLeft="@dimen/margin_3"
+                                        android:ellipsize="end"
+                                        android:maxLines="1"
+                                        android:text="@string/clean_hygienic_toilets"
+                                        android:textColor="@color/text_color_one"
+                                        android:textSize="@dimen/size_4"
+                                        android:textStyle="normal" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="@dimen/margin_5"
+                                        android:layout_height="@dimen/margin_5"
+                                        android:src="@drawable/ic_assisted_facility_one" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginLeft="@dimen/margin_3"
+                                        android:ellipsize="end"
+                                        android:maxLines="1"
+                                        android:text="@string/assisted_facility_for_abled"
+                                        android:textColor="@color/text_color_one"
+                                        android:textSize="@dimen/size_4"
+                                        android:textStyle="normal" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="@dimen/margin_5"
+                                        android:layout_height="@dimen/margin_5"
+                                        android:src="@drawable/ic_mom_feeding_baby_premium" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginLeft="@dimen/margin_3"
+                                        android:ellipsize="end"
+                                        android:maxLines="1"
+                                        android:text="@string/feeding_room"
+                                        android:textColor="@color/text_color_one"
+                                        android:textSize="@dimen/size_4"
+                                        android:textStyle="normal" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="@dimen/margin_5"
+                                        android:layout_height="@dimen/margin_5"
+                                        android:src="@drawable/ic_diaper_changing_facility" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginLeft="@dimen/margin_3"
+                                        android:ellipsize="end"
+                                        android:maxLines="1"
+                                        android:text="@string/diaper_changing_room"
+                                        android:textColor="@color/text_color_one"
+                                        android:textSize="@dimen/size_4"
+                                        android:textStyle="normal" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="@dimen/margin_5"
+                                        android:layout_height="@dimen/margin_5"
+                                        android:src="@drawable/ic_makeup_premium" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginLeft="@dimen/margin_3"
+                                        android:ellipsize="end"
+                                        android:maxLines="1"
+                                        android:text="@string/beauty_and_changing_room"
+                                        android:textColor="@color/text_color_one"
+                                        android:textSize="@dimen/size_4"
+                                        android:textStyle="normal" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="@dimen/margin_2"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="@dimen/margin_5"
+                                        android:layout_height="@dimen/margin_5"
+                                        android:src="@drawable/ic_safe" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginLeft="@dimen/margin_3"
+                                        android:ellipsize="end"
+                                        android:maxLines="1"
+                                        android:text="@string/safe_space"
+                                        android:textColor="@color/text_color_one"
+                                        android:textSize="@dimen/size_4"
+                                        android:textStyle="normal" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/ll_subscription"
+                            android:layout_width="@dimen/margin_40"
+                            android:layout_height="@dimen/margin_85"
+                            android:layout_marginLeft="@dimen/margin_5"
+                            android:background="@drawable/ic_monthly_subscription_bg"
+                            android:orientation="vertical"
+                            android:padding="@dimen/size_3">
+
+                            <TextView
+                                android:id="@+id/frequency"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="@dimen/margin_6"
+                                android:gravity="center_horizontal"
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                android:text="@string/monthly"
+                                android:textAllCaps="true"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/size_6"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/appLogo_tv"
+                                android:layout_width="@dimen/margin_25"
+                                android:layout_height="@dimen/margin_15"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_logo_text" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                android:text="@string/peer_club"
+                                android:textColor="@color/peer_club"
+                                android:textSize="@dimen/size_6"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tv_class"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Classsic"
+                                android:textColor="@color/text_color_one"
+                                android:textSize="@dimen/size_6"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tv_price"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center_horizontal"
+                                android:text="₹99"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/size_12"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_price_info"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center_horizontal"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/size_5"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_Voucher"
+                            android:layout_width="@dimen/margin_40"
+                            android:layout_height="@dimen/margin_85"
+                            android:layout_marginLeft="@dimen/margin_5"
+                            android:background="@drawable/ic_monthly_subscription_bg"
+                            android:orientation="vertical"
+                            android:padding="@dimen/size_3"
+                            android:paddingTop="@dimen/margin_20"
+                            android:paddingBottom="@dimen/margin_20"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:id="@+id/voucherNameTv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="@dimen/margin_6"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal"
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                android:text="@string/monthly"
+                                android:textAllCaps="true"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/size_6"
+                                android:textStyle="bold" />
+
+
+                            <TextView
+                                android:id="@+id/voucherTV"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:text="Test ASda"
+                                android:textColor="@color/peer_club"
+                                android:textSize="@dimen/size_6"
+                                android:textStyle="normal" />
+
+                            <ImageView
+                                android:id="@+id/voucher_Logo_tv"
+                                android:layout_width="@dimen/margin_25"
+                                android:layout_height="@dimen/margin_15"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:src="@drawable/ic_logo_text"
+                                android:visibility="gone" />
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal"
+                                android:text="Voucher"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/size_6"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ivSubscriptionMark"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:layout_marginTop="@dimen/margin_5"
+                            android:background="@drawable/background_subscription"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tvSubscriptionTitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="@dimen/margin_2"
+                                android:gravity="center"
+                                android:text="Active"
+                                android:textColor="@color/black" />
+
+                            <ImageView
+                                android:layout_width="@dimen/margin_10"
+                                android:layout_height="@dimen/margin_10"
+                                android:layout_gravity="right"
+                                android:src="@drawable/ic_subscription_mark" />
+                        </LinearLayout>
+
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_expanded"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_10"
+                        android:background="@color/application_background"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvSubscriptionDetail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_2"
+                            android:text=""
+                            android:textColor="@color/text_color_eight"
+                            android:textSize="@dimen/size_6"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/what_we_offer"
+                            android:textColor="@color/text_color_eight"
+                            android:textSize="@dimen/size_6"
+                            android:textStyle="normal" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/margin_2"
+                            android:orientation="horizontal">
+
+                            <WebView
+                                android:id="@+id/description_Wb"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/transparent" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_upgrade"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="@dimen/margin_5"
+                            android:text="upgrade"
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/margin_6"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/future_llParentLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/llParentLayout"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_10"
+                        android:layout_marginRight="@dimen/margin_10"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/size_65"
+                            android:layout_marginTop="@dimen/margin_10"
+                            android:background="@drawable/rectangle_shape"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="@dimen/margin_51"
+                                android:layout_marginTop="@dimen/margin_5"
+                                android:orientation="vertical">
+
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="start"
+                                    android:text="Enjoy Woloo's Peer Club Membership."
+                                    android:textColor="@color/application_background"
+                                    android:textSize="@dimen/size_5" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="@dimen/margin_10"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Start Date On "
+                                        android:textColor="@color/text_color_one"
+                                        android:textSize="@dimen/size_5" />
+
+                                    <TextView
+                                        android:id="@+id/future_tv_startDate"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="16-06-2021"
+                                        android:textColor="@color/text_color_one"
+                                        android:textSize="@dimen/size_5" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="@dimen/margin_5"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="End Date On "
+                                        android:textColor="@color/text_color_one"
+                                        android:textSize="@dimen/size_5" />
+
+                                    <TextView
+                                        android:id="@+id/future_tv_endDate"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="16-07-2021 "
+                                        android:textColor="@color/text_color_one"
+                                        android:textSize="@dimen/size_5" />
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="@dimen/margin_51"
+                                android:orientation="vertical"
+                                android:visibility="gone">
+
+                                <TextView
+                                    android:id="@+id/future_tvSubscriptionDetails"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/margin_2"
+                                    android:text=""
+                                    android:textColor="@color/text_color_one"
+                                    android:textSize="@dimen/size_4"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/what_we_offer"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/size_4"
+                                    android:textStyle="normal" />
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/margin_2"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="@dimen/margin_5"
+                                        android:layout_height="@dimen/margin_5"
+                                        android:src="@drawable/ic_toilet_premium" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginLeft="@dimen/margin_3"
+                                        android:ellipsize="end"
+                                        android:maxLines="1"
+                                        android:text="@string/clean_hygienic_toilets"
+                                        android:textColor="@color/text_color_one"
+                                        android:textSize="@dimen/size_4"
+                                        android:textStyle="normal" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="@dimen/margin_5"
+                                        android:layout_height="@dimen/margin_5"
+                                        android:src="@drawable/ic_assisted_facility_one" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginLeft="@dimen/margin_3"
+                                        android:ellipsize="end"
+                                        android:maxLines="1"
+                                        android:text="@string/assisted_facility_for_abled"
+                                        android:textColor="@color/text_color_one"
+                                        android:textSize="@dimen/size_4"
+                                        android:textStyle="normal" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="@dimen/margin_5"
+                                        android:layout_height="@dimen/margin_5"
+                                        android:src="@drawable/ic_mom_feeding_baby_premium" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginLeft="@dimen/margin_3"
+                                        android:ellipsize="end"
+                                        android:maxLines="1"
+                                        android:text="@string/feeding_room"
+                                        android:textColor="@color/text_color_one"
+                                        android:textSize="@dimen/size_4"
+                                        android:textStyle="normal" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="@dimen/margin_5"
+                                        android:layout_height="@dimen/margin_5"
+                                        android:src="@drawable/ic_diaper_changing_facility" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginLeft="@dimen/margin_3"
+                                        android:ellipsize="end"
+                                        android:maxLines="1"
+                                        android:text="@string/diaper_changing_room"
+                                        android:textColor="@color/text_color_one"
+                                        android:textSize="@dimen/size_4"
+                                        android:textStyle="normal" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="@dimen/margin_5"
+                                        android:layout_height="@dimen/margin_5"
+                                        android:src="@drawable/ic_makeup_premium" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginLeft="@dimen/margin_3"
+                                        android:ellipsize="end"
+                                        android:maxLines="1"
+                                        android:text="@string/beauty_and_changing_room"
+                                        android:textColor="@color/text_color_one"
+                                        android:textSize="@dimen/size_4"
+                                        android:textStyle="normal" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="@dimen/margin_2"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="@dimen/margin_5"
+                                        android:layout_height="@dimen/margin_5"
+                                        android:src="@drawable/ic_safe" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginLeft="@dimen/margin_3"
+                                        android:ellipsize="end"
+                                        android:maxLines="1"
+                                        android:text="@string/safe_space"
+                                        android:textColor="@color/text_color_one"
+                                        android:textSize="@dimen/size_4"
+                                        android:textStyle="normal" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/future_ll_subscription"
+                            android:layout_width="@dimen/margin_40"
+                            android:layout_height="@dimen/margin_85"
+                            android:layout_marginLeft="@dimen/margin_5"
+                            android:background="@drawable/ic_monthly_subscription_bg"
+                            android:orientation="vertical"
+                            android:padding="@dimen/size_3">
+
+                            <TextView
+                                android:id="@+id/future_frequency"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="@dimen/margin_6"
+                                android:gravity="center_horizontal"
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                android:text="@string/monthly"
+                                android:textAllCaps="true"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/size_6"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:layout_width="@dimen/margin_25"
+                                android:layout_height="@dimen/margin_15"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_logo_text" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                android:text="@string/peer_club"
+                                android:textColor="@color/peer_club"
+                                android:textSize="@dimen/size_6"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/future_tv_class"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Classsic"
+                                android:textColor="@color/text_color_one"
+                                android:textSize="@dimen/size_6"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/future_tv_price"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center_horizontal"
+                                android:text="₹99"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/size_12"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/future_tv_price_info"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center_horizontal"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/size_5"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/futureSubscriptionMark"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:layout_marginTop="@dimen/margin_5"
+                            android:background="@drawable/background_subscription"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/futuretvSubscriptionTitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="@dimen/margin_2"
+                                android:gravity="center"
+                                android:text="Future"
+                                android:textColor="@color/black" />
+
+                            <ImageView
+                                android:layout_width="@dimen/margin_10"
+                                android:layout_height="@dimen/margin_10"
+                                android:layout_gravity="right"
+                                android:src="@drawable/ic_subscription_mark" />
+                        </LinearLayout>
+
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:id="@+id/future_ll_expanded"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_10"
+                        android:background="@color/application_background"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/future_tvSubscriptionDetail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_2"
+                            android:text=""
+                            android:textColor="@color/text_color_eight"
+                            android:textSize="@dimen/size_6"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/what_we_offer"
+                            android:textColor="@color/text_color_eight"
+                            android:textSize="@dimen/size_6"
+                            android:textStyle="normal" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/margin_2"
+                            android:orientation="horizontal">
+
+                            <WebView
+                                android:id="@+id/future_description_Wb"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/transparent" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/future_tv_upgrade"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="@dimen/margin_5"
+                            android:text="upgrade"
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/margin_6"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <include
+                    layout="@layout/item_silver_membership"
+                    android:visibility="invisible" />
+            </LinearLayout>
+        </ScrollView>
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/margin_10"
+            android:background="@drawable/dialog_background_yellow"
+            android:gravity="center"
+            android:paddingLeft="@dimen/size_5"
+            android:paddingTop="@dimen/size_5"
+            android:paddingRight="@dimen/size_5"
+            android:paddingBottom="@dimen/size_5"
+            android:text="Cancel Subscription"
+            android:textColor="@color/application_background"
+            android:textSize="@dimen/size_6" />
+
+    </RelativeLayout>
+</LinearLayout>
