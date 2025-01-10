@@ -43,6 +43,9 @@ jobs:
     - name: Accept Android SDK licenses
       run: yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses
 
+    - name: List available SDK components
+      run: $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --list
+
     - name: Install Build Tools and Platforms
       run: |
         $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager "platform-tools" "platforms;android-35" "build-tools;8.7.3"
