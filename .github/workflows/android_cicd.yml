@@ -29,14 +29,13 @@ jobs:
         restore-keys: |
           gradle-${{ runner.os }}
 
-    - name: Set up Android SDK
-      uses: android-actions/setup-android@v2
-      with:
-        api-level: 35
-        build-tools: '8.7.3'
+    - name: Set up Android SDK and build tools
+      run: |
+        yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses
+        $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager "platform-tools" "platforms;android-35" "build-tools;8.7.3"
 
-    - name: Accept Android SDK licenses
-      run: yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses
+    - name: Convert Gradlew to Unix line endings
+      run: dos2unix ./gradlew
 
     - name: Grant execute permission for Gradlew
       run: chmod +x ./gradlew
