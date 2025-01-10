@@ -3,7 +3,7 @@ name: Android CI Pipeline
 on:
   push:
     branches:
-      - kotlin_ui_stable_aarati
+      - master
       
 jobs:
   build:
