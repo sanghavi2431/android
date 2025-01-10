@@ -46,7 +46,7 @@ jobs:
       run: chmod +x ./gradlew  # Adds execute permissions
 
     - name: Build Debug APK
-      run: bash ./gradlew :app:assembleRelease
+      run: bash -x ./gradlew :app:assembleRelease
 
     - name: Run Unit Tests
       run: ./gradlew testDebugUnitTest
