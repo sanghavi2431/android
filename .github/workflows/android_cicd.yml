@@ -29,10 +29,26 @@ jobs:
         restore-keys: |
           gradle-${{ runner.os }}
 
-    - name: Set up Android SDK and build tools
+    - name: Check ANDROID_HOME
+      run: echo "ANDROID_HOME=$ANDROID_HOME"
+
+    - name: Install SDK Command-Line Tools
       run: |
-        yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses
+        mkdir -p $ANDROID_HOME/cmdline-tools
+        cd $ANDROID_HOME/cmdline-tools
+        curl -o tools.zip https://dl.google.com/android/repository/commandlinetools-linux-9477386_latest.zip
+        unzip tools.zip -d latest
+        rm tools.zip
+
+    - name: Accept Android SDK licenses
+      run: yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses
+
+    - name: Install Build Tools and Platforms
+      run: |
         $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager "platform-tools" "platforms;android-35" "build-tools;8.7.3"
+
+    - name: Verify SDK installation
+      run: $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --list
 
     - name: Convert Gradlew to Unix line endings
       run: dos2unix ./gradlew
