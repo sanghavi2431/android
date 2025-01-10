@@ -29,7 +29,8 @@ jobs:
 
     - name: Install Build Tools and SDK Platforms
       run: |
-        yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager "platform-tools" "platforms;android-35" "build-tools;8.7.3"
+        retry() { for i in {1..3}; do "$@" && break || sleep 10; done; }
+        retry yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager "platform-tools" "platforms;android-35" "build-tools;33.0.2"
 
     - name: Convert gradlew to Unix Format
       run: dos2unix ./gradlew
