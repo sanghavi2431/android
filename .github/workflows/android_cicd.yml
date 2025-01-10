@@ -4,10 +4,10 @@ on:
   push:
     branches:
       - master
-      
+
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest  # Changed from ubuntu-latest to windows-latest
 
     steps:
     - name: Checkout code
@@ -32,32 +32,21 @@ jobs:
     - name: Install Android SDK
       uses: android-actions/setup-android@v2
       with:
-        api-level: 35        # Target SDK version (API level 35)
-        build-tools: 8.7.3   # Build Tools version 8.7.3
-        target: android-35   # Target the correct SDK version
-        min-sdk: 26          # Minimum SDK version 26
+        api-level: 35
+        build-tools: 8.7.3
+        target: android-35
+        min-sdk: 26
 
     - name: Set up Gradle
       uses: gradle/gradle-build-action@v2
       with:
-        gradle-version: '8.9'  # Your required Gradle version
+        gradle-version: '8.9'
         
-    - name: Debug gradlew script
-      run: sed -n '55p' ./gradlew
-
-    - name: Fix line endings
-      run: |
-        sudo apt-get install dos2unix
-        dos2unix ./gradlew
-
-    - name: Grant execute permission for gradlew
-      run: chmod +x ./gradlew
-
-    - name: Debug bash interpretation
-      run: bash -x ./gradlew :app:assembleRelease
+    - name: Run Gradle build
+      run: .\gradlew :app:assembleRelease  # Using gradlew.bat on Windows
 
     - name: Run Unit Tests
-      run: ./gradlew testDebugUnitTest
+      run: .\gradlew testDebugUnitTest  # Using gradlew.bat on Windows
 
     - name: Upload Debug APK Artifact
       uses: actions/upload-artifact@v3
