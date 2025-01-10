@@ -32,6 +32,9 @@ jobs:
         echo "GRADLE_HOME=/opt/gradle/gradle-8.9" >> $GITHUB_ENV
         echo "PATH=$GRADLE_HOME/bin:$PATH" >> $GITHUB_ENV
 
+    - name: Convert gradlew to Unix Format
+      run: dos2unix ./gradlew
+
     - name: Make Gradlew Executable
       run: chmod +x ./gradlew
 
