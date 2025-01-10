@@ -42,16 +42,19 @@ jobs:
       with:
         gradle-version: '8.9'  # Your required Gradle version
         
+    - name: Debug gradlew script
+      run: sed -n '55p' ./gradlew
+
     - name: Fix line endings
       run: |
-          sudo apt-get install dos2unix
-          dos2unix ./gradlew
+        sudo apt-get install dos2unix
+        dos2unix ./gradlew
 
     - name: Grant execute permission for gradlew
       run: chmod +x ./gradlew
 
-    - name: Run Gradle build
-      run: bash ./gradlew :app:assembleRelease
+    - name: Debug bash interpretation
+      run: bash -x ./gradlew :app:assembleRelease
 
     - name: Run Unit Tests
       run: ./gradlew testDebugUnitTest
