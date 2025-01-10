@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - master
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -19,18 +18,18 @@ jobs:
         java-version: '19'
         distribution: 'zulu'
 
-    - name: Set up Android SDK
-      uses: android-actions/setup-android@v2
-      with:
-        api-level: 35
-        build-tools: '8.7.3'
-
-    - name: Download and Set Gradle Version
+    - name: Install Android SDK Command Line Tools
       run: |
-        wget https://services.gradle.org/distributions/gradle-8.9-bin.zip
-        unzip -d /opt/gradle gradle-8.9-bin.zip
-        echo "GRADLE_HOME=/opt/gradle/gradle-8.9" >> $GITHUB_ENV
-        echo "PATH=$GRADLE_HOME/bin:$PATH" >> $GITHUB_ENV
+        sudo apt-get update
+        sudo apt-get install -y wget unzip
+        wget https://dl.google.com/android/repository/commandlinetools-linux-9477386_latest.zip -O cmdline-tools.zip
+        mkdir -p $ANDROID_HOME/cmdline-tools
+        unzip cmdline-tools.zip -d $ANDROID_HOME/cmdline-tools
+        mv $ANDROID_HOME/cmdline-tools/cmdline-tools $ANDROID_HOME/cmdline-tools/latest
+
+    - name: Install Build Tools and SDK Platforms
+      run: |
+        yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager "platform-tools" "platforms;android-35" "build-tools;8.7.3"
 
     - name: Convert gradlew to Unix Format
       run: dos2unix ./gradlew
