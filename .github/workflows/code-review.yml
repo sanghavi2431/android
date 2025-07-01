@@ -32,13 +32,13 @@ jobs:
 
       # Optional: Save reports as artifacts
       - name: Upload Detekt Report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: detekt-report
           path: build/reports/detekt/
 
       - name: Upload Ktlint Report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ktlint-report
           path: build/reports/ktlint/
