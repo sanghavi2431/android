@@ -9,13 +9,12 @@ import `in`.woloo.www.v2.data.local.SharedPrefSettings
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.Response
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.io.IOException
 import java.util.*
 import java.util.concurrent.TimeUnit
-import okhttp3.logging.HttpLoggingInterceptor
-
 
 class ApiServiceClientAdapter {
 
@@ -67,7 +66,7 @@ class ApiServiceClientAdapter {
             val android = "Android"
             val userAgent = android + slash + BuildConfig.VERSION_CODE + "/" + Build.VERSION.RELEASE
             request.addHeader("user-agent", userAgent)
-            if(SharedPrefSettings.getPreferences.fetchToken() != null){
+            if (SharedPrefSettings.getPreferences.fetchToken() != null) {
                 request.addHeader("x-woloo-token", SharedPrefSettings.getPreferences.fetchToken()!!)
             }
             return chain.proceed(request.build())

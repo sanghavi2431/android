@@ -14,7 +14,7 @@ import `in`.woloo.www.common.CommonUtils
 import `in`.woloo.www.v2.data.local.SharedPrefSettings
 import `in`.woloo.www.v2.data.remote.ApiResponseData
 
-open class BaseFragment: Fragment() {
+open class BaseFragment : Fragment() {
 
     private lateinit var viewModel: BaseViewModel
     internal val pref = SharedPrefSettings.getPreferences
@@ -35,7 +35,7 @@ open class BaseFragment: Fragment() {
             progressbar!!.setCancelable(false)
             progressbar!!.setContentView(R.layout.dialog_progress_overlay)
         } catch (e: Exception) {
-              CommonUtils.printStackTrace(e)
+            CommonUtils.printStackTrace(e)
         }
     }
 
@@ -45,19 +45,22 @@ open class BaseFragment: Fragment() {
 
     fun setProgressBar() {
         val viewModel = onCreateViewModel() ?: return
-        viewModel.observeProgressDialogLiveData().observe(this, Observer {
-            if (requireActivity().isFinishing) {
-                return@Observer
+        viewModel.observeProgressDialogLiveData().observe(
+            this,
+            Observer {
+                if (requireActivity().isFinishing) {
+                    return@Observer
+                }
+                if (it.isShow) {
+                    showProgressBar(true)
+                } else {
+                    showProgressBar(false)
+                }
             }
-            if (it.isShow) {
-                showProgressBar(true)
-            } else {
-                showProgressBar(false)
-            }
-        })
+        )
     }
 
-    fun showProgressBar(show: Boolean){
+    fun showProgressBar(show: Boolean) {
         if (requireActivity().isFinishing) {
             return
         }
@@ -70,19 +73,22 @@ open class BaseFragment: Fragment() {
 
     fun setNetworkDetector() {
         val viewModel = onCreateViewModel() ?: return
-        viewModel.observeNetworkDetectorLiveData().observe(this, Observer {
-            when (it.status) {
-                ApiResponseData.API_NO_NETWORK -> {
-                    displayToast(resources.getString(R.string.no_internet_connection))
-                }
-                ApiResponseData.API_FAILURE -> {
-                    displayToast(it.message)
-                }
-                else -> {
-                    displayToast(it.message)
+        viewModel.observeNetworkDetectorLiveData().observe(
+            this,
+            Observer {
+                when (it.status) {
+                    ApiResponseData.API_NO_NETWORK -> {
+                        displayToast(resources.getString(R.string.no_internet_connection))
+                    }
+                    ApiResponseData.API_FAILURE -> {
+                        displayToast(it.message)
+                    }
+                    else -> {
+                        displayToast(it.message)
+                    }
                 }
             }
-        })
+        )
     }
 
     fun displayToast(message: String) {
@@ -94,5 +100,4 @@ open class BaseFragment: Fragment() {
             ).show()
         }
     }
-
 }

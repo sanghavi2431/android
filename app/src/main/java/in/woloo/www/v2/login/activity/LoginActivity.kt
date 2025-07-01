@@ -3,7 +3,6 @@ package `in`.woloo.www.v2.login.activity
 import android.app.Activity
 import android.app.Dialog
 import android.content.Intent
-import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
@@ -13,7 +12,6 @@ import android.text.Editable
 import android.text.TextUtils
 import android.text.TextWatcher
 import android.util.Base64
-import android.util.Log
 import android.view.View
 import android.view.Window
 import android.widget.TextView
@@ -72,7 +70,6 @@ class LoginActivity : BaseActivity(), SmartLoginCallbacks {
             }
         }
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginV2Binding.inflate(layoutInflater)
@@ -80,7 +77,7 @@ class LoginActivity : BaseActivity(), SmartLoginCallbacks {
         loginViewModel = ViewModelProvider(this)[LoginViewModel::class.java]
         homeViewModel = ViewModelProvider(this)[HomeViewModel::class.java]
 
-        //splashPresenter.getAuthConfig();
+        // splashPresenter.getAuthConfig();
         val request = LocaleRequest.Locale()
         request.packageName = "in.woloo.www"
         request.platform = "android"
@@ -103,7 +100,6 @@ class LoginActivity : BaseActivity(), SmartLoginCallbacks {
     private fun addTextWatchers() {
         binding.etEmailMobile.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-
             }
 
             override fun onTextChanged(cs: CharSequence?, p1: Int, p2: Int, p3: Int) {
@@ -117,7 +113,6 @@ class LoginActivity : BaseActivity(), SmartLoginCallbacks {
             }
 
             override fun afterTextChanged(p0: Editable?) {
-
             }
         })
     }
@@ -153,7 +148,6 @@ class LoginActivity : BaseActivity(), SmartLoginCallbacks {
     }
 */
 
-
     private fun requestHint() {
         val request = GetPhoneNumberHintIntentRequest.builder().build()
         Identity.getSignInClient(this)
@@ -167,13 +161,12 @@ class LoginActivity : BaseActivity(), SmartLoginCallbacks {
             }
     }
 
-
     private fun enableSubmitButton() {
         try {
             binding.txtSendOtp.background = resources.getDrawable(R.drawable.yellow_rectangle_shape)
             binding.txtSendOtp.setTextColor(resources.getColor(R.color.black))
         } catch (ex: java.lang.Exception) {
-             CommonUtils.printStackTrace(ex);
+            CommonUtils.printStackTrace(ex)
         }
     }
 
@@ -182,7 +175,7 @@ class LoginActivity : BaseActivity(), SmartLoginCallbacks {
             binding.txtSendOtp.background = resources.getDrawable(R.drawable.rounded_corner_button)
             binding.txtSendOtp.setTextColor(resources.getColor(R.color.text_color_five))
         } catch (ex: java.lang.Exception) {
-             CommonUtils.printStackTrace(ex);
+            CommonUtils.printStackTrace(ex)
         }
     }
 
@@ -236,7 +229,6 @@ class LoginActivity : BaseActivity(), SmartLoginCallbacks {
         }
     }
 
-
     private fun setClickables() {
         binding.txtSendOtp.setOnClickListener {
             binding.etEmailMobile.text.removePrefix("+91")
@@ -245,14 +237,13 @@ class LoginActivity : BaseActivity(), SmartLoginCallbacks {
 
         binding.tvPrivacyPolicy.setOnClickListener {
             val intent = Intent(this, WebActivity::class.java)
-            intent.putExtra("privacy_policy","https://woloo.in/privacy-policy/") // Changed By Aarati
-            //intent.putExtra("privacy_policy","https://api.woloo.in/WolooTermsofUse.html")
+            intent.putExtra("privacy_policy", "https://woloo.in/privacy-policy/") // Changed By Aarati
+            // intent.putExtra("privacy_policy","https://api.woloo.in/WolooTermsofUse.html")
             startActivity(intent)
         }
     }
 
     private fun sendOtp() {
-
         if (!TextUtils.isEmpty(binding.etEmailMobile.text.toString())) {
             if (TextUtils.isDigitsOnly(binding.etEmailMobile.text.toString())) {
                 if (CommonUtils.isValidMobileNumber(binding.etEmailMobile.text.toString())) {
@@ -264,7 +255,7 @@ class LoginActivity : BaseActivity(), SmartLoginCallbacks {
                         binding.txtSendOtp.text.toString()
                     )
                     val request = SendOtpRequest()
-                    if(SharedPrefSettings.getPreferences.fetchReferralCode()!= null) {
+                    if (SharedPrefSettings.getPreferences.fetchReferralCode() != null) {
                         request.referralCode = SharedPrefSettings.getPreferences.fetchReferralCode().toString()
                     }
                     request.mobile = binding.etEmailMobile.text.toString().trim { it <= ' ' }
@@ -284,25 +275,30 @@ class LoginActivity : BaseActivity(), SmartLoginCallbacks {
                 getPreferences.storeAuthConfig(it)
             }
         }
-        loginViewModel.observeSendOtp().observe(this, Observer {
-            Logger.i("Aarati Login" , "in otp responseti")
-            if(it != null){
-                goToOtpVerification(it.data)
-            }
-        })
-
-        loginViewModel.otpMessage.observe(this, Observer { message ->
-            message?.let {
-                Logger.i("Aarati Login" , "in otp message $message")
-                if (it.contains("inactive", ignoreCase = true)) {
-                    Logger.i("Aarati Login" , "in otp message {${it.toString()}")
-                    showLoginFailureDialog(it)
-                    loginViewModel.clearOtpMessage()
+        loginViewModel.observeSendOtp().observe(
+            this,
+            Observer {
+                Logger.i("Aarati Login", "in otp responseti")
+                if (it != null) {
+                    goToOtpVerification(it.data)
                 }
             }
-        })
-    }
+        )
 
+        loginViewModel.otpMessage.observe(
+            this,
+            Observer { message ->
+                message?.let {
+                    Logger.i("Aarati Login", "in otp message $message")
+                    if (it.contains("inactive", ignoreCase = true)) {
+                        Logger.i("Aarati Login", "in otp message {$it")
+                        showLoginFailureDialog(it)
+                        loginViewModel.clearOtpMessage()
+                    }
+                }
+            }
+        )
+    }
 
     override fun onCreateViewModel(): BaseViewModel? {
         return ViewModelProvider(this)[LoginViewModel::class.java]
@@ -315,7 +311,8 @@ class LoginActivity : BaseActivity(), SmartLoginCallbacks {
             intent.putExtra(IntentConstants.REQUEST_ID, data.requestId)
             intent.putExtra(
                 IntentConstants.MOBILE_NO,
-                binding.etEmailMobile.text.toString().trim { it <= ' ' })
+                binding.etEmailMobile.text.toString().trim { it <= ' ' }
+            )
             startActivity(intent)
             overridePendingTransition(0, 0)
         }
@@ -341,16 +338,14 @@ class LoginActivity : BaseActivity(), SmartLoginCallbacks {
             }
             dialog.show()
         } catch (e: java.lang.Exception) {
-              CommonUtils.printStackTrace(e)
+            CommonUtils.printStackTrace(e)
         }
     }
 
     override fun onLoginSuccess(user: SmartUser?) {
-
     }
 
     override fun onLoginFailure(e: SmartLoginException?) {
-
     }
 
     override fun doCustomLogin(): SmartUser {
@@ -364,5 +359,4 @@ class LoginActivity : BaseActivity(), SmartLoginCallbacks {
         user.email = ""
         return user
     }
-
 }

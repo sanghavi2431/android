@@ -31,7 +31,7 @@ class SearchWolooActivity : BaseActivity(), PlacesAutoCompleteAdapter.ClickListe
         super.onCreate(savedInstanceState)
         binding = ActivitySearchWoloo2Binding.inflate(layoutInflater)
         setContentView(binding.root)
-        homeViewModel =  ViewModelProvider(this)[HomeViewModel::class.java]
+        homeViewModel = ViewModelProvider(this)[HomeViewModel::class.java]
         setProgressBar()
         setNetworkDetector()
         init()
@@ -47,7 +47,7 @@ class SearchWolooActivity : BaseActivity(), PlacesAutoCompleteAdapter.ClickListe
             binding.rvGoogleNearbyPlaces.layoutManager = LinearLayoutManager(this)
             mAutoCompleteAdapter?.setClickListener(this)
             binding.rvGoogleNearbyPlaces.adapter = mAutoCompleteAdapter
-            //mAutoCompleteAdapter?.notifyDataSetChanged()
+            // mAutoCompleteAdapter?.notifyDataSetChanged()
 
 //            adapter = WolooSearchAdapter(this, nearByStoreResponseList, lastKnownLocation)
 //            binding.rvSearchResults.setHasFixedSize(true)
@@ -61,18 +61,16 @@ class SearchWolooActivity : BaseActivity(), PlacesAutoCompleteAdapter.ClickListe
 //                }
 //            binding.rvSearchResults.adapter = adapter
         } catch (ex: Exception) {
-             CommonUtils.printStackTrace(ex);
+            CommonUtils.printStackTrace(ex)
         }
     }
 
     private fun addTextWatcher() {
-        binding.searchBar.etSearchText.addTextChangedListener(object : TextWatcher{
+        binding.searchBar.etSearchText.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-
             }
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-
             }
 
             override fun afterTextChanged(s: Editable?) {
@@ -90,16 +88,12 @@ class SearchWolooActivity : BaseActivity(), PlacesAutoCompleteAdapter.ClickListe
                     }
                 }
             }
-
         })
     }
 
     private fun setLiveData() {
-
     }
 
     override fun click(place: Place?) {
-
     }
-
 }

@@ -6,7 +6,6 @@ class EditProfileResponse {
 
     @SerializedName("wolooGuest")
     var wolooGuest: WolooGuest = WolooGuest()
-
 }
 
 class WolooGuest {

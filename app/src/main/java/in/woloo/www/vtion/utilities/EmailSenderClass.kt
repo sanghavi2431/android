@@ -3,11 +3,10 @@ package `in`.woloo.www.vtion.utilities
 import android.os.Build
 import androidx.annotation.RequiresApi
 import `in`.woloo.www.BuildConfig
-import `in`.woloo.www.vtion.utilities.SecurePreferences.encrypt
-import `in`.woloo.www.vtion.utilities.SecurePreferences.generateKey
+
+
 import java.util.Properties
 import java.util.concurrent.Executors
-import javax.crypto.SecretKey
 import javax.mail.Authenticator
 import javax.mail.Message
 import javax.mail.MessagingException
@@ -21,18 +20,15 @@ class EmailSenderClass {
 
     companion object {
         private const val SMTP_SERVER = "smtpout.secureserver.net"
-        private const val SMTP_PORT = "465"  // Or "587" if you are using TLS
+        private const val SMTP_PORT = "465" // Or "587" if you are using TLS
         private const val USERNAME = "woloo@woloo.in"
         private val ENCRYPTION_KEY = BuildConfig.EMAIL_ENCRYPTION_KEY
         private val ENCRYPTED_PASSWORD = BuildConfig.EMAIL_PASSWORD
-
-
 
         // Example of how to get the key from an environment variable
 
         @RequiresApi(Build.VERSION_CODES.O)
         private val SECRET_KEY = SecurePreferences.generateKey()
-
 
         @RequiresApi(Build.VERSION_CODES.O)
         val encryptedText = SecurePreferences.encrypt(ENCRYPTED_PASSWORD, SECRET_KEY)
@@ -42,7 +38,6 @@ class EmailSenderClass {
         fun sendEmail(toEmail: String, subject: String, message: String) {
             executor.execute {
                 try {
-
                     val encryptedPassword = (encryptedText)
                     val password = SecurePreferences.decrypt(encryptedPassword, SECRET_KEY)
                     println("Email Sending$encryptedPassword $password $SECRET_KEY")
@@ -55,11 +50,14 @@ class EmailSenderClass {
                         put("mail.smtp.socketFactory.fallback", "false")
                     }
 
-                    val session = Session.getInstance(props, object : Authenticator() {
-                        override fun getPasswordAuthentication(): PasswordAuthentication {
-                            return PasswordAuthentication(USERNAME, password)
+                    val session = Session.getInstance(
+                        props,
+                        object : Authenticator() {
+                            override fun getPasswordAuthentication(): PasswordAuthentication {
+                                return PasswordAuthentication(USERNAME, password)
+                            }
                         }
-                    })
+                    )
 
                     val mimeMessage = MimeMessage(session).apply {
                         setFrom(InternetAddress(USERNAME))
@@ -70,7 +68,6 @@ class EmailSenderClass {
 
                     Transport.send(mimeMessage)
                     println("Email Sent Successfully")
-
                 } catch (e: MessagingException) {
                     e.printStackTrace()
                 }

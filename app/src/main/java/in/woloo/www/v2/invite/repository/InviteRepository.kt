@@ -22,10 +22,9 @@ class InviteRepository : BaseRepository() {
                 val callback: ApiServiceCallback<BaseResponse<JSONObject>> =
                     ApiServiceCallback(webserviceCallback)
                 call.enqueue(callback)
-            } catch (e: Exception){
-                  CommonUtils.printStackTrace(e)
+            } catch (e: Exception) {
+                CommonUtils.printStackTrace(e)
             }
-
         } else {
             val data = ApiResponseData<BaseResponse<JSONObject>>()
             data.status = ApiResponseData.API_NO_NETWORK

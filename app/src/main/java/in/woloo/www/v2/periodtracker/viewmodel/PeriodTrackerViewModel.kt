@@ -10,8 +10,7 @@ import `in`.woloo.www.v2.data.remote.WebserviceCallback
 import `in`.woloo.www.v2.periodtracker.model.PeriodTrackerRequest
 import `in`.woloo.www.v2.periodtracker.repository.PeriodTrackerRepository
 
-
-class PeriodTrackerViewModel : BaseViewModel(){
+class PeriodTrackerViewModel : BaseViewModel() {
     private val mPeriodTrackerRepository: PeriodTrackerRepository = PeriodTrackerRepository()
     private val mPeriodTracker: EventLiveData<BaseResponse<PeriodTrackerResponse.Data>> = EventLiveData()
     private val mGetPeriodTracker: EventLiveData<BaseResponse<PeriodTrackerResponse.Data>> = EventLiveData()
@@ -20,36 +19,39 @@ class PeriodTrackerViewModel : BaseViewModel(){
         request: PeriodTrackerRequest
     ) {
         updateProgress(true)
-        mPeriodTrackerRepository.periodTracker(request, object :
-            WebserviceCallback<ApiResponseData<BaseResponse<PeriodTrackerResponse.Data>>> {
-            override fun onWebResponse(data: ApiResponseData<BaseResponse<PeriodTrackerResponse.Data>>) {
-                updateProgress(false)
-                if (data.status == ApiResponseData.API_SUCCESS) {
-                    mPeriodTracker.value = data.data
-                } else {
-                    WolooApplication.setErrorMessage(data.message)
-                    mPeriodTracker.value = data.data
-                    notifyNetworkError(data)
+        mPeriodTrackerRepository.periodTracker(
+            request,
+            object :
+                WebserviceCallback<ApiResponseData<BaseResponse<PeriodTrackerResponse.Data>>> {
+                override fun onWebResponse(data: ApiResponseData<BaseResponse<PeriodTrackerResponse.Data>>) {
+                    updateProgress(false)
+                    if (data.status == ApiResponseData.API_SUCCESS) {
+                        mPeriodTracker.value = data.data
+                    } else {
+                        WolooApplication.setErrorMessage(data.message)
+                        mPeriodTracker.value = data.data
+                        notifyNetworkError(data)
+                    }
                 }
             }
-        })
+        )
     }
 
     fun getPeriodTracker() {
         updateProgress(true)
-        mPeriodTrackerRepository.getPeriodTracker( object :
-            WebserviceCallback<ApiResponseData<BaseResponse<PeriodTrackerResponse.Data>>> {
-            override fun onWebResponse(data: ApiResponseData<BaseResponse<PeriodTrackerResponse.Data>>) {
-                updateProgress(false)
-                if (data.status == ApiResponseData.API_SUCCESS) {
-                    mGetPeriodTracker.value = data.data
-                } else {
-                    WolooApplication.setErrorMessage(data.message)
-                    mGetPeriodTracker.value = data.data
-                    notifyNetworkError(data)
+        mPeriodTrackerRepository.getPeriodTracker(object :
+                WebserviceCallback<ApiResponseData<BaseResponse<PeriodTrackerResponse.Data>>> {
+                override fun onWebResponse(data: ApiResponseData<BaseResponse<PeriodTrackerResponse.Data>>) {
+                    updateProgress(false)
+                    if (data.status == ApiResponseData.API_SUCCESS) {
+                        mGetPeriodTracker.value = data.data
+                    } else {
+                        WolooApplication.setErrorMessage(data.message)
+                        mGetPeriodTracker.value = data.data
+                        notifyNetworkError(data)
+                    }
                 }
-            }
-        })
+            })
     }
 
     fun observePeriodTracker(): EventLiveData<BaseResponse<PeriodTrackerResponse.Data>> {
@@ -59,6 +61,4 @@ class PeriodTrackerViewModel : BaseViewModel(){
     fun observeGetPeriodTracker(): EventLiveData<BaseResponse<PeriodTrackerResponse.Data>> {
         return mGetPeriodTracker
     }
-
-
 }

@@ -4,7 +4,6 @@ import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 import `in`.woloo.www.dashboard.ui.home.model.NearByStoreResponse.Data.Offer
 
-
 data class NearbyWoloo(
     @SerializedName("id") var id: Int? = null,
     @SerializedName("code") var code: String? = null,
@@ -137,5 +136,4 @@ data class NearbyWoloo(
             return arrayOfNulls(size)
         }
     }
-
 }

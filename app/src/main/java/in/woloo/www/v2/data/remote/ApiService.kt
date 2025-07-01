@@ -45,7 +45,6 @@ import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.http.*
 
-
 /**
  * Created by jadhavpankaj16 on 28/12/21
  */
@@ -62,12 +61,12 @@ interface ApiService {
 
     @PUT("/api/wolooGuest/delete")
     fun deleteWolooUser(
-    @Query("id") id: Int
+        @Query("id") id: Int
     ): Call<BaseResponse<JSONObject>>
-
 
     @POST("/api/wolooGuest/appConfig")
     fun appConfig(@Body request: LocaleRequest): Call<BaseResponse<AuthConfigResponse.Data>>
+
     @GET
     fun getDirections(@Url url: String): Call<GetDistance>
 
@@ -83,7 +82,6 @@ interface ApiService {
     @POST("/api/wolooHost/addCoins")
     fun addCoin(@Body request: AddCoinsRequest): Call<BaseResponse<AddCoinsResponse>>
 
-
     @GET("/api/voucher/UserGiftPopUp")
     fun verifyGiftCardId(@Query("id") giftCardId: String): Call<BaseResponse<ValidateGiftCardResponse>>
 
@@ -94,55 +92,53 @@ interface ApiService {
     fun getSubscriptionPlan(): Call<BaseResponse<ArrayList<PlanResponse.Data>>>
 
     @POST("/api/subscription/initSubscriptionByOrder")
-    fun initSubscriptionByOrder(@Body request : InitSubscriptionRequest): Call<BaseResponse<InitSubscriptionResponse.Data>>
+    fun initSubscriptionByOrder(@Body request: InitSubscriptionRequest): Call<BaseResponse<InitSubscriptionResponse.Data>>
 
     @POST("/api/subscription/submitSubscriptionPurchase")
-    fun submitSubscriptionPurchase(@Body request : SubmitSubscriptionPurchaseRequest): Call<BaseResponse<InitSubscriptionResponse>>
+    fun submitSubscriptionPurchase(@Body request: SubmitSubscriptionPurchaseRequest): Call<BaseResponse<InitSubscriptionResponse>>
 
     @POST("/api/wolooGuest/thirstReminder")
-    fun thirstRemainder(@Body request : ThirstReminderRequest): Call<BaseResponse<ThirstReminderResponse>>
+    fun thirstRemainder(@Body request: ThirstReminderRequest): Call<BaseResponse<ThirstReminderResponse>>
 
     @POST("/api/wolooHost/nearByWolooAndOfferCount")
-    fun getNearByWolooAndOfferCount(@Body request : NearByWolooAndOfferCountRequest): Call<BaseResponse<NearByWolooAndOfferCountResponse.Data>>
+    fun getNearByWolooAndOfferCount(@Body request: NearByWolooAndOfferCountRequest): Call<BaseResponse<NearByWolooAndOfferCountResponse.Data>>
 
     @POST("/api/wolooGuest/periodtracker")
-    fun periodTracker(@Body request : PeriodTrackerRequest): Call<BaseResponse<PeriodTrackerResponse.Data>>
+    fun periodTracker(@Body request: PeriodTrackerRequest): Call<BaseResponse<PeriodTrackerResponse.Data>>
 
     @GET("/api/wolooGuest/viewperiodtracker")
     fun getPeriodTracker(): Call<BaseResponse<PeriodTrackerResponse.Data>>
 
     @POST("/api/wolooHost/enroute")
-    fun getEnrouteWoloo(@Body request : EnrouteRequest): Call<BaseResponse<ArrayList<NearByStoreResponse.Data>>>
+    fun getEnrouteWoloo(@Body request: EnrouteRequest): Call<BaseResponse<ArrayList<NearByStoreResponse.Data>>>
 
     @GET("/api/wolooGuest/wolooNavigationReward")
-    fun getWolooNavigationReward(@Query("wolooId") wolooId : Int): Call<BaseResponse<JSONObject>>
+    fun getWolooNavigationReward(@Query("wolooId") wolooId: Int): Call<BaseResponse<JSONObject>>
 
-    //api/wolooHost/user_coins
+    // api/wolooHost/user_coins
     @GET("/api/wolooHost/user_coins")
     fun getUserCoins(): Call<BaseResponse<UserCoins>>
 
     @GET("/api/wolooGuest/profile")
-    fun getUserProfile(@Query("id") userId : String): Call<BaseResponse<UserProfile>>
+    fun getUserProfile(@Query("id") userId: String): Call<BaseResponse<UserProfile>>
 
     @POST("/api/wolooHost/woloo_engagements")
-    fun wolooEngagements(@Body request : WolooEngagementRequest): Call<BaseResponse<JSONObject>>
+    fun wolooEngagements(@Body request: WolooEngagementRequest): Call<BaseResponse<JSONObject>>
 
     @POST("/api/wolooGuest/getReviewList")
-    fun getReviewList(@Body request : ReviewListRequest): Call<BaseResponse<ReviewListResponse.Data>>
+    fun getReviewList(@Body request: ReviewListRequest): Call<BaseResponse<ReviewListResponse.Data>>
 
-    @GET("/api/wolooGuest/coinHistory") //need to implement
-    fun getCoinHistory(@Query("pageIndex") pageNumber : Int): Call<BaseResponse<UserCoinHistoryModel.Data>>
-
+    @GET("/api/wolooGuest/coinHistory") // need to implement
+    fun getCoinHistory(@Query("pageIndex") pageNumber: Int): Call<BaseResponse<UserCoinHistoryModel.Data>>
 
     @GET("/api/wolooHost/wolooRewardHistory")
-    fun getWolooRewardHistory(@Query("pageNumber") pageNumber : Int): Call<BaseResponse<MyHistoryResponse.Data>>
+    fun getWolooRewardHistory(@Query("pageNumber") pageNumber: Int): Call<BaseResponse<MyHistoryResponse.Data>>
 
     @POST("/api/wolooGuest/reverseGeocoding")
-    fun reverseGeocoding(@Body request : ReverseGeocodeRequest): Call<BaseResponse<ArrayList<ReverseGeocodeItem>>>
+    fun reverseGeocoding(@Body request: ReverseGeocodeRequest): Call<BaseResponse<ArrayList<ReverseGeocodeItem>>>
 
     @GET("/api/wolooGuest/getPendingReviewStatus")
     fun getPendingReviewStatus(): Call<BaseResponse<PendingReviewStatusResponse.Data>>
-
 
     @POST("/api/wolooHost/recommendWoloo")
     fun recommendWoloo(@Body body: RequestBody): Call<BaseResponse<MessageResponse>>
@@ -160,48 +156,48 @@ interface ApiService {
     fun myOffers(): Call<BaseResponse<ArrayList<NearByStoreResponse.Data>>>
 
     @POST("/api/wolooGuest/updateDeviceToken")
-    fun updateDeviceToken(@Body request : HashMap<String,String>): Call<BaseResponse<String>>
+    fun updateDeviceToken(@Body request: HashMap<String, String>): Call<BaseResponse<String>>
 
     @POST("/api/wolooHost/addWoloo")
     fun addWoloo(@Body body: RequestBody): Call<BaseResponse<MessageResponse>>
 
     @POST("/api/wolooGuest/invite")
-    fun invite(@Body request : InviteRequest): Call<BaseResponse<JSONObject>>
+    fun invite(@Body request: InviteRequest): Call<BaseResponse<JSONObject>>
 
     @GET("/api/wolooGuest/scanWoloo")
-    fun scanWoloo(@Query("name") name : String): Call<BaseResponse<MessageResponse>>
+    fun scanWoloo(@Query("name") name: String): Call<BaseResponse<MessageResponse>>
 
     @GET("/api/wolooGuest/wahcertificate")
-    fun wahCertificate(@Query("woloo_id") wolooId : String): Call<BaseResponse<WahCertificateResponse>>
+    fun wahCertificate(@Query("woloo_id") wolooId: String): Call<BaseResponse<WahCertificateResponse>>
 
     @GET("/api/wolooGuest/redeemOffer")
-    fun redeemOffer(@Query("offer_id") offerId : Int): Call<BaseResponse<MessageResponse>>
+    fun redeemOffer(@Query("offer_id") offerId: Int): Call<BaseResponse<MessageResponse>>
 
-//BLOG APIs
+// BLOG APIs
     @GET("/api/blog/ctaFavourite")
-    fun ctaFavourite(@Query("blog_id") blogId : String): Call<BaseResponse<JSONObject>>
+    fun ctaFavourite(@Query("blog_id") blogId: String): Call<BaseResponse<JSONObject>>
 
     @GET("/api/blog/ctaLikes")
-    fun ctaLikes(@Query("blog_id") blogId : String): Call<BaseResponse<JSONObject>>
+    fun ctaLikes(@Query("blog_id") blogId: String): Call<BaseResponse<JSONObject>>
 
     @GET("/api/blog/ctaBlogRead")
-    fun ctaBlogRead(@Query("blog_id") blogId : String): Call<BaseResponse<JSONObject>>
+    fun ctaBlogRead(@Query("blog_id") blogId: String): Call<BaseResponse<JSONObject>>
 
     @GET("/api/blog/blogReadPoint")
-    fun blogReadPoint(@Query("blog_id") blogId : String): Call<BaseResponse<MessageResponse>>
+    fun blogReadPoint(@Query("blog_id") blogId: String): Call<BaseResponse<MessageResponse>>
 
     @GET("/api/blog/getCategories")
     fun getCategories(): Call<BaseResponse<ArrayList<CategoriesResponse.Category>>>
 
     @POST("/api/blog/saveUserCategory")
-    fun saveUserCategory(@Body request : SaveUserCategoryRequest): Call<BaseResponse<JSONObject>>
+    fun saveUserCategory(@Body request: SaveUserCategoryRequest): Call<BaseResponse<JSONObject>>
 
     @POST("/api/blog/ecomCoinUpdate")
-    fun ecomCoinUpdate(@Body request : EcomCoinUpdateRequest): Call<BaseResponse<EcomCoinUpdateResponse>>
+    fun ecomCoinUpdate(@Body request: EcomCoinUpdateRequest): Call<BaseResponse<EcomCoinUpdateResponse>>
 
     @GET("/api/blog/ecomTransactionFail")
-    fun ecomCoinFail(@Query("transaction_id") transactionId : Int): Call<BaseResponse<JSONObject>>
+    fun ecomCoinFail(@Query("transaction_id") transactionId: Int): Call<BaseResponse<JSONObject>>
 
     @POST("/api/blog/getBlogsForUserByCategory")
-    fun getBlogsForUserByCategory(@Body request : HashMap<String, Any>): Call<BaseResponse<BlogByCategoryResponse>>
+    fun getBlogsForUserByCategory(@Body request: HashMap<String, Any>): Call<BaseResponse<BlogByCategoryResponse>>
 }

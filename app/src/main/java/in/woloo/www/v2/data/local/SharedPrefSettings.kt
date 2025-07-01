@@ -6,7 +6,6 @@ import `in`.woloo.www.splash.AuthConfigResponse
 import `in`.woloo.www.v2.enroute.EnrouteDirectionActivity
 import `in`.woloo.www.v2.splash.UserDetails
 
-
 class SharedPrefSettings {
 
     private val sharedPrefClient: SharedPrefClient = SharedPrefClient.getSharedPrefClient
@@ -23,11 +22,9 @@ class SharedPrefSettings {
         const val IS_SHOWN_ONBOARDING = "is_shown_onboarding"
         const val LOCATION_FOR_NETCORE = "location_for_netcore"
         const val IS_WOLOO_DIRECTIONS = "is_woloo_directions"
-        const val DIRECTION_WOLOO= "direction_woloo"
+        const val DIRECTION_WOLOO = "direction_woloo"
         const val IS_VTION_SCREEN = "is_vtion_screen"
         const val IS_VTION_USER = "is_vtion_user"
-
-
 
         private var pref: SharedPrefSettings? = null
         val getPreferences: SharedPrefSettings
@@ -55,7 +52,7 @@ class SharedPrefSettings {
         return sharedPrefClient.getString(LOCATION_FOR_NETCORE)
     }
 
-    fun storeReferralCode(code: String){
+    fun storeReferralCode(code: String) {
         sharedPrefClient.setString(REFERRAL_CODE, code)
     }
 
@@ -90,7 +87,7 @@ class SharedPrefSettings {
         sharedPrefClient.setString(USER_DETAILS, Gson().toJson(user))
     }
 
-    fun storeAuthConfig(config: AuthConfigResponse.Data){
+    fun storeAuthConfig(config: AuthConfigResponse.Data) {
         sharedPrefClient.setString(AUTH_CONFIG, Gson().toJson(config))
     }
 
@@ -113,17 +110,21 @@ class SharedPrefSettings {
     }
 
     fun fetchDirectionWoloo(): EnrouteDirectionActivity.DirectionWoloo? {
-        if (TextUtils.isEmpty(sharedPrefClient.getString(DIRECTION_WOLOO, "")))
+        if (TextUtils.isEmpty(sharedPrefClient.getString(DIRECTION_WOLOO, ""))) {
             return null
-        return Gson().fromJson(sharedPrefClient.getString(DIRECTION_WOLOO, ""),
-            EnrouteDirectionActivity.DirectionWoloo::class.java)
+        }
+        return Gson().fromJson(
+            sharedPrefClient.getString(DIRECTION_WOLOO, ""),
+            EnrouteDirectionActivity.DirectionWoloo::class.java
+        )
     }
 
     fun storeDirectionWoloo(woloo: EnrouteDirectionActivity.DirectionWoloo?) {
-        if(woloo == null)
+        if (woloo == null) {
             sharedPrefClient.removeKey(DIRECTION_WOLOO)
-        else
-         sharedPrefClient.setString(DIRECTION_WOLOO, Gson().toJson(woloo))
+        } else {
+            sharedPrefClient.setString(DIRECTION_WOLOO, Gson().toJson(woloo))
+        }
     }
 
     fun clear() {
@@ -138,7 +139,6 @@ class SharedPrefSettings {
         return sharedPrefClient.getBoolean(IS_VTION_SCREEN)
     }
 
-
     fun storeIsVTIONUser(isVtionUser: Boolean) {
         sharedPrefClient.setBoolean(IS_VTION_USER, isVtionUser)
     }
@@ -146,5 +146,4 @@ class SharedPrefSettings {
     fun fetchIsVTIONUser(): Boolean {
         return sharedPrefClient.getBoolean(IS_VTION_USER)
     }
-
 }

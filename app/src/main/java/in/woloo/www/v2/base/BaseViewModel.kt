@@ -13,14 +13,13 @@ import `in`.woloo.www.v2.geocode.ReverseGeocodeItem
 import `in`.woloo.www.v2.geocode.ReverseGeocodeRequest
 import `in`.woloo.www.v2.splash.model.LocaleRequest
 
-open class BaseViewModel: ViewModel() {
+open class BaseViewModel : ViewModel() {
 
     private val baseAPIRepository: BaseRepository = BaseRepository()
     private val mProgressDialogLd = MutableLiveData<ProgressBarAttr>()
     private val mNetworkErrorLd = MutableLiveData<ApiResponseData<*>>()
     private val mAppConfig = MutableLiveData<AuthConfigResponse.Data?>()
     private val reverseGeocodeResponse: EventLiveData<BaseResponse<ArrayList<ReverseGeocodeItem>>> = EventLiveData()
-
 
     fun observeProgressDialogLiveData(): MutableLiveData<ProgressBarAttr> {
         return mProgressDialogLd
@@ -30,41 +29,47 @@ open class BaseViewModel: ViewModel() {
         return mNetworkErrorLd
     }
 
-    fun observeAppConfig(): MutableLiveData<AuthConfigResponse.Data?>{
+    fun observeAppConfig(): MutableLiveData<AuthConfigResponse.Data?> {
         return mAppConfig
     }
 
-    fun getAppConfig(request: LocaleRequest){
-        baseAPIRepository.appConfig(request, object :
-            WebserviceCallback<ApiResponseData<BaseResponse<AuthConfigResponse.Data>>> {
-            override fun onWebResponse(data: ApiResponseData<BaseResponse<AuthConfigResponse.Data>>) {
-                if(data.status == ApiResponseData.API_SUCCESS && data.data != null) {
-                    mAppConfig.value = data.data!!.data!!
-                } else {
-                    mAppConfig.value = null
+    fun getAppConfig(request: LocaleRequest) {
+        baseAPIRepository.appConfig(
+            request,
+            object :
+                WebserviceCallback<ApiResponseData<BaseResponse<AuthConfigResponse.Data>>> {
+                override fun onWebResponse(data: ApiResponseData<BaseResponse<AuthConfigResponse.Data>>) {
+                    if (data.status == ApiResponseData.API_SUCCESS && data.data != null) {
+                        mAppConfig.value = data.data!!.data!!
+                    } else {
+                        mAppConfig.value = null
+                    }
                 }
             }
-        })
+        )
     }
 
-    fun reverseGeocoding(lat : Double, lng : Double) {
+    fun reverseGeocoding(lat: Double, lng: Double) {
         updateProgress(true)
         val request = ReverseGeocodeRequest()
         request.lat = lat
         request.lng = lng
-        baseAPIRepository.reverseGeocoding(request, object :
-            WebserviceCallback<ApiResponseData<BaseResponse<ArrayList<ReverseGeocodeItem>>>> {
-            override fun onWebResponse(data: ApiResponseData<BaseResponse<ArrayList<ReverseGeocodeItem>>>) {
-                updateProgress(false)
-                if (data.status == ApiResponseData.API_SUCCESS) {
-                    reverseGeocodeResponse.value = data.data
-                } else {
-                    WolooApplication.setErrorMessage(data.message)
-                    reverseGeocodeResponse.value = data.data
-                    notifyNetworkError(data)
+        baseAPIRepository.reverseGeocoding(
+            request,
+            object :
+                WebserviceCallback<ApiResponseData<BaseResponse<ArrayList<ReverseGeocodeItem>>>> {
+                override fun onWebResponse(data: ApiResponseData<BaseResponse<ArrayList<ReverseGeocodeItem>>>) {
+                    updateProgress(false)
+                    if (data.status == ApiResponseData.API_SUCCESS) {
+                        reverseGeocodeResponse.value = data.data
+                    } else {
+                        WolooApplication.setErrorMessage(data.message)
+                        reverseGeocodeResponse.value = data.data
+                        notifyNetworkError(data)
+                    }
                 }
             }
-        })
+        )
     }
 
     fun observeReverseGeocoding(): EventLiveData<BaseResponse<ArrayList<ReverseGeocodeItem>>> {

@@ -54,7 +54,7 @@ class ApiServiceCallback<T>(private val webserviceCallback: WebserviceCallback<A
 
     override fun onFailure(call: Call<T>, t: Throwable) {
         onHandleError()
-        CommonUtils.printStackTrace(t as Exception);
+        CommonUtils.printStackTrace(t as Exception)
     }
 
     private fun onHandleError() {

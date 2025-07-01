@@ -4,11 +4,12 @@ import android.content.Context.MODE_PRIVATE
 import android.content.SharedPreferences
 import `in`.woloo.www.app.WolooApplication
 
-
 class SharedPrefClient {
 
     private var sharedPreferences: SharedPreferences = WolooApplication.getInstance().getSharedPreferences(
-        SharedPrefSettings.SHARED_PREF_NAME, MODE_PRIVATE)
+        SharedPrefSettings.SHARED_PREF_NAME,
+        MODE_PRIVATE
+    )
 
     companion object {
         var mSharedPrefClient: SharedPrefClient? = null
@@ -20,7 +21,6 @@ class SharedPrefClient {
                 return mSharedPrefClient!!
             }
     }
-
 
     fun clear() {
         sharedPreferences.edit().clear().apply()

@@ -4,26 +4,22 @@ import android.app.Dialog
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.text.TextUtils
-import android.view.View
 import android.view.Window
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import `in`.woloo.www.R
 import `in`.woloo.www.common.CommonUtils
-import `in`.woloo.www.utils.Logger
 import `in`.woloo.www.v2.data.local.SharedPrefSettings
 import `in`.woloo.www.v2.data.remote.ApiResponseData
 
-open class BaseActivity: AppCompatActivity() {
+open class BaseActivity : AppCompatActivity() {
 
-    //private var progressbar: AppProgressBaseDialog? = null
+    // private var progressbar: AppProgressBaseDialog? = null
     private lateinit var viewModel: BaseViewModel
     internal val pref = SharedPrefSettings.getPreferences
     private var progressbar: Dialog? = null
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,7 +37,7 @@ open class BaseActivity: AppCompatActivity() {
             progressbar!!.setCancelable(false)
             progressbar!!.setContentView(R.layout.dialog_progress_overlay)
         } catch (e: Exception) {
-              CommonUtils.printStackTrace(e)
+            CommonUtils.printStackTrace(e)
         }
     }
 
@@ -51,19 +47,22 @@ open class BaseActivity: AppCompatActivity() {
 
     fun setProgressBar() {
         val viewModel = onCreateViewModel() ?: return
-        viewModel.observeProgressDialogLiveData().observe(this, Observer {
-            if (this.isFinishing) {
-                return@Observer
+        viewModel.observeProgressDialogLiveData().observe(
+            this,
+            Observer {
+                if (this.isFinishing) {
+                    return@Observer
+                }
+                if (it.isShow) {
+                    showProgressBar(true)
+                } else {
+                    showProgressBar(false)
+                }
             }
-            if (it.isShow) {
-                showProgressBar(true)
-            } else {
-                showProgressBar(false)
-            }
-        })
+        )
     }
 
-    fun showProgressBar(show: Boolean){
+    fun showProgressBar(show: Boolean) {
         if (this.isFinishing) {
             return
         }
@@ -76,19 +75,22 @@ open class BaseActivity: AppCompatActivity() {
 
     fun setNetworkDetector() {
         val viewModel = onCreateViewModel() ?: return
-        viewModel.observeNetworkDetectorLiveData().observe(this, Observer {
-            when (it.status) {
-                ApiResponseData.API_NO_NETWORK -> {
-                    displayToast(resources.getString(R.string.no_internet_connection))
-                }
-                ApiResponseData.API_FAILURE -> {
-                    displayToast(it.message)
-                }
-                else -> {
-                    displayToast(it.message)
+        viewModel.observeNetworkDetectorLiveData().observe(
+            this,
+            Observer {
+                when (it.status) {
+                    ApiResponseData.API_NO_NETWORK -> {
+                        displayToast(resources.getString(R.string.no_internet_connection))
+                    }
+                    ApiResponseData.API_FAILURE -> {
+                        displayToast(it.message)
+                    }
+                    else -> {
+                        displayToast(it.message)
+                    }
                 }
             }
-        })
+        )
     }
 
     fun displayToast(message: String) {
@@ -100,5 +102,4 @@ open class BaseActivity: AppCompatActivity() {
             ).show()
         }
     }
-
 }

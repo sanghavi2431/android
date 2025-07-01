@@ -1,9 +1,7 @@
 package `in`.woloo.www.v2.data.remote
 
-import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import `in`.woloo.www.v2.constant.ResponseConstants
-
 
 class BaseResponse<T> {
 
@@ -18,5 +16,4 @@ class BaseResponse<T> {
 
     @SerializedName(ResponseConstants.ERROR)
     var error: T? = null
-
 }

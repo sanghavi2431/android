@@ -7,7 +7,6 @@ import `in`.woloo.www.v2.data.remote.*
 import `in`.woloo.www.v2.woloo.model.WahCertificateResponse
 import `in`.woloo.www.v2.woloo.repository.WolooRepository
 import okhttp3.RequestBody
-import org.json.JSONObject
 
 class WolooViewModel : BaseViewModel() {
     private val wolooRepository: WolooRepository = WolooRepository()
@@ -19,19 +18,22 @@ class WolooViewModel : BaseViewModel() {
 
     fun recommendWoloo(body: RequestBody) {
         updateProgress(true)
-        wolooRepository.recommendWoloo(body, object :
-            WebserviceCallback<ApiResponseData<BaseResponse<MessageResponse>>> {
-            override fun onWebResponse(data: ApiResponseData<BaseResponse<MessageResponse>>) {
-                updateProgress(false)
-                if (data.status == ApiResponseData.API_SUCCESS) {
-                    recommendWolooResponse.value = data.data
-                } else {
-                    WolooApplication.setErrorMessage(data.message)
-                    recommendWolooResponse.value = data.data
-                    notifyNetworkError(data)
+        wolooRepository.recommendWoloo(
+            body,
+            object :
+                WebserviceCallback<ApiResponseData<BaseResponse<MessageResponse>>> {
+                override fun onWebResponse(data: ApiResponseData<BaseResponse<MessageResponse>>) {
+                    updateProgress(false)
+                    if (data.status == ApiResponseData.API_SUCCESS) {
+                        recommendWolooResponse.value = data.data
+                    } else {
+                        WolooApplication.setErrorMessage(data.message)
+                        recommendWolooResponse.value = data.data
+                        notifyNetworkError(data)
+                    }
                 }
             }
-        })
+        )
     }
 
     fun observeRecommendWoloo(): EventLiveData<BaseResponse<MessageResponse>> {
@@ -40,19 +42,19 @@ class WolooViewModel : BaseViewModel() {
 
     fun getRecommendWolooList() {
         updateProgress(true)
-        wolooRepository.getRecommendWolooList( object :
-            WebserviceCallback<ApiResponseData<BaseResponse<ArrayList<ReferredWolooListResponse.DataItem>>>> {
-            override fun onWebResponse(data: ApiResponseData<BaseResponse<ArrayList<ReferredWolooListResponse.DataItem>>>) {
-                updateProgress(false)
-                if (data.status == ApiResponseData.API_SUCCESS) {
-                    referredWolooListResponse.value = data.data
-                } else {
-                    WolooApplication.setErrorMessage(data.message)
-                    referredWolooListResponse.value = data.data
-                    notifyNetworkError(data)
+        wolooRepository.getRecommendWolooList(object :
+                WebserviceCallback<ApiResponseData<BaseResponse<ArrayList<ReferredWolooListResponse.DataItem>>>> {
+                override fun onWebResponse(data: ApiResponseData<BaseResponse<ArrayList<ReferredWolooListResponse.DataItem>>>) {
+                    updateProgress(false)
+                    if (data.status == ApiResponseData.API_SUCCESS) {
+                        referredWolooListResponse.value = data.data
+                    } else {
+                        WolooApplication.setErrorMessage(data.message)
+                        referredWolooListResponse.value = data.data
+                        notifyNetworkError(data)
+                    }
                 }
-            }
-        })
+            })
     }
 
     fun observeRecommendWolooList(): EventLiveData<BaseResponse<ArrayList<ReferredWolooListResponse.DataItem>>> {
@@ -61,19 +63,22 @@ class WolooViewModel : BaseViewModel() {
 
     fun addWoloo(body: RequestBody) {
         updateProgress(true)
-        wolooRepository.addWoloo(body, object :
-            WebserviceCallback<ApiResponseData<BaseResponse<MessageResponse>>> {
-            override fun onWebResponse(data: ApiResponseData<BaseResponse<MessageResponse>>) {
-                updateProgress(false)
-                if (data.status == ApiResponseData.API_SUCCESS) {
-                    addWolooResponse.value = data.data
-                } else {
-                    WolooApplication.setErrorMessage(data.message)
-                    addWolooResponse.value = data.data
-                    notifyNetworkError(data)
+        wolooRepository.addWoloo(
+            body,
+            object :
+                WebserviceCallback<ApiResponseData<BaseResponse<MessageResponse>>> {
+                override fun onWebResponse(data: ApiResponseData<BaseResponse<MessageResponse>>) {
+                    updateProgress(false)
+                    if (data.status == ApiResponseData.API_SUCCESS) {
+                        addWolooResponse.value = data.data
+                    } else {
+                        WolooApplication.setErrorMessage(data.message)
+                        addWolooResponse.value = data.data
+                        notifyNetworkError(data)
+                    }
                 }
             }
-        })
+        )
     }
 
     fun observeAddWoloo(): EventLiveData<BaseResponse<MessageResponse>> {
@@ -82,19 +87,22 @@ class WolooViewModel : BaseViewModel() {
 
     fun scanQRCode(name: String) {
         updateProgress(true)
-        wolooRepository.scanWoloo(name, object :
-            WebserviceCallback<ApiResponseData<BaseResponse<MessageResponse>>> {
-            override fun onWebResponse(data: ApiResponseData<BaseResponse<MessageResponse>>) {
-                updateProgress(false)
-                if (data.status == ApiResponseData.API_SUCCESS) {
-                    scanWolooResponse.value = data.data
-                } else {
-                    WolooApplication.setErrorMessage(data.message)
-                    scanWolooResponse.value = data.data
-                    notifyNetworkError(data)
+        wolooRepository.scanWoloo(
+            name,
+            object :
+                WebserviceCallback<ApiResponseData<BaseResponse<MessageResponse>>> {
+                override fun onWebResponse(data: ApiResponseData<BaseResponse<MessageResponse>>) {
+                    updateProgress(false)
+                    if (data.status == ApiResponseData.API_SUCCESS) {
+                        scanWolooResponse.value = data.data
+                    } else {
+                        WolooApplication.setErrorMessage(data.message)
+                        scanWolooResponse.value = data.data
+                        notifyNetworkError(data)
+                    }
                 }
             }
-        })
+        )
     }
 
     fun observeScanQRCode(): EventLiveData<BaseResponse<MessageResponse>> {
@@ -103,19 +111,22 @@ class WolooViewModel : BaseViewModel() {
 
     fun wahCertificate(name: String) {
         updateProgress(true)
-        wolooRepository.wahCertificate(name, object :
-            WebserviceCallback<ApiResponseData<BaseResponse<WahCertificateResponse>>> {
-            override fun onWebResponse(data: ApiResponseData<BaseResponse<WahCertificateResponse>>) {
-                updateProgress(false)
-                if (data.status == ApiResponseData.API_SUCCESS) {
-                    wahCertificateResponse.value = data.data
-                } else {
-                    WolooApplication.setErrorMessage(data.message)
-                    wahCertificateResponse.value = data.data
-                    notifyNetworkError(data)
+        wolooRepository.wahCertificate(
+            name,
+            object :
+                WebserviceCallback<ApiResponseData<BaseResponse<WahCertificateResponse>>> {
+                override fun onWebResponse(data: ApiResponseData<BaseResponse<WahCertificateResponse>>) {
+                    updateProgress(false)
+                    if (data.status == ApiResponseData.API_SUCCESS) {
+                        wahCertificateResponse.value = data.data
+                    } else {
+                        WolooApplication.setErrorMessage(data.message)
+                        wahCertificateResponse.value = data.data
+                        notifyNetworkError(data)
+                    }
                 }
             }
-        })
+        )
     }
 
     fun observewWahCertificate(): EventLiveData<BaseResponse<WahCertificateResponse>> {

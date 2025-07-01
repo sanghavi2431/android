@@ -30,10 +30,9 @@ class HomeRepository : BaseRepository() {
                 val callback: ApiServiceCallback<BaseResponse<ArrayList<NearByStoreResponse.Data>>> =
                     ApiServiceCallback(webserviceCallback)
                 call.enqueue(callback)
-            } catch (e: Exception){
-                  CommonUtils.printStackTrace(e)
+            } catch (e: Exception) {
+                CommonUtils.printStackTrace(e)
             }
-
         } else {
             val data = ApiResponseData<BaseResponse<ArrayList<NearByStoreResponse.Data>>>()
             data.status = ApiResponseData.API_NO_NETWORK
@@ -52,10 +51,9 @@ class HomeRepository : BaseRepository() {
                 val callback: ApiServiceCallback<BaseResponse<NearByWolooAndOfferCountResponse.Data>> =
                     ApiServiceCallback(webserviceCallback)
                 call.enqueue(callback)
-            } catch (e: Exception){
-                  CommonUtils.printStackTrace(e)
+            } catch (e: Exception) {
+                CommonUtils.printStackTrace(e)
             }
-
         } else {
             val data = ApiResponseData<BaseResponse<NearByWolooAndOfferCountResponse.Data>>()
             data.status = ApiResponseData.API_NO_NETWORK
@@ -74,10 +72,9 @@ class HomeRepository : BaseRepository() {
                 val callback: ApiServiceCallback<BaseResponse<ShowProfileResponse>> =
                     ApiServiceCallback(webserviceCallback)
                 call.enqueue(callback)
-            } catch (e: Exception){
-                  CommonUtils.printStackTrace(e)
+            } catch (e: Exception) {
+                CommonUtils.printStackTrace(e)
             }
-
         } else {
             val data = ApiResponseData<BaseResponse<ShowProfileResponse>>()
             data.status = ApiResponseData.API_NO_NETWORK
@@ -85,7 +82,7 @@ class HomeRepository : BaseRepository() {
         }
     }
 
-    fun applyVoucher(request: VoucherRequest,  webserviceCallback: WebserviceCallback<ApiResponseData<BaseResponse<Voucher>>>){
+    fun applyVoucher(request: VoucherRequest, webserviceCallback: WebserviceCallback<ApiResponseData<BaseResponse<Voucher>>>) {
         if (NetworkUtils.isInternetAvailable(WolooApplication.getInstance())) {
             try {
                 val call: Call<BaseResponse<Voucher>> =
@@ -93,10 +90,9 @@ class HomeRepository : BaseRepository() {
                 val callback: ApiServiceCallback<BaseResponse<Voucher>> =
                     ApiServiceCallback(webserviceCallback)
                 call.enqueue(callback)
-            } catch (e: Exception){
-                  CommonUtils.printStackTrace(e)
+            } catch (e: Exception) {
+                CommonUtils.printStackTrace(e)
             }
-
         } else {
             val data = ApiResponseData<BaseResponse<Voucher>>()
             data.status = ApiResponseData.API_NO_NETWORK
@@ -104,19 +100,19 @@ class HomeRepository : BaseRepository() {
         }
     }
 
-    fun validateGiftCard(giftCardId : String, webserviceCallback: WebserviceCallback<ApiResponseData<BaseResponse<ValidateGiftCardResponse>>>){
-        if(NetworkUtils.isInternetAvailable(WolooApplication.getInstance())){
-            try{
-                val call : Call<BaseResponse<ValidateGiftCardResponse>> = apiService.verifyGiftCardId(giftCardId)
+    fun validateGiftCard(giftCardId: String, webserviceCallback: WebserviceCallback<ApiResponseData<BaseResponse<ValidateGiftCardResponse>>>) {
+        if (NetworkUtils.isInternetAvailable(WolooApplication.getInstance())) {
+            try {
+                val call: Call<BaseResponse<ValidateGiftCardResponse>> = apiService.verifyGiftCardId(giftCardId)
                 val callback = ApiServiceCallback(webserviceCallback)
                 call.enqueue(callback)
-            } catch (e : Exception){
-                  CommonUtils.printStackTrace(e)
+            } catch (e: Exception) {
+                CommonUtils.printStackTrace(e)
             }
         }
     }
 
-    fun wolooEngagement(request: WolooEngagementRequest,  webserviceCallback: WebserviceCallback<ApiResponseData<BaseResponse<JSONObject>>>){
+    fun wolooEngagement(request: WolooEngagementRequest, webserviceCallback: WebserviceCallback<ApiResponseData<BaseResponse<JSONObject>>>) {
         if (NetworkUtils.isInternetAvailable(WolooApplication.getInstance())) {
             try {
                 val call: Call<BaseResponse<JSONObject>> =
@@ -124,10 +120,9 @@ class HomeRepository : BaseRepository() {
                 val callback: ApiServiceCallback<BaseResponse<JSONObject>> =
                     ApiServiceCallback(webserviceCallback)
                 call.enqueue(callback)
-            } catch (e: Exception){
-                  CommonUtils.printStackTrace(e)
+            } catch (e: Exception) {
+                CommonUtils.printStackTrace(e)
             }
-
         } else {
             val data = ApiResponseData<BaseResponse<JSONObject>>()
             data.status = ApiResponseData.API_NO_NETWORK
@@ -135,7 +130,7 @@ class HomeRepository : BaseRepository() {
         }
     }
 
-    fun getReviewList(request: ReviewListRequest,  webserviceCallback: WebserviceCallback<ApiResponseData<BaseResponse<ReviewListResponse.Data>>>){
+    fun getReviewList(request: ReviewListRequest, webserviceCallback: WebserviceCallback<ApiResponseData<BaseResponse<ReviewListResponse.Data>>>) {
         if (NetworkUtils.isInternetAvailable(WolooApplication.getInstance())) {
             try {
                 val call: Call<BaseResponse<ReviewListResponse.Data>> =
@@ -143,10 +138,9 @@ class HomeRepository : BaseRepository() {
                 val callback: ApiServiceCallback<BaseResponse<ReviewListResponse.Data>> =
                     ApiServiceCallback(webserviceCallback)
                 call.enqueue(callback)
-            } catch (e: Exception){
-                  CommonUtils.printStackTrace(e)
+            } catch (e: Exception) {
+                CommonUtils.printStackTrace(e)
             }
-
         } else {
             val data = ApiResponseData<BaseResponse<ReviewListResponse.Data>>()
             data.status = ApiResponseData.API_NO_NETWORK
@@ -165,9 +159,8 @@ class HomeRepository : BaseRepository() {
                     ApiServiceCallback(webserviceCallback)
                 call.enqueue(callback)
             } catch (e: Exception) {
-                  CommonUtils.printStackTrace(e)
+                CommonUtils.printStackTrace(e)
             }
-
         } else {
             val data = ApiResponseData<BaseResponse<PendingReviewStatusResponse.Data>>()
             data.status = ApiResponseData.API_NO_NETWORK
@@ -186,10 +179,9 @@ class HomeRepository : BaseRepository() {
                 val callback: ApiServiceCallback<BaseResponse<MessageResponse>> =
                     ApiServiceCallback(webserviceCallback)
                 call.enqueue(callback)
-            } catch (e: Exception){
+            } catch (e: Exception) {
                 e.printStackTrace()
             }
-
         } else {
             val data = ApiResponseData<BaseResponse<MessageResponse>>()
             data.status = ApiResponseData.API_NO_NETWORK

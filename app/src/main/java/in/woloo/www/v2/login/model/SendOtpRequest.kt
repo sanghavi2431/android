@@ -9,5 +9,4 @@ class SendOtpRequest {
 
     @SerializedName("referral_code")
     var referralCode: String = ""
-
 }

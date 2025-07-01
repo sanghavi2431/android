@@ -14,5 +14,4 @@ class LocaleRequest {
         @SerializedName("platform")
         var platform: String = ""
     }
-
 }

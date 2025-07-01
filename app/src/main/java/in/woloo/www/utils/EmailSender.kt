@@ -1,4 +1,4 @@
-package `in`.woloo.www.utils;
+package `in`.woloo.www.utils
 
 import java.util.Properties
 import java.util.concurrent.Executors
@@ -15,7 +15,7 @@ class EmailSender {
 
     companion object {
         private const val SMTP_SERVER = "smtpout.secureserver.net"
-        private const val SMTP_PORT = "465"  // Or "587" if you are using TLS
+        private const val SMTP_PORT = "465" // Or "587" if you are using TLS
         private const val USERNAME = "woloo@woloo.in"
         private const val PASSWORD = "Woloo@woloo"
 
@@ -33,11 +33,14 @@ class EmailSender {
                         put("mail.smtp.socketFactory.fallback", "false")
                     }
 
-                    val session = Session.getInstance(props, object : Authenticator() {
-                        override fun getPasswordAuthentication(): PasswordAuthentication {
-                            return PasswordAuthentication(USERNAME, PASSWORD)
+                    val session = Session.getInstance(
+                        props,
+                        object : Authenticator() {
+                            override fun getPasswordAuthentication(): PasswordAuthentication {
+                                return PasswordAuthentication(USERNAME, PASSWORD)
+                            }
                         }
-                    })
+                    )
 
                     val mimeMessage = MimeMessage(session).apply {
                         setFrom(InternetAddress(USERNAME))
@@ -48,7 +51,6 @@ class EmailSender {
 
                     Transport.send(mimeMessage)
                     println("Email Sent Successfully")
-
                 } catch (e: MessagingException) {
                     e.printStackTrace()
                 }
@@ -56,8 +58,6 @@ class EmailSender {
         }
     }
 }
-
-
 
 /*
 import kotlinx.coroutines.Dispatchers

@@ -10,7 +10,6 @@ import android.media.MediaScannerConnection
 import android.os.Bundle
 import android.provider.MediaStore
 import android.text.TextUtils
-import android.util.Log
 import android.util.Patterns
 import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
@@ -34,7 +33,6 @@ import java.io.IOException
 import java.lang.ref.WeakReference
 import java.text.SimpleDateFormat
 import java.util.*
-
 
 class ProfileActivity : BaseActivity() {
 
@@ -65,15 +63,17 @@ class ProfileActivity : BaseActivity() {
     }
 
     private fun initViews() {
-        if(CommonUtils().userInfo?.mobile != null) {
+        if (CommonUtils().userInfo?.mobile != null) {
             binding.phone.setText(CommonUtils().userInfo.mobile.toString())
             binding.phone.isEnabled = false
             binding.phone.alpha = 0.6f
         }
-        if(CommonUtils().userInfo?.email != null)
+        if (CommonUtils().userInfo?.email != null) {
             binding.email.setText(CommonUtils().userInfo.email.toString())
-        if(CommonUtils().userInfo?.name != null)
+        }
+        if (CommonUtils().userInfo?.name != null) {
             binding.firstName.setText(CommonUtils().userInfo.name.toString())
+        }
     }
 
     override fun onCreateViewModel(): BaseViewModel? {
@@ -109,7 +109,8 @@ class ProfileActivity : BaseActivity() {
 
     private fun requestCameraPermission() {
         ActivityCompat.requestPermissions(
-            this, arrayOf(Manifest.permission.CAMERA),
+            this,
+            arrayOf(Manifest.permission.CAMERA),
             CAMERA_PERMISSION_REQUEST_CODE
         )
     }
@@ -123,7 +124,8 @@ class ProfileActivity : BaseActivity() {
 
     private fun requestStoragePermission() {
         ActivityCompat.requestPermissions(
-            this, arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),
+            this,
+            arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),
             GALLERY_PERMISSION_REQUEST_CODE
         )
     }
@@ -142,7 +144,6 @@ class ProfileActivity : BaseActivity() {
         }
         pictureDialog.show()
     }
-
 
     private fun choosePhotoFromGallery() {
         val galleryIntent = Intent(
@@ -163,20 +164,22 @@ class ProfileActivity : BaseActivity() {
     }
 
     private fun setLiveData() {
-        profileViewModel.observeEditProfile().observe(this, androidx.lifecycle.Observer {
-            if (it != null) {
-                it.data?.wolooGuest?.response?.let { it1 ->
-                    displayToast(it1)
-                    //Saving User Profile  Data to Netcore
-                    val payload: HashMap<String, Any> = HashMap()
-                    payload["NAME"] =  binding.firstName.text.trim().toString() + " " + binding.lastName.text.trim().toString()
-                    payload["EMAIL"] = binding.email.text.trim().toString()
-                    Smartech.getInstance(WeakReference(this)).updateUserProfile(payload)
-
+        profileViewModel.observeEditProfile().observe(
+            this,
+            androidx.lifecycle.Observer {
+                if (it != null) {
+                    it.data?.wolooGuest?.response?.let { it1 ->
+                        displayToast(it1)
+                        // Saving User Profile  Data to Netcore
+                        val payload: HashMap<String, Any> = HashMap()
+                        payload["NAME"] = binding.firstName.text.trim().toString() + " " + binding.lastName.text.trim().toString()
+                        payload["EMAIL"] = binding.email.text.trim().toString()
+                        Smartech.getInstance(WeakReference(this)).updateUserProfile(payload)
+                    }
+                    finish()
                 }
-                finish()
             }
-        })
+        )
     }
 
     private fun setClickables() {
@@ -195,55 +198,55 @@ class ProfileActivity : BaseActivity() {
     }
 
     private fun validateFormData() {
-        if (binding.firstName.text.trim().toString().isEmpty()){
+        if (binding.firstName.text.trim().toString().isEmpty()) {
             displayToast("Please enter your first name")
             return
         }
-        if (binding.lastName.text.trim().toString().isEmpty()){
+        if (binding.lastName.text.trim().toString().isEmpty()) {
             displayToast("Please enter your last name")
             return
         }
-        if (binding.email.text.trim().toString().isEmpty()){
+        if (binding.email.text.trim().toString().isEmpty()) {
             displayToast("Please enter your email")
             return
         }
-        if (!isValidEmail(binding.email.text.trim().toString())){
+        if (!isValidEmail(binding.email.text.trim().toString())) {
             displayToast("Please enter a valid email")
             return
         }
-        if (binding.phone.text.trim().toString().isEmpty()){
+        if (binding.phone.text.trim().toString().isEmpty()) {
             displayToast("Please enter your mobile number")
             return
         }
-        if(!isValidMobile(binding.phone.text.trim().toString())){
+        if (!isValidMobile(binding.phone.text.trim().toString())) {
             displayToast("Please enter a valid mobile number")
             return
         }
-        if (binding.streetAddress.text.trim().toString().isEmpty()){
+        if (binding.streetAddress.text.trim().toString().isEmpty()) {
             displayToast("Please enter your address")
             return
         }
-        if (binding.city.text.trim().toString().isEmpty()){
+        if (binding.city.text.trim().toString().isEmpty()) {
             displayToast("Please enter your city")
             return
         }
-        if (binding.state.text.trim().toString().isEmpty()){
+        if (binding.state.text.trim().toString().isEmpty()) {
             displayToast("Please enter your state")
             return
         }
-        if (binding.zip.text.trim().toString().isEmpty()){
+        if (binding.zip.text.trim().toString().isEmpty()) {
             displayToast("Please enter your pin code")
             return
         }
-        if (binding.dob.text.trim().toString().isEmpty()){
+        if (binding.dob.text.trim().toString().isEmpty()) {
             displayToast("Please select your date of birth")
             return
         }
-        if (adharImage == null){
+        if (adharImage == null) {
             displayToast("Please upload your Aadhaar card")
             return
         }
-        if (panImage == null){
+        if (panImage == null) {
             displayToast("Please upload your Pan card")
             return
         }
@@ -259,21 +262,27 @@ class ProfileActivity : BaseActivity() {
             .setType(MultipartBody.FORM)
             .addFormDataPart("id", CommonUtils().userInfo.id.toString())
             .addFormDataPart("name", binding.firstName.text.trim().toString() + " " + binding.lastName.text.trim().toString())
-            .addFormDataPart("email",  binding.email.text.trim().toString())
+            .addFormDataPart("email", binding.email.text.trim().toString())
             .addFormDataPart("mobile", CommonUtils().userInfo.mobile.toString())
             .addFormDataPart("address", binding.streetAddress.text.trim().toString())
             .addFormDataPart("city", binding.city.text.trim().toString())
             .addFormDataPart("state", binding.state.text.trim().toString())
             .addFormDataPart("pincode", binding.zip.text.trim().toString())
             .addFormDataPart("dob", binding.dob.text.trim().toString())
-            .addFormDataPart("aadhar_url", adharImage?.name, RequestBody.create(
-                "image/png".toMediaTypeOrNull(),
-                adharImage!!
-            ))
-            .addFormDataPart("pan_url", adharImage?.name, RequestBody.create(
-                "image/png".toMediaTypeOrNull(),
-                panImage!!
-            ))
+            .addFormDataPart(
+                "aadhar_url", adharImage?.name,
+                RequestBody.create(
+                    "image/png".toMediaTypeOrNull(),
+                    adharImage!!
+                )
+            )
+            .addFormDataPart(
+                "pan_url", adharImage?.name,
+                RequestBody.create(
+                    "image/png".toMediaTypeOrNull(),
+                    panImage!!
+                )
+            )
             .build()
         profileViewModel.updateProfile(requestBody)
     }
@@ -301,7 +310,6 @@ class ProfileActivity : BaseActivity() {
             directory.mkdirs()
         }
         try {
-
             val name = when (mediaListIndex) {
                 1 -> "ADHAR"
                 2 -> "PAN"
@@ -311,17 +319,20 @@ class ProfileActivity : BaseActivity() {
             } + ".jpg"
             Logger.d("heel", directory.toString())
             val f = File(
-                directory, name
+                directory,
+                name
             )
-            if (f.exists())
+            if (f.exists()) {
                 f.delete()
+            }
             f.createNewFile()
             val fo = FileOutputStream(f)
             fo.write(bytes.toByteArray())
             MediaScannerConnection.scanFile(
                 this,
                 arrayOf(f.path),
-                arrayOf("image/jpeg"), null
+                arrayOf("image/jpeg"),
+                null
             )
             fo.close()
             Logger.d("TAG", "File Saved::--->" + f.absolutePath)
@@ -397,8 +408,11 @@ class ProfileActivity : BaseActivity() {
 
         setOnClickListener {
             DatePickerDialog(
-                context, datePickerOnDataSetListener, myCalendar
-                    .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
+                context,
+                datePickerOnDataSetListener,
+                myCalendar
+                    .get(Calendar.YEAR),
+                myCalendar.get(Calendar.MONTH),
                 myCalendar.get(Calendar.DAY_OF_MONTH)
             ).run {
                 maxDate?.time?.also { datePicker.maxDate = it }

@@ -13,7 +13,6 @@ import android.view.Window
 import android.widget.LinearLayout
 import kotlin.math.roundToInt
 
-
 /**
  * Created by jadhavpankaj16 on 2019-11-15
  */
@@ -54,9 +53,12 @@ abstract class AppBaseDialogBox(val context: Activity, layoutResource: Int) {
 
     open fun hide() {
         if (mDialog.isShowing) {
-            Handler().postDelayed(Runnable {
-                mDialog.dismiss()
-            },500)
+            Handler().postDelayed(
+                Runnable {
+                    mDialog.dismiss()
+                },
+                500
+            )
         }
     }
 }

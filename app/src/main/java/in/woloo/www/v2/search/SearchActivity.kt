@@ -68,11 +68,11 @@ class SearchActivity() : BaseActivity(), OnMapReadyCallback {
     var tv6Km: TextView? = null
     var tv8Km: TextView? = null
     var tvAll: TextView? = null
-    var tvNoWolooFound : View? = null
+    var tvNoWolooFound: View? = null
     var tvNoWolooText: TextView? = null
-    var ivBack : ImageView? = null
-    var ivCancel : ImageView? = null
-    var wolooRv : RecyclerView? = null
+    var ivBack: ImageView? = null
+    var ivCancel: ImageView? = null
+    var wolooRv: RecyclerView? = null
     private var mMap: GoogleMap? = null
     private lateinit var locationManager: LocationManager
     private var nearByStoreResponseList: ArrayList<NearByStoreResponse.Data> = ArrayList()
@@ -88,17 +88,16 @@ class SearchActivity() : BaseActivity(), OnMapReadyCallback {
     private var currentpos: LatLng? = null
     var gps: GpsTracker? = null
     lateinit var homeViewModel: HomeViewModel
-    var travelMode : Int = 0
-    var range : Int = 2
+    var travelMode: Int = 0
+    var range: Int = 2
     private var adapter: NearestWalkAdapter? = null
-    var isFromHome : Boolean = false
+    var isFromHome: Boolean = false
     private val defaultLocation = LatLng(19.055229, 72.830829)
 
     /*Calling on onCreateView*/
     val DIALOGID = 2
     private var searchedLocation: String = ""
     private var wolooWithOffers = false
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -121,9 +120,11 @@ class SearchActivity() : BaseActivity(), OnMapReadyCallback {
                 val selectedWoloo: NearByStoreResponse.Data =
                     WolooApplication.getInstance().nearByWoloo!!
                 if (nearByStoreResponseListFromApi.contains(selectedWoloo)) {
-                    nearByStoreResponseListFromApi[nearByStoreResponseListFromApi.indexOf(
-                        selectedWoloo
-                    )].isLiked =
+                    nearByStoreResponseListFromApi[
+                        nearByStoreResponseListFromApi.indexOf(
+                            selectedWoloo
+                        )
+                    ].isLiked =
                         WolooApplication.getInstance().updatedLikeStatus
                 }
                 bookmarkedWolooList = ArrayList()
@@ -141,12 +142,12 @@ class SearchActivity() : BaseActivity(), OnMapReadyCallback {
                 WolooApplication.getInstance().updatedLikeStatus = -1
             }
         } catch (e: java.lang.Exception) {
-              CommonUtils.printStackTrace(e)
+            CommonUtils.printStackTrace(e)
         }
     }
 
     private fun initViews() {
-                checkGpsAndRequestLocation()
+        checkGpsAndRequestLocation()
 
         searchAutoComplete = findViewById(R.id.search_auto_complete)
         cbWolooWithOffers = findViewById(R.id.cbWolooWithOffers)
@@ -189,7 +190,7 @@ class SearchActivity() : BaseActivity(), OnMapReadyCallback {
             searchAutoComplete!!.setAdapter(placeAdapter)
             searchAutoComplete!!.threshold = 1
         } catch (ex: Exception) {
-             CommonUtils.printStackTrace(ex);
+            CommonUtils.printStackTrace(ex)
         }
         searchAutoComplete!!.onItemClickListener = AdapterView.OnItemClickListener { adapterView, view, pos, id ->
             val place = adapterView.getItemAtPosition(pos) as PlaceAutocomplete
@@ -200,21 +201,25 @@ class SearchActivity() : BaseActivity(), OnMapReadyCallback {
             //                Toast.makeText(getContext(), place.address, Toast.LENGTH_SHORT).show();
         }
 
-        cbWolooWithOffers?.setOnCheckedChangeListener(CompoundButton.OnCheckedChangeListener { compoundButton: CompoundButton?, b: Boolean ->
-            getNearByWoloos(dest!!.latitude, dest!!.longitude, travelMode , range, 1, cbWolooWithOffers!!.isChecked, cbOpenNow!!.isChecked)
-            wolooWithOffers = b
-        })
+        cbWolooWithOffers?.setOnCheckedChangeListener(
+            CompoundButton.OnCheckedChangeListener { compoundButton: CompoundButton?, b: Boolean ->
+                getNearByWoloos(dest!!.latitude, dest!!.longitude, travelMode, range, 1, cbWolooWithOffers!!.isChecked, cbOpenNow!!.isChecked)
+                wolooWithOffers = b
+            }
+        )
 
-        cbOpenNow?.setOnCheckedChangeListener(CompoundButton.OnCheckedChangeListener { compoundButton: CompoundButton?, b: Boolean ->
-            getNearByWoloos(dest!!.latitude, dest!!.longitude, travelMode , range, 1, wolooWithOffers, cbOpenNow!!.isChecked)
-        })
+        cbOpenNow?.setOnCheckedChangeListener(
+            CompoundButton.OnCheckedChangeListener { compoundButton: CompoundButton?, b: Boolean ->
+                getNearByWoloos(dest!!.latitude, dest!!.longitude, travelMode, range, 1, wolooWithOffers, cbOpenNow!!.isChecked)
+            }
+        )
 
         cbBookmarkedWoloo?.setOnCheckedChangeListener { buttonView, isChecked ->
             if (isChecked) {
-                //show bookmarked list
+                // show bookmarked list
                 renderNearByWoloos(bookmarkedWolooList)
             } else {
-                //show normal list
+                // show normal list
                 renderNearByWoloos(nearByStoreResponseListFromApi)
             }
         }
@@ -242,12 +247,10 @@ class SearchActivity() : BaseActivity(), OnMapReadyCallback {
         ivBack?.setOnClickListener { finish() }
 
         ivCancel?.setOnClickListener { searchAutoComplete?.setText("") }
-
-
     }
 
     private var progressbar: Dialog? = null
-    private fun setProgressDialog(){
+    private fun setProgressDialog() {
         progressbar = Dialog(this, R.style.CustomDialogTime)
         progressbar!!.requestWindowFeature(Window.FEATURE_NO_TITLE)
         progressbar!!.window?.setBackgroundDrawable(
@@ -262,7 +265,7 @@ class SearchActivity() : BaseActivity(), OnMapReadyCallback {
         progressbar!!.setContentView(R.layout.dialog_progress_overlay)
     }
 
-    private fun distanceRangeChanged(changedRange : Int) {
+    private fun distanceRangeChanged(changedRange: Int) {
         range = changedRange
         val selected = resources.getDrawable(R.drawable.yello_rectangle_shape)
         val notSelected = resources.getDrawable(R.drawable.rounded_gray_bg)
@@ -278,14 +281,12 @@ class SearchActivity() : BaseActivity(), OnMapReadyCallback {
             6 -> tv6Km?.background = selected
             8 -> tv8Km?.background = selected
             25 -> tvAll?.background = selected
-            else -> Logger.e("range else", " $range");
+            else -> Logger.e("range else", " $range")
         }
-        getNearByWoloos(dest!!.latitude, dest!!.longitude, travelMode , range, 1, wolooWithOffers, cbOpenNow!!.isChecked)
-
+        getNearByWoloos(dest!!.latitude, dest!!.longitude, travelMode, range, 1, wolooWithOffers, cbOpenNow!!.isChecked)
     }
 
     private fun onPlaceClick(place: PlaceAutocomplete) {
-
         try {
             val placeId: String = place.placeId.toString()
             val placeFields = Arrays.asList(
@@ -302,10 +303,10 @@ class SearchActivity() : BaseActivity(), OnMapReadyCallback {
                     try {
                         Utility.hideKeyboard(this)
                     } catch (ex: java.lang.Exception) {
-                         CommonUtils.printStackTrace(ex);
+                        CommonUtils.printStackTrace(ex)
                     }
                     dest = placeTemp?.latLng
-                    getNearByWoloos(dest!!.latitude, dest!!.longitude, travelMode , range, 1, wolooWithOffers, cbOpenNow!!.isChecked)
+                    getNearByWoloos(dest!!.latitude, dest!!.longitude, travelMode, range, 1, wolooWithOffers, cbOpenNow!!.isChecked)
 
 //                    Toast.makeText(this, "getNearByWoloos onPlaceClick", Toast.LENGTH_SHORT).show()
                     val cameraPosition = CameraPosition.Builder()
@@ -315,11 +316,8 @@ class SearchActivity() : BaseActivity(), OnMapReadyCallback {
                         .tilt(30f) // Sets the tilt of the camera to 30 degrees
                         .build() // Creates a CameraPosition from the builder
 
-
                     mMap?.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition), 20, null)
                     mMap?.moveCamera(CameraUpdateFactory.newLatLngZoom(dest!!, AppConstants.DEFAULT_ZOOM.toFloat()))
-
-
                 }.addOnFailureListener { exception ->
                     if (exception is ApiException) {
                         Toast.makeText(
@@ -366,10 +364,9 @@ class SearchActivity() : BaseActivity(), OnMapReadyCallback {
     }
 
     private fun setLiveData() {
-
         homeViewModel.observeNearByWoloo().observe(this) { arrayListBaseResponse ->
             Utility.hideKeyboard(this@SearchActivity)
-            if(progressbar?.isShowing == true) progressbar?.dismiss()
+            if (progressbar?.isShowing == true) progressbar?.dismiss()
             if (arrayListBaseResponse != null) {
                 nearByStoreResponseListFromApi = arrayListBaseResponse.data!!
             } else {
@@ -406,7 +403,7 @@ class SearchActivity() : BaseActivity(), OnMapReadyCallback {
                 Logger.w(" loction address", "No Address returned!")
             }
         } catch (e: java.lang.Exception) {
-              CommonUtils.printStackTrace(e)
+            CommonUtils.printStackTrace(e)
             Logger.w("loction address", "Canont get Address!")
         }
         return strAdd
@@ -420,7 +417,7 @@ class SearchActivity() : BaseActivity(), OnMapReadyCallback {
             nearByStoreResponseList.addAll(data)
             adapter!!.notifyDataSetChanged()
             try {
-                if(nearByStoreResponseList.isEmpty()){
+                if (nearByStoreResponseList.isEmpty()) {
                     if (cbOpenNow?.isChecked == true) {
                         tvNoWolooText?.text = resources.getString(R.string.no_woloo_found_at_moment)
                     } else if (cbBookmarkedWoloo?.isChecked == true) {
@@ -436,29 +433,28 @@ class SearchActivity() : BaseActivity(), OnMapReadyCallback {
                         val payload = HashMap<String, Any>()
                         bundle.putString(AppConstants.LOCATION, "(${dest!!.latitude}, ${dest!!.longitude})")
                         bundle.putString(AppConstants.SEARCH_KEYWORD, searchedLocation)
-                        payload[AppConstants.LOCATION] ="(${dest!!.latitude}, ${dest!!.longitude})"
+                        payload[AppConstants.LOCATION] = "(${dest!!.latitude}, ${dest!!.longitude})"
                         payload[AppConstants.SEARCH_KEYWORD] = searchedLocation
                         Utility.logFirebaseEvent(this, bundle, AppConstants.NO_LOCATION_FOUND)
                         Utility.logNetcoreEvent(this, payload, AppConstants.NO_LOCATION_FOUND)
                     }
-
-                }else{
+                } else {
                     tvNoWolooFound?.visibility = View.GONE
                     wolooRv?.visibility = View.VISIBLE
                 }
             } catch (ex: java.lang.Exception) {
-                 CommonUtils.printStackTrace(ex);
+                CommonUtils.printStackTrace(ex)
             }
             for ((i, data) in nearByStoreResponseList.withIndex()) {
-                markerList.add(createMarker(data.lat.toDouble(), data.lng.toDouble(), data.name , "", R.drawable.ic_store_mark_dest, i))
+                markerList.add(createMarker(data.lat.toDouble(), data.lng.toDouble(), data.name, "", R.drawable.ic_store_mark_dest, i))
             }
             animateCameraToMarkerPosition(0)
         } catch (e: java.lang.Exception) {
-              CommonUtils.printStackTrace(e)
+            CommonUtils.printStackTrace(e)
         }
     }
 
-    private fun createMarker(latitude: Double, longitude: Double, title: String, snippet: String, iconResID: Int, index: Int): Marker{
+    private fun createMarker(latitude: Double, longitude: Double, title: String, snippet: String, iconResID: Int, index: Int): Marker {
         Logger.i(TAG, "createMarker")
         mMap?.uiSettings?.isZoomGesturesEnabled = true
         val height = 110
@@ -490,20 +486,19 @@ class SearchActivity() : BaseActivity(), OnMapReadyCallback {
         }
     }
 
-
     @SuppressLint("MissingPermission")
     override fun onMapReady(googleMap: GoogleMap) {
-        try{
+        try {
             mMap = googleMap
             Logger.i(TAG, "onMapReady")
             mMap!!.isMyLocationEnabled = true
-            mMap!!.uiSettings.isZoomControlsEnabled = true;
+            mMap!!.uiSettings.isZoomControlsEnabled = true
             mMap!!.uiSettings.isMyLocationButtonEnabled = true
 //            Toast.makeText(this,"OnMapReady",Toast.LENGTH_SHORT).show()
             moveCameraToDefaultLocation(true)
             checkGpsAndRequestLocation()
-        }catch (e : java.lang.Exception){
-              CommonUtils.printStackTrace(e)
+        } catch (e: java.lang.Exception) {
+            CommonUtils.printStackTrace(e)
         }
     }
 
@@ -513,8 +508,7 @@ class SearchActivity() : BaseActivity(), OnMapReadyCallback {
             CameraUpdateFactory.newLatLngZoom(defaultLocation, AppConstants.DEFAULT_ZOOM.toFloat())
         mMap!!.moveCamera(cameraUpdate)
         if (shouldShowNearbyLoos) {
-            getNearByWoloos( defaultLocation.latitude, defaultLocation.longitude, travelMode , range, 1, wolooWithOffers, cbOpenNow!!.isChecked)
-
+            getNearByWoloos(defaultLocation.latitude, defaultLocation.longitude, travelMode, range, 1, wolooWithOffers, cbOpenNow!!.isChecked)
         }
     }
 
@@ -527,7 +521,7 @@ class SearchActivity() : BaseActivity(), OnMapReadyCallback {
             locationRequest.numUpdates = 1
             val builder = LocationSettingsRequest.Builder()
                 .addLocationRequest(locationRequest)
-            builder.setAlwaysShow(true) //this is the key ingredient
+            builder.setAlwaysShow(true) // this is the key ingredient
             builder.addLocationRequest(locationRequest)
             val result = LocationServices.getSettingsClient(this)
                 .checkLocationSettings(builder.build())
@@ -541,7 +535,7 @@ class SearchActivity() : BaseActivity(), OnMapReadyCallback {
                         // requests here.
                         getDeviceLocation()
                         updateLocationUI()
-                        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                        // //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                     } catch (exception: ApiException) {
                         when (exception.statusCode) {
                             LocationSettingsStatusCodes.RESOLUTION_REQUIRED -> try {
@@ -558,7 +552,7 @@ class SearchActivity() : BaseActivity(), OnMapReadyCallback {
                             } catch (e: ClassCastException) {
                                 // Ignore, should be an impossible error.
                             } catch (e: IntentSender.SendIntentException) {
-                                  CommonUtils.printStackTrace(e)
+                                CommonUtils.printStackTrace(e)
                             }
                             LocationSettingsStatusCodes.SETTINGS_CHANGE_UNAVAILABLE -> {}
                         }
@@ -573,7 +567,7 @@ class SearchActivity() : BaseActivity(), OnMapReadyCallback {
     }
 
     fun isLocationPermissionGranted(): Boolean {
-        return (ContextCompat.checkSelfPermission(this , Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED)
+        return (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED)
     }
 
     fun getLocationPermission() {
@@ -586,7 +580,8 @@ class SearchActivity() : BaseActivity(), OnMapReadyCallback {
 //            getDeviceLocation()
         } else {
             ActivityCompat.requestPermissions(
-                this, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
+                this,
+                arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
                 PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION
             )
         }
@@ -670,18 +665,18 @@ class SearchActivity() : BaseActivity(), OnMapReadyCallback {
             return
         }
         try {
-            if(intent.hasExtra("lat") && intent.hasExtra("lng")){
+            if (intent.hasExtra("lat") && intent.hasExtra("lng")) {
                 isFromHome = true
                 dest = LatLng(
-                    intent.getDoubleExtra("lat",defaultLocation.latitude),
-                    intent.getDoubleExtra("lng",defaultLocation.longitude))
-                val destName = getCompleteAddressString(dest!!.latitude,dest!!.longitude)
-                if(destName?.isNotEmpty() == true) {
+                    intent.getDoubleExtra("lat", defaultLocation.latitude),
+                    intent.getDoubleExtra("lng", defaultLocation.longitude)
+                )
+                val destName = getCompleteAddressString(dest!!.latitude, dest!!.longitude)
+                if (destName?.isNotEmpty() == true) {
                     searchAutoComplete?.setText(destName)
                     searchedLocation = destName
                 }
-
-            }else {
+            } else {
                 isLocationEnabled()
                 gps = GpsTracker(this)
 
@@ -689,7 +684,7 @@ class SearchActivity() : BaseActivity(), OnMapReadyCallback {
                 dest = currentpos
             }
 //            Toast.makeText(this,"dest : $isFromHome",Toast.LENGTH_SHORT).show()
-            getNearByWoloos(dest!!.latitude, dest!!.longitude, travelMode , range, 1, wolooWithOffers, cbOpenNow!!.isChecked)
+            getNearByWoloos(dest!!.latitude, dest!!.longitude, travelMode, range, 1, wolooWithOffers, cbOpenNow!!.isChecked)
 
             val cameraPosition = CameraPosition.Builder()
                 .target(dest!!) // Sets the center of the map to Mountain View
@@ -704,21 +699,21 @@ class SearchActivity() : BaseActivity(), OnMapReadyCallback {
                 mMap?.setMyLocationEnabled(true)
                 mMap?.getUiSettings()?.setMyLocationButtonEnabled(true)
                 mMap?.getUiSettings()?.setZoomGesturesEnabled(true)
-                mMap?.setOnMyLocationButtonClickListener(OnMyLocationButtonClickListener {
-                    Utility.hideKeyboard(this)
-                    val location: Location = mMap?.getMyLocation()!!
-                   dest= LatLng(location.latitude,location.longitude)
-                    getNearByWoloos(dest!!.latitude, dest!!.longitude, travelMode , range, 1, wolooWithOffers, cbOpenNow!!.isChecked)
-                    true
-                })
-
+                mMap?.setOnMyLocationButtonClickListener(
+                    OnMyLocationButtonClickListener {
+                        Utility.hideKeyboard(this)
+                        val location: Location = mMap?.getMyLocation()!!
+                        dest = LatLng(location.latitude, location.longitude)
+                        getNearByWoloos(dest!!.latitude, dest!!.longitude, travelMode, range, 1, wolooWithOffers, cbOpenNow!!.isChecked)
+                        true
+                    }
+                )
             } else {
                 mMap?.setMyLocationEnabled(false)
                 mMap?.getUiSettings()?.setMyLocationButtonEnabled(false)
                 moveCameraToDefaultLocation(true)
                 mMap?.setOnMyLocationClickListener(null)
             }
-
         } catch (e: SecurityException) {
             Logger.e("Exception: %s", e.message)
         }
@@ -732,11 +727,11 @@ class SearchActivity() : BaseActivity(), OnMapReadyCallback {
                 if (ActivityCompat.checkSelfPermission(
                         this,
                         Manifest.permission.ACCESS_FINE_LOCATION
-                    ) != PackageManager.PERMISSION_GRANTED
-                    && ActivityCompat.checkSelfPermission(
-                        this,
-                        Manifest.permission.ACCESS_COARSE_LOCATION
-                    ) != PackageManager.PERMISSION_GRANTED
+                    ) != PackageManager.PERMISSION_GRANTED &&
+                    ActivityCompat.checkSelfPermission(
+                            this,
+                            Manifest.permission.ACCESS_COARSE_LOCATION
+                        ) != PackageManager.PERMISSION_GRANTED
                 ) {
                     return
                 }
@@ -744,8 +739,8 @@ class SearchActivity() : BaseActivity(), OnMapReadyCallback {
                 val locationResult: Task<Location> = mFusedLocationProviderClient!!.lastLocation
                 locationResult.addOnCompleteListener { task ->
 
-                        if (task.isSuccessful) {
-                            // Set the map's camera position to the current location of the device.
+                    if (task.isSuccessful) {
+                        // Set the map's camera position to the current location of the device.
 //                            val location = task.result
 //                            //                            Smartech.getInstance(new WeakReference(requireContext())).setUserLocation(location);
 //                            val currentLatLng = LatLng(
@@ -773,16 +768,12 @@ class SearchActivity() : BaseActivity(), OnMapReadyCallback {
 //                            )
 //                            //                mMap.clear();
 //                            mMap?.moveCamera(update)
-                        }
-
+                    }
                 }
             } else {
-
             }
         } catch (e: java.lang.Exception) {
             Logger.e("Exception: %s", e.message)
         }
     }
-
-
 }

@@ -1,12 +1,10 @@
 package `in`.woloo.www.vtion.utilities
 
-import android.content.Context
 import android.content.ComponentName
-import android.content.pm.PackageManager
-import android.text.TextUtils
-import android.accessibilityservice.AccessibilityServiceInfo
+import android.content.Context
 import android.content.Intent
 import android.provider.Settings
+import android.text.TextUtils
 import android.util.Log
 import android.view.accessibility.AccessibilityManager
 

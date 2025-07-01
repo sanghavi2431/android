@@ -16,7 +16,7 @@ import `in`.woloo.www.v2.profile.model.ShowProfileResponse
 import org.json.JSONObject
 
 class HomeViewModel : BaseViewModel() {
-    val TAG =javaClass.name
+    val TAG = javaClass.name
 
     private val mHomeRepository: HomeRepository = HomeRepository()
     private val mGetNearbyWoloos: EventLiveData<BaseResponse<ArrayList<NearByStoreResponse.Data>>> = EventLiveData()
@@ -29,36 +29,41 @@ class HomeViewModel : BaseViewModel() {
     private val mPendingReviewStatusResponse = EventLiveData<BaseResponse<PendingReviewStatusResponse.Data>>()
     private val redeemOfferResponse: EventLiveData<BaseResponse<MessageResponse>> = EventLiveData()
 
-
     fun getNearbyWoloos(request: NearbyWolooRequest) {
         Log.d(TAG, "getNearbyWoloos:$request")
-        //updateProgress(true)
-        mHomeRepository.getNearbyWoloos(request, object :
-            WebserviceCallback<ApiResponseData<BaseResponse<ArrayList<NearByStoreResponse.Data>>>> {
-            override fun onWebResponse(data: ApiResponseData<BaseResponse<ArrayList<NearByStoreResponse.Data>>>) {
-                //updateProgress(false)
-                if (data.status == ApiResponseData.API_SUCCESS) {
-                    mGetNearbyWoloos.value = data.data
-                } else {
-                    mGetNearbyWoloos.value = data.data
-                    notifyNetworkError(data)
+        // updateProgress(true)
+        mHomeRepository.getNearbyWoloos(
+            request,
+            object :
+                WebserviceCallback<ApiResponseData<BaseResponse<ArrayList<NearByStoreResponse.Data>>>> {
+                override fun onWebResponse(data: ApiResponseData<BaseResponse<ArrayList<NearByStoreResponse.Data>>>) {
+                    // updateProgress(false)
+                    if (data.status == ApiResponseData.API_SUCCESS) {
+                        mGetNearbyWoloos.value = data.data
+                    } else {
+                        mGetNearbyWoloos.value = data.data
+                        notifyNetworkError(data)
+                    }
                 }
             }
-        })
+        )
     }
 
     fun showProfile(userId: String) {
-        mHomeRepository.showProfile(userId, object :
-            WebserviceCallback<ApiResponseData<BaseResponse<ShowProfileResponse>>> {
-            override fun onWebResponse(data: ApiResponseData<BaseResponse<ShowProfileResponse>>) {
-                if (data.status == ApiResponseData.API_SUCCESS) {
-                    mShowProfile.value = data.data
-                } else {
-                    mShowProfile.value = data.data
-                    notifyNetworkError(data)
+        mHomeRepository.showProfile(
+            userId,
+            object :
+                WebserviceCallback<ApiResponseData<BaseResponse<ShowProfileResponse>>> {
+                override fun onWebResponse(data: ApiResponseData<BaseResponse<ShowProfileResponse>>) {
+                    if (data.status == ApiResponseData.API_SUCCESS) {
+                        mShowProfile.value = data.data
+                    } else {
+                        mShowProfile.value = data.data
+                        notifyNetworkError(data)
+                    }
                 }
             }
-        })
+        )
     }
 
     fun applyVoucher(request: VoucherRequest) {
@@ -76,92 +81,104 @@ class HomeViewModel : BaseViewModel() {
                         notifyNetworkError(data)
                     }
                 }
-            })
+            }
+        )
     }
 
-    fun validateGiftCard(giftCardId : String){
+    fun validateGiftCard(giftCardId: String) {
         updateProgress(true)
-        mHomeRepository.validateGiftCard(giftCardId,object : WebserviceCallback<ApiResponseData<BaseResponse<ValidateGiftCardResponse>>>{
-            override fun onWebResponse(data: ApiResponseData<BaseResponse<ValidateGiftCardResponse>>) {
-                updateProgress(false)
-                if(data.status == ApiResponseData.API_SUCCESS){
-                    mValidateGiftCard.value = data.data
-                }else{
-                    WolooApplication.setErrorMessage(data.message)
-                    mValidateGiftCard.value = data.data
-                    notifyNetworkError(data)
+        mHomeRepository.validateGiftCard(
+            giftCardId,
+            object : WebserviceCallback<ApiResponseData<BaseResponse<ValidateGiftCardResponse>>> {
+                override fun onWebResponse(data: ApiResponseData<BaseResponse<ValidateGiftCardResponse>>) {
+                    updateProgress(false)
+                    if (data.status == ApiResponseData.API_SUCCESS) {
+                        mValidateGiftCard.value = data.data
+                    } else {
+                        WolooApplication.setErrorMessage(data.message)
+                        mValidateGiftCard.value = data.data
+                        notifyNetworkError(data)
+                    }
                 }
             }
-        })
+        )
     }
 
-    fun getNearByWolooAndOfferCount(request: NearByWolooAndOfferCountRequest){
+    fun getNearByWolooAndOfferCount(request: NearByWolooAndOfferCountRequest) {
         updateProgress(true)
-        mHomeRepository.getNearByWolooAndOfferCount(request,object : WebserviceCallback<ApiResponseData<BaseResponse<NearByWolooAndOfferCountResponse.Data>>>{
-            override fun onWebResponse(data: ApiResponseData<BaseResponse<NearByWolooAndOfferCountResponse.Data>>) {
-                updateProgress(false)
-                if(data.status == ApiResponseData.API_SUCCESS){
-                    mNearByWolooAndOfferCount.value = data.data
-                }else{
-                    WolooApplication.setErrorMessage(data.message)
-                    mNearByWolooAndOfferCount.value = data.data
-                    notifyNetworkError(data)
+        mHomeRepository.getNearByWolooAndOfferCount(
+            request,
+            object : WebserviceCallback<ApiResponseData<BaseResponse<NearByWolooAndOfferCountResponse.Data>>> {
+                override fun onWebResponse(data: ApiResponseData<BaseResponse<NearByWolooAndOfferCountResponse.Data>>) {
+                    updateProgress(false)
+                    if (data.status == ApiResponseData.API_SUCCESS) {
+                        mNearByWolooAndOfferCount.value = data.data
+                    } else {
+                        WolooApplication.setErrorMessage(data.message)
+                        mNearByWolooAndOfferCount.value = data.data
+                        notifyNetworkError(data)
+                    }
                 }
             }
-        })
+        )
     }
 
-    fun wolooEngagement(request: WolooEngagementRequest){
+    fun wolooEngagement(request: WolooEngagementRequest) {
         updateProgress(true)
-        mHomeRepository.wolooEngagement(request,object : WebserviceCallback<ApiResponseData<BaseResponse<JSONObject>>>{
-            override fun onWebResponse(data: ApiResponseData<BaseResponse<JSONObject>>) {
-                updateProgress(false)
-                if(data.status == ApiResponseData.API_SUCCESS){
-                    mWolooEngagement.value = data.data
-                }else{
-                    WolooApplication.setErrorMessage(data.message)
-                    mWolooEngagement.value = data.data
-                    notifyNetworkError(data)
+        mHomeRepository.wolooEngagement(
+            request,
+            object : WebserviceCallback<ApiResponseData<BaseResponse<JSONObject>>> {
+                override fun onWebResponse(data: ApiResponseData<BaseResponse<JSONObject>>) {
+                    updateProgress(false)
+                    if (data.status == ApiResponseData.API_SUCCESS) {
+                        mWolooEngagement.value = data.data
+                    } else {
+                        WolooApplication.setErrorMessage(data.message)
+                        mWolooEngagement.value = data.data
+                        notifyNetworkError(data)
+                    }
                 }
             }
-        })
+        )
     }
 
-    fun getReviewList(request: ReviewListRequest){
+    fun getReviewList(request: ReviewListRequest) {
         updateProgress(true)
-        mHomeRepository.getReviewList(request,object : WebserviceCallback<ApiResponseData<BaseResponse<ReviewListResponse.Data>>>{
-            override fun onWebResponse(data: ApiResponseData<BaseResponse<ReviewListResponse.Data>>) {
-                updateProgress(false)
-                if(data.status == ApiResponseData.API_SUCCESS){
-                    mReviewList.value = data.data
-                }else{
-                    WolooApplication.setErrorMessage(data.message)
-                    mReviewList.value = data.data
-                    notifyNetworkError(data)
+        mHomeRepository.getReviewList(
+            request,
+            object : WebserviceCallback<ApiResponseData<BaseResponse<ReviewListResponse.Data>>> {
+                override fun onWebResponse(data: ApiResponseData<BaseResponse<ReviewListResponse.Data>>) {
+                    updateProgress(false)
+                    if (data.status == ApiResponseData.API_SUCCESS) {
+                        mReviewList.value = data.data
+                    } else {
+                        WolooApplication.setErrorMessage(data.message)
+                        mReviewList.value = data.data
+                        notifyNetworkError(data)
+                    }
                 }
             }
-        })
+        )
     }
 
     fun observePendingReviewStatus(): MutableLiveData<BaseResponse<PendingReviewStatusResponse.Data>> {
         return mPendingReviewStatusResponse
     }
 
-    fun getPendingReviewStatus(){
+    fun getPendingReviewStatus() {
         mHomeRepository.getPendingReviewStatus(object :
-            WebserviceCallback<ApiResponseData<BaseResponse<PendingReviewStatusResponse.Data>>> {
-            override fun onWebResponse(data: ApiResponseData<BaseResponse<PendingReviewStatusResponse.Data>>) {
-                if (data.status == ApiResponseData.API_SUCCESS) {
-                    mPendingReviewStatusResponse.value = data.data
-                } else {
-                    WolooApplication.setErrorMessage(data.message)
-                    mPendingReviewStatusResponse.value = data.data
-                    notifyNetworkError(data)
+                WebserviceCallback<ApiResponseData<BaseResponse<PendingReviewStatusResponse.Data>>> {
+                override fun onWebResponse(data: ApiResponseData<BaseResponse<PendingReviewStatusResponse.Data>>) {
+                    if (data.status == ApiResponseData.API_SUCCESS) {
+                        mPendingReviewStatusResponse.value = data.data
+                    } else {
+                        WolooApplication.setErrorMessage(data.message)
+                        mPendingReviewStatusResponse.value = data.data
+                        notifyNetworkError(data)
+                    }
                 }
-            }
-        })
+            })
     }
-
 
     fun observeReviewList(): EventLiveData<BaseResponse<ReviewListResponse.Data>> {
         return mReviewList
@@ -193,19 +210,22 @@ class HomeViewModel : BaseViewModel() {
 
     fun redeemOffer(offerId: Int) {
         updateProgress(true)
-        mHomeRepository.redeemOffer(offerId, object :
-            WebserviceCallback<ApiResponseData<BaseResponse<MessageResponse>>> {
-            override fun onWebResponse(data: ApiResponseData<BaseResponse<MessageResponse>>) {
-                updateProgress(false)
-                if (data.status == ApiResponseData.API_SUCCESS) {
-                    redeemOfferResponse.value = data.data
-                } else {
-                    WolooApplication.setErrorMessage(data.message)
-                    redeemOfferResponse.value = data.data
-                    notifyNetworkError(data)
+        mHomeRepository.redeemOffer(
+            offerId,
+            object :
+                WebserviceCallback<ApiResponseData<BaseResponse<MessageResponse>>> {
+                override fun onWebResponse(data: ApiResponseData<BaseResponse<MessageResponse>>) {
+                    updateProgress(false)
+                    if (data.status == ApiResponseData.API_SUCCESS) {
+                        redeemOfferResponse.value = data.data
+                    } else {
+                        WolooApplication.setErrorMessage(data.message)
+                        redeemOfferResponse.value = data.data
+                        notifyNetworkError(data)
+                    }
                 }
             }
-        })
+        )
     }
 
     fun observeRedeemOffer(): EventLiveData<BaseResponse<MessageResponse>> {

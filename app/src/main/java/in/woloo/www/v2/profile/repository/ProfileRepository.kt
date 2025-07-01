@@ -10,7 +10,7 @@ import `in`.woloo.www.v2.util.NetworkUtils
 import okhttp3.RequestBody
 import retrofit2.Call
 
-class ProfileRepository: BaseRepository() {
+class ProfileRepository : BaseRepository() {
 
     val service: ApiService = ApiServiceClientAdapter.instance.apiService
 
@@ -22,10 +22,9 @@ class ProfileRepository: BaseRepository() {
                 val callback: ApiServiceCallback<BaseResponse<UserProfile>> =
                     ApiServiceCallback(webserviceCallback)
                 call.enqueue(callback)
-            } catch (e: Exception){
-                  CommonUtils.printStackTrace(e)
+            } catch (e: Exception) {
+                CommonUtils.printStackTrace(e)
             }
-
         } else {
             val data = ApiResponseData<BaseResponse<UserProfile>>()
             data.status = ApiResponseData.API_NO_NETWORK
@@ -44,10 +43,9 @@ class ProfileRepository: BaseRepository() {
                 val callback: ApiServiceCallback<BaseResponse<EditProfileResponse>> =
                     ApiServiceCallback(webserviceCallback)
                 call.enqueue(callback)
-            } catch (e: Exception){
-                  CommonUtils.printStackTrace(e)
+            } catch (e: Exception) {
+                CommonUtils.printStackTrace(e)
             }
-
         } else {
             val data = ApiResponseData<BaseResponse<EditProfileResponse>>()
             data.status = ApiResponseData.API_NO_NETWORK

@@ -10,7 +10,6 @@ import retrofit2.Call
 
 class HistoryRepository {
 
-
     val service: ApiService = ApiServiceClientAdapter.instance.apiService
 
     fun wolooRewardHistory(
@@ -25,9 +24,8 @@ class HistoryRepository {
                     ApiServiceCallback(webserviceCallback)
                 call.enqueue(callback)
             } catch (e: Exception) {
-                 CommonUtils.printStackTrace(e)
+                CommonUtils.printStackTrace(e)
             }
-
         } else {
             val data = ApiResponseData<BaseResponse<MyHistoryResponse.Data>>()
             data.status = ApiResponseData.API_NO_NETWORK
@@ -48,7 +46,6 @@ class HistoryRepository {
             } catch (e: Exception) {
                 e.printStackTrace()
             }
-
         } else {
             val data = ApiResponseData<BaseResponse<ArrayList<NearByStoreResponse.Data>>>()
             data.status = ApiResponseData.API_NO_NETWORK

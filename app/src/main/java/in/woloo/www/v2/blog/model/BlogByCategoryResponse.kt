@@ -1,6 +1,5 @@
 package `in`.woloo.www.v2.blog.model
 
-import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import `in`.woloo.www.trendingblog.model.blog.Blog
 import `in`.woloo.www.trendingblog.model.blog.Category

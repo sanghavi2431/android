@@ -11,5 +11,4 @@ class ApiResponseData<T> {
     var status: Int = 0
     var data: T? = null
     var message: String = ""
-
 }

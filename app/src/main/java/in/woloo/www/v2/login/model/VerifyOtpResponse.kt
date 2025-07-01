@@ -13,5 +13,4 @@ class VerifyOtpResponse {
 
     @SerializedName("user")
     var user: UserDetails? = null
-
 }

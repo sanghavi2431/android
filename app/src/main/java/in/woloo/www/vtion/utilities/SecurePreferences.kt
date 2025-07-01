@@ -2,19 +2,17 @@ package `in`.woloo.www.vtion.utilities
 
 import android.os.Build
 import androidx.annotation.RequiresApi
+import java.util.Base64
 import javax.crypto.Cipher
 import javax.crypto.KeyGenerator
 import javax.crypto.SecretKey
-import javax.crypto.spec.SecretKeySpec
-import java.util.Base64
 import javax.crypto.spec.IvParameterSpec
-
+import javax.crypto.spec.SecretKeySpec
 
 object SecurePreferences {
 
     private const val ALGORITHM = "AES"
     private const val TRANSFORMATION = "AES/CBC/PKCS5Padding"
-
 
     @RequiresApi(Build.VERSION_CODES.O)
     @JvmStatic
@@ -51,5 +49,4 @@ object SecurePreferences {
         val keyBytes = Base64.getDecoder().decode(keyString)
         return SecretKeySpec(keyBytes, ALGORITHM)
     }
-
 }

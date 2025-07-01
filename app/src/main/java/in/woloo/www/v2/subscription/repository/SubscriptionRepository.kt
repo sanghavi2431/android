@@ -14,7 +14,6 @@ import retrofit2.Call
 
 class SubscriptionRepository : BaseRepository() {
 
-
     fun getMySubscription(
         webserviceCallback: WebserviceCallback<ApiResponseData<BaseResponse<GetSubscriptionDetailsResponse.Data>>>
     ) {
@@ -25,10 +24,9 @@ class SubscriptionRepository : BaseRepository() {
                 val callback: ApiServiceCallback<BaseResponse<GetSubscriptionDetailsResponse.Data>> =
                     ApiServiceCallback(webserviceCallback)
                 call.enqueue(callback)
-            } catch (e: Exception){
-                  CommonUtils.printStackTrace(e)
+            } catch (e: Exception) {
+                CommonUtils.printStackTrace(e)
             }
-
         } else {
             val data = ApiResponseData<BaseResponse<GetSubscriptionDetailsResponse.Data>>()
             data.status = ApiResponseData.API_NO_NETWORK
@@ -46,10 +44,9 @@ class SubscriptionRepository : BaseRepository() {
                 val callback: ApiServiceCallback<BaseResponse<ArrayList<PlanResponse.Data>>> =
                     ApiServiceCallback(webserviceCallback)
                 call.enqueue(callback)
-            } catch (e: Exception){
-                  CommonUtils.printStackTrace(e)
+            } catch (e: Exception) {
+                CommonUtils.printStackTrace(e)
             }
-
         } else {
             val data = ApiResponseData<BaseResponse<ArrayList<PlanResponse.Data>>>()
             data.status = ApiResponseData.API_NO_NETWORK
@@ -68,10 +65,9 @@ class SubscriptionRepository : BaseRepository() {
                 val callback: ApiServiceCallback<BaseResponse<InitSubscriptionResponse.Data>> =
                     ApiServiceCallback(webserviceCallback)
                 call.enqueue(callback)
-            } catch (e: Exception){
-                  CommonUtils.printStackTrace(e)
+            } catch (e: Exception) {
+                CommonUtils.printStackTrace(e)
             }
-
         } else {
             val data = ApiResponseData<BaseResponse<InitSubscriptionResponse.Data>>()
             data.status = ApiResponseData.API_NO_NETWORK
@@ -90,10 +86,9 @@ class SubscriptionRepository : BaseRepository() {
                 val callback: ApiServiceCallback<BaseResponse<InitSubscriptionResponse>> =
                     ApiServiceCallback(webserviceCallback)
                 call.enqueue(callback)
-            } catch (e: Exception){
-                  CommonUtils.printStackTrace(e)
+            } catch (e: Exception) {
+                CommonUtils.printStackTrace(e)
             }
-
         } else {
             val data = ApiResponseData<BaseResponse<InitSubscriptionResponse>>()
             data.status = ApiResponseData.API_NO_NETWORK

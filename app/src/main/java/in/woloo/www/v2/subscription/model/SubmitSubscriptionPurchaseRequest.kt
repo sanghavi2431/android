@@ -4,7 +4,6 @@ import com.google.gson.annotations.SerializedName
 
 class SubmitSubscriptionPurchaseRequest {
 
-
     @SerializedName("plan_id")
     var planId: String = ""
 

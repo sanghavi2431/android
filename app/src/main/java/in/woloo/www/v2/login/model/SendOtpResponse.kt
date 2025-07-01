@@ -6,5 +6,4 @@ class SendOtpResponse {
 
     @SerializedName("request_id")
     var requestId: String = ""
-
 }

@@ -4,8 +4,6 @@ import android.app.Activity
 import android.os.Handler
 import android.widget.TextView
 import `in`.woloo.www.R
-import `in`.woloo.www.v2.dialog.AppBaseDialogBox
-
 
 /**
  * Created by jadhavpankaj16 on 2019-11-15
@@ -27,9 +25,12 @@ class AppProgressBaseDialog : AppBaseDialogBox {
 
     override fun hide() {
         if (mDialog != null && mDialog.isShowing && !context.isFinishing) {
-            Handler().postDelayed(Runnable {
-                mDialog.dismiss()
-            }, 500)
+            Handler().postDelayed(
+                Runnable {
+                    mDialog.dismiss()
+                },
+                500
+            )
         }
     }
 

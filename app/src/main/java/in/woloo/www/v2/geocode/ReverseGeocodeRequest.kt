@@ -8,5 +8,4 @@ class ReverseGeocodeRequest {
 
     @SerializedName("lng")
     var lng: Double = 0.0
-
 }

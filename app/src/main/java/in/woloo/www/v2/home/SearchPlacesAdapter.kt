@@ -13,7 +13,6 @@ import android.widget.TextView
 import com.google.android.gms.tasks.Tasks
 import com.google.android.libraries.places.api.model.AutocompletePrediction
 import com.google.android.libraries.places.api.model.AutocompleteSessionToken
-import com.google.android.libraries.places.api.model.TypeFilter
 import com.google.android.libraries.places.api.net.FindAutocompletePredictionsRequest
 import com.google.android.libraries.places.api.net.PlacesClient
 import `in`.woloo.www.R
@@ -23,11 +22,10 @@ import java.util.concurrent.ExecutionException
 import java.util.concurrent.TimeUnit
 import java.util.concurrent.TimeoutException
 
+class SearchPlacesAdapter(context: Context, var resource: Int, val mPlacesClient: PlacesClient) :
+    ArrayAdapter<PlaceAutocomplete?>(context, resource), Filterable {
 
-class SearchPlacesAdapter (context: Context,var resource: Int, val mPlacesClient: PlacesClient) :
-    ArrayAdapter<PlaceAutocomplete?>(context, resource),Filterable{
-
-    private var mContext : Context = context
+    private var mContext: Context = context
     private var resultList = arrayListOf<PlaceAutocomplete>()
 
     override fun getCount(): Int {
@@ -44,7 +42,6 @@ class SearchPlacesAdapter (context: Context,var resource: Int, val mPlacesClient
         }
     }
 
-
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
 //        super.getView(position, convertView, parent)
 
@@ -60,7 +57,6 @@ class SearchPlacesAdapter (context: Context,var resource: Int, val mPlacesClient
         }
         bindView(viewHolder, resultList, position)
         return view!!
-
     }
 
     private fun bindView(viewHolder: ViewHolder, place: ArrayList<PlaceAutocomplete>, position: Int) {
@@ -93,10 +89,9 @@ class SearchPlacesAdapter (context: Context,var resource: Int, val mPlacesClient
                                 PlaceAutocomplete(
                                     item.placeId,
                                     item.getPrimaryText(StyleSpan(Typeface.BOLD)).toString(),
-                                    item.getFullText(StyleSpan(Typeface.BOLD)).toString())
+                                    item.getFullText(StyleSpan(Typeface.BOLD)).toString()
+                                )
                             )
-
-
                         }
                     }
                     filterResults.values = resultList
@@ -114,7 +109,7 @@ class SearchPlacesAdapter (context: Context,var resource: Int, val mPlacesClient
         val token = AutocompleteSessionToken.newInstance()
         val request = FindAutocompletePredictionsRequest.builder()
 //            .setTypeFilter(TypeFilter.CITIES) //.setTypeFilter(TypeFilter.ADDRESS)
-            //.setLocationBias(bounds)
+            // .setLocationBias(bounds)
             .setCountry("IN")
             .setSessionToken(token)
             .setQuery(constraint.toString())
@@ -123,11 +118,11 @@ class SearchPlacesAdapter (context: Context,var resource: Int, val mPlacesClient
         try {
             Tasks.await(prediction, TASK_AWAIT, TimeUnit.SECONDS)
         } catch (e: ExecutionException) {
-              CommonUtils.printStackTrace(e)
+            CommonUtils.printStackTrace(e)
         } catch (e: InterruptedException) {
-              CommonUtils.printStackTrace(e)
+            CommonUtils.printStackTrace(e)
         } catch (e: TimeoutException) {
-              CommonUtils.printStackTrace(e)
+            CommonUtils.printStackTrace(e)
         }
 
         if (prediction.isSuccessful) {

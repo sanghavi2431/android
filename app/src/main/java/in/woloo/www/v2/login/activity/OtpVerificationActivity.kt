@@ -61,7 +61,6 @@ import `in`.woloo.www.vtion.activities.VitionUserDataActivity
 import `in`.woloo.www.vtion.utilities.AccessibilityUtil
 import java.util.concurrent.TimeUnit
 
-
 class OtpVerificationActivity : BaseActivity(), TextWatcher {
 
     private lateinit var loginViewModel: LoginViewModel
@@ -71,12 +70,12 @@ class OtpVerificationActivity : BaseActivity(), TextWatcher {
     private var requestId: String? = null
 
     private val SMS_CONSENT_REQUEST = 1002
-    private val ACCESSIBILITY_REQUEST_CODE = 101  //// Added by Aarati July 2024  , for access permissions request
+    private val ACCESSIBILITY_REQUEST_CODE = 101 // // Added by Aarati July 2024  , for access permissions request
     private var isReceiverRegistered = false
     protected var mSharedPreference: SharedPreference? = null
-    var isVtionUser : String? = null
-    var voucherId : String? = null
-    var isFirstSession : Int? = null
+    var isVtionUser: String? = null
+    var voucherId: String? = null
+    var isFirstSession: Int? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -101,8 +100,8 @@ class OtpVerificationActivity : BaseActivity(), TextWatcher {
         if (!isReceiverRegistered) {
             SmsRetriever.getClient(this).startSmsUserConsent(null)
             val intentFilter = IntentFilter(SmsRetriever.SMS_RETRIEVED_ACTION)
-            applicationContext.registerReceiver(smsVerificationReceiver, intentFilter , RECEIVER_EXPORTED)
-            isReceiverRegistered = true;
+            applicationContext.registerReceiver(smsVerificationReceiver, intentFilter, RECEIVER_EXPORTED)
+            isReceiverRegistered = true
         }
 
       /*  SmsRetriever.getClient(this).startSmsUserConsent(null)
@@ -111,7 +110,6 @@ class OtpVerificationActivity : BaseActivity(), TextWatcher {
     }
 
     private fun setClickables() {
-
     }
 
     private var countDownTimer: CountDownTimer = object : CountDownTimer(60000, 1000) {
@@ -134,7 +132,7 @@ class OtpVerificationActivity : BaseActivity(), TextWatcher {
         return "" + String.format(
             "%d ",
             TimeUnit.MILLISECONDS.toSeconds(milliseconds) -
-                    TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(milliseconds))
+                TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(milliseconds))
         )
     }
 
@@ -152,15 +150,15 @@ class OtpVerificationActivity : BaseActivity(), TextWatcher {
                             val name = consentIntent!!.resolveActivity(packageManager)
                             if (name.packageName.equals("com.google.android.gms", true) &&
                                 name.className.equals(
-                                    "com.google.android.gms.auth.api.phone.ui.UserConsentPromptActivity",
-                                    true
-                                )
+                                        "com.google.android.gms.auth.api.phone.ui.UserConsentPromptActivity",
+                                        true
+                                    )
                             ) {
                                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                                    consentIntent.removeFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-                                    consentIntent.removeFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
-                                    consentIntent.removeFlags(Intent.FLAG_GRANT_PERSISTABLE_URI_PERMISSION);
-                                    consentIntent.removeFlags(Intent.FLAG_GRANT_PREFIX_URI_PERMISSION);
+                                    consentIntent.removeFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+                                    consentIntent.removeFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION)
+                                    consentIntent.removeFlags(Intent.FLAG_GRANT_PERSISTABLE_URI_PERMISSION)
+                                    consentIntent.removeFlags(Intent.FLAG_GRANT_PREFIX_URI_PERMISSION)
                                 }
                                 startActivityForResult(consentIntent, SMS_CONSENT_REQUEST)
                             }
@@ -187,16 +185,16 @@ class OtpVerificationActivity : BaseActivity(), TextWatcher {
                         binding.editTextTwo.setText(oneTimeCode[1].toString())
                         binding.editTextThree.setText(oneTimeCode[2].toString())
                         binding.editTextFour.setText(oneTimeCode[3].toString())
-                        binding.editTextFour.setSelection(binding.editTextFour.text.length);
-                        binding.txtProceed.requestFocus();
+                        binding.editTextFour.setSelection(binding.editTextFour.text.length)
+                        binding.txtProceed.requestFocus()
                     }
                 } else {
                     // Consent denied. User can type OTP manually.
                 }
 
             // Added by Aarati on July 2024 @WOLOO
-            //following code gives result of access permissions.
-           ACCESSIBILITY_REQUEST_CODE ->
+            // following code gives result of access permissions.
+            ACCESSIBILITY_REQUEST_CODE ->
                 // Check again if accessibility service is enabled
                 if (isAccessibilityServiceEnabled()) {
                     // Accessibility service is enabled now, launch vtion activity
@@ -205,7 +203,6 @@ class OtpVerificationActivity : BaseActivity(), TextWatcher {
                     // Accessibility service is still not enabled, launch normal flow gender activity
                     callGenderActivity()
                 }
-
         }
     }
 
@@ -215,97 +212,117 @@ class OtpVerificationActivity : BaseActivity(), TextWatcher {
 
     override fun onDestroy() {
         super.onDestroy()
-       // unregisterReceiver(smsVerificationReceiver)
-        //Added By Aarati
+        // unregisterReceiver(smsVerificationReceiver)
+        // Added By Aarati
         if (isReceiverRegistered) {
             applicationContext.unregisterReceiver(smsVerificationReceiver)
-            isReceiverRegistered = false;
+            isReceiverRegistered = false
         }
     }
 
     private fun initViews() {
         try {
             countDownTimer.start()
-            binding.tvResendcode.setOnClickListener(View.OnClickListener {
-                resendCount++
-                if (resendCount > 2) {
-                    showResendOTPDialog()
-                }
-                if (!TextUtils.isEmpty(mobileNumber)) {
-                    binding.editTextOne.setText("")
-                    binding.editTextTwo.setText("")
-                    binding.editTextThree.setText("")
-                    binding.editTextFour.setText("")
+            binding.tvResendcode.setOnClickListener(
+                View.OnClickListener {
+                    resendCount++
+                    if (resendCount > 2) {
+                        showResendOTPDialog()
+                    }
+                    if (!TextUtils.isEmpty(mobileNumber)) {
+                        binding.editTextOne.setText("")
+                        binding.editTextTwo.setText("")
+                        binding.editTextThree.setText("")
+                        binding.editTextFour.setText("")
 
-                    val referralCode: String = SharedPrefSettings.getPreferences.fetchReferralCode().toString()
-                    val request = SendOtpRequest()
-                    request.mobile = mobileNumber.toString()
-                    loginViewModel.sendOtp(request)
+                        val referralCode: String = SharedPrefSettings.getPreferences.fetchReferralCode().toString()
+                        val request = SendOtpRequest()
+                        request.mobile = mobileNumber.toString()
+                        loginViewModel.sendOtp(request)
+                    }
                 }
-            })
+            )
             binding.tvMessage.text = resources.getString(R.string.otp_message) + " " + mobileNumber
             binding.editTextOne.addTextChangedListener(this)
             binding.editTextTwo.addTextChangedListener(this)
             binding.editTextThree.addTextChangedListener(this)
             binding.editTextFour.addTextChangedListener(this)
-            binding.txtProceed.setOnClickListener(View.OnClickListener { v: View? ->
-                try {
-                    verifyOtp()
-                } catch (ex: Exception) {
-                    CommonUtils.printStackTrace(ex);
+            binding.txtProceed.setOnClickListener(
+                View.OnClickListener { v: View? ->
+                    try {
+                        verifyOtp()
+                    } catch (ex: Exception) {
+                        CommonUtils.printStackTrace(ex)
+                    }
                 }
-            })
-            binding.editTextOne.setOnEditorActionListener(TextView.OnEditorActionListener { v: TextView?, actionId: Int, event: KeyEvent? ->
-                if (event != null && event.keyCode == KeyEvent.KEYCODE_ENTER || actionId == EditorInfo.IME_ACTION_DONE) {
-                    verifyOtp()
+            )
+            binding.editTextOne.setOnEditorActionListener(
+                TextView.OnEditorActionListener { v: TextView?, actionId: Int, event: KeyEvent? ->
+                    if (event != null && event.keyCode == KeyEvent.KEYCODE_ENTER || actionId == EditorInfo.IME_ACTION_DONE) {
+                        verifyOtp()
+                    }
+                    false
                 }
-                false
-            })
-            binding.editTextTwo.setOnEditorActionListener(TextView.OnEditorActionListener { v: TextView?, actionId: Int, event: KeyEvent? ->
-                if (event != null && event.keyCode == KeyEvent.KEYCODE_ENTER || actionId == EditorInfo.IME_ACTION_DONE) {
-                    verifyOtp()
+            )
+            binding.editTextTwo.setOnEditorActionListener(
+                TextView.OnEditorActionListener { v: TextView?, actionId: Int, event: KeyEvent? ->
+                    if (event != null && event.keyCode == KeyEvent.KEYCODE_ENTER || actionId == EditorInfo.IME_ACTION_DONE) {
+                        verifyOtp()
+                    }
+                    false
                 }
-                false
-            })
-            binding.editTextThree.setOnEditorActionListener(TextView.OnEditorActionListener { v: TextView?, actionId: Int, event: KeyEvent? ->
-                if (event != null && event.keyCode == KeyEvent.KEYCODE_ENTER || actionId == EditorInfo.IME_ACTION_DONE) {
-                    verifyOtp()
+            )
+            binding.editTextThree.setOnEditorActionListener(
+                TextView.OnEditorActionListener { v: TextView?, actionId: Int, event: KeyEvent? ->
+                    if (event != null && event.keyCode == KeyEvent.KEYCODE_ENTER || actionId == EditorInfo.IME_ACTION_DONE) {
+                        verifyOtp()
+                    }
+                    false
                 }
-                false
-            })
-            binding.editTextFour.setOnEditorActionListener(TextView.OnEditorActionListener { v: TextView?, actionId: Int, event: KeyEvent? ->
-                if (event != null && event.keyCode == KeyEvent.KEYCODE_ENTER || actionId == EditorInfo.IME_ACTION_DONE) {
-                    verifyOtp()
+            )
+            binding.editTextFour.setOnEditorActionListener(
+                TextView.OnEditorActionListener { v: TextView?, actionId: Int, event: KeyEvent? ->
+                    if (event != null && event.keyCode == KeyEvent.KEYCODE_ENTER || actionId == EditorInfo.IME_ACTION_DONE) {
+                        verifyOtp()
+                    }
+                    false
                 }
-                false
-            })
-            binding.editTextFour.setOnKeyListener(View.OnKeyListener { v, keyCode, event ->
-                if (keyCode == 67 && TextUtils.isEmpty(binding.editTextFour.text)) {
-                    binding.editTextThree.requestFocus()
+            )
+            binding.editTextFour.setOnKeyListener(
+                View.OnKeyListener { v, keyCode, event ->
+                    if (keyCode == 67 && TextUtils.isEmpty(binding.editTextFour.text)) {
+                        binding.editTextThree.requestFocus()
+                    }
+                    false
                 }
-                false
-            })
-            binding.editTextThree.setOnKeyListener(View.OnKeyListener { v, keyCode, event ->
-                if (keyCode == 67 && TextUtils.isEmpty(binding.editTextThree.text)) {
-                    binding.editTextTwo.requestFocus()
+            )
+            binding.editTextThree.setOnKeyListener(
+                View.OnKeyListener { v, keyCode, event ->
+                    if (keyCode == 67 && TextUtils.isEmpty(binding.editTextThree.text)) {
+                        binding.editTextTwo.requestFocus()
+                    }
+                    false
                 }
-                false
-            })
-            binding.editTextTwo.setOnKeyListener(View.OnKeyListener { v, keyCode, event ->
-                if (keyCode == 67 && TextUtils.isEmpty(binding.editTextTwo.text)) {
-                    binding.editTextOne.requestFocus()
+            )
+            binding.editTextTwo.setOnKeyListener(
+                View.OnKeyListener { v, keyCode, event ->
+                    if (keyCode == 67 && TextUtils.isEmpty(binding.editTextTwo.text)) {
+                        binding.editTextOne.requestFocus()
+                    }
+                    false
                 }
-                false
-            })
-            binding.tvNotyou.setOnClickListener(View.OnClickListener { v: View? ->
-                try {
-                    goToLoginPage()
-                } catch (ex: Exception) {
-                    CommonUtils.printStackTrace(ex);
+            )
+            binding.tvNotyou.setOnClickListener(
+                View.OnClickListener { v: View? ->
+                    try {
+                        goToLoginPage()
+                    } catch (ex: Exception) {
+                        CommonUtils.printStackTrace(ex)
+                    }
                 }
-            })
+            )
         } catch (ex: Exception) {
-            CommonUtils.printStackTrace(ex);
+            CommonUtils.printStackTrace(ex)
         }
     }
 
@@ -334,7 +351,7 @@ class OtpVerificationActivity : BaseActivity(), TextWatcher {
                 val request = VerifyOtpRequest()
                 request.requestId = requestId.toString()
                 request.otp = password.trim { it <= ' ' }
-                if(SharedPrefSettings.getPreferences.fetchReferralCode()!= null){
+                if (SharedPrefSettings.getPreferences.fetchReferralCode() != null) {
                     request.referralCode = SharedPrefSettings.getPreferences.fetchReferralCode().toString()
                 }
                 loginViewModel.verifyOtp(request)
@@ -342,7 +359,7 @@ class OtpVerificationActivity : BaseActivity(), TextWatcher {
                 displayToast("Please enter valid otp")
             }
         } catch (ex: java.lang.Exception) {
-            CommonUtils.printStackTrace(ex);
+            CommonUtils.printStackTrace(ex)
         }
     }
 
@@ -352,13 +369,13 @@ class OtpVerificationActivity : BaseActivity(), TextWatcher {
             if (!TextUtils.isEmpty(binding.editTextOne.text.toString()) && !TextUtils.isEmpty(
                     binding.editTextTwo.text.toString()
                 ) && !TextUtils.isEmpty(binding.editTextThree.text.toString()) && !TextUtils.isEmpty(
-                    binding.editTextFour.text.toString()
-                )
+                        binding.editTextFour.text.toString()
+                    )
             ) {
                 isOTPEntered = true
             }
         } catch (ex: java.lang.Exception) {
-            CommonUtils.printStackTrace(ex);
+            CommonUtils.printStackTrace(ex)
         }
         return isOTPEntered
     }
@@ -371,28 +388,34 @@ class OtpVerificationActivity : BaseActivity(), TextWatcher {
     }
 
     private fun setLiveData() {
-        loginViewModel.observeVerifyOtp().observe(this, Observer {
-            if (it != null) {
-                userLoggedInSuccessfully(it.data)
-                val updateDeviceRequest  = HashMap<String,String>()
-                updateDeviceRequest.put("deviceSerial",CommonUtils().getDeviceId(this))
-                updateDeviceRequest.put("deviceToken",CommonUtils().getDeviceToken(this))
-                loginViewModel.updateDeviceToken(updateDeviceRequest)
-                //moveToDashboard()
-            } else {
-                displayToast(WolooApplication.getErrorMessage())
-                WolooApplication.setErrorMessage("")
+        loginViewModel.observeVerifyOtp().observe(
+            this,
+            Observer {
+                if (it != null) {
+                    userLoggedInSuccessfully(it.data)
+                    val updateDeviceRequest = HashMap<String, String>()
+                    updateDeviceRequest.put("deviceSerial", CommonUtils().getDeviceId(this))
+                    updateDeviceRequest.put("deviceToken", CommonUtils().getDeviceToken(this))
+                    loginViewModel.updateDeviceToken(updateDeviceRequest)
+                    // moveToDashboard()
+                } else {
+                    displayToast(WolooApplication.getErrorMessage())
+                    WolooApplication.setErrorMessage("")
+                }
             }
-        })
-        loginViewModel.observeSendOtp().observe(this, Observer {
-            if (it != null) {
-                requestId = it.data?.requestId
-                resetViews()
-            } else {
-                displayToast(WolooApplication.getErrorMessage())
-                WolooApplication.setErrorMessage("")
+        )
+        loginViewModel.observeSendOtp().observe(
+            this,
+            Observer {
+                if (it != null) {
+                    requestId = it.data?.requestId
+                    resetViews()
+                } else {
+                    displayToast(WolooApplication.getErrorMessage())
+                    WolooApplication.setErrorMessage("")
+                }
             }
-        })
+        )
     }
 
     private fun resetViews() {
@@ -426,54 +449,48 @@ class OtpVerificationActivity : BaseActivity(), TextWatcher {
 
             SharedPrefSettings.getPreferences.storeReferralCode("")
             SharedPrefSettings.getPreferences.storeIsLoggedIn(true)
-            //SharedPrefSettings.getPreferences.storeIsVTION(true)
-
-
-
+            // SharedPrefSettings.getPreferences.storeIsVTION(true)
 
             if (data.user != null && data.user!!
-                    .isFirstSession != null && data.user!!.isFreeTrial == 1) {
+                .isFirstSession != null && data.user!!.isFreeTrial == 1
+            ) {
                 // showFreeTrialDialog(data.user!!)
                 isVtionUser = data.user!!.isVtionUser
                 voucherId = data.user!!.voucherId
                 isFirstSession = data.user!!.isFirstSession
-                Logger.d("aarati" , "vtion voucher $isVtionUser $voucherId")
+                Logger.d("aarati", "vtion voucher $isVtionUser $voucherId")
                 val serviceClassName = "sdk.vtion.in.sdkcore.UsersAccessibility"
                 val isEnabled: Boolean = AccessibilityUtil.isAccessibilityServiceEnabled(
                     this,
-                    serviceClassName)
-                Log.i("Access Log" , isEnabled.toString());
+                    serviceClassName
+                )
+                Log.i("Access Log", isEnabled.toString())
                 if (isAccessibilityServiceEnabled()) {
                     if (SharedPrefSettings.getPreferences.fetchIsVTION()) {
                         callVitionActivity()
                     } else {
                         startDashboardActivity()
                     }
-
                 } else {
-                    val vCode: String  = mSharedPreference!!.getStoredPreference(this, SharedPreferencesEnum.VOUCHER_CODE.getPreferenceKey(), "")
-                    Log.d("Voucher_code" , vCode);
-                    if(vCode == null || vCode.isEmpty()) {
-                        if(isFirstSession == 1) {
+                    val vCode: String = mSharedPreference!!.getStoredPreference(this, SharedPreferencesEnum.VOUCHER_CODE.getPreferenceKey(), "")
+                    Log.d("Voucher_code", vCode)
+                    if (vCode == null || vCode.isEmpty()) {
+                        if (isFirstSession == 1) {
                             startActivity(
                                 Intent(
                                     applicationContext,
                                     TermsAndConditionsActivity::class.java
                                 )
                             )
-                        }
-                        else{
+                        } else {
                             startDashboardActivity()
                         }
-                    }
-                    else
-                    {
+                    } else {
                         startDashboardActivity()
                     }
                     finish()
-
                 }
-            }else {
+            } else {
                 sendDeviceToken(this)
                 moveToDashboard()
             }
@@ -496,7 +513,7 @@ class OtpVerificationActivity : BaseActivity(), TextWatcher {
             try {
                 val authConfigResponse: AuthConfigResponse.Data =
                     CommonUtils.authconfig_response(this)
-                daysTrials.text = authConfigResponse.freeTrialPeriodDays+"\nDAYS"
+                daysTrials.text = authConfigResponse.freeTrialPeriodDays + "\nDAYS"
                 typeOfVoucher.text = authConfigResponse.freeTrialText
 //                ImageUtil.loadImage(
 //                    this,
@@ -506,7 +523,7 @@ class OtpVerificationActivity : BaseActivity(), TextWatcher {
 //                tv_daysTrials.setText(authConfigResponse.freeTrialPeriodDays+"\nDays")
 //                ivFreeTrial.setImageResource(R.drawable.free_trial_image)
             } catch (ex: java.lang.Exception) {
-                CommonUtils.printStackTrace(ex);
+                CommonUtils.printStackTrace(ex)
             }
             val authConfigResponse: AuthConfigResponse.Data? =
                 CommonUtils.authconfig_response(this)
@@ -514,7 +531,7 @@ class OtpVerificationActivity : BaseActivity(), TextWatcher {
                 var freeTrialDialogText: String =
                     authConfigResponse.getcUSTOMMESSAGE().freeTrialDialogText
                 freeTrialDialogText = freeTrialDialogText.replace("\\\\n".toRegex(), "\n")
-                if(freeTrialDialogText.contains("7")) {
+                if (freeTrialDialogText.contains("7")) {
                     freeTrialDialogText = freeTrialDialogText.replace(
                         "7",
                         authConfigResponse.freeTrialPeriodDays
@@ -539,7 +556,6 @@ class OtpVerificationActivity : BaseActivity(), TextWatcher {
     }
 
     private fun sendDeviceToken(context: Context) {
-
     }
 
     private fun decode(text: String): String? {
@@ -547,11 +563,9 @@ class OtpVerificationActivity : BaseActivity(), TextWatcher {
     }
 
     override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-
     }
 
     override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-
     }
 
     private fun enableSubmitButton() {
@@ -559,7 +573,7 @@ class OtpVerificationActivity : BaseActivity(), TextWatcher {
             binding.txtProceed.background = resources.getDrawable(R.drawable.yellow_rectangle_shape)
             binding.txtProceed.setTextColor(resources.getColor(R.color.black))
         } catch (ex: java.lang.Exception) {
-            CommonUtils.printStackTrace(ex);
+            CommonUtils.printStackTrace(ex)
         }
     }
 
@@ -568,7 +582,7 @@ class OtpVerificationActivity : BaseActivity(), TextWatcher {
             binding.txtProceed.background = resources.getDrawable(R.drawable.otp_edit_box)
             binding.txtProceed.setTextColor(resources.getColor(R.color.text_color))
         } catch (ex: java.lang.Exception) {
-            CommonUtils.printStackTrace(ex);
+            CommonUtils.printStackTrace(ex)
         }
     }
 
@@ -592,11 +606,9 @@ class OtpVerificationActivity : BaseActivity(), TextWatcher {
     }
 
     private fun moveToDashboard() {
-        if(SharedPrefSettings.getPreferences.fetchIsVTION()){
+        if (SharedPrefSettings.getPreferences.fetchIsVTION()) {
             callVitionActivity()
-        }
-        else
-        {
+        } else {
             val userInfo: UserDetails = CommonUtils().userInfo
 
             NetcoreUserDetails(this).setNetcoreUserIdentityAndLogin(userInfo.mobile.orEmpty())
@@ -604,45 +616,39 @@ class OtpVerificationActivity : BaseActivity(), TextWatcher {
 
             Logger.e("data", "save to netcore")
             if (TextUtils.isEmpty(userInfo.gender)) {
-
                 val serviceClassName = "sdk.vtion.in.sdkcore.UsersAccessibility"
                 val isEnabled: Boolean = AccessibilityUtil.isAccessibilityServiceEnabled(
                     this,
-                    serviceClassName)
-                Log.i("Access Log" , isEnabled.toString());
+                    serviceClassName
+                )
+                Log.i("Access Log", isEnabled.toString())
                 if (isAccessibilityServiceEnabled()) {
-
                     if (SharedPrefSettings.getPreferences.fetchIsVTION()) {
                         callVitionActivity()
                     } else {
                         startDashboardActivity()
                     }
-
                 } else {
-                    val vCode: String  = mSharedPreference!!.getStoredPreference(this, SharedPreferencesEnum.VOUCHER_CODE.getPreferenceKey(), "")
-                    Log.d("Voucher_code" , vCode);
-                    if(vCode == null || vCode.isEmpty()) {
-                        if(isFirstSession == 1) {
+                    val vCode: String = mSharedPreference!!.getStoredPreference(this, SharedPreferencesEnum.VOUCHER_CODE.getPreferenceKey(), "")
+                    Log.d("Voucher_code", vCode)
+                    if (vCode == null || vCode.isEmpty()) {
+                        if (isFirstSession == 1) {
                             startActivity(
                                 Intent(
                                     applicationContext,
                                     TermsAndConditionsActivity::class.java
                                 )
                             )
-                        }
-                        else
-                        {
+                        } else {
                             startDashboardActivity()
                         }
-                    }
-                    else
-                    {
+                    } else {
                         startDashboardActivity()
                     }
                     finish()
                 }
                 // Changes done by Aarati // Changes by Aarati July 2024  , simple function which consist of activity call for vtion
-                //if (userInfo.isFreeTrial == 1) {
+                // if (userInfo.isFreeTrial == 1) {
 
                 //   startActivityForResult(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS), ACCESSIBILITY_REQUEST_CODE)
 
@@ -667,7 +673,7 @@ class OtpVerificationActivity : BaseActivity(), TextWatcher {
                     )
                     finish()
                 } catch (ex: java.lang.Exception) {
-                    CommonUtils.printStackTrace(ex);
+                    CommonUtils.printStackTrace(ex)
                 }
             }
         }
@@ -741,17 +747,16 @@ class OtpVerificationActivity : BaseActivity(), TextWatcher {
                 }
             }
         } catch (ex: java.lang.Exception) {
-            CommonUtils.printStackTrace(ex);
+            CommonUtils.printStackTrace(ex)
         }
     }
-
-
 
     // Added by Aarati
     private fun isAccessibilityServiceEnabled(): Boolean {
         val accessibilityEnabled = Settings.Secure.getInt(
             applicationContext.contentResolver,
-            Settings.Secure.ACCESSIBILITY_ENABLED, 0
+            Settings.Secure.ACCESSIBILITY_ENABLED,
+            0
         )
         return accessibilityEnabled == 1
     }
@@ -767,9 +772,8 @@ class OtpVerificationActivity : BaseActivity(), TextWatcher {
         finish()
     }
 
-
     // Added by Aarati July 2024  , simple function which consist of activity call for gender
-    private fun callGenderActivity(){
+    private fun callGenderActivity() {
         startActivity(
             Intent(
                 applicationContext,
@@ -792,8 +796,6 @@ class OtpVerificationActivity : BaseActivity(), TextWatcher {
             }
         }
     }
-
-
 
     private fun startDashboardActivity() {
         NetcoreUserDetails(this).checkIfUserIdentityIsSet()
@@ -841,6 +843,4 @@ class OtpVerificationActivity : BaseActivity(), TextWatcher {
         startActivity(intent)
         finish()
     }
-
-
 }

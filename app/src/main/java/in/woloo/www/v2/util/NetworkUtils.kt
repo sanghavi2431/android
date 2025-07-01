@@ -17,5 +17,4 @@ object NetworkUtils {
         val netInfo = cm.activeNetworkInfo
         return netInfo != null && netInfo.isConnectedOrConnecting
     }
-
 }

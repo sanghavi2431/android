@@ -9,5 +9,4 @@ class VoucherRequest {
 
     @SerializedName("forceApply")
     var forceApply: Boolean = false
-
 }

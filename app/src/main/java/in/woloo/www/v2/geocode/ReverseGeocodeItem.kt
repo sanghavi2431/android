@@ -3,24 +3,23 @@ package `in`.woloo.www.v2.geocode
 import com.google.gson.annotations.SerializedName
 
 class ReverseGeocodeItem {
-        @SerializedName("formatted_address")
-        val formattedAddress: String? = null
+    @SerializedName("formatted_address")
+    val formattedAddress: String? = null
 
-        @SerializedName("types")
-        val types: List<String>? = null
+    @SerializedName("types")
+    val types: List<String>? = null
 
-        @SerializedName("geometry")
-        val geometry: Geometry? = null
+    @SerializedName("geometry")
+    val geometry: Geometry? = null
 
-        @SerializedName("address_components")
-        val addressComponents: List<AddressComponentsItem>? = null
+    @SerializedName("address_components")
+    val addressComponents: List<AddressComponentsItem>? = null
 
-        @SerializedName("plus_code")
-        val plusCode: PlusCode? = null
+    @SerializedName("plus_code")
+    val plusCode: PlusCode? = null
 
-        @SerializedName("place_id")
-        val placeId: String? = null
-
+    @SerializedName("place_id")
+    val placeId: String? = null
 
     class AddressComponentsItem {
         @SerializedName("types")

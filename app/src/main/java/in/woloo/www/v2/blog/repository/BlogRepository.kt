@@ -15,7 +15,7 @@ import retrofit2.Call
 
 class BlogRepository : BaseRepository() {
 
-    fun saveUserCategory(request: SaveUserCategoryRequest,webserviceCallback: WebserviceCallback<ApiResponseData<BaseResponse<JSONObject>>>) {
+    fun saveUserCategory(request: SaveUserCategoryRequest, webserviceCallback: WebserviceCallback<ApiResponseData<BaseResponse<JSONObject>>>) {
         if (NetworkUtils.isInternetAvailable(WolooApplication.getInstance())) {
             try {
                 val call: Call<BaseResponse<JSONObject>> =
@@ -23,10 +23,9 @@ class BlogRepository : BaseRepository() {
                 val callback: ApiServiceCallback<BaseResponse<JSONObject>> =
                     ApiServiceCallback(webserviceCallback)
                 call.enqueue(callback)
-            } catch (e: Exception){
+            } catch (e: Exception) {
                 CommonUtils.printStackTrace(e)
             }
-
         } else {
             val data = ApiResponseData<BaseResponse<JSONObject>>()
             data.status = ApiResponseData.API_NO_NETWORK
@@ -42,10 +41,9 @@ class BlogRepository : BaseRepository() {
                 val callback: ApiServiceCallback<BaseResponse<ArrayList<CategoriesResponse.Category>>> =
                     ApiServiceCallback(webserviceCallback)
                 call.enqueue(callback)
-            } catch (e: Exception){
-                 CommonUtils.printStackTrace(e)
+            } catch (e: Exception) {
+                CommonUtils.printStackTrace(e)
             }
-
         } else {
             val data = ApiResponseData<BaseResponse<ArrayList<CategoriesResponse.Category>>>()
             data.status = ApiResponseData.API_NO_NETWORK
@@ -53,7 +51,7 @@ class BlogRepository : BaseRepository() {
         }
     }
 
-    fun ctaFavourite(blogId: String,webserviceCallback: WebserviceCallback<ApiResponseData<BaseResponse<JSONObject>>>) {
+    fun ctaFavourite(blogId: String, webserviceCallback: WebserviceCallback<ApiResponseData<BaseResponse<JSONObject>>>) {
         if (NetworkUtils.isInternetAvailable(WolooApplication.getInstance())) {
             try {
                 val call: Call<BaseResponse<JSONObject>> =
@@ -61,10 +59,9 @@ class BlogRepository : BaseRepository() {
                 val callback: ApiServiceCallback<BaseResponse<JSONObject>> =
                     ApiServiceCallback(webserviceCallback)
                 call.enqueue(callback)
-            } catch (e: Exception){
+            } catch (e: Exception) {
                 CommonUtils.printStackTrace(e)
             }
-
         } else {
             val data = ApiResponseData<BaseResponse<JSONObject>>()
             data.status = ApiResponseData.API_NO_NETWORK
@@ -72,7 +69,7 @@ class BlogRepository : BaseRepository() {
         }
     }
 
-    fun ctaLikes(blogId: String,webserviceCallback: WebserviceCallback<ApiResponseData<BaseResponse<JSONObject>>>) {
+    fun ctaLikes(blogId: String, webserviceCallback: WebserviceCallback<ApiResponseData<BaseResponse<JSONObject>>>) {
         if (NetworkUtils.isInternetAvailable(WolooApplication.getInstance())) {
             try {
                 val call: Call<BaseResponse<JSONObject>> =
@@ -80,10 +77,9 @@ class BlogRepository : BaseRepository() {
                 val callback: ApiServiceCallback<BaseResponse<JSONObject>> =
                     ApiServiceCallback(webserviceCallback)
                 call.enqueue(callback)
-            } catch (e: Exception){
+            } catch (e: Exception) {
                 CommonUtils.printStackTrace(e)
             }
-
         } else {
             val data = ApiResponseData<BaseResponse<JSONObject>>()
             data.status = ApiResponseData.API_NO_NETWORK
@@ -91,7 +87,7 @@ class BlogRepository : BaseRepository() {
         }
     }
 
-    fun ctaBlogRead(blogId: String,webserviceCallback: WebserviceCallback<ApiResponseData<BaseResponse<JSONObject>>>) {
+    fun ctaBlogRead(blogId: String, webserviceCallback: WebserviceCallback<ApiResponseData<BaseResponse<JSONObject>>>) {
         if (NetworkUtils.isInternetAvailable(WolooApplication.getInstance())) {
             try {
                 val call: Call<BaseResponse<JSONObject>> =
@@ -99,10 +95,9 @@ class BlogRepository : BaseRepository() {
                 val callback: ApiServiceCallback<BaseResponse<JSONObject>> =
                     ApiServiceCallback(webserviceCallback)
                 call.enqueue(callback)
-            } catch (e: Exception){
+            } catch (e: Exception) {
                 CommonUtils.printStackTrace(e)
             }
-
         } else {
             val data = ApiResponseData<BaseResponse<JSONObject>>()
             data.status = ApiResponseData.API_NO_NETWORK
@@ -110,7 +105,7 @@ class BlogRepository : BaseRepository() {
         }
     }
 
-    fun blogReadPoint(blogId: String,webserviceCallback: WebserviceCallback<ApiResponseData<BaseResponse<MessageResponse>>>) {
+    fun blogReadPoint(blogId: String, webserviceCallback: WebserviceCallback<ApiResponseData<BaseResponse<MessageResponse>>>) {
         if (NetworkUtils.isInternetAvailable(WolooApplication.getInstance())) {
             try {
                 val call: Call<BaseResponse<MessageResponse>> =
@@ -118,10 +113,9 @@ class BlogRepository : BaseRepository() {
                 val callback: ApiServiceCallback<BaseResponse<MessageResponse>> =
                     ApiServiceCallback(webserviceCallback)
                 call.enqueue(callback)
-            } catch (e: Exception){
+            } catch (e: Exception) {
                 CommonUtils.printStackTrace(e)
             }
-
         } else {
             val data = ApiResponseData<BaseResponse<MessageResponse>>()
             data.status = ApiResponseData.API_NO_NETWORK
@@ -129,7 +123,7 @@ class BlogRepository : BaseRepository() {
         }
     }
 
-    fun ecomCoinUpdate(request: EcomCoinUpdateRequest,webserviceCallback: WebserviceCallback<ApiResponseData<BaseResponse<EcomCoinUpdateResponse>>>) {
+    fun ecomCoinUpdate(request: EcomCoinUpdateRequest, webserviceCallback: WebserviceCallback<ApiResponseData<BaseResponse<EcomCoinUpdateResponse>>>) {
         if (NetworkUtils.isInternetAvailable(WolooApplication.getInstance())) {
             try {
                 val call: Call<BaseResponse<EcomCoinUpdateResponse>> =
@@ -137,10 +131,9 @@ class BlogRepository : BaseRepository() {
                 val callback: ApiServiceCallback<BaseResponse<EcomCoinUpdateResponse>> =
                     ApiServiceCallback(webserviceCallback)
                 call.enqueue(callback)
-            } catch (e: Exception){
+            } catch (e: Exception) {
                 CommonUtils.printStackTrace(e)
             }
-
         } else {
             val data = ApiResponseData<BaseResponse<EcomCoinUpdateResponse>>()
             data.status = ApiResponseData.API_NO_NETWORK
@@ -148,7 +141,7 @@ class BlogRepository : BaseRepository() {
         }
     }
 
-    fun ecomCoinFail(transactionId: Int,webserviceCallback: WebserviceCallback<ApiResponseData<BaseResponse<JSONObject>>>) {
+    fun ecomCoinFail(transactionId: Int, webserviceCallback: WebserviceCallback<ApiResponseData<BaseResponse<JSONObject>>>) {
         if (NetworkUtils.isInternetAvailable(WolooApplication.getInstance())) {
             try {
                 val call: Call<BaseResponse<JSONObject>> =
@@ -156,10 +149,9 @@ class BlogRepository : BaseRepository() {
                 val callback: ApiServiceCallback<BaseResponse<JSONObject>> =
                     ApiServiceCallback(webserviceCallback)
                 call.enqueue(callback)
-            } catch (e: Exception){
+            } catch (e: Exception) {
                 CommonUtils.printStackTrace(e)
             }
-
         } else {
             val data = ApiResponseData<BaseResponse<JSONObject>>()
             data.status = ApiResponseData.API_NO_NETWORK
@@ -167,7 +159,7 @@ class BlogRepository : BaseRepository() {
         }
     }
 
-    fun getBlogsForUserByCategory(request: HashMap<String, Any>,webserviceCallback: WebserviceCallback<ApiResponseData<BaseResponse<BlogByCategoryResponse>>>) {
+    fun getBlogsForUserByCategory(request: HashMap<String, Any>, webserviceCallback: WebserviceCallback<ApiResponseData<BaseResponse<BlogByCategoryResponse>>>) {
         if (NetworkUtils.isInternetAvailable(WolooApplication.getInstance())) {
             try {
                 val call: Call<BaseResponse<BlogByCategoryResponse>> =
@@ -175,10 +167,9 @@ class BlogRepository : BaseRepository() {
                 val callback: ApiServiceCallback<BaseResponse<BlogByCategoryResponse>> =
                     ApiServiceCallback(webserviceCallback)
                 call.enqueue(callback)
-            } catch (e: Exception){
+            } catch (e: Exception) {
                 CommonUtils.printStackTrace(e)
             }
-
         } else {
             val data = ApiResponseData<BaseResponse<BlogByCategoryResponse>>()
             data.status = ApiResponseData.API_NO_NETWORK

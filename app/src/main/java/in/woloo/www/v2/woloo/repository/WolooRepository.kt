@@ -8,7 +8,6 @@ import `in`.woloo.www.v2.data.remote.*
 import `in`.woloo.www.v2.util.NetworkUtils
 import `in`.woloo.www.v2.woloo.model.WahCertificateResponse
 import okhttp3.RequestBody
-import org.json.JSONObject
 import retrofit2.Call
 
 class WolooRepository : BaseRepository() {
@@ -24,10 +23,9 @@ class WolooRepository : BaseRepository() {
                 val callback: ApiServiceCallback<BaseResponse<MessageResponse>> =
                     ApiServiceCallback(webserviceCallback)
                 call.enqueue(callback)
-            } catch (e: Exception){
+            } catch (e: Exception) {
                 e.printStackTrace()
             }
-
         } else {
             val data = ApiResponseData<BaseResponse<MessageResponse>>()
             data.status = ApiResponseData.API_NO_NETWORK
@@ -45,10 +43,9 @@ class WolooRepository : BaseRepository() {
                 val callback: ApiServiceCallback<BaseResponse<ArrayList<ReferredWolooListResponse.DataItem>>> =
                     ApiServiceCallback(webserviceCallback)
                 call.enqueue(callback)
-            } catch (e: Exception){
-                 CommonUtils.printStackTrace(e)
+            } catch (e: Exception) {
+                CommonUtils.printStackTrace(e)
             }
-
         } else {
             val data = ApiResponseData<BaseResponse<ArrayList<ReferredWolooListResponse.DataItem>>>()
             data.status = ApiResponseData.API_NO_NETWORK
@@ -67,10 +64,9 @@ class WolooRepository : BaseRepository() {
                 val callback: ApiServiceCallback<BaseResponse<MessageResponse>> =
                     ApiServiceCallback(webserviceCallback)
                 call.enqueue(callback)
-            } catch (e: Exception){
+            } catch (e: Exception) {
                 e.printStackTrace()
             }
-
         } else {
             val data = ApiResponseData<BaseResponse<MessageResponse>>()
             data.status = ApiResponseData.API_NO_NETWORK
@@ -89,10 +85,9 @@ class WolooRepository : BaseRepository() {
                 val callback: ApiServiceCallback<BaseResponse<MessageResponse>> =
                     ApiServiceCallback(webserviceCallback)
                 call.enqueue(callback)
-            } catch (e: Exception){
+            } catch (e: Exception) {
                 e.printStackTrace()
             }
-
         } else {
             val data = ApiResponseData<BaseResponse<MessageResponse>>()
             data.status = ApiResponseData.API_NO_NETWORK
@@ -111,10 +106,9 @@ class WolooRepository : BaseRepository() {
                 val callback: ApiServiceCallback<BaseResponse<WahCertificateResponse>> =
                     ApiServiceCallback(webserviceCallback)
                 call.enqueue(callback)
-            } catch (e: Exception){
+            } catch (e: Exception) {
                 e.printStackTrace()
             }
-
         } else {
             val data = ApiResponseData<BaseResponse<WahCertificateResponse>>()
             data.status = ApiResponseData.API_NO_NETWORK

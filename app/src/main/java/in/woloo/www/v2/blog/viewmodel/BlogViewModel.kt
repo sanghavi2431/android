@@ -14,7 +14,7 @@ import org.json.JSONObject
 class BlogViewModel : BaseViewModel() {
 
     private val blogRepository: BlogRepository = BlogRepository()
-    private val saveUserCategoryResponse : EventLiveData<BaseResponse<JSONObject>> = EventLiveData()
+    private val saveUserCategoryResponse: EventLiveData<BaseResponse<JSONObject>> = EventLiveData()
     private val categoriesResponse: EventLiveData<BaseResponse<ArrayList<CategoriesResponse.Category>>> = EventLiveData()
     private val ctaLikesResponse: EventLiveData<BaseResponse<JSONObject>> = EventLiveData()
     private val ctaFavouriteResponse: EventLiveData<BaseResponse<JSONObject>> = EventLiveData()
@@ -24,23 +24,26 @@ class BlogViewModel : BaseViewModel() {
     private val ecomCoinFailResponse: EventLiveData<BaseResponse<JSONObject>> = EventLiveData()
     private val blogResponse: EventLiveData<BaseResponse<BlogByCategoryResponse>> = EventLiveData()
 
-    fun saveUserCategory(categoryList : ArrayList<Int>) {
+    fun saveUserCategory(categoryList: ArrayList<Int>) {
         updateProgress(true)
         val request = SaveUserCategoryRequest()
         request.categories = categoryList
-        blogRepository.saveUserCategory(request,object :
-            WebserviceCallback<ApiResponseData<BaseResponse<JSONObject>>> {
-            override fun onWebResponse(data: ApiResponseData<BaseResponse<JSONObject>>) {
-                updateProgress(false)
-                if (data.status == ApiResponseData.API_SUCCESS) {
-                    saveUserCategoryResponse.value = data.data
-                } else {
-                    WolooApplication.setErrorMessage(data.message)
-                    saveUserCategoryResponse.value = data.data
-                    notifyNetworkError(data)
+        blogRepository.saveUserCategory(
+            request,
+            object :
+                WebserviceCallback<ApiResponseData<BaseResponse<JSONObject>>> {
+                override fun onWebResponse(data: ApiResponseData<BaseResponse<JSONObject>>) {
+                    updateProgress(false)
+                    if (data.status == ApiResponseData.API_SUCCESS) {
+                        saveUserCategoryResponse.value = data.data
+                    } else {
+                        WolooApplication.setErrorMessage(data.message)
+                        saveUserCategoryResponse.value = data.data
+                        notifyNetworkError(data)
+                    }
                 }
             }
-        })
+        )
     }
 
     fun observeSaveUserCategory(): EventLiveData<BaseResponse<JSONObject>> {
@@ -50,18 +53,18 @@ class BlogViewModel : BaseViewModel() {
     fun getCategories() {
         updateProgress(true)
         blogRepository.getCategories(object :
-            WebserviceCallback<ApiResponseData<BaseResponse<ArrayList<CategoriesResponse.Category>>>> {
-            override fun onWebResponse(data: ApiResponseData<BaseResponse<ArrayList<CategoriesResponse.Category>>>) {
-                updateProgress(false)
-                if (data.status == ApiResponseData.API_SUCCESS) {
-                    categoriesResponse.value = data.data
-                } else {
-                    WolooApplication.setErrorMessage(data.message)
-                    categoriesResponse.value = data.data
-                    notifyNetworkError(data)
+                WebserviceCallback<ApiResponseData<BaseResponse<ArrayList<CategoriesResponse.Category>>>> {
+                override fun onWebResponse(data: ApiResponseData<BaseResponse<ArrayList<CategoriesResponse.Category>>>) {
+                    updateProgress(false)
+                    if (data.status == ApiResponseData.API_SUCCESS) {
+                        categoriesResponse.value = data.data
+                    } else {
+                        WolooApplication.setErrorMessage(data.message)
+                        categoriesResponse.value = data.data
+                        notifyNetworkError(data)
+                    }
                 }
-            }
-        })
+            })
     }
 
     fun observeGetCategories(): EventLiveData<BaseResponse<ArrayList<CategoriesResponse.Category>>> {
@@ -70,19 +73,22 @@ class BlogViewModel : BaseViewModel() {
 
     fun ctaFavourite(blogId: String) {
         updateProgress(true)
-        blogRepository.ctaFavourite(blogId, object :
-            WebserviceCallback<ApiResponseData<BaseResponse<JSONObject>>> {
-            override fun onWebResponse(data: ApiResponseData<BaseResponse<JSONObject>>) {
-                updateProgress(false)
-                if (data.status == ApiResponseData.API_SUCCESS) {
-                    ctaFavouriteResponse.value = data.data
-                } else {
-                    WolooApplication.setErrorMessage(data.message)
-                    ctaFavouriteResponse.value = data.data
-                    notifyNetworkError(data)
+        blogRepository.ctaFavourite(
+            blogId,
+            object :
+                WebserviceCallback<ApiResponseData<BaseResponse<JSONObject>>> {
+                override fun onWebResponse(data: ApiResponseData<BaseResponse<JSONObject>>) {
+                    updateProgress(false)
+                    if (data.status == ApiResponseData.API_SUCCESS) {
+                        ctaFavouriteResponse.value = data.data
+                    } else {
+                        WolooApplication.setErrorMessage(data.message)
+                        ctaFavouriteResponse.value = data.data
+                        notifyNetworkError(data)
+                    }
                 }
             }
-        })
+        )
     }
 
     fun observeCtaFavourite(): EventLiveData<BaseResponse<JSONObject>> {
@@ -91,19 +97,22 @@ class BlogViewModel : BaseViewModel() {
 
     fun ctaLikes(blogId: String) {
         updateProgress(true)
-        blogRepository.ctaLikes(blogId, object :
-            WebserviceCallback<ApiResponseData<BaseResponse<JSONObject>>> {
-            override fun onWebResponse(data: ApiResponseData<BaseResponse<JSONObject>>) {
-                updateProgress(false)
-                if (data.status == ApiResponseData.API_SUCCESS) {
-                    ctaLikesResponse.value = data.data
-                } else {
-                    WolooApplication.setErrorMessage(data.message)
-                    ctaLikesResponse.value = data.data
-                    notifyNetworkError(data)
+        blogRepository.ctaLikes(
+            blogId,
+            object :
+                WebserviceCallback<ApiResponseData<BaseResponse<JSONObject>>> {
+                override fun onWebResponse(data: ApiResponseData<BaseResponse<JSONObject>>) {
+                    updateProgress(false)
+                    if (data.status == ApiResponseData.API_SUCCESS) {
+                        ctaLikesResponse.value = data.data
+                    } else {
+                        WolooApplication.setErrorMessage(data.message)
+                        ctaLikesResponse.value = data.data
+                        notifyNetworkError(data)
+                    }
                 }
             }
-        })
+        )
     }
 
     fun observeCtaLikes(): EventLiveData<BaseResponse<JSONObject>> {
@@ -112,19 +121,22 @@ class BlogViewModel : BaseViewModel() {
 
     fun ctaBlogRead(blogId: String) {
         updateProgress(true)
-        blogRepository.ctaBlogRead(blogId, object :
-            WebserviceCallback<ApiResponseData<BaseResponse<JSONObject>>> {
-            override fun onWebResponse(data: ApiResponseData<BaseResponse<JSONObject>>) {
-                updateProgress(false)
-                if (data.status == ApiResponseData.API_SUCCESS) {
-                    ctaBlogReadResponse.value = data.data
-                } else {
-                    WolooApplication.setErrorMessage(data.message)
-                    ctaBlogReadResponse.value = data.data
-                    notifyNetworkError(data)
+        blogRepository.ctaBlogRead(
+            blogId,
+            object :
+                WebserviceCallback<ApiResponseData<BaseResponse<JSONObject>>> {
+                override fun onWebResponse(data: ApiResponseData<BaseResponse<JSONObject>>) {
+                    updateProgress(false)
+                    if (data.status == ApiResponseData.API_SUCCESS) {
+                        ctaBlogReadResponse.value = data.data
+                    } else {
+                        WolooApplication.setErrorMessage(data.message)
+                        ctaBlogReadResponse.value = data.data
+                        notifyNetworkError(data)
+                    }
                 }
             }
-        })
+        )
     }
 
     fun observeCtaBlogRead(): EventLiveData<BaseResponse<JSONObject>> {
@@ -133,44 +145,50 @@ class BlogViewModel : BaseViewModel() {
 
     fun blogReadPoint(blogId: String) {
         updateProgress(true)
-        blogRepository.blogReadPoint(blogId, object :
-            WebserviceCallback<ApiResponseData<BaseResponse<MessageResponse>>> {
-            override fun onWebResponse(data: ApiResponseData<BaseResponse<MessageResponse>>) {
-                updateProgress(false)
-                if (data.status == ApiResponseData.API_SUCCESS) {
-                    blogReadPointResponse.value = data.data
-                } else {
-                    WolooApplication.setErrorMessage(data.message)
-                    blogReadPointResponse.value = data.data
-                    notifyNetworkError(data)
+        blogRepository.blogReadPoint(
+            blogId,
+            object :
+                WebserviceCallback<ApiResponseData<BaseResponse<MessageResponse>>> {
+                override fun onWebResponse(data: ApiResponseData<BaseResponse<MessageResponse>>) {
+                    updateProgress(false)
+                    if (data.status == ApiResponseData.API_SUCCESS) {
+                        blogReadPointResponse.value = data.data
+                    } else {
+                        WolooApplication.setErrorMessage(data.message)
+                        blogReadPointResponse.value = data.data
+                        notifyNetworkError(data)
+                    }
                 }
             }
-        })
+        )
     }
 
     fun observeBlogReadPoint(): EventLiveData<BaseResponse<MessageResponse>> {
         return blogReadPointResponse
     }
 
-    fun ecomCoinUpdate(type : String, coins : Int, orderid: String) {
+    fun ecomCoinUpdate(type: String, coins: Int, orderid: String) {
         val request = EcomCoinUpdateRequest()
         request.orderId = orderid
         request.type = type
         request.coins = coins
         updateProgress(true)
-        blogRepository.ecomCoinUpdate(request, object :
-            WebserviceCallback<ApiResponseData<BaseResponse<EcomCoinUpdateResponse>>> {
-            override fun onWebResponse(data: ApiResponseData<BaseResponse<EcomCoinUpdateResponse>>) {
-                updateProgress(false)
-                if (data.status == ApiResponseData.API_SUCCESS) {
-                    ecomCoinUpdateResponse.value = data.data
-                } else {
-                    WolooApplication.setErrorMessage(data.message)
-                    ecomCoinUpdateResponse.value = data.data
-                    notifyNetworkError(data)
+        blogRepository.ecomCoinUpdate(
+            request,
+            object :
+                WebserviceCallback<ApiResponseData<BaseResponse<EcomCoinUpdateResponse>>> {
+                override fun onWebResponse(data: ApiResponseData<BaseResponse<EcomCoinUpdateResponse>>) {
+                    updateProgress(false)
+                    if (data.status == ApiResponseData.API_SUCCESS) {
+                        ecomCoinUpdateResponse.value = data.data
+                    } else {
+                        WolooApplication.setErrorMessage(data.message)
+                        ecomCoinUpdateResponse.value = data.data
+                        notifyNetworkError(data)
+                    }
                 }
             }
-        })
+        )
     }
 
     fun observeEcomCoinUpdate(): EventLiveData<BaseResponse<EcomCoinUpdateResponse>> {
@@ -179,19 +197,22 @@ class BlogViewModel : BaseViewModel() {
 
     fun ecomCoinFail(transactionId: Int) {
         updateProgress(true)
-        blogRepository.ecomCoinFail(transactionId, object :
-            WebserviceCallback<ApiResponseData<BaseResponse<JSONObject>>> {
-            override fun onWebResponse(data: ApiResponseData<BaseResponse<JSONObject>>) {
-                updateProgress(false)
-                if (data.status == ApiResponseData.API_SUCCESS) {
-                    ecomCoinFailResponse.value = data.data
-                } else {
-                    WolooApplication.setErrorMessage(data.message)
-                    ecomCoinFailResponse.value = data.data
-                    notifyNetworkError(data)
+        blogRepository.ecomCoinFail(
+            transactionId,
+            object :
+                WebserviceCallback<ApiResponseData<BaseResponse<JSONObject>>> {
+                override fun onWebResponse(data: ApiResponseData<BaseResponse<JSONObject>>) {
+                    updateProgress(false)
+                    if (data.status == ApiResponseData.API_SUCCESS) {
+                        ecomCoinFailResponse.value = data.data
+                    } else {
+                        WolooApplication.setErrorMessage(data.message)
+                        ecomCoinFailResponse.value = data.data
+                        notifyNetworkError(data)
+                    }
                 }
             }
-        })
+        )
     }
 
     fun observeEcomCoinFail(): EventLiveData<BaseResponse<JSONObject>> {
@@ -202,22 +223,25 @@ class BlogViewModel : BaseViewModel() {
         updateProgress(true)
 
         val request = HashMap<String, Any>()
-        request.put("category",category)
-        request.put("page",page)
+        request.put("category", category)
+        request.put("page", page)
 
-        blogRepository.getBlogsForUserByCategory(request, object :
-            WebserviceCallback<ApiResponseData<BaseResponse<BlogByCategoryResponse>>> {
-            override fun onWebResponse(data: ApiResponseData<BaseResponse<BlogByCategoryResponse>>) {
-                updateProgress(false)
-                if (data.status == ApiResponseData.API_SUCCESS) {
-                    blogResponse.value = data.data
-                } else {
-                    WolooApplication.setErrorMessage(data.message)
-                    blogResponse.value = data.data
-                    notifyNetworkError(data)
+        blogRepository.getBlogsForUserByCategory(
+            request,
+            object :
+                WebserviceCallback<ApiResponseData<BaseResponse<BlogByCategoryResponse>>> {
+                override fun onWebResponse(data: ApiResponseData<BaseResponse<BlogByCategoryResponse>>) {
+                    updateProgress(false)
+                    if (data.status == ApiResponseData.API_SUCCESS) {
+                        blogResponse.value = data.data
+                    } else {
+                        WolooApplication.setErrorMessage(data.message)
+                        blogResponse.value = data.data
+                        notifyNetworkError(data)
+                    }
                 }
             }
-        })
+        )
     }
 
     fun observeBlogsForUserByCategory(): EventLiveData<BaseResponse<BlogByCategoryResponse>> {

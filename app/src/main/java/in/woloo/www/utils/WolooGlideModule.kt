@@ -7,6 +7,4 @@ import com.bumptech.glide.module.AppGlideModule
 // Class is created by Aarati , @Woloo on 19th July 2024.
 
 @GlideModule
-class WolooGlideModule : AppGlideModule() {
-
-}
+class WolooGlideModule : AppGlideModule()

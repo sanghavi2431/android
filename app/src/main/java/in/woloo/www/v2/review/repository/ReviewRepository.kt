@@ -25,10 +25,9 @@ class ReviewRepository : BaseRepository() {
                 val callback: ApiServiceCallback<BaseResponse<ReviewOptionsResponse.Data>> =
                     ApiServiceCallback(webserviceCallback)
                 call.enqueue(callback)
-            } catch (e: Exception){
-                 CommonUtils.printStackTrace(e)
+            } catch (e: Exception) {
+                CommonUtils.printStackTrace(e)
             }
-
         } else {
             val data = ApiResponseData<BaseResponse<ReviewOptionsResponse.Data>>()
             data.status = ApiResponseData.API_NO_NETWORK
@@ -47,10 +46,9 @@ class ReviewRepository : BaseRepository() {
                 val callback: ApiServiceCallback<BaseResponse<JSONObject>> =
                     ApiServiceCallback(webserviceCallback)
                 call.enqueue(callback)
-            } catch (e: Exception){
-                 CommonUtils.printStackTrace(e)
+            } catch (e: Exception) {
+                CommonUtils.printStackTrace(e)
             }
-
         } else {
             val data = ApiResponseData<BaseResponse<JSONObject>>()
             data.status = ApiResponseData.API_NO_NETWORK

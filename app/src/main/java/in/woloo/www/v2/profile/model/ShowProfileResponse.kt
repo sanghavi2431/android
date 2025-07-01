@@ -6,5 +6,4 @@ class ShowProfileResponse {
 
     @SerializedName("isShowProfileForm")
     var shouldShowProfileForm: Boolean = false
-
 }

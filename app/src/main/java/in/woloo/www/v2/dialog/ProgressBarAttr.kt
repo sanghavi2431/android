@@ -18,11 +18,10 @@ class ProgressBarAttr : Parcelable {
 
     constructor()
 
-    constructor(source: Parcel): this(){
+    constructor(source: Parcel) : this() {
         this.message = source.readString().toString()
         this.isShow = 1 == source.readInt()
     }
-
 
     override fun describeContents() = 0
 

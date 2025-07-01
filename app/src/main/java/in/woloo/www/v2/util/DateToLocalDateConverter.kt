@@ -15,5 +15,4 @@ class DateToLocalDateConverter {
         val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")
         return localZonedDateTime.format(formatter)
     }
-
 }

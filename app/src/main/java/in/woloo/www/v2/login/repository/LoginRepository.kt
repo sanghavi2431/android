@@ -12,7 +12,7 @@ import `in`.woloo.www.v2.util.NetworkUtils
 import org.json.JSONObject
 import retrofit2.Call
 
-class LoginRepository: BaseRepository() {
+class LoginRepository : BaseRepository() {
 
     val service: ApiService = ApiServiceClientAdapter.instance.apiService
 
@@ -27,10 +27,9 @@ class LoginRepository: BaseRepository() {
                 val callback: ApiServiceCallback<BaseResponse<SendOtpResponse>> =
                     ApiServiceCallback(webserviceCallback)
                 call.enqueue(callback)
-            } catch (e: Exception){
-                  CommonUtils.printStackTrace(e)
+            } catch (e: Exception) {
+                CommonUtils.printStackTrace(e)
             }
-
         } else {
             val data = ApiResponseData<BaseResponse<SendOtpResponse>>()
             data.status = ApiResponseData.API_NO_NETWORK
@@ -49,10 +48,9 @@ class LoginRepository: BaseRepository() {
                 val callback: ApiServiceCallback<BaseResponse<VerifyOtpResponse>> =
                     ApiServiceCallback(webserviceCallback)
                 call.enqueue(callback)
-            } catch (e: Exception){
-                  CommonUtils.printStackTrace(e)
+            } catch (e: Exception) {
+                CommonUtils.printStackTrace(e)
             }
-
         } else {
             val data = ApiResponseData<BaseResponse<VerifyOtpResponse>>()
             data.status = ApiResponseData.API_NO_NETWORK
@@ -71,10 +69,9 @@ class LoginRepository: BaseRepository() {
                 val callback: ApiServiceCallback<BaseResponse<JSONObject>> =
                     ApiServiceCallback(webserviceCallback)
                 call.enqueue(callback)
-            } catch (e: Exception){
+            } catch (e: Exception) {
                 CommonUtils.printStackTrace(e)
             }
-
         } else {
             val data = ApiResponseData<BaseResponse<JSONObject>>()
             data.status = ApiResponseData.API_NO_NETWORK
@@ -83,9 +80,9 @@ class LoginRepository: BaseRepository() {
     }
 
     fun updateDeviceToken(
-        request: HashMap<String,String>,
+        request: HashMap<String, String>,
         webserviceCallback: WebserviceCallback<ApiResponseData<BaseResponse<String>>>
-    ){
+    ) {
         if (NetworkUtils.isInternetAvailable(WolooApplication.getInstance())) {
             try {
                 val call: Call<BaseResponse<String>> =
@@ -93,10 +90,9 @@ class LoginRepository: BaseRepository() {
                 val callback: ApiServiceCallback<BaseResponse<String>> =
                     ApiServiceCallback(webserviceCallback)
                 call.enqueue(callback)
-            } catch (e: Exception){
-                  CommonUtils.printStackTrace(e)
+            } catch (e: Exception) {
+                CommonUtils.printStackTrace(e)
             }
-
         } else {
             val data = ApiResponseData<BaseResponse<String>>()
             data.status = ApiResponseData.API_NO_NETWORK

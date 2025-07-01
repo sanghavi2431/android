@@ -12,12 +12,12 @@ import retrofit2.Call
 
 class CoinsRepository {
 
-
     val service: ApiService = ApiServiceClientAdapter.instance.apiService
 
-    fun addCoins(request: AddCoinsRequest,
-                 webserviceCallback: WebserviceCallback<ApiResponseData<BaseResponse<AddCoinsResponse>>>)
-    {
+    fun addCoins(
+        request: AddCoinsRequest,
+        webserviceCallback: WebserviceCallback<ApiResponseData<BaseResponse<AddCoinsResponse>>>
+    ) {
         if (NetworkUtils.isInternetAvailable(WolooApplication.getInstance())) {
             try {
                 val call: Call<BaseResponse<AddCoinsResponse>> =
@@ -25,10 +25,9 @@ class CoinsRepository {
                 val callback: ApiServiceCallback<BaseResponse<AddCoinsResponse>> =
                     ApiServiceCallback(webserviceCallback)
                 call.enqueue(callback)
-            } catch (e: Exception){
-                 CommonUtils.printStackTrace(e)
+            } catch (e: Exception) {
+                CommonUtils.printStackTrace(e)
             }
-
         } else {
             val data = ApiResponseData<BaseResponse<AddCoinsResponse>>()
             data.status = ApiResponseData.API_NO_NETWORK
@@ -36,8 +35,7 @@ class CoinsRepository {
         }
     }
 
-    fun userCoins(webserviceCallback: WebserviceCallback<ApiResponseData<BaseResponse<UserCoins>>>)
-    {
+    fun userCoins(webserviceCallback: WebserviceCallback<ApiResponseData<BaseResponse<UserCoins>>>) {
         if (NetworkUtils.isInternetAvailable(WolooApplication.getInstance())) {
             try {
                 val call: Call<BaseResponse<UserCoins>> =
@@ -45,10 +43,9 @@ class CoinsRepository {
                 val callback: ApiServiceCallback<BaseResponse<UserCoins>> =
                     ApiServiceCallback(webserviceCallback)
                 call.enqueue(callback)
-            } catch (e: Exception){
-                 CommonUtils.printStackTrace(e)
+            } catch (e: Exception) {
+                CommonUtils.printStackTrace(e)
             }
-
         } else {
             val data = ApiResponseData<BaseResponse<UserCoins>>()
             data.status = ApiResponseData.API_NO_NETWORK
@@ -56,8 +53,7 @@ class CoinsRepository {
         }
     }
 
-    fun coinHistory(pageNumber: Int,webserviceCallback: WebserviceCallback<ApiResponseData<BaseResponse<UserCoinHistoryModel.Data>>>)
-    {
+    fun coinHistory(pageNumber: Int, webserviceCallback: WebserviceCallback<ApiResponseData<BaseResponse<UserCoinHistoryModel.Data>>>) {
         if (NetworkUtils.isInternetAvailable(WolooApplication.getInstance())) {
             try {
                 val call: Call<BaseResponse<UserCoinHistoryModel.Data>> =
@@ -65,10 +61,9 @@ class CoinsRepository {
                 val callback: ApiServiceCallback<BaseResponse<UserCoinHistoryModel.Data>> =
                     ApiServiceCallback(webserviceCallback)
                 call.enqueue(callback)
-            } catch (e: Exception){
+            } catch (e: Exception) {
                 CommonUtils.printStackTrace(e)
             }
-
         } else {
             val data = ApiResponseData<BaseResponse<UserCoinHistoryModel.Data>>()
             data.status = ApiResponseData.API_NO_NETWORK

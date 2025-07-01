@@ -6,5 +6,4 @@ class SaveUserCategoryRequest {
 
     @SerializedName("categories")
     var categories: ArrayList<Int> = ArrayList<Int>()
-
 }

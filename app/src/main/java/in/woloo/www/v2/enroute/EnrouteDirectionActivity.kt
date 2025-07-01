@@ -55,9 +55,6 @@ import `in`.woloo.www.home.fragments.HomeCategoryFragment
 import `in`.woloo.www.home.fragments.WolooStoreInfoFragment
 import `in`.woloo.www.mapdirection.GetDistance
 import `in`.woloo.www.mapdirection.GpsTracker
-import `in`.woloo.www.mapdirection.model.NavigationRewardsResponse
-import `in`.woloo.www.mapdirection.mvp.MapDirectionPresenter
-import `in`.woloo.www.mapdirection.mvp.MapDirectionView
 import `in`.woloo.www.review.AddReviewActivity
 import `in`.woloo.www.utils.AppConstants
 import `in`.woloo.www.utils.Logger
@@ -73,7 +70,6 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.util.*
-
 
 class EnrouteDirectionActivity : BaseActivity(), OnMapReadyCallback, OnMarkerClickListener {
 
@@ -101,7 +97,7 @@ class EnrouteDirectionActivity : BaseActivity(), OnMapReadyCallback, OnMarkerCli
     private var mFusedLocationProviderClient: FusedLocationProviderClient? = null
     private val PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1
     var source: LatLng? = null
-    var dest: LatLng? = null //LatLng(19.055229, 72.830829)
+    var dest: LatLng? = null // LatLng(19.055229, 72.830829)
     private lateinit var placesClient: PlacesClient
     var destPlacesAdapter: SearchPlacesAdapter? = null
     var sourcePlacesAdapter: SearchPlacesAdapter? = null
@@ -118,6 +114,7 @@ class EnrouteDirectionActivity : BaseActivity(), OnMapReadyCallback, OnMarkerCli
     private var marker: Marker? = null
     private var currentpos: LatLng? = null
     var gps: GpsTracker? = null
+
     /*Calling on onCreateView*/
     val DIALOGID = 2
     private val defaultLocation = LatLng(20.5937, 78.9629)
@@ -132,18 +129,17 @@ class EnrouteDirectionActivity : BaseActivity(), OnMapReadyCallback, OnMarkerCli
     var frm_home_map: FrameLayout? = null
     var frm_home_data: View? = null
     public var tv_woloo: TextView? = null
-    public var tv_woloo_data : TextView? = null
+    public var tv_woloo_data: TextView? = null
     var height = 0
     var isFromClickFlag = true
     var isShowWolooList = false
     private var nearByStoreResponseList: List<NearByStoreResponse.Data> = ArrayList<NearByStoreResponse.Data>()
     private var wolooStoreInfoFragment: WolooStoreInfoFragment? = null
-    var bottomLayout : View? = null
-    var topInfoLayout : View? = null
+    var bottomLayout: View? = null
+    var topInfoLayout: View? = null
     public var ivSrcCancel: ImageView? = null
     public var ivDestCancel: ImageView? = null
     var hasReachedAtDestination = false
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -165,16 +161,16 @@ class EnrouteDirectionActivity : BaseActivity(), OnMapReadyCallback, OnMarkerCli
             if (intent.hasExtra("wolooId")) {
                 destlat = intent.getStringExtra("destlat")!!
                 destlong = intent.getStringExtra("destlong")!!
-                dest = LatLng(destlat.toDouble(),destlong.toDouble())
+                dest = LatLng(destlat.toDouble(), destlong.toDouble())
                 tag = intent.getStringExtra("tag")!!
                 destName = intent.getStringExtra("wolooName")!!
                 destAddress = intent.getStringExtra("wolooAddress")!!
                 wolooId = intent.getIntExtra("wolooId", 0)
 //                Toast.makeText(this, "Woloo Id received", Toast.LENGTH_SHORT).show()
             }
-        }catch (e : Exception){
-              CommonUtils.printStackTrace(e)
-        }finally {
+        } catch (e: Exception) {
+            CommonUtils.printStackTrace(e)
+        } finally {
             SharedPrefSettings.getPreferences.storeIsDirectionWoloo(false)
             SharedPrefSettings.getPreferences.storeDirectionWoloo(null)
         }
@@ -188,12 +184,12 @@ class EnrouteDirectionActivity : BaseActivity(), OnMapReadyCallback, OnMarkerCli
             setNetworkDetector()
             setViewModel()
         } catch (e: Exception) {
-              CommonUtils.printStackTrace(e)
+            CommonUtils.printStackTrace(e)
         }
     }
 
     private var progressbar: Dialog? = null
-    private fun setProgressDialog(){
+    private fun setProgressDialog() {
         progressbar = Dialog(this, R.style.CustomDialogTime)
         progressbar!!.requestWindowFeature(Window.FEATURE_NO_TITLE)
         progressbar!!.window?.setBackgroundDrawable(
@@ -209,8 +205,8 @@ class EnrouteDirectionActivity : BaseActivity(), OnMapReadyCallback, OnMarkerCli
     }
 
     private fun setViewModel() {
-        enrouteViewModel.observeNearByWoloo().observe(this){
-            if(progressbar?.isShowing == true) progressbar?.dismiss()
+        enrouteViewModel.observeNearByWoloo().observe(this) {
+            if (progressbar?.isShowing == true) progressbar?.dismiss()
             Utility.hideKeyboard(this)
             if (it != null) {
                 renderNearByWoloos(it.data!!)
@@ -222,21 +218,21 @@ class EnrouteDirectionActivity : BaseActivity(), OnMapReadyCallback, OnMarkerCli
             }
         }
 
-        enrouteViewModel.observeWolooNavigationReward().observe(this){
+        enrouteViewModel.observeWolooNavigationReward().observe(this) {
             Logger.i(TAG, "navigationRewardSuccess")
             try {
                 if (it != null && it.success) {
-                    showdialogReachedLocation( true)
+                    showdialogReachedLocation(true)
                 } else {
-                    showdialogReachedLocation( false)
+                    showdialogReachedLocation(false)
                     WolooApplication.setErrorMessage("")
                     // Toast.makeText(getActivity().getApplicationContext(), "You have arrived at your destination.", Toast.LENGTH_SHORT).show();
                 }
                 val bundle = Bundle()
-                //bundle.put
+                // bundle.put
                 Utility.logFirebaseEvent(this, bundle, AppConstants.DESTIONATION_REACHED)
             } catch (ex: java.lang.Exception) {
-                CommonUtils.printStackTrace(ex);
+                CommonUtils.printStackTrace(ex)
             }
         }
     }
@@ -244,7 +240,7 @@ class EnrouteDirectionActivity : BaseActivity(), OnMapReadyCallback, OnMarkerCli
     private fun renderNearByWoloos(data: ArrayList<NearByStoreResponse.Data>) {
         try {
             markerList = ArrayList<Marker>()
-            nearByStoreResponseList  = data
+            nearByStoreResponseList = data
             for (i in data.indices) {
                 val item = data[i]
                 markerList.add(
@@ -260,13 +256,12 @@ class EnrouteDirectionActivity : BaseActivity(), OnMapReadyCallback, OnMarkerCli
             }
             showingKeyboard(false)
             try {
-                (fragment_map as HomeCategoryFragment).setNearestWalk(data,false,false,true)
-
+                (fragment_map as HomeCategoryFragment).setNearestWalk(data, false, false, true)
             } catch (ex: java.lang.Exception) {
-                CommonUtils.printStackTrace(ex);
+                CommonUtils.printStackTrace(ex)
             }
         } catch (e: java.lang.Exception) {
-              CommonUtils.printStackTrace(e)
+            CommonUtils.printStackTrace(e)
         }
     }
 
@@ -275,7 +270,6 @@ class EnrouteDirectionActivity : BaseActivity(), OnMapReadyCallback, OnMarkerCli
         Logger.i(TAG, "setWidthAndHeight")
         if (markerList != null) {
             height -= 250
-
         }
         view.layoutParams.height = height
         view.requestLayout()
@@ -288,7 +282,8 @@ class EnrouteDirectionActivity : BaseActivity(), OnMapReadyCallback, OnMarkerCli
             //            nsv.setSmoothScrollingEnabled(false);
 //            tv_woloo?.setVisibility(View.GONE)
             frm_home_data?.startAnimation(
-                AnimationUtils.loadAnimation(this, R.anim.slide_bottom))
+                AnimationUtils.loadAnimation(this, R.anim.slide_bottom)
+            )
             //            tv_woloo.startAnimation(AnimationUtils.loadAnimation(getContext(),R.anim.slide_bottom));
 //            nsv.startAnimation(AnimationUtils.loadAnimation(getContext(),R.anim.slide_bottom));
         } else {
@@ -296,7 +291,7 @@ class EnrouteDirectionActivity : BaseActivity(), OnMapReadyCallback, OnMarkerCli
             val payload = HashMap<String, Any>()
 
             isFromClickFlag = false
-            //loadMore("1", true);
+            // loadMore("1", true);
             setWidthAndHeight(frm_home_map!!, height / 2)
             frm_home_data?.setVisibility(View.VISIBLE)
 
@@ -330,10 +325,9 @@ class EnrouteDirectionActivity : BaseActivity(), OnMapReadyCallback, OnMarkerCli
     }
     override fun onResume() {
         super.onResume()
-             if (SharedPrefSettings.getPreferences.fetchIsDirectionWoloo()) {
-                checkIfUserReachedLocation()
-
-            }
+        if (SharedPrefSettings.getPreferences.fetchIsDirectionWoloo()) {
+            checkIfUserReachedLocation()
+        }
         showingKeyboard(false)
         isShowWolooList = false
         showWolooList(isShowWolooList)
@@ -350,11 +344,11 @@ class EnrouteDirectionActivity : BaseActivity(), OnMapReadyCallback, OnMarkerCli
                 if (ActivityCompat.checkSelfPermission(
                         this,
                         Manifest.permission.ACCESS_FINE_LOCATION
-                    ) != PackageManager.PERMISSION_GRANTED
-                    && ActivityCompat.checkSelfPermission(
-                        this,
-                        Manifest.permission.ACCESS_COARSE_LOCATION
-                    ) != PackageManager.PERMISSION_GRANTED
+                    ) != PackageManager.PERMISSION_GRANTED &&
+                    ActivityCompat.checkSelfPermission(
+                            this,
+                            Manifest.permission.ACCESS_COARSE_LOCATION
+                        ) != PackageManager.PERMISSION_GRANTED
                 ) {
                     return
                 }
@@ -365,7 +359,7 @@ class EnrouteDirectionActivity : BaseActivity(), OnMapReadyCallback, OnMarkerCli
                         // Set the map's camera position to the current location of the device.
                         val location = task.result
                         //                            Smartech.getInstance(new WeakReference(requireContext())).setUserLocation(location);
-                        if (location!=null) {
+                        if (location != null) {
                             val currentLatLng = LatLng(
                                 location.latitude,
                                 location.longitude
@@ -383,7 +377,7 @@ class EnrouteDirectionActivity : BaseActivity(), OnMapReadyCallback, OnMarkerCli
                                     val distance = getdistance!!.routes[0].legs[0].distance.value
                                     if (distance < 50) {
                                         enrouteViewModel.getWolooNavigationReward(wolooId)
-                                        //showdialogReachedLocation(true)
+                                        // showdialogReachedLocation(true)
                                     }
                                     SharedPrefSettings.getPreferences.storeIsDirectionWoloo(false)
                                 }
@@ -394,14 +388,10 @@ class EnrouteDirectionActivity : BaseActivity(), OnMapReadyCallback, OnMarkerCli
                     }
                 }
             } else {
-
             }
         } catch (e: java.lang.Exception) {
             Logger.e("Exception: %s", e.message)
         }
-
-
-
     }
 
     private fun initView() {
@@ -428,7 +418,7 @@ class EnrouteDirectionActivity : BaseActivity(), OnMapReadyCallback, OnMarkerCli
         info = findViewById(R.id.tv_info)
         infoBottom = findViewById(R.id.tv_info_bottom)
         start = findViewById(R.id.tv_start)
-        ivClose= findViewById(R.id.iv_close)
+        ivClose = findViewById(R.id.iv_close)
         ivCurrentLocation = findViewById(R.id.iv_currentlocation)
         ivBack = findViewById(R.id.ivBack)
 
@@ -448,12 +438,11 @@ class EnrouteDirectionActivity : BaseActivity(), OnMapReadyCallback, OnMarkerCli
         destAutoComplete?.setAdapter(destPlacesAdapter)
         destAutoComplete?.threshold = 1
 
-
         sourceAutoComplete?.setOnClickListener { view ->
-            showingKeyboard(true);
+            showingKeyboard(true)
         }
         destAutoComplete?.setOnClickListener { view ->
-            showingKeyboard(true);
+            showingKeyboard(true)
         }
         sourceAutoComplete?.setOnTouchListener { view, motionEvent ->
             view.performClick()
@@ -464,16 +453,16 @@ class EnrouteDirectionActivity : BaseActivity(), OnMapReadyCallback, OnMarkerCli
             return@setOnTouchListener false
         }
         sourceAutoComplete?.addTextChangedListener {
-            if (sourceAutoComplete?.text?.isEmpty()==true){
+            if (sourceAutoComplete?.text?.isEmpty() == true) {
                 source = null
             }
-            showingKeyboard(true);
+            showingKeyboard(true)
         }
         destAutoComplete?.addTextChangedListener {
-            if (destAutoComplete?.text?.isEmpty()==true){
+            if (destAutoComplete?.text?.isEmpty() == true) {
                 dest = null
             }
-            showingKeyboard(true);
+            showingKeyboard(true)
         }
 
         sourceAutoComplete?.onItemClickListener =
@@ -481,7 +470,7 @@ class EnrouteDirectionActivity : BaseActivity(), OnMapReadyCallback, OnMarkerCli
                 val place = adapterView.getItemAtPosition(pos) as PlaceAutocomplete
                 sourceAutoComplete?.setText(place.address)
                 sourceAutoComplete?.setSelection(sourceAutoComplete?.length()!!)
-                onPlaceClick(place,true)
+                onPlaceClick(place, true)
                 //                Toast.makeText(getContext(), place.address, Toast.LENGTH_SHORT).show();
             }
 
@@ -494,22 +483,20 @@ class EnrouteDirectionActivity : BaseActivity(), OnMapReadyCallback, OnMarkerCli
                 //                Toast.makeText(getContext(), place.address, Toast.LENGTH_SHORT).show();
             }
 
-
         ivSrcCancel?.setOnClickListener {
             sourceAutoComplete?.setText("")
-            source=null
-            showingKeyboard(true);
+            source = null
+            showingKeyboard(true)
             drawPolylineOnMap()
         }
         ivDestCancel?.setOnClickListener {
             destAutoComplete?.setText("")
             dest = null
-            showingKeyboard(true);
+            showingKeyboard(true)
             drawPolylineOnMap()
         }
 
-
-        if(tag.isNotEmpty()){
+        if (tag.isNotEmpty()) {
             destAutoComplete?.setText("$destName,$destAddress")
             destAutoComplete?.isEnabled = false
 
@@ -517,7 +504,7 @@ class EnrouteDirectionActivity : BaseActivity(), OnMapReadyCallback, OnMarkerCli
             bottomLayout?.visibility = View.VISIBLE
             topInfoLayout?.visibility = View.GONE
             tv_woloo?.visibility = View.GONE
-        }else{
+        } else {
             bottomLayout?.visibility = View.GONE
             topInfoLayout?.visibility = View.VISIBLE
         }
@@ -527,40 +514,43 @@ class EnrouteDirectionActivity : BaseActivity(), OnMapReadyCallback, OnMarkerCli
         ivCurrentLocation?.setOnClickListener { isLocationEnabled() }
         start?.setOnClickListener { showdialogGoToMaps() }
 
-        tv_woloo?.setOnClickListener(View.OnClickListener {
+        tv_woloo?.setOnClickListener(
+            View.OnClickListener {
+                isShowWolooList = !isShowWolooList
+                showWolooList(isShowWolooList)
+                tv_woloo?.visibility = View.GONE
+                showingKeyboard(false)
+            }
+        )
 
-            isShowWolooList = !isShowWolooList
-            showWolooList(isShowWolooList)
-            tv_woloo?.visibility = View.GONE
-            showingKeyboard(false);
-        })
-
-        tv_woloo_data?.setOnClickListener(View.OnClickListener {
-
-            isShowWolooList = !isShowWolooList
-            showWolooList(isShowWolooList)
-            tv_woloo?.visibility = View.VISIBLE
-            showingKeyboard(false);
-        })
+        tv_woloo_data?.setOnClickListener(
+            View.OnClickListener {
+                isShowWolooList = !isShowWolooList
+                showWolooList(isShowWolooList)
+                tv_woloo?.visibility = View.VISIBLE
+                showingKeyboard(false)
+            }
+        )
     }
 
     private fun showingKeyboard(isKeyboardShowing: Boolean) {
-        if(isKeyboardShowing){
+        if (isKeyboardShowing) {
             Logger.i(TAG, "hideAndShow")
-            if (frm_home_data?.isVisible == true){
+            if (frm_home_data?.isVisible == true) {
                 setWidthAndHeight(frm_home_map!!, height)
                 frm_home_data?.startAnimation(
-                    AnimationUtils.loadAnimation(this, R.anim.slide_bottom))
+                    AnimationUtils.loadAnimation(this, R.anim.slide_bottom)
+                )
                 frm_home_data?.visibility = View.GONE
             }
             removeWolooStoreInfo()
             isShowWolooList = false
-        }else{
-            Utility.hideKeyboard(this);
+        } else {
+            Utility.hideKeyboard(this)
         }
     }
 
-    private fun onPlaceClick(place: PlaceAutocomplete, isSource : Boolean = false) {
+    private fun onPlaceClick(place: PlaceAutocomplete, isSource: Boolean = false) {
         try {
             val placeId: String = place.placeId.toString()
             val placeFields = Arrays.asList(
@@ -578,12 +568,12 @@ class EnrouteDirectionActivity : BaseActivity(), OnMapReadyCallback, OnMarkerCli
                     } catch (ex: java.lang.Exception) {
                         ex.printStackTrace()
                     }
-                    if(isSource)
+                    if (isSource) {
                         source = place?.latLng
-                    else
+                    } else {
                         dest = place?.latLng
+                    }
                     drawPolylineOnMap()
-
                 }.addOnFailureListener { exception ->
                     if (exception is ApiException) {
                         Toast.makeText(
@@ -596,7 +586,6 @@ class EnrouteDirectionActivity : BaseActivity(), OnMapReadyCallback, OnMarkerCli
         } catch (ex: java.lang.Exception) {
         }
     }
-
 
     fun animateCameraToMarkerPosition(position: Int) {
         if (markerList != null && !markerList.isEmpty()) {
@@ -618,7 +607,7 @@ class EnrouteDirectionActivity : BaseActivity(), OnMapReadyCallback, OnMarkerCli
             isShowWolooList = false
             showWolooList(isShowWolooList)
         }
-        if(marker.title?.isNotEmpty() == true) {
+        if (marker.title?.isNotEmpty() == true) {
             showingKeyboard(false)
             Logger.i(TAG, "onMarkerClick")
             loadMarkerFragmentWithIndex(marker.zIndex.toInt(), nearByStoreResponseList)
@@ -641,9 +630,9 @@ class EnrouteDirectionActivity : BaseActivity(), OnMapReadyCallback, OnMarkerCli
             val fragmentManager = (this as AppCompatActivity).supportFragmentManager
             val fragmentTransaction = fragmentManager.beginTransaction()
             fragmentTransaction.setCustomAnimations(
-                R.anim.slide_in_up,  // enter
-                R.anim.fade_out,  // exit
-                R.anim.fade_in,  // popEnter
+                R.anim.slide_in_up, // enter
+                R.anim.fade_out, // exit
+                R.anim.fade_in, // popEnter
                 R.anim.slide_out_up // popExit
             )
             fragmentTransaction.replace(R.id.frm_marker_detail, fragment!!, homeTah)
@@ -663,7 +652,7 @@ class EnrouteDirectionActivity : BaseActivity(), OnMapReadyCallback, OnMarkerCli
                 tv_woloo?.visibility = View.VISIBLE
                 //  fragmentManager.beginTransaction().remove(getFragmentManager().findFragmentById(R.id.frm_marker_detail)).commit();
             } catch (e: java.lang.Exception) {
-                  CommonUtils.printStackTrace(e)
+                CommonUtils.printStackTrace(e)
             }
         }
     }
@@ -695,14 +684,13 @@ class EnrouteDirectionActivity : BaseActivity(), OnMapReadyCallback, OnMarkerCli
             mMap!!.moveCamera(CameraUpdateFactory.newLatLngZoom(currentpos!!, AppConstants.DEFAULT_ZOOM.toFloat()))
             drawPolylineOnMap()
 
-            if(tag.isEmpty())
+            if (tag.isEmpty()) {
                 mMap!!.setOnMarkerClickListener(this@EnrouteDirectionActivity)
-
+            }
         } catch (e: java.lang.Exception) {
-              CommonUtils.printStackTrace(e)
+            CommonUtils.printStackTrace(e)
         }
     }
-
 
     fun checkGpsAndRequestLocation() {
         if (isLocationPermissionGranted()) {
@@ -713,7 +701,7 @@ class EnrouteDirectionActivity : BaseActivity(), OnMapReadyCallback, OnMarkerCli
             locationRequest.numUpdates = 1
             val builder = LocationSettingsRequest.Builder()
                 .addLocationRequest(locationRequest)
-            builder.setAlwaysShow(true) //this is the key ingredient
+            builder.setAlwaysShow(true) // this is the key ingredient
             builder.addLocationRequest(locationRequest)
             val result = LocationServices.getSettingsClient(this)
                 .checkLocationSettings(builder.build())
@@ -725,7 +713,7 @@ class EnrouteDirectionActivity : BaseActivity(), OnMapReadyCallback, OnMarkerCli
                     // All location settings are satisfied. The client can initialize location requests here.
                     getDeviceLocation()
                     updateLocationUI()
-                    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                    // //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 } catch (exception: ApiException) {
                     //                        moveCameraToDefaultLocation()
                     when (exception.statusCode) {
@@ -735,7 +723,7 @@ class EnrouteDirectionActivity : BaseActivity(), OnMapReadyCallback, OnMarkerCli
                         } catch (e: ClassCastException) {
                             // Ignore, should be an impossible error.
                         } catch (e: IntentSender.SendIntentException) {
-                              CommonUtils.printStackTrace(e)
+                            CommonUtils.printStackTrace(e)
                         }
                         LocationSettingsStatusCodes.SETTINGS_CHANGE_UNAVAILABLE -> {}
                     }
@@ -749,7 +737,7 @@ class EnrouteDirectionActivity : BaseActivity(), OnMapReadyCallback, OnMarkerCli
     }
 
     fun isLocationPermissionGranted(): Boolean {
-        return (ContextCompat.checkSelfPermission(this , Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED)
+        return (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED)
     }
 
   /*  override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String?>, grantResults: IntArray) {
@@ -785,7 +773,6 @@ class EnrouteDirectionActivity : BaseActivity(), OnMapReadyCallback, OnMarkerCli
         }
     }
 
-
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         when (requestCode) {
@@ -820,7 +807,8 @@ class EnrouteDirectionActivity : BaseActivity(), OnMapReadyCallback, OnMarkerCli
 //            getDeviceLocation()
         } else {
             ActivityCompat.requestPermissions(
-                this, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
+                this,
+                arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
                 PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION
             )
         }
@@ -833,11 +821,11 @@ class EnrouteDirectionActivity : BaseActivity(), OnMapReadyCallback, OnMarkerCli
                 if (ActivityCompat.checkSelfPermission(
                         this,
                         Manifest.permission.ACCESS_FINE_LOCATION
-                    ) != PackageManager.PERMISSION_GRANTED
-                    && ActivityCompat.checkSelfPermission(
-                        this,
-                        Manifest.permission.ACCESS_COARSE_LOCATION
-                    ) != PackageManager.PERMISSION_GRANTED
+                    ) != PackageManager.PERMISSION_GRANTED &&
+                    ActivityCompat.checkSelfPermission(
+                            this,
+                            Manifest.permission.ACCESS_COARSE_LOCATION
+                        ) != PackageManager.PERMISSION_GRANTED
                 ) {
                     return
                 }
@@ -877,13 +865,11 @@ class EnrouteDirectionActivity : BaseActivity(), OnMapReadyCallback, OnMarkerCli
                                 mMap?.moveCamera(update)
                             }
                         }
-                    } catch (e :Exception){
-                          CommonUtils.printStackTrace(e)
+                    } catch (e: Exception) {
+                        CommonUtils.printStackTrace(e)
                     }
-
                 }
             } else {
-
             }
         } catch (e: java.lang.Exception) {
             Logger.e("Exception: %s", e.message)
@@ -903,7 +889,7 @@ class EnrouteDirectionActivity : BaseActivity(), OnMapReadyCallback, OnMarkerCli
         showingKeyboard(false)
         renderNearByWoloos(ArrayList<NearByStoreResponse.Data>())
 
-        if(source != null){
+        if (source != null) {
             markerPoints.add(source!!)
             val options = MarkerOptions()
             options.position(source!!)
@@ -917,17 +903,18 @@ class EnrouteDirectionActivity : BaseActivity(), OnMapReadyCallback, OnMarkerCli
                 options.position(dest!!)
                 options.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED))
                 mMap!!.addMarker(options)
-            }else{
+            } else {
                 createMarker(
                     dest!!.latitude,
                     dest!!.longitude,
                     destName,
                     "",
                     R.drawable.ic_store_mark_dest,
-                    0)!!
+                    0
+                )!!
             }
         }
-        if(source!=null && dest!=null) {
+        if (source != null && dest != null) {
             progressbar?.show()
             try {
 //                val bearing = bearingBetweenLocations(source!!, dest!!).toFloat()
@@ -956,10 +943,10 @@ class EnrouteDirectionActivity : BaseActivity(), OnMapReadyCallback, OnMarkerCli
                 info?.visibility = View.GONE
                 infoBottom?.visibility = View.GONE
             } catch (e: java.lang.Exception) {
-                  CommonUtils.printStackTrace(e)
+                CommonUtils.printStackTrace(e)
             }
-        }else{
-            if (source!=null){
+        } else {
+            if (source != null) {
                 val cameraPosition = CameraPosition.Builder()
                     .target(source!!) // Sets the center of the map to Mountain View
                     .zoom(AppConstants.DEFAULT_ZOOM.toFloat()) // Sets the zoom
@@ -967,7 +954,7 @@ class EnrouteDirectionActivity : BaseActivity(), OnMapReadyCallback, OnMarkerCli
                     .tilt(30f) // Sets the tilt of the camera to 30 degrees
                     .build() // C
                 mMap?.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition), 2000, null)
-            }else if(dest!=null){
+            } else if (dest != null) {
                 val cameraPosition = CameraPosition.Builder()
                     .target(dest!!) // Sets the center of the map to Mountain View
                     .zoom(AppConstants.DEFAULT_ZOOM.toFloat()) // Sets the zoom
@@ -1035,7 +1022,7 @@ class EnrouteDirectionActivity : BaseActivity(), OnMapReadyCallback, OnMarkerCli
                 ) {
                     try {
                         getdistance = response.body()
-                        if(getdistance?.routes?.isEmpty() == false) {
+                        if (getdistance?.routes?.isEmpty() == false) {
                             result_in_kms = getdistance!!.routes[0].legs[0].distance.text
                             duration = getdistance!!.routes[0].legs[0].duration.text
                             distanceTV?.setText(result_in_kms)
@@ -1053,7 +1040,7 @@ class EnrouteDirectionActivity : BaseActivity(), OnMapReadyCallback, OnMarkerCli
                                         getdistance!!.routes[0].overview_polyline
                                     )
                                 )
-                            } else{
+                            } else {
                                 progressbar?.dismiss()
                             }
                             var lineOptions: PolylineOptions? = null
@@ -1076,9 +1063,7 @@ class EnrouteDirectionActivity : BaseActivity(), OnMapReadyCallback, OnMarkerCli
                                         )
                                     )
                                     lineOptions.geodesic(true)
-
                                 }
-
                             }
                             var builder = LatLngBounds.Builder()
                             for (latLng in points) {
@@ -1096,24 +1081,23 @@ class EnrouteDirectionActivity : BaseActivity(), OnMapReadyCallback, OnMarkerCli
 // Drawing polyline in the Google Map for the i-th route
 
 //                            if (tag.isEmpty()) progressbar?.show()
-                        }else{
-                            if(progressbar?.isShowing == true) progressbar?.dismiss()
-                            Toast.makeText(this@EnrouteDirectionActivity,"No Route Available",Toast.LENGTH_SHORT).show()
-                            (fragment_map as HomeCategoryFragment).setNearestWalk(ArrayList<NearByStoreResponse.Data>(),false,false,true)
+                        } else {
+                            if (progressbar?.isShowing == true) progressbar?.dismiss()
+                            Toast.makeText(this@EnrouteDirectionActivity, "No Route Available", Toast.LENGTH_SHORT).show()
+                            (fragment_map as HomeCategoryFragment).setNearestWalk(ArrayList<NearByStoreResponse.Data>(), false, false, true)
                         }
                     } catch (e: java.lang.Exception) {
-                          CommonUtils.printStackTrace(e)
-                        if(progressbar?.isShowing == true) progressbar?.dismiss()
-                        Toast.makeText(this@EnrouteDirectionActivity,"No Route Available",Toast.LENGTH_SHORT).show()
-                        (fragment_map as HomeCategoryFragment).setNearestWalk(ArrayList<NearByStoreResponse.Data>(),false,false,true)
+                        CommonUtils.printStackTrace(e)
+                        if (progressbar?.isShowing == true) progressbar?.dismiss()
+                        Toast.makeText(this@EnrouteDirectionActivity, "No Route Available", Toast.LENGTH_SHORT).show()
+                        (fragment_map as HomeCategoryFragment).setNearestWalk(ArrayList<NearByStoreResponse.Data>(), false, false, true)
                     }
-
                 }
 
                 override fun onFailure(call: Call<GetDistance?>, t: Throwable) {}
             })
         } catch (e: java.lang.Exception) {
-              CommonUtils.printStackTrace(e)
+            CommonUtils.printStackTrace(e)
         }
     }
 
@@ -1224,7 +1208,7 @@ class EnrouteDirectionActivity : BaseActivity(), OnMapReadyCallback, OnMarkerCli
                     "Unable to find Location Service. Please start your location Service Or Reboot your device."
                 )
             }
-              CommonUtils.printStackTrace(e)
+            CommonUtils.printStackTrace(e)
         }
     }
 
@@ -1236,7 +1220,7 @@ class EnrouteDirectionActivity : BaseActivity(), OnMapReadyCallback, OnMarkerCli
         when (transport_mode) {
             "0" -> mode = "d"
             "1" -> mode = "w"
-            "2" -> mode = "l" //b for bycycler & l for two wheeler
+            "2" -> mode = "l" // b for bycycler & l for two wheeler
         }
         // Create a Uri from an intent string. Use the result to create an Intent.
 //        geo:${source!!.latitude},${source!!.longitude}?
@@ -1251,7 +1235,7 @@ class EnrouteDirectionActivity : BaseActivity(), OnMapReadyCallback, OnMarkerCli
         startActivity(mapIntent)
     }
 
-    fun showdialogReachedLocation(isPoints : Boolean = false) {
+    fun showdialogReachedLocation(isPoints: Boolean = false) {
         try {
             SharedPrefSettings.getPreferences.storeIsDirectionWoloo(false)
             SharedPrefSettings.getPreferences.storeDirectionWoloo(null)
@@ -1305,14 +1289,12 @@ class EnrouteDirectionActivity : BaseActivity(), OnMapReadyCallback, OnMarkerCli
                         startActivity(i)
                     }
                 }
-
             }
             dialog.show()
         } catch (e: java.lang.Exception) {
             CommonUtils.printStackTrace(e)
         }
     }
-
 
     fun showdialogGoToMaps() {
         try {
@@ -1336,18 +1318,16 @@ class EnrouteDirectionActivity : BaseActivity(), OnMapReadyCallback, OnMarkerCli
             action.setOnClickListener {
                 dialog.dismiss()
                 SharedPrefSettings.getPreferences.storeIsDirectionWoloo(true)
-                SharedPrefSettings.getPreferences.storeDirectionWoloo(DirectionWoloo(wolooId,dest!!.latitude,dest!!.longitude))
+                SharedPrefSettings.getPreferences.storeDirectionWoloo(DirectionWoloo(wolooId, dest!!.latitude, dest!!.longitude))
                 goToMaps()
             }
             cancel.setOnClickListener { dialog.dismiss() }
 
-
             dialog.show()
         } catch (e: java.lang.Exception) {
-              CommonUtils.printStackTrace(e)
+            CommonUtils.printStackTrace(e)
         }
     }
 
-    public data class DirectionWoloo (var wolooid : Int, var lat: Double, var lng: Double)
-
+    public data class DirectionWoloo(var wolooid: Int, var lat: Double, var lng: Double)
 }

@@ -23,12 +23,11 @@ class DashboardActivity : BaseActivity() {
 
     private val viewProfileResponse: ViewProfileResponse? = null
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDashboardBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        homeViewModel =  ViewModelProvider(this)[HomeViewModel::class.java]
+        homeViewModel = ViewModelProvider(this)[HomeViewModel::class.java]
         setProgressBar()
         setNetworkDetector()
         setLiveData()
@@ -66,13 +65,15 @@ class DashboardActivity : BaseActivity() {
     }
 
     private fun setLiveData() {
-        homeViewModel.observeNearByWoloo().observe(this, Observer {
-            displayToast(""+Gson().toJson(it.data))
-        })
+        homeViewModel.observeNearByWoloo().observe(
+            this,
+            Observer {
+                displayToast("" + Gson().toJson(it.data))
+            }
+        )
     }
 
     override fun onCreateViewModel(): BaseViewModel? {
         return ViewModelProvider(this)[HomeViewModel::class.java]
     }
-
 }

@@ -16,7 +16,6 @@ import `in`.woloo.www.v2.login.model.VerifyOtpResponse
 import `in`.woloo.www.v2.login.repository.LoginRepository
 import org.json.JSONObject
 
-
 class LoginViewModel : BaseViewModel() {
 
     private val mLoginRepository: LoginRepository = LoginRepository()
@@ -26,78 +25,89 @@ class LoginViewModel : BaseViewModel() {
     private val _otpMessage = MutableLiveData<String?>()
     val otpMessage: LiveData<String?> get() = _otpMessage
 
-
     fun sendOtp(request: SendOtpRequest) {
         updateProgress(true)
-        mLoginRepository.sendOtp(request, object :
-            WebserviceCallback<ApiResponseData<BaseResponse<SendOtpResponse>>> {
-            override fun onWebResponse(data: ApiResponseData<BaseResponse<SendOtpResponse>>) {
-                updateProgress(false)
+        mLoginRepository.sendOtp(
+            request,
+            object :
+                WebserviceCallback<ApiResponseData<BaseResponse<SendOtpResponse>>> {
+                override fun onWebResponse(data: ApiResponseData<BaseResponse<SendOtpResponse>>) {
+                    updateProgress(false)
 
-                // ✅ Always set message (even on success or failure)
+                    // ✅ Always set message (even on success or failure)
 
-Logger.e("Aarati data.status",data.message.toString())
+                    Logger.e("Aarati data.status", data.message.toString())
 
-                if (data.status == ApiResponseData.API_SUCCESS) {
-                    mSendOtp.value = data.data
-                } else {
-                    _otpMessage.value = data.message
-                    WolooApplication.setErrorMessage(data.message)
-                    mSendOtp.value = data.data
-                    notifyNetworkError(data)
+                    if (data.status == ApiResponseData.API_SUCCESS) {
+                        mSendOtp.value = data.data
+                    } else {
+                        _otpMessage.value = data.message
+                        WolooApplication.setErrorMessage(data.message)
+                        mSendOtp.value = data.data
+                        notifyNetworkError(data)
+                    }
                 }
             }
-        })
+        )
     }
 
     fun verifyOtp(
         request: VerifyOtpRequest
     ) {
         updateProgress(true)
-        mLoginRepository.verifyOtp(request, object :
-            WebserviceCallback<ApiResponseData<BaseResponse<VerifyOtpResponse>>> {
-            override fun onWebResponse(data: ApiResponseData<BaseResponse<VerifyOtpResponse>>) {
-                updateProgress(false)
-                if (data.status == ApiResponseData.API_SUCCESS) {
-                    mVerifyOtp.value = data.data
-                } else {
-                    WolooApplication.setErrorMessage(data.message)
-                    mVerifyOtp.value = data.data
-                    notifyNetworkError(data)
+        mLoginRepository.verifyOtp(
+            request,
+            object :
+                WebserviceCallback<ApiResponseData<BaseResponse<VerifyOtpResponse>>> {
+                override fun onWebResponse(data: ApiResponseData<BaseResponse<VerifyOtpResponse>>) {
+                    updateProgress(false)
+                    if (data.status == ApiResponseData.API_SUCCESS) {
+                        mVerifyOtp.value = data.data
+                    } else {
+                        WolooApplication.setErrorMessage(data.message)
+                        mVerifyOtp.value = data.data
+                        notifyNetworkError(data)
+                    }
                 }
             }
-        })
+        )
     }
 
     fun deleteWolooUser(
-       id: Int
+        id: Int
     ) {
         updateProgress(true)
-        mLoginRepository.deleteWolooUser(id, object :
-            WebserviceCallback<ApiResponseData<BaseResponse<JSONObject>>> {
-            override fun onWebResponse(data: ApiResponseData<BaseResponse<JSONObject>>) {
-                updateProgress(false)
-                if (data.status == ApiResponseData.API_SUCCESS) {
-                    mDeleteUser.value = data.data
-                } else {
-                    WolooApplication.setErrorMessage(data.message)
-                    mDeleteUser.value = data.data
-                    notifyNetworkError(data)
+        mLoginRepository.deleteWolooUser(
+            id,
+            object :
+                WebserviceCallback<ApiResponseData<BaseResponse<JSONObject>>> {
+                override fun onWebResponse(data: ApiResponseData<BaseResponse<JSONObject>>) {
+                    updateProgress(false)
+                    if (data.status == ApiResponseData.API_SUCCESS) {
+                        mDeleteUser.value = data.data
+                    } else {
+                        WolooApplication.setErrorMessage(data.message)
+                        mDeleteUser.value = data.data
+                        notifyNetworkError(data)
+                    }
                 }
             }
-        })
+        )
     }
 
     fun updateDeviceToken(
-        request: HashMap<String,String>
+        request: HashMap<String, String>
     ) {
         updateProgress(true)
-        mLoginRepository.updateDeviceToken(request, object :
-            WebserviceCallback<ApiResponseData<BaseResponse<String>>> {
-            override fun onWebResponse(data: ApiResponseData<BaseResponse<String>>) {
-                updateProgress(false)
+        mLoginRepository.updateDeviceToken(
+            request,
+            object :
+                WebserviceCallback<ApiResponseData<BaseResponse<String>>> {
+                override fun onWebResponse(data: ApiResponseData<BaseResponse<String>>) {
+                    updateProgress(false)
+                }
             }
-        })
+        )
     }
 
     fun observeSendOtp(): EventLiveData<BaseResponse<SendOtpResponse>> {
@@ -115,6 +125,4 @@ Logger.e("Aarati data.status",data.message.toString())
     fun clearOtpMessage() {
         _otpMessage.value = null
     }
-
-
 }

@@ -4,8 +4,8 @@ import com.google.gson.annotations.SerializedName
 
 class ValidateGiftCardResponse {
     @SerializedName("showPopUp")
-    var showPopUp : Int = 0
+    var showPopUp: Int = 0
 
     @SerializedName("message")
-    var message : String = ""
+    var message: String = ""
 }
