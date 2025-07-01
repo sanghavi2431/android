@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:background="#151515"
+    android:layout_margin="@dimen/dp_36"
+    >
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:background="@drawable/dialog_background">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="@dimen/margin_30"
+                    android:layout_height="@dimen/margin_30"
+                    android:layout_marginTop="@dimen/margin_5"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/ic_wl_logo"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="normal"
+                android:textSize="@dimen/size_8"
+                android:textColor="#ffffff"
+                android:gravity="center_horizontal"
+                android:layout_margin="@dimen/margin_3"
+                android:text="Do you want to add profile image ?" />
+
+            <LinearLayout
+                android:id="@+id/llStartFreeTrial"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:layout_margin="@dimen/margin_5">
+
+
+                <TextView
+                    android:id="@+id/tvSelectGallery"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/size_5"
+                    android:textColor="@color/black"
+                    android:padding="@dimen/margin_5"
+                    android:gravity="center"
+                    android:layout_gravity="left"
+                    android:background="@drawable/yellow_rectangle_shape"
+                    android:text="Select From Gallery"
+                    android:layout_margin="@dimen/margin_2"/>
+
+
+
+                <TextView
+                    android:id="@+id/tvImageCapture"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/size_5"
+                    android:textColor="@color/black"
+                    android:padding="@dimen/margin_5"
+                    android:gravity="center"
+                    android:layout_gravity="right"
+                    android:background="@drawable/yellow_rectangle_shape"
+                    android:text="Capture Image"
+                    android:layout_margin="@dimen/margin_2"/>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+</LinearLayout>

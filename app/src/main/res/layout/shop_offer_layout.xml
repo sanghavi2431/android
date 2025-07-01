@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/viewpageLayoutone"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:layout_centerVertical="true">
+    <RelativeLayout
+        android:id="@+id/banner_one_rel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/margin_2"
+        android:layout_marginLeft="@dimen/margin_2"
+        android:layout_marginBottom="@dimen/margin_2"
+        android:layout_marginTop="@dimen/margin_2"
+        android:padding="@dimen/margin_2"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:id="@+id/banTextMain3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/margin_30"
+            android:fontFamily="sans-serif"
+            android:gravity="left"
+            android:padding="@dimen/margin_1"
+            android:text="we have 5 woloo host available in your location"
+            android:textAlignment="textStart"
+            android:textColor="@color/color_gray"
+            android:textSize="@dimen/size_9"
+            android:textStyle="bold"
+            tools:ignore="RtlCompat" />
+
+        <TextView
+            android:id="@+id/banTextSub3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/banTextMain3"
+            android:layout_marginEnd="@dimen/margin_7"
+            android:fontFamily="sans-serif"
+            android:gravity="left"
+            android:padding="@dimen/margin_1"
+            android:text="we provide the best service to keep your Health and Hygiene intact.Click to know more."
+            android:textAlignment="textStart"
+            android:textColor="@color/color_gray"
+            android:textSize="@dimen/size_7"
+            android:textStyle="bold"
+            tools:ignore="RtlCompat" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:background="@color/transparent"
+            android:layout_marginRight="@dimen/margin_4"
+            >
+
+            <ImageView
+                android:id="@+id/trendLocateSrcimg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_shopping_cart" />
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+</RelativeLayout>

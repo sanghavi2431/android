@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/application_background"
+    android:padding="@dimen/margin_1"
+    android:orientation="vertical"
+    >
+
+    <ImageView
+        android:id="@+id/close_dialog_sos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:visibility="gone"
+        android:src="@drawable/yellow_close"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginBottom="@dimen/dp_10">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@android:color/transparent"
+        android:layout_weight="1"
+        android:layout_margin="@dimen/margin_3"
+        >
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/woloo_store_bg"
+
+   
+   >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/woloo_contact"
+        android:textColor="@color/dark_yellow"
+        android:gravity="center"
+        android:textSize="@dimen/margin_8"
+        android:visibility="gone"
+        />
+<ImageView
+    android:id="@+id/woloo_image"
+    android:layout_width="@dimen/margin_30"
+    android:layout_height="@dimen/margin_30"
+    android:scaleType="fitXY"
+    android:src="@drawable/logo_trans"
+    android:layout_gravity="center"
+    android:layout_margin="@dimen/margin_3"
+    android:padding="@dimen/margin_3"
+    />
+
+</LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@android:color/transparent"
+                android:layout_weight="1"
+                android:layout_margin="@dimen/margin_3"
+
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                   android:background="@drawable/woloo_store_bg"
+                    >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/hospital_contact"
+                android:textColor="@color/dark_yellow"
+                android:gravity="center"
+                android:textSize="@dimen/margin_8"
+                android:visibility="gone"
+                />
+
+            <ImageView
+                android:id="@+id/hospital_image"
+                android:layout_width="@dimen/margin_30"
+                android:layout_height="@dimen/margin_30"
+                android:scaleType="fitXY"
+                android:src="@drawable/hospital_img"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/margin_3"
+                android:padding="@dimen/margin_3"
+                />
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!--    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">-->
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@android:color/transparent"
+                android:layout_weight="1"
+                android:layout_margin="@dimen/margin_3"
+
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/woloo_store_bg"
+                   
+                    >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/police_contact"
+                android:textColor="@color/dark_yellow"
+                android:gravity="center"
+                android:textSize="@dimen/margin_8"
+                android:visibility="gone"
+                />
+            <ImageView
+                android:id="@+id/police_image"
+                android:layout_width="@dimen/margin_25"
+                android:layout_height="@dimen/margin_30"
+                android:scaleType="fitXY"
+                android:src="@drawable/police_icon_img"
+                android:layout_margin="@dimen/margin_3"
+                android:padding="@dimen/margin_3"
+                android:layout_gravity="center"
+                />
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@android:color/transparent"
+                android:layout_weight="1"
+                android:layout_margin="@dimen/margin_3"
+
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                   android:background="@drawable/woloo_store_bg"
+                    >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/fire_contact"
+                android:textColor="@color/dark_yellow"
+                android:gravity="center"
+                android:textSize="@dimen/margin_8"
+                android:visibility="gone"
+                />
+
+            <ImageView
+                android:id="@+id/fire_image"
+                android:layout_width="@dimen/margin_30"
+                android:layout_height="@dimen/margin_30"
+                android:scaleType="fitXY"
+                android:layout_margin="@dimen/margin_3"
+                android:padding="@dimen/margin_3"
+                android:src="@drawable/fire_station_icon_img"
+                android:layout_gravity="center"
+                />
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/woloo_support"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/margin_2"
+                    android:layout_marginRight="@dimen/margin_2"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:layout_marginBottom="@dimen/dp_5"
+                    >
+                    <TextView
+                        android:id="@+id/woloo_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Name"
+                        android:textColor="@color/white"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:maxLines="1"
+                        android:textSize="@dimen/margin_5"
+                        android:lines="1"
+                        android:layout_margin="-1dp"/>
+                    <TextView
+                        android:id="@+id/woloo_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Address"
+                        android:textColor="@color/dark_yellow"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:maxLines="2"
+                        android:lines="2"
+                        android:layout_margin="-1dp"
+                        android:visibility="gone"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/woloo_phone"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="Phone Number"
+                            android:layout_margin="-1dp"
+                            android:textColor="@color/white"
+                            android:layout_weight="1"
+                            android:gravity="left|center"
+                            android:maxLines="1"
+                            android:lines="1"
+                            />
+
+                        <ImageView
+                            android:id="@+id/call_woloo"
+                            android:layout_width="27dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="bottom"
+                            android:layout_margin="@dimen/margin_3"
+                            android:padding="@dimen/margin_1"
+                            android:src="@drawable/woloo_call" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/hospital_support"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/margin_2"
+                    android:layout_marginRight="@dimen/margin_2"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:layout_marginBottom="@dimen/dp_5">
+                    <TextView
+                        android:id="@+id/hospital_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Name"
+                        android:textSize="@dimen/margin_5"
+                        android:textColor="@color/white"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:maxLines="1"
+                        android:lines="1"
+                        android:layout_margin="-1dp"/>
+                    <TextView
+                        android:id="@+id/hospital_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Address"
+                        android:textColor="@color/black"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:maxLines="2"
+                        android:lines="2"
+                        android:layout_margin="-1dp"
+                        android:visibility="gone"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/hospital_phone"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="Phone Number"
+                            android:layout_margin="-1dp"
+                            android:textColor="@color/white"
+                            android:layout_weight="1"
+                            android:gravity="left|center"
+                            android:maxLines="1"
+                            android:lines="1"
+                            android:drawableEnd="@drawable/call_icon"/>
+                        <ImageView
+                            android:id="@+id/call_hospital"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/call_hospital_icon"
+                            android:layout_gravity="bottom"
+                            android:layout_margin="@dimen/margin_3"
+                            android:padding="@dimen/margin_1"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/police_support"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/margin_2"
+                    android:layout_marginRight="@dimen/margin_2"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:layout_marginBottom="@dimen/dp_5">
+                    <TextView
+                        android:id="@+id/police_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Name"
+                        android:textSize="@dimen/margin_5"
+                        android:textColor="@color/white"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:maxLines="1"
+                        android:lines="1"
+                        android:layout_margin="-1dp"/>
+                    <TextView
+                        android:id="@+id/police_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Address"
+                        android:textColor="@color/black"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:maxLines="2"
+                        android:lines="2"
+                        android:layout_margin="-1dp"
+                        android:visibility="gone"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/police_phone"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="Phone Number"
+                            android:layout_margin="-1dp"
+                            android:textColor="@color/white"
+                            android:layout_weight="1"
+                            android:gravity="left|center"
+                            android:maxLines="1"
+                            android:lines="1"
+                            android:drawableEnd="@drawable/call_icon"/>
+                        <ImageView
+                            android:id="@+id/call_police"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/police_call"
+                            android:layout_gravity="bottom"
+                            android:layout_margin="@dimen/margin_3"
+                            android:padding="@dimen/margin_1"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/fire_support"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/margin_2"
+                    android:layout_marginRight="@dimen/margin_2"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:layout_marginBottom="@dimen/dp_5">
+                    <TextView
+                        android:id="@+id/fire_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Name"
+                        android:textColor="@color/white"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:textSize="@dimen/margin_5"
+                        android:maxLines="1"
+                        android:lines="1"
+                        android:layout_margin="-1dp"/>
+                    <TextView
+                        android:id="@+id/fire_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Address"
+                        android:textColor="@color/black"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:maxLines="2"
+                        android:lines="2"
+                        android:layout_margin="-1dp"
+                        android:visibility="gone"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/fire_phone"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="Phone Number"
+                            android:layout_margin="-1dp"
+                            android:textColor="@color/white"
+                            android:layout_weight="1"
+                            android:gravity="left|center"
+                            android:maxLines="1"
+                            android:lines="1"
+                            />
+                        <ImageView
+                            android:id="@+id/call_fire"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/fire_call"
+                            android:layout_gravity="bottom"
+                            android:layout_margin="@dimen/margin_3"
+                            android:padding="@dimen/margin_1"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

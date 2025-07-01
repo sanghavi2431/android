@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/application_background">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Consent"
+        android:textColor="@color/light_yellow"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/margin_3"
+        android:padding="@dimen/margin_2"
+        android:textSize="@dimen/margin_9"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+
+        <TextView
+        android:id="@+id/consent_sign"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_5"
+        android:layout_marginLeft="@dimen/margin_5"
+        android:layout_marginRight="@dimen/margin_5"
+        android:text="@string/consent_sign"
+        android:textColor="@color/white"
+        android:textSize="@dimen/margin_6"/>
+
+
+    <TextView
+        android:id="@+id/consent_sign_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_2"
+        android:layout_marginLeft="@dimen/margin_5"
+        android:layout_marginRight="@dimen/margin_5"
+        android:text="@string/sign_two"
+        android:textColor="@color/white"
+        android:textSize="@dimen/margin_6"/>
+
+
+    <TextView
+        android:id="@+id/consent_sign_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_2"
+        android:layout_marginLeft="@dimen/margin_5"
+        android:layout_marginRight="@dimen/margin_5"
+        android:layout_marginBottom="@dimen/margin_5"
+        android:text="@string/sign_three"
+        android:textColor="@color/white"
+        android:textSize="@dimen/margin_6"/>
+
+</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/margin_2">
+        <TextView
+            android:id="@+id/tv_disagree_dialog"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="@dimen/size_5"
+            android:textColor="@color/black"
+            android:padding="@dimen/margin_5"
+            android:gravity="center"
+            android:layout_gravity="left"
+            android:background="@drawable/yellow_rectangle_shape"
+            android:text="@string/disagree"
+            android:layout_weight="1"
+            android:layout_marginTop="@dimen/margin_5"
+            android:layout_marginBottom="@dimen/margin_5"
+            android:layout_marginLeft="@dimen/margin_5"
+            android:layout_marginRight="@dimen/margin_2"
+            android:paddingTop="@dimen/margin_2"
+            android:paddingBottom="@dimen/margin_2"/>
+
+        <TextView
+            android:id="@+id/tv_agree_dialog"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="@dimen/size_5"
+            android:textColor="@color/black"
+            android:padding="@dimen/margin_5"
+            android:gravity="center"
+            android:layout_gravity="left"
+            android:background="@drawable/yellow_rectangle_shape"
+            android:text="@string/agree"
+            android:layout_weight="1"
+            android:layout_marginTop="@dimen/margin_5"
+            android:layout_marginBottom="@dimen/margin_5"
+            android:layout_marginLeft="@dimen/margin_2"
+            android:layout_marginRight="@dimen/margin_5"
+            android:paddingTop="@dimen/margin_2"
+            android:paddingBottom="@dimen/margin_2"/>
+    </LinearLayout>
+
+</LinearLayout>

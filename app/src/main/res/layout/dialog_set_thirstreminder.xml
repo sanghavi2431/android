@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/rounded_dialog">
+
+    <TextView
+        android:id="@+id/headTitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/open_sans_semi_bold"
+        android:text="@string/thirst_reminder"
+        android:textAllCaps="true"
+        android:textColor="@color/color_gray"
+        android:textSize="@dimen/size_8"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="#1A414042"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/headTitleText" />
+
+    <ImageView
+        android:id="@+id/ivClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/ic_close"
+        app:layout_constraintBottom_toBottomOf="@+id/headTitleText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/headTitleText"
+        app:tint="@color/blak_bluedark" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/open_sans_semi_bold"
+        android:text="@string/set_frequency"
+        android:textColor="@color/color_gray"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view3" />
+
+    <EditText
+        android:id="@+id/etThirstFrequency"
+        android:layout_width="@dimen/margin_20"
+        android:layout_height="@dimen/margin_20"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rounded_background_grey"
+        android:inputType="number"
+        android:maxLength="1"
+        android:maxLines="1"
+        android:digits="1234567890"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/size_8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="@string/every"
+        android:textColor="@color/color_gray"
+        app:layout_constraintBottom_toBottomOf="@+id/etThirstFrequency"
+        app:layout_constraintEnd_toStartOf="@+id/etThirstFrequency"
+        app:layout_constraintTop_toTopOf="@+id/etThirstFrequency" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/hrs"
+        android:textColor="@color/color_gray"
+        app:layout_constraintBottom_toBottomOf="@+id/etThirstFrequency"
+        app:layout_constraintStart_toEndOf="@+id/etThirstFrequency"
+        app:layout_constraintTop_toTopOf="@+id/etThirstFrequency" />
+
+    <TextView
+        android:id="@+id/tvThirstTimerMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:drawablePadding="4dp"
+        android:fontFamily="@font/open_sans_semi_bold"
+        android:gravity="center"
+        android:text="@string/thirst_reminder_confirmation_value"
+        android:textColor="@color/color_gray"
+        android:textSize="12sp"
+        app:drawableStartCompat="@drawable/ic_info"
+        app:drawableTint="#F09334"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etThirstFrequency" />
+
+    <CheckBox
+        android:id="@+id/cbCancelReminder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:includeFontPadding="false"
+        android:text="@string/cancel_reminder"
+        android:textColor="@color/color_gray"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvThirstTimerMessage" />
+
+    <TextView
+        android:id="@+id/tvSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/round_corner_button"
+        android:gravity="center"
+        android:minWidth="200dp"
+        android:padding="@dimen/margin_4"
+        android:text="@string/save"
+        android:textColor="@color/text_color_one"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cbCancelReminder" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

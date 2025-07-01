@@ -1,0 +1,41 @@
+apply plugin: 'com.android.library'
+
+ext {
+    PUBLISH_GROUP_ID = 'codelight.studios'
+    PUBLISH_ARTIFACT_ID = 'android-smart-login'
+    PUBLISH_VERSION = '1.2'
+}
+
+android {
+    compileSdkVersion 34
+    namespace('studios.codelight.smartloginlibrary')
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 34
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    lint {
+        abortOnError false
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    // Facebook sdk
+    implementation 'com.facebook.android:facebook-android-sdk:[4,5)'
+    // Google Play Services
+    implementation 'com.google.android.gms:play-services-auth:10.2.0'
+    implementation 'com.google.firebase:firebase-auth:10.2.0'
+    // GSON lib
+    implementation 'com.google.code.gson:gson:2.7'
+}
+

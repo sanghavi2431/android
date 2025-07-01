@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <item
+        android:id="@+id/navigation_dash_home"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="@string/menu_home"
+        app:showAsAction="always"
+        />
+
+    <item
+        android:id="@+id/navigation_inviteFriend"
+        android:icon="@drawable/ic_invitefriend"
+        android:title="@string/refer"
+        app:showAsAction="always"
+        />
+
+    <item
+        android:id="@+id/navigation_home"
+        app:showAsAction="always"
+        tools:ignore="MenuTitle" />
+
+    <item
+        android:id="@+id/navigation_chatty_cat"
+        android:icon="@drawable/ic_accountdeactive"
+        android:title="@string/my_account"
+        app:showAsAction="always"
+        />
+
+    <item
+        android:id="@+id/navigation_more"
+        android:icon="@drawable/ic_more_deactive"
+        android:title="@string/title_menu"
+        app:showAsAction="always"
+        />
+
+</menu>

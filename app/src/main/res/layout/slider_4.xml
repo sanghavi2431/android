@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/application_background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/size_9"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:text="@string/criteria"/>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_10"
+                android:layout_marginBottom="@dimen/margin_10"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_below="@id/wah_Tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/size_8"
+                    android:layout_gravity="center"
+                    android:textAllCaps="true"
+                    android:gravity="center"
+                    android:text="@string/pre_requisites_for_wah_certification"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_color_six"
+                    android:textSize="@dimen/size_7"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/margin_5"
+                    android:gravity="center"
+                    android:text="@string/criteria_text_1"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_5"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_below="@id/wah_Tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/size_7"
+                    android:layout_gravity="center"
+                    android:textAllCaps="true"
+                    android:gravity="center"
+                    android:text="Location accessibility"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_color_six"
+                    android:textSize="@dimen/size_7"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/margin_5"
+                    android:gravity="center"
+                    android:text="@string/criteria_text_2"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_5"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_below="@id/wah_Tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/size_7"
+                    android:textAllCaps="true"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="@string/safety_security"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_color_six"
+                    android:textSize="@dimen/size_7"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/margin_5"
+                    android:gravity="center"
+                    android:text="@string/criteria_text_3"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_5"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_below="@id/wah_Tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/size_7"
+                    android:textAllCaps="true"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="@string/hygiene_cleanliness"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_color_six"
+                    android:textSize="@dimen/size_7"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/margin_5"
+                    android:gravity="center"
+                    android:text="@string/criteria_text_4"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_5"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_below="@id/wah_Tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/size_7"
+                    android:layout_gravity="center"
+                    android:textAllCaps="true"
+                    android:gravity="center"
+                    android:text="@string/quality_of_fitting_facilities"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_color_six"
+                    android:textSize="@dimen/size_7"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/margin_5"
+                    android:gravity="center"
+                    android:text="@string/criteria_text_5"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_5"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_below="@id/wah_Tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/size_7"
+                    android:layout_gravity="center"
+                    android:textAllCaps="true"
+                    android:gravity="center"
+                    android:text="@string/hospitality_courtesy"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_color_six"
+                    android:textSize="@dimen/size_7"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/margin_5"
+                    android:gravity="center"
+                    android:text="@string/criteria_text_6"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</LinearLayout>

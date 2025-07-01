@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/dialog_background"
+    tools:context=".vtion.activities.TermsAndConditionsActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Terms &amp; Conditions"
+        android:textColor="@color/light_yellow"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/margin_3"
+        android:padding="@dimen/margin_2"
+        android:textSize="@dimen/margin_8"/>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_margin="@dimen/margin_2"
+       >
+
+        <TextView
+            android:id="@+id/terms_condi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_4"
+            android:layout_marginRight="@dimen/margin_4"
+            android:layout_marginTop="@dimen/margin_2"
+            android:layout_marginBottom="@dimen/margin_2"
+            android:text="@string/terms_details_one"
+            android:textColor="@color/white"
+            android:textSize="@dimen/margin_6"/>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/check_condition"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="@dimen/margin_2">
+
+        <CheckBox
+            android:id="@+id/check_agree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margin_2"
+           >
+
+    <TextView
+        android:id="@+id/terms_one"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/margin_5"
+        android:textColor="@color/white"
+        android:text="@string/terms_one"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintEnd_toStartOf="@+id/terms_two"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+            <TextView
+                android:id="@+id/terms_two"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/margin_5"
+                android:textColor="@color/light_yellow"
+                android:text="@string/terms_two"
+                tools:ignore="MissingConstraints"
+                android:paddingEnd="@dimen/margin_2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/terms_one"/>
+            <TextView
+                android:id="@+id/terms_three"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/margin_5"
+                android:textColor="@color/white"
+                android:text="@string/terms_three"
+                app:layout_constraintStart_toEndOf="@+id/terms_two"
+                app:layout_constraintTop_toBottomOf="@id/terms_one"
+                tools:ignore="MissingConstraints" />
+            <TextView
+                android:id="@+id/terms_four"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/margin_5"
+                android:textColor="@color/light_yellow"
+                android:text="@string/terms_four"
+                android:layout_marginLeft="@dimen/margin_2"
+                android:layout_marginRight="@dimen/margin_2"
+                app:layout_constraintStart_toEndOf="@+id/terms_three"
+                app:layout_constraintTop_toBottomOf="@id/terms_one"
+                tools:ignore="MissingConstraints" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/margin_2">
+        <TextView
+            android:id="@+id/tv_disagree"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="@dimen/size_5"
+            android:textColor="@color/black"
+            android:padding="@dimen/margin_5"
+            android:gravity="center"
+            android:layout_gravity="left"
+            android:background="@drawable/yellow_rectangle_shape"
+            android:text="@string/disagree"
+            android:layout_weight="1"
+            android:layout_marginTop="@dimen/margin_5"
+            android:layout_marginBottom="@dimen/margin_5"
+            android:layout_marginLeft="@dimen/margin_5"
+            android:layout_marginRight="@dimen/margin_2"
+            android:paddingTop="@dimen/margin_2"
+            android:paddingBottom="@dimen/margin_2"/>
+
+        <TextView
+            android:id="@+id/tv_agree"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="@dimen/size_5"
+            android:textColor="@color/black"
+            android:padding="@dimen/margin_5"
+            android:gravity="center"
+            android:layout_gravity="left"
+            android:enabled="false"
+            android:background="@drawable/yellow_rectangle_shape"
+            android:text="@string/agree"
+            android:layout_weight="1"
+            android:layout_marginTop="@dimen/margin_5"
+            android:layout_marginBottom="@dimen/margin_5"
+            android:layout_marginLeft="@dimen/margin_2"
+            android:layout_marginRight="@dimen/margin_5"
+            android:paddingTop="@dimen/margin_2"
+            android:paddingBottom="@dimen/margin_2"/>
+    </LinearLayout>
+
+</LinearLayout>

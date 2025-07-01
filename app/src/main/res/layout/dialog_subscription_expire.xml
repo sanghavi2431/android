@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:paddingTop="@dimen/margin_10"
+        android:paddingBottom="@dimen/margin_10"
+        android:layout_centerInParent="true"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="@drawable/dialog_background_yellow">
+
+        <ImageView
+            android:layout_width="@dimen/margin_40"
+            android:layout_height="@dimen/margin_40"
+            android:layout_marginTop="@dimen/margin_10"
+            android:layout_marginBottom="@dimen/margin_10"
+            android:layout_gravity="center"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/dialog_expire_clock_image"/>
+
+
+        <TextView
+            android:id="@+id/tv_expiredate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:layout_marginRight="@dimen/margin_10"
+            android:gravity="center_horizontal"
+            android:text="@string/expire_date_text"
+            android:visibility="visible"
+            android:textColor="@color/application_background"
+            android:textSize="@dimen/size_8"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/tv_expired"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:layout_marginRight="@dimen/margin_10"
+            android:gravity="center"
+            android:text="@string/expired_text"
+            android:textColor="@color/application_background"
+            android:textSize="@dimen/size_8"
+            android:textStyle="normal" />
+
+        <LinearLayout
+            android:id="@+id/ll_renew"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/app_background"
+            android:padding="@dimen/margin_3"
+            android:layout_marginTop="@dimen/margin_5"
+            android:layout_marginBottom="@dimen/margin_5"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/size_9"
+                android:background="@drawable/dialog_background"
+                android:textColor="@color/app_background"
+                android:paddingLeft="@dimen/margin_20"
+                android:paddingRight="@dimen/margin_20"
+                android:paddingTop="@dimen/margin_2"
+                android:paddingBottom="@dimen/margin_2"
+                android:lineSpacingExtra="25.3sp"
+                android:layout_margin="@dimen/margin_5"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:text="@string/renew" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <in.woloo.www.utils.CapitalizedTextView
+        android:id="@+id/moods_Tv"
+        android:layout_width="@dimen/margin_20"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/margin_5"
+        android:layout_marginTop="@dimen/margin_5"
+        android:layout_marginEnd="@dimen/margin_5"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="@string/bleeding"
+        android:textColor="@color/text_color_seven"
+        android:textSize="@dimen/margin_5" />
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/margin_3"
+        android:background="@drawable/rounded_background_white">
+
+        <ImageView
+            android:id="@+id/moods_Imv"
+            android:layout_width="@dimen/margin_18"
+            android:layout_height="@dimen/margin_18"
+            android:src="@drawable/ic_bleeding_icon" />
+
+        <TextView
+            android:id="@+id/multipleMoods_Imv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|end"
+            android:gravity="center"
+            android:background="@drawable/circular_background"
+            android:backgroundTint="@color/gray"
+            android:includeFontPadding="false"
+            android:padding="4dp"
+            tools:text="+2"
+            android:textColor="@color/white"
+            android:textSize="10sp" />
+    </FrameLayout>
+
+
+</LinearLayout>

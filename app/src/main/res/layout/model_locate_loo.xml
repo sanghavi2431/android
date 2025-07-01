@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cvRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="4dp"
+    app:cardElevation="0dp"
+    app:cardMaxElevation="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_rect_pager_back"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/locatePinRel"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_new_loo_location"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/color_gray" />
+
+        <TextView
+            android:id="@+id/textMainlocate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_toEndOf="@+id/locatePinRel"
+            android:ellipsize="end"
+            android:fontFamily="@font/open_sans_semi_bold"
+            android:maxLines="1"
+            android:text="Locate a Loo Near You"
+            android:textColor="@color/color_gray"
+            android:textSize="@dimen/size_9"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/locatePinRel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/locatePinRel"
+            app:layout_constraintTop_toTopOf="@+id/locatePinRel" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:src="@drawable/ic_move"
+            app:layout_constraintBottom_toBottomOf="@+id/textMainlocate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textMainlocate" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/static_map"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/locatePinRel" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <!-- <TextView
+         android:id="@+id/textSublocate"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_below="@+id/textMainlocate"
+         android:layout_marginEnd="@dimen/margin_35"
+         android:fontFamily="@font/open_sans_regular"
+         android:text="we provide the best service to keep your Health and Hygiene intact."
+         android:textColor="@color/color_gray"
+         android:textSize="@dimen/size_6" />-->
+
+</androidx.cardview.widget.CardView>

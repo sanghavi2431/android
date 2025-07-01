@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true">
+
+    <RelativeLayout
+        android:id="@+id/rlHeaderInclude"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_150">
+
+        <include layout="@layout/item_details_header" />
+
+    </RelativeLayout>
+
+    <include
+        layout="@layout/bottom_sheet_content" />
+
+
+    <RelativeLayout
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:background="@drawable/details_bottom_bg"
+        android:layout_gravity="bottom"
+        android:paddingLeft="@dimen/margin_7"
+        android:paddingRight="@dimen/margin_7"
+        android:layout_height="@dimen/margin_30">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/margin_2"
+            android:layout_above="@+id/directionPts"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_direction"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="@dimen/size_4"
+                android:textColor="@color/text_color_one"
+                android:padding="@dimen/margin_3"
+                android:gravity="center"
+                android:paddingLeft="@dimen/margin_2"
+                android:singleLine="true"
+                android:paddingRight="@dimen/margin_2"
+                android:drawablePadding="@dimen/margin_1"
+                android:layout_marginRight="@dimen/margin_3"
+                android:drawableLeft="@drawable/details_location_layer_list"
+                android:background="@drawable/yellow_rectangle_shape"
+                android:text="Directions" />
+
+
+            <TextView
+                android:id="@+id/tv_start"
+                android:singleLine="true"
+                android:layout_width="0dp"
+                android:layout_weight="0"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="@dimen/size_4"
+                android:textColor="@color/white"
+                android:padding="@dimen/margin_3"
+                android:layout_marginLeft="@dimen/margin_1"
+                android:gravity="center"
+                android:drawablePadding="@dimen/margin_1"
+                android:paddingLeft="@dimen/margin_2"
+                android:paddingRight="@dimen/margin_2"
+                android:layout_marginRight="@dimen/margin_3"
+                android:visibility="gone"
+                android:drawableLeft="@drawable/details_start_layer_list"
+                android:background="@drawable/transperent_rectangle_shape"
+                android:text="Start" />
+
+            <TextView
+                android:id="@+id/tvShare"
+                android:singleLine="true"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="@dimen/size_4"
+                android:textColor="@color/white"
+                android:padding="@dimen/margin_3"
+                android:drawablePadding="@dimen/margin_1"
+                android:layout_marginLeft="@dimen/margin_1"
+                android:gravity="center"
+                android:paddingLeft="@dimen/margin_2"
+                android:paddingRight="@dimen/margin_2"
+                android:layout_marginRight="@dimen/margin_3"
+                android:drawableLeft="@drawable/details_share_layer_list"
+                android:background="@drawable/transperent_rectangle_shape"
+                android:text="@string/share" />
+
+            <TextView
+                android:id="@+id/tv_like"
+                android:singleLine="true"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="@dimen/size_4"
+                android:textColor="@color/white"
+                android:padding="@dimen/margin_3"
+                android:layout_marginLeft="@dimen/margin_1"
+                android:gravity="center"
+                android:drawablePadding="@dimen/margin_1"
+                android:paddingLeft="@dimen/margin_2"
+                android:paddingRight="@dimen/margin_2"
+                android:drawableLeft="@drawable/details_like_layer_list"
+                android:background="@drawable/transperent_rectangle_shape"
+                android:text="@string/bookmark" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/directionPts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/margin_2"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/margin_5"
+                android:layout_height="@dimen/margin_5"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/margin_2"
+                android:src="@drawable/ic_info"
+                app:tint="@color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:includeFontPadding="false"
+                android:layout_marginLeft="@dimen/margin_2"
+                android:maxLines="2"
+                android:text="Please use direction to earn Woloo Points"
+                android:textColor="@color/text_color_six"
+                android:textSize="@dimen/size_6"
+                android:textStyle="normal" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

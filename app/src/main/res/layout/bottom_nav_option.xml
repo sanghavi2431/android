@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#DD000000"
+    android:orientation="vertical"
+    app:layout_behavior="android.support.design.widget.BottomSheetBehavior">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_5"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/blogCatRelTwo"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <RelativeLayout
+                android:id="@+id/imgTwoRel"
+                android:layout_width="@dimen/margin_20"
+                android:layout_height="@dimen/margin_20"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/ic_circle_back_img_blog_hor"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/imgTwo"
+                    android:layout_width="@dimen/margin_9"
+                    android:layout_height="@dimen/margin_9"
+                    android:src="@drawable/ic_locate_woloo_pin" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imgTwoRel"
+                android:layout_centerInParent="true"
+                android:ellipsize="end"
+                android:fontFamily="@font/open_sans_semi_bold"
+                android:maxLines="1"
+                android:text="Loo Locator"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/blogCatRelOne"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <RelativeLayout
+                android:id="@+id/imgOneRel"
+                android:layout_width="@dimen/margin_20"
+                android:layout_height="@dimen/margin_20"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/ic_circle_back_img_blog_hor"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/imgOne"
+                    android:layout_width="@dimen/margin_9"
+                    android:layout_height="@dimen/margin_9"
+                    android:src="@drawable/ic_shop_cart_icon" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imgOneRel"
+                android:layout_centerInParent="true"
+                android:ellipsize="end"
+                android:fontFamily="@font/open_sans_semi_bold"
+                android:maxLines="1"
+                android:text="Shop"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_5"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/blogCatRelThree"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <RelativeLayout
+                android:id="@+id/imgThreeRel"
+                android:layout_width="@dimen/margin_20"
+                android:layout_height="@dimen/margin_20"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/ic_circle_back_img_blog_hor"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/imgThree"
+                    android:layout_width="@dimen/margin_9"
+                    android:layout_height="@dimen/margin_9"
+                    android:src="@drawable/ic_calendars_icon" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imgThreeRel"
+                android:layout_centerInParent="true"
+                android:ellipsize="end"
+                android:fontFamily="@font/open_sans_semi_bold"
+                android:maxLines="1"
+                android:text="Period Tracker"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/blogCatRelFour"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <RelativeLayout
+                android:id="@+id/imgFourRel"
+                android:layout_width="@dimen/margin_20"
+                android:layout_height="@dimen/margin_20"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/ic_circle_back_img_blog_hor"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/imgFour"
+                    android:layout_width="@dimen/margin_9"
+                    android:layout_height="@dimen/margin_9"
+                    android:src="@drawable/ic_thirst" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imgFourRel"
+                android:layout_centerInParent="true"
+                android:ellipsize="end"
+                android:fontFamily="@font/open_sans_semi_bold"
+                android:maxLines="1"
+                android:text="Thirst Reminder"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_5"
+        android:layout_marginBottom="@dimen/margin_35"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:visibility="gone"
+            android:id="@+id/blogCatRelFive"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <RelativeLayout
+                android:id="@+id/imgFiveRel"
+                android:layout_width="@dimen/margin_20"
+                android:layout_height="@dimen/margin_20"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/ic_circle_back_img_blog_hor"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/imgFive"
+                    android:layout_width="@dimen/margin_9"
+                    android:layout_height="@dimen/margin_9"
+                    android:src="@drawable/ic_woloo_community" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imgFiveRel"
+                android:layout_centerInParent="true"
+                android:ellipsize="end"
+                android:fontFamily="@font/open_sans_semi_bold"
+                android:maxLines="1"
+                android:text="Woloo Community"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:visibility="invisible" />
+    </LinearLayout>
+</LinearLayout>

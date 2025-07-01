@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dialog_background"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/dialog_background"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/margin_10"
+        android:paddingBottom="@dimen/margin_10">
+
+        <ImageView
+            android:layout_width="@dimen/margin_40"
+            android:layout_height="@dimen/margin_40"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margin_5"
+            android:layout_marginBottom="@dimen/margin_3"
+            android:src="@drawable/ic_wl_logo" />
+
+
+        <TextView
+            android:id="@+id/tv_startfreetrial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/margin_5"
+            android:layout_marginRight="@dimen/margin_5"
+            android:layout_marginBottom="@dimen/margin_5"
+            android:gravity="center_horizontal"
+            android:text="trial description"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/size_6"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/tv_expiryNote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/margin_5"
+            android:layout_marginRight="@dimen/margin_5"
+            android:layout_marginBottom="@dimen/margin_5"
+            android:gravity="center_horizontal"
+            android:text="trial description"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/size_5"
+            android:textStyle="italic"
+            android:visibility="gone" />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:id="@+id/ivFreeTrial"
+                android:layout_width="@dimen/margin_40"
+                android:layout_height="@dimen/margin_40"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:src="@drawable/woloo_empty" />
+
+            <TextView
+                android:id="@+id/tv_daysTrials"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/margin_4"
+                android:text=""
+                android:includeFontPadding="false"
+                android:gravity="center"
+                android:textColor="@color/application_background" />
+
+            <TextView
+                android:id="@+id/tv_typeOfVoucher"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/margin_7"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:maxLines="2"
+                android:text=""
+                android:textColor="@color/application_background"
+                android:textSize="9sp"
+                android:textStyle="bold" />
+
+
+        </FrameLayout>
+
+        <!-- android:src="@drawable/ic_free_trial"-->
+
+
+        <LinearLayout
+            android:id="@+id/llStartFreeTrial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margin_5"
+            android:layout_marginBottom="@dimen/margin_5"
+            android:background="@drawable/yellow_rectangle_shape"
+            android:orientation="horizontal"
+            android:padding="@dimen/margin_3">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:lineSpacingExtra="25.3sp"
+                android:paddingLeft="@dimen/margin_20"
+                android:paddingRight="@dimen/margin_20"
+                android:text="@string/okay"
+                android:textAllCaps="true"
+                android:textColor="@color/application_background"
+                android:textSize="@dimen/size_9"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

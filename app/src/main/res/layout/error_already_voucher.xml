@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/transparent_rectangle"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/margin_10"
+        android:paddingRight="@dimen/margin_10"
+        android:paddingLeft="@dimen/margin_10"
+        android:paddingBottom="@dimen/margin_5"
+        android:layout_centerInParent="true"
+        android:background="@drawable/dialog_background_yellow">
+
+        <ImageView
+            android:id="@+id/wah_Imv"
+            android:layout_width="@dimen/margin_50"
+            android:layout_height="@dimen/margin_50"
+            android:layout_gravity="center"
+            android:paddingBottom="@dimen/margin_10"
+            android:src="@drawable/logo"/>
+
+        <TextView
+            android:id="@+id/title_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="You already have an active Voucher/Membership. If you want to use Scanned Voucher the Current Will be Cancelled"
+            android:textStyle="bold"
+            android:textColor="@color/application_background"
+            android:textSize="@dimen/size_8" />
+
+        <LinearLayout
+            android:id="@+id/llOkayBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/black_rectangle_button"
+            android:padding="@dimen/margin_3"
+            android:layout_marginTop="@dimen/margin_10"
+            android:layout_marginBottom="@dimen/margin_5"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="@dimen/size_9"
+                android:textColor="@color/text_color_five"
+                android:paddingLeft="@dimen/margin_20"
+                android:paddingRight="@dimen/margin_20"
+                android:lineSpacingExtra="25.3sp"
+                android:gravity="center"
+                android:textAllCaps="true"
+                android:layout_gravity="center"
+                android:text="@string/okay" />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/llCancelBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/black_rectangle_button"
+            android:padding="@dimen/margin_3"
+            android:layout_marginTop="@dimen/margin_5"
+            android:layout_marginBottom="@dimen/margin_5"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="@dimen/size_9"
+                android:textColor="@color/text_color_five"
+                android:paddingLeft="@dimen/margin_15"
+                android:paddingRight="@dimen/margin_15"
+                android:lineSpacingExtra="25.3sp"
+                android:gravity="center"
+                android:textAllCaps="true"
+                android:layout_gravity="center"
+                android:text="Cancel" />
+
+
+        </LinearLayout>
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/application_background"
+            android:layout_gravity="center"
+            android:textSize="@dimen/size_6"
+            android:gravity="center"
+            android:text="*Remaining number of days from the current Membership will be void"/>
+
+    </LinearLayout>
+
+
+
+
+
+</RelativeLayout>

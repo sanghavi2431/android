@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/application_background"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/wah_Tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="WAH"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/size_9" />
+
+            <TextView
+                android:id="@+id/title_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/wah_Tv"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="(Woloo Assurance of Hygiene)"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/size_10" />
+
+            <LinearLayout
+                android:id="@+id/mainlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title_TV"
+                android:layout_centerInParent="true"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/margin_5"
+                    android:gravity="center"
+                    android:text="@string/text1"
+                    android:textColor="@color/text_color_six"
+                    android:textSize="@dimen/size_7" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/margin_5"
+                    android:gravity="center"
+                    android:text="@string/text2"
+                    android:textColor="@color/text_color_six"
+                    android:textSize="@dimen/size_7" />
+
+                <ImageView
+                    android:id="@+id/wah_Imv"
+                    android:layout_width="@dimen/margin_50"
+                    android:layout_height="@dimen/margin_50"
+                    android:layout_gravity="center"
+                    android:paddingBottom="@dimen/margin_10"
+                    android:src="@drawable/wah" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+</LinearLayout>

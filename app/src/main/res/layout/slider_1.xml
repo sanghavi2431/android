@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/application_background"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/margin_50">
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_30"
+                android:layout_marginLeft="@dimen/margin_20"
+                android:layout_marginRight="@dimen/margin_20"
+                android:src="@drawable/ic_welcome"
+                android:visibility="gone" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/margin_10"
+                android:gravity="center"
+                android:text="Welcome"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/size_9"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_6"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_marginRight="@dimen/margin_6"
+                android:gravity="center"
+                android:lineSpacingExtra="8.7sp"
+                android:text="@string/become_a_woloo_host_msg1"
+                android:textColor="#f4f4f4"
+                android:textSize="@dimen/size_7"
+                android:textStyle="normal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_6"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_marginRight="@dimen/margin_6"
+                android:gravity="center"
+                android:lineSpacingExtra="8.7sp"
+                android:text="@string/become_a_woloo_host_msg2"
+                android:textColor="#f4f4f4"
+
+                android:textSize="@dimen/size_7"
+                android:textStyle="normal" />
+
+            <LinearLayout
+                android:id="@+id/llInterestedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/margin_15"
+                android:background="@drawable/yellow_rectangle_shape"
+                android:orientation="vertical"
+                android:padding="@dimen/margin_5"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/btnInterest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:layout_marginRight="@dimen/margin_10"
+                    android:gravity="center_horizontal"
+                    android:text="@string/yes_i_am_interested"
+                    android:textColor="@color/text_color_one"
+                    android:textSize="@dimen/size_7"
+                    android:textStyle="normal" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

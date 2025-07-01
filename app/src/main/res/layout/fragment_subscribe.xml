@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/application_background"
+    android:orientation="vertical"
+    tools:context=".subscribe.fragments.SubscribeFragment">
+
+    <include layout="@layout/title_bar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corner_gray_outlined"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginVertical="12dp"
+        android:padding="12dp">
+        <TextView
+            android:id="@+id/tv_gift_points"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:gravity="start"
+            android:text=""
+            android:fontFamily="@font/open_sans_regular"
+            android:textColor="@color/text_color_five"
+            android:textSize="@dimen/size_7" />
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/open_sans_regular"
+            android:text="You can redeem gift vouchers to buy subscription."
+            android:textColor="@color/white"
+            android:textSize="@dimen/size_6"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <in.woloo.www.subscribe.mvp.EmptyRecyclerView
+                android:id="@+id/recyclerView_subscribe"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/margin_40"
+                android:descendantFocusability="blocksDescendants" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

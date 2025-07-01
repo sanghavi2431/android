@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_gravity="center">
+
+    <LinearLayout
+        android:paddingTop="@dimen/margin_10"
+        android:paddingBottom="@dimen/margin_10"
+        android:layout_centerInParent="true"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/dialog_background">
+
+        <ImageView
+            android:layout_width="@dimen/margin_60"
+            android:layout_height="@dimen/margin_60"
+            android:layout_marginTop="@dimen/margin_10"
+            android:layout_marginBottom="@dimen/margin_10"
+            android:layout_gravity="center"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/logo"
+            app:tint="@color/text_color_five" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/margin_6"
+            android:layout_marginRight="@dimen/margin_6"
+            android:layout_marginTop="@dimen/margin_5"
+            android:layout_marginBottom="@dimen/margin_5"
+            android:gravity="center"
+            android:visibility="gone"
+            android:text="@string/we_will_be_back_soon"
+            android:textColor="@color/text_color_five"
+            android:textSize="@dimen/size_10"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/maintenanceTextTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/margin_6"
+            android:layout_marginRight="@dimen/margin_6"
+            android:layout_marginTop="@dimen/margin_5"
+            android:layout_marginBottom="@dimen/margin_5"
+            android:gravity="center"
+            android:text="@string/maintaince_text"
+            android:textColor="@color/text_color_five"
+            android:textSize="@dimen/size_8"
+            android:textStyle="normal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/margin_6"
+            android:layout_marginRight="@dimen/margin_6"
+            android:layout_marginTop="@dimen/margin_3"
+            android:layout_marginBottom="@dimen/margin_5"
+            android:gravity="center"
+            android:visibility="gone"
+            android:text="@string/maintaince_text_2"
+            android:textColor="@color/text_color_five"
+            android:textSize="@dimen/size_8"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/btnCloseDialog"
+            android:text="@string/OKAY"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/size_5"
+            android:layout_marginTop="@dimen/size_10"
+            android:paddingBottom="@dimen/size_5"
+            android:visibility="gone"
+            android:paddingLeft="@dimen/margin_10"
+            android:paddingRight="@dimen/margin_10"
+            android:layout_gravity="center"
+            android:background="@drawable/yellow_rectangle_shape"/>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,451 @@
+import java.util.regex.Matcher
+import java.util.regex.Pattern
+
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
+
+}
+
+android {
+
+    compileSdkVersion 35 // Changed by Aarati
+    flavorDimensions rootProject.ext.flavorDimensions
+    namespace('in.woloo.www')
+
+
+
+    buildFeatures {
+
+        buildConfig true
+
+    }
+
+
+
+
+
+    defaultConfig {
+        applicationId "in.woloo.www"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        resConfigs ('en', 'xxxhdpi')
+        ndk {
+            abiFilters "x86", "x86_64", "arm64-v8a", "armeabi-v7a"
+        }
+        buildConfigField "String", "EMAIL_ENCRYPTION_KEY", "\"${project.EMAIL_ENCRYPTION_KEY}\""
+
+        buildConfigField "String", "EMAIL_PASSWORD", "\"${project.EMAIL_PASSWORD}\""
+
+
+    }
+
+    signingConfigs {
+        woloo_signing {
+            keyAlias 'woloo'
+            keyPassword 'jetsynthesys@123'
+            storeFile file('woloo.jks')
+            storePassword 'jetsynthesys@123'
+        }
+    }
+
+    buildTypes {
+
+        debug {
+//            applicationIdSuffix ".debug"
+//            versionNameSuffix "-debug"
+            minifyEnabled false
+            shrinkResources false
+            debuggable true
+            splits.abi.enable = false
+            splits.density.enable = false
+            aaptOptions.cruncherEnabled = false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            if (getCurrentFlavor().equalsIgnoreCase("woloo")) {
+                signingConfig signingConfigs.woloo_signing
+            } else {
+                signingConfig signingConfigs.woloo_signing
+            }
+            ext.enableCrashlytics = false
+            manifestPlaceholders = [crashlyticsCollectionEnabled:"false",FIREBASE_ANALYTICS_DEACTIVATED:"true"]
+        }
+
+        release {
+            minifyEnabled false
+            shrinkResources false
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            if (getCurrentFlavor().equalsIgnoreCase("woloo")) {
+                signingConfig signingConfigs.woloo_signing
+            } else {
+                signingConfig signingConfigs.woloo_signing
+            }
+            manifestPlaceholders = [crashlyticsCollectionEnabled:"true",FIREBASE_ANALYTICS_DEACTIVATED:"false"]
+        }
+
+
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+    android {
+        useLibrary 'org.apache.http.legacy'
+    }
+
+    productFlavors {
+        woloo {
+
+            //ext.woloo = wolooAlpha
+//            ext.woloo = wolooBeta
+       //     ext.woloo = wolooPreProd
+          ext.woloo = wolooProd
+        //   ext.woloo = wolooStaging
+//            ext.woloo = wolooDev
+
+            buildConfigField 'String', 'BASE_URL', "${woloo.BASE_URL}"
+            buildConfigField 'String', 'SHOP_URL', "${woloo.SHOP_URL}"
+            buildConfigField 'String', 'NODE_API_URL', "${woloo.NODE_API_URL}"
+            buildConfigField 'String', 'LIVE_URL', "${woloo.LIVE_URL}"
+            buildConfigField 'String', 'BASE_URL_ENC', "${woloo.BASE_URL_ENC}"
+            buildConfigField 'String', 'END_POINT_ENC', "${woloo.END_POINT_ENC}"
+            buildConfigField 'Integer', 'PORT_ENC', "${woloo.PORT_ENC}"
+            buildConfigField 'String', 'SAFETY_URL', "${woloo.SAFETY_URL}"
+//            buildConfigField 'String', 'SMT_APP_ID', "${woloo.SMT_APP_ID}"
+//            resValue "string", "SMT_APP_ID", "${woloo.SMT_APP_ID}"
+            manifestPlaceholders = [SMT_APP_ID:"${woloo.SMT_APP_ID}",HANSEL_APP_ID:"${woloo.HANSEL_APP_ID}",HANSEL_APP_KEY:"${woloo.HANSEL_APP_KEY}"]
+
+            buildConfigField 'Boolean', 'IS_SECURE', "${woloo.IS_SECURE}"
+            buildConfigField 'String', 'RESCUE_API_URL', "${woloo.RESCUE_API_URL}"
+            buildConfigField 'String', 'PERIOD_CATEGORY_ID', "${woloo.PERIOD_CATEGORY_ID}"
+
+            //
+            applicationId "in.woloo.www"
+            versionCode rootProject.ext.versionCode
+            versionName rootProject.ext.versionName
+        }
+    }
+
+    packagingOptions {
+        resources.excludes.add("META-INF/*")
+    }
+
+    compileOptions {
+        // Flag to enable support for the new language APIs
+        coreLibraryDesugaringEnabled true
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    sourceSets {
+        main {
+            res {
+                srcDirs 'src\\main\\res', 'src\\main\\res\\color'
+            }
+        }
+    }
+    dexOptions {
+        preDexLibraries true
+        maxProcessCount 8
+    }
+
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+    }
+
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+
+
+
+    tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
+
+        kotlinOptions {
+
+            jvmTarget = "11"
+
+        }
+
+    }
+
+
+
+    kapt {
+
+        correctErrorTypes = true
+
+        useBuildCache = true
+
+    }
+
+
+
+    dataBinding {
+
+        enabled = true
+
+    }
+
+    lint {
+
+        abortOnError false
+
+        checkReleaseBuilds false
+
+    }
+
+
+
+    // coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.0.4'
+
+}
+
+repositories {
+    google()
+    mavenCentral()
+    gradlePluginPortal()
+    maven { url 'https://jitpack.io' }
+    maven { url 'https://artifacts.netcore.co.in/artifactory/android' }
+    maven { url "https://jcenter.bintray.com" }
+}
+
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'com.google.android.material:material:1.6.0-alpha01'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.navigation:navigation-fragment:2.3.2'
+    implementation 'androidx.navigation:navigation-ui:2.3.2'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+
+    implementation project(path: ':smartloginlibrary')
+    implementation project(':collapsiblecalendarview2')
+
+    implementation 'com.google.firebase:firebase-inappmessaging-display:21.0.0'
+    implementation 'androidx.core:core-ktx:1.13.1' // Changed by Aarati from 1.1.0 to 1.13.1 @woloo on 19 Jul 2024
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.5.3'
+    implementation 'com.google.firebase:firebase-crashlytics-buildtools:3.0.2'
+    implementation 'androidx.activity:activity-ktx:1.10.1'
+
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    //Playing GIF image for splash screen
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.3'
+
+    // butterknife
+    implementation "com.jakewharton:butterknife:${versions.butterknife}"
+    annotationProcessor "com.jakewharton:butterknife-compiler:${versions.butterknife}"
+    kapt "com.jakewharton:butterknife-compiler:${versions.butterknife}"
+
+
+    implementation 'com.google.android.gms:play-services-maps:18.1.0'
+    implementation 'com.google.android.gms:play-services-location:21.0.1' //21.0.1
+    implementation 'com.google.android.gms:play-services-places:17.0.0'
+    implementation 'com.google.android.libraries.places:places:1.1.0'
+    implementation 'com.google.android.play:integrity:1.2.0' // Added by Aarati @ Woloo on 1 Aug 24
+
+
+
+    implementation 'com.google.code.gson:gson:2.10.1'
+
+    implementation 'com.android.volley:volley:1.2.1'
+
+    implementation files('libs/JetEncryptor_v19.aar')
+    implementation files('libs/jetconnectiontester_v1.0.aar')
+    implementation files('libs/VTION-SDK-1.2.4.aar')
+
+    /*Lottie Animation*/
+    implementation 'com.airbnb.android:lottie:3.0.5'
+
+    //firebase
+    implementation 'com.google.firebase:firebase-core:21.1.1'
+//implementation 'com.crashlytics.sdk.android:crashlytics:2.10.1'
+// Add the Firebase Crashlytics SDK.
+
+    implementation 'com.google.firebase:firebase-crashlytics:19.0.3' //Changed by Aarati from 18.2.0 to 19.0.1
+// Recommended: Add the Google Analytics SDK.
+    implementation 'com.google.firebase:firebase-analytics:22.1.0'
+
+
+    implementation 'com.google.firebase:firebase-auth:23.1.0'
+    implementation 'com.google.android.gms:play-services-auth:19.0.0'
+    implementation 'com.google.firebase:firebase-messaging:24.1.0'
+    //tags library
+    implementation 'com.google.android.material:material:1.3.0-beta01'
+    implementation 'androidx.appcompat:appcompat:1.3.0-alpha02'
+    //Rounded corner image view
+    implementation 'com.joooonho:selectableroundedimageview:1.0.1'
+    //FlexBox
+    implementation 'com.google.android:flexbox:2.0.1'
+    //QR code scanning
+    implementation 'com.budiyev.android:code-scanner:2.1.0'
+
+    implementation "com.github.TayfunCesur:CurvedBottomSheet:1.0.2"
+
+    //Razorpay
+    implementation 'com.razorpay:checkout:1.6.15'
+
+    //Glide
+    implementation 'com.github.bumptech.glide:glide:4.16.0' // Changed by Aarati 27 Aug 24
+    kapt 'com.github.bumptech.glide:compiler:4.16.0' // Changed by Aarati 28 Aug 24
+
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0' // Changed by Aarati from 2.3.0 to 2.9.0
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0' // Changed by Aarati from 2.3.0 to 2.9.0
+    implementation "com.google.accompanist:accompanist-permissions:0.29.0-alpha" // Added By Aarati for camera permissions on 19th july 2024
+
+    implementation("com.squareup.okhttp3:okhttp:4.9.0"){
+        transitive = true
+    } // block added by Aarati
+    implementation("com.squareup.okhttp3:logging-interceptor:4.9.0"){
+        transitive = true
+    } // block added by Aarati
+
+    implementation 'com.google.android.libraries.places:places:2.4.0'
+    implementation 'com.google.maps.android:android-maps-utils:2.2.0'
+    implementation 'org.slf4j:slf4j-nop:1.7.25'
+//    implementation 'com.google.maps:google-maps-services:17.0.0'
+
+    implementation 'com.google.maps:google-maps-services:0.2.5'
+//    implementation 'org.slf4j:slf4j-simple:1.7.25'
+
+    implementation project(':MobileContactsLib')
+//    implementation 'com.facebook.android:facebook-android-sdk:[5,6)'
+  implementation 'me.dm7.barcodescanner:zxing:1.9.8'
+    implementation 'com.journeyapps:zxing-android-embedded:4.3.0' // Added By Aarati
+    implementation 'com.google.zxing:core:3.4.1' // Added By Aarati
+
+    //implementation 'com.facebook.android:facebook-android-sdk:[4,5)'
+    implementation 'com.facebook.android:facebook-android-sdk:13.0.0' // Changed by Aarati
+    implementation 'com.facebook.android:facebook-core:13.0.0' // Changed by Aarati
+    implementation 'com.facebook.android:facebook-marketing:7.0.1'
+
+    implementation 'com.google.firebase:firebase-analytics:17.2.2'
+    implementation 'com.google.firebase:firebase-messaging:20.1.0'
+    implementation platform('com.google.firebase:firebase-bom:28.0.1')
+    implementation 'com.google.firebase:firebase-dynamic-links'
+    implementation 'com.google.firebase:firebase-config:22.0.0'
+
+    implementation 'com.google.android.gms:play-services-auth:17.0.0'
+    implementation 'com.google.android.gms:play-services-auth-api-phone:18.2.0'
+
+
+    implementation 'com.netcore.android:smartech-sdk:3.3.1'
+    implementation 'androidx.work:work-runtime:2.7.0' // Changed by Aarati 2.7.0 to 2.7.1
+    implementation 'com.netcore.android:smartech-push:3.3.0'
+    implementation 'com.netcore.android:smartech-nudges:9.0.17'
+
+    /////////////////////Shopping Gradle /////////////////////////
+
+    //implementation 'com.razorpay:checkout:1.6.3'
+
+    implementation 'me.relex:circleindicator:1.2.2@aar'
+    implementation 'com.github.swapnil1104:OtpEditText:0.2'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'com.jsibbold:zoomage:1.2.0'
+
+
+
+    implementation 'com.google.firebase:firebase-database:21.0.0' // Added by Aarati , @woloo on 16th Jul 2024 for storing result of vtionsdk.
+
+    implementation 'com.sun.mail:android-mail:1.6.7' //Added by Aarati on 17th jul 2024
+    implementation 'com.sun.mail:android-activation:1.6.7' //Added by Aarati on 17th jul 2024
+
+    implementation group: 'org.apache.httpcomponents', name: 'httpclient-android', version: '4.3.5.1'
+    implementation('org.apache.httpcomponents:httpmime:4.3') {
+        exclude module: "httpclient"
+    }
+
+    implementation 'com.github.jd-alexander:library:1.1.0'
+
+    //Play Store's Install Referrer dependency
+    implementation 'com.android.installreferrer:installreferrer:2.2'
+
+    implementation 'com.appsflyer:af-android-sdk:6.3.2'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    //cameraX Added By Aarati @woloo on 18 Jul 2024
+    def camerax_version = "1.1.0"
+    implementation "androidx.camera:camera-core:$camerax_version"
+    implementation "androidx.camera:camera-camera2:$camerax_version"
+    implementation "androidx.camera:camera-lifecycle:$camerax_version"
+
+
+
+    // Epoxy
+    def epoxyVersion = "4.6.4"
+    implementation "com.airbnb.android:epoxy:$epoxyVersion"
+    // Add the annotation processor if you are using Epoxy's annotations (recommended)
+    annotationProcessor "com.airbnb.android:epoxy-processor:$epoxyVersion"
+    kapt "com.airbnb.android:epoxy-processor:$epoxyVersion"
+
+    implementation "androidx.browser:browser:1.8.0"
+
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.1.5'
+    //debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.7'
+
+    // Replace bundled strings dynamically
+    implementation 'dev.b3nedikt.restring:restring:5.1.4'
+
+    // Intercept view inflation
+    implementation 'dev.b3nedikt.viewpump:viewpump:4.0.9'
+
+    // Allows to update the text of views at runtime without recreating the activity
+    implementation 'dev.b3nedikt.reword:reword:4.0.1'
+
+    //Moving to Kotlin & Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.11.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.11.0'
+    implementation 'com.squareup.okhttp3:okhttp:4.10.0'
+    //Network Logs
+    debugImplementation "com.github.chuckerteam.chucker:library:3.5.2"
+    releaseImplementation "com.github.chuckerteam.chucker:library-no-op:3.5.2"
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+    implementation 'com.google.android.gms:play-services-auth:21.3.0'
+    implementation 'com.google.android.gms:play-services-auth-api-phone:18.2.0'
+}
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
+
+def getCurrentFlavor() {
+    Gradle gradle = getGradle()
+    String tskReqStr = gradle.getStartParameter().getTaskRequests().toString()
+
+    Pattern pattern
+
+    if (tskReqStr.contains("assemble"))
+        pattern = Pattern.compile("assemble(\\w+)(Release|Debug)")
+    else
+        pattern = Pattern.compile("generate(\\w+)(Release|Debug)")
+
+    Matcher matcher = pattern.matcher(tskReqStr)
+
+    if (matcher.find())
+        return matcher.group(1).toLowerCase()
+    else {
+        println "NO MATCH FOUND"
+        return ""
+    }
+}

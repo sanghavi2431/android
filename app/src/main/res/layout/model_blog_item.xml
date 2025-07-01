@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/trendBlogVerMainRel"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/trendblogLastStarimg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_3"
+        android:layout_marginBottom="@dimen/margin_5">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:fontFamily="sans-serif"
+                    android:gravity="left"
+                    android:text="Via Woloo Blogs"
+                    android:textColor="@color/color_gray"
+                    android:textSize="@dimen/size_6"
+                    android:textStyle="normal" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/starimg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toStartOf="@+id/heartimg"
+                        android:src="@drawable/ic_star_blog_outline" />
+
+                    <ImageView
+                        android:id="@+id/heartimg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_5"
+                        android:layout_toStartOf="@+id/shareimg"
+                        android:src="@drawable/ic_heart_blog_outline" />
+
+                    <ImageView
+                        android:id="@+id/shareimg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="@dimen/margin_5"
+                        android:src="@drawable/ic_share_blog" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/reltopImg"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_70"
+        android:layout_below="@id/trendblogLastStarimg">
+
+        <ImageView
+            android:id="@+id/blogImg"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_70"
+            android:scaleType="centerCrop"
+            android:src="@drawable/blog_image_one" />
+
+        <RelativeLayout
+            android:id="@+id/rlBlogPoints"
+            android:layout_width="@dimen/margin_30"
+            android:layout_height="@dimen/margin_12"
+            android:layout_alignTop="@+id/blogImg"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/margin_5"
+            android:layout_marginRight="@dimen/margin_5"
+            android:background="@drawable/ic_rect_image_on_img"
+            android:backgroundTint="@color/gray">
+
+            <ImageView
+                android:id="@+id/subImageOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_5"
+                android:src="@drawable/ic_coin"
+                app:tint="@color/blak_bluedark" />
+
+            <TextView
+                android:id="@+id/subImageTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/subImageOne"
+                android:fontFamily="sans-serif"
+                android:text="10"
+                android:textAlignment="center"
+                android:textColor="@color/blak_bluedark"
+                android:textSize="@dimen/size_6"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/blogText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/reltopImg"
+        android:layout_marginTop="@dimen/margin_5"
+        android:fontFamily="sans-serif"
+        android:gravity="left"
+        android:text="10 Simple changesthat leads to weight loss in a short period of time"
+        android:textAllCaps="false"
+        android:textColor="@color/color_gray"
+        android:textSize="@dimen/size_6"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/blogTimeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/blogText"
+        android:layout_marginTop="@dimen/margin_2"
+        android:fontFamily="sans-serif"
+        android:gravity="left"
+        android:text="2 Days Ago"
+        android:textAllCaps="false"
+        android:textColor="@color/color_gray"
+        android:textSize="@dimen/size_6"
+        android:textStyle="normal" />
+
+    <View
+        android:id="@+id/viewDivider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_1"
+        android:layout_below="@+id/blogTimeText"
+        android:layout_marginTop="@dimen/margin_3"
+        android:background="@drawable/recy_shadow_back" />
+</RelativeLayout>

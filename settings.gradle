@@ -1,0 +1,6 @@
+include ':MobileContactsLib'
+include ':smartloginlibrary'
+include ':collapsiblecalendarview2'
+include ':app'
+rootProject.name = "Woloo"
+include ':WolooSDK'

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/margin_40"
+    android:layout_height="wrap_content"
+
+    android:layout_gravity="center_horizontal"
+    android:layout_marginRight="@dimen/margin_5"
+    android:layout_marginBottom="@dimen/margin_5"
+    android:layout_marginTop="@dimen/margin_5">
+
+    <RelativeLayout
+        android:id="@+id/gridDesignRel1"
+        android:layout_width="@dimen/margin_25"
+        android:layout_height="@dimen/margin_25"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/circular_background_change"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/checkboxItem"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:buttonTint="@color/blak_bluedark"
+            android:gravity="center"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic__01_hormones" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/gridDesignRel2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gridDesignRel1"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:id="@+id/itemNameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margin_1"
+            android:text="Wellness"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:lines="2"
+            android:ellipsize="end"
+            android:textColor="@color/application_background" />
+    </RelativeLayout>
+
+</RelativeLayout>

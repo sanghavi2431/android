@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@color/transparent_background"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_centerInParent="true"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/dialog_background">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="normal"
+            android:textSize="@dimen/size_8"
+            android:textColor="#ffffff"
+            android:lineSpacingExtra="4.3sp"
+            android:gravity="center_horizontal"
+            android:layout_margin="@dimen/margin_10"
+            android:text="Opps Not enough points " />
+
+        <LinearLayout
+            android:id="@+id/llStartFreeTrial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margin_5"
+            android:layout_marginBottom="@dimen/margin_10"
+            android:layout_gravity="center"
+            >
+
+
+
+
+            <TextView
+                android:id="@+id/tvOkay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/margin_2"
+                android:background="@drawable/yellow_rectangle_shape"
+                android:gravity="center"
+
+                android:lineSpacingExtra="25.3sp"
+                android:padding="@dimen/margin_2"
+                android:text="@string/subscription_validation_okay"
+                android:textColor="@color/black"
+                android:textSize="@dimen/size_6"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

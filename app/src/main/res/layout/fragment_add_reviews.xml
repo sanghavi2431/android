@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/application_background"
+        tools:context=".payment.fragments.PaymentFragment">
+
+        <include layout="@layout/title_bar" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_below="@+id/toolbar"
+            android:paddingBottom="@dimen/margin_50"
+            android:clipToPadding="false"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvReviewText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/open_sans_regular"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/size_12"
+                        android:textColor="#ffee00"
+                        android:layout_margin="@dimen/margin_2"
+                        android:lineSpacingExtra="-1.7sp"
+                        android:textAllCaps="true"
+                        android:gravity="center_horizontal"
+                        android:text="" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_margin="@dimen/margin_2"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/ivVeryBad"
+                            android:layout_width="@dimen/margin_15"
+                            android:layout_height="@dimen/margin_15"
+                            android:layout_marginLeft="@dimen/margin_5"
+                            android:src="@drawable/ic_star"/>
+
+                        <ImageView
+                            android:id="@+id/ivBad"
+                            android:layout_width="@dimen/margin_15"
+                            android:layout_height="@dimen/margin_15"
+                            android:layout_marginLeft="@dimen/margin_5"
+                            android:src="@drawable/ic_star"/>
+
+                        <ImageView
+                            android:id="@+id/ivAverage"
+                            android:layout_width="@dimen/margin_15"
+                            android:layout_height="@dimen/margin_15"
+                            android:layout_marginLeft="@dimen/margin_5"
+                            android:src="@drawable/ic_star"/>
+
+                        <ImageView
+                            android:id="@+id/ivGood"
+                            android:layout_width="@dimen/margin_15"
+                            android:layout_height="@dimen/margin_15"
+                            android:layout_marginLeft="@dimen/margin_5"
+                            android:src="@drawable/ic_star"/>
+
+                        <ImageView
+                            android:id="@+id/ivLovedIt"
+                            android:layout_width="@dimen/margin_15"
+                            android:layout_height="@dimen/margin_15"
+                            android:layout_marginLeft="@dimen/margin_5"
+                            android:src="@drawable/ic_star"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:background="@color/seperator_line_color_one"
+                    android:layout_marginTop="@dimen/margin_2"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:layout_marginRight="@dimen/margin_10"
+                    android:layout_height="3dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_5"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:layout_marginRight="@dimen/margin_10"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvChooseAnotherPayment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="normal"
+                        android:textSize="@dimen/size_9"
+                        android:textColor="@color/text_color"
+                        android:text="@string/rate_your_experience"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.chip.ChipGroup
+                            android:id="@+id/cgRateYourExperience"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp">
+
+                            <!--<com.google.android.material.chip.Chip
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:clickable="true"
+                                android:focusable="true"
+                                style="@style/CustomChipChoice"
+                                android:text="@string/amazing_experience" />
+
+                            <com.google.android.material.chip.Chip
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="@style/CustomChipChoice"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:text="@string/really_liked" />
+
+                            <com.google.android.material.chip.Chip
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="@style/CustomChipChoice"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:text="@string/satisfied_with_experience" />
+
+                            <com.google.android.material.chip.Chip
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="@style/CustomChipChoice"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:text="@string/good_but_have_better" />
+
+                            <com.google.android.material.chip.Chip
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="@style/CustomChipChoice"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:text="@string/need_improvment" />-->
+
+                        </com.google.android.material.chip.ChipGroup>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:background="@color/seperator_line_color_one"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:layout_marginRight="@dimen/margin_10"
+                    android:layout_height="3dp"/>
+
+                <LinearLayout
+                    android:id="@+id/llDynamicReview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_5"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:layout_marginRight="@dimen/margin_10"
+                    android:visibility="gone"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvDynamicReviewTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="normal"
+                        android:textSize="@dimen/size_9"
+                        android:textColor="@color/text_color"
+                        android:text="@string/tell_us_improve"/>
+
+                    <com.google.android.flexbox.FlexboxLayout
+                        android:id="@+id/fbReviews"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_gravity="center_vertical"
+                        android:autofillHints="@string/tag_hint_text"
+                        app:flexWrap="wrap"
+                        app:showDivider="beginning|middle"
+                        app:alignContent="flex_start"
+                        app:alignItems="flex_start"
+                        app:dividerDrawable="@drawable/divider_transparent_flexlayout">
+
+                        <EditText
+                            android:id="@+id/chipEditText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="32dp"
+                            app:layout_flexGrow="1"
+                            android:textColor="@color/white"
+                            android:background="@android:color/transparent"
+                            android:imeOptions="actionDone"
+                            android:inputType="text"/>
+
+                    </com.google.android.flexbox.FlexboxLayout>
+
+                    <View
+                        android:background="@color/text_color_one"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="@dimen/margin_2"
+                        android:layout_marginBottom="@dimen/margin_2"
+                        android:layout_height="2dp"/>
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/cgTags"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:animateLayoutChanges="true"
+                        android:layout_marginTop="10dp">
+
+                        <!-- <com.google.android.material.chip.Chip
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:text="@string/clean_hygienic_toilets" />
+
+
+                         <com.google.android.material.chip.Chip
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:text="@string/clean_hygienic_toilets" />
+
+                         <com.google.android.material.chip.Chip
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:text="@string/beauty_and_changing_room" />
+
+                         <com.google.android.material.chip.Chip
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:text="@string/safe_space" />
+
+                         <com.google.android.material.chip.Chip
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:text="@string/feeding_room" />
+
+                         <com.google.android.material.chip.Chip
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:text="@string/diaper_changing_room" />
+
+                         <com.google.android.material.chip.Chip
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:text="@string/assisted_facility_for_abled" />-->
+
+                    </com.google.android.material.chip.ChipGroup>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:background="@color/seperator_line_color_one"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:layout_marginRight="@dimen/margin_10"
+                    android:layout_height="3dp"/>
+
+                <LinearLayout
+                    android:id="@+id/llReviewArea"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_5"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:layout_marginRight="@dimen/margin_10"
+                    android:visibility="gone"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="normal"
+                        android:textSize="@dimen/size_9"
+                        android:textColor="@color/text_color"
+                        android:text="@string/any_other_feedback"/>
+
+                    <EditText
+                        android:id="@+id/etReview"
+                        android:background="@drawable/rectangle_shape"
+                        android:hint="@string/type_here"
+                        android:layout_width="match_parent"
+                        android:gravity="left|top"
+                        android:padding="@dimen/margin_3"
+                        android:layout_marginTop="@dimen/margin_5"
+                        android:layout_height="wrap_content"
+                        android:textStyle="normal"
+                        android:textSize="@dimen/size_8"
+                        android:minLines="3"
+                        android:textColor="@color/text_color_one"
+                        android:lineSpacingExtra="2sp"
+                        android:textColorHint="@color/text_color_one"/>
+
+                    <TextView
+                        android:id="@+id/btnSubmit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="normal"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:textSize="@dimen/size_8"
+                        android:layout_marginTop="@dimen/margin_5"
+                        android:paddingTop="@dimen/margin_5"
+                        android:paddingBottom="@dimen/margin_5"
+                        android:paddingLeft="@dimen/margin_10"
+                        android:paddingRight="@dimen/margin_10"
+                        android:textColor="@color/black"
+                        android:background="@drawable/blank_rectangle_shape"
+                        android:text="@string/submit" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlSuccessOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:background="@drawable/ic_add_review_success">
+
+
+    </RelativeLayout>
+
+</FrameLayout>

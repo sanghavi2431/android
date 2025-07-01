@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ef0c1da1-47ea-4798-9efe-f1f7fcddc884" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/shrikanthravi/collapsiblecalendarview/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/shrikanthravi/collapsiblecalendarview/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/drawable-v24/circle_white_stroke_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/res/drawable-v24/circle_white_stroke_background.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proguard-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/androidTest/java/com/shrikanthravi/collapsiblecalendarview/ExampleInstrumentedTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/shrikanthravi/collapsiblecalendarview/data/CalendarAdapter.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/shrikanthravi/collapsiblecalendarview/data/Day.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/shrikanthravi/collapsiblecalendarview/data/Event.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/shrikanthravi/collapsiblecalendarview/view/BounceAnimator.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/shrikanthravi/collapsiblecalendarview/view/ExpandIconView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/shrikanthravi/collapsiblecalendarview/view/LockScrollView.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/shrikanthravi/collapsiblecalendarview/view/SwipeTouchListener.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/shrikanthravi/collapsiblecalendarview/widget/CollapsibleCalendar.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/shrikanthravi/collapsiblecalendarview/widget/UICalendar.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/anim/bounce.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-hdpi/dot_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-hdpi/down_arrow_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-hdpi/left_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-hdpi/right_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-mdpi/dot_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-mdpi/down_arrow_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-mdpi/left_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-mdpi/right_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-xhdpi/calender_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-xhdpi/dot_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-xhdpi/down_arrow_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-xhdpi/left_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-xhdpi/right_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-xxhdpi/dot_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-xxhdpi/down_arrow_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-xxhdpi/left_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable-xxhdpi/right_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/circle_black_solid_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/circle_black_stroke_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/circle_white_solid_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/circle_white_stroke_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/ic_calendar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/day_layout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/layout_day_of_week.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/widget_collapsible_calendarview.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/values/attrs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/values/dimens.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/shrikanthravi/collapsiblecalendarview/ExampleUnitTest.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1wr9wYmfETBAQlnXOb2XPOCSfoC" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ef0c1da1-47ea-4798-9efe-f1f7fcddc884" name="Default Changelist" comment="" />
+      <created>1629206083468</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1629206083468</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

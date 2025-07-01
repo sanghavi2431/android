@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:background="@drawable/dialog_background"
+    android:orientation="vertical"
+    android:paddingStart="@dimen/margin_10"
+    android:paddingTop="@dimen/margin_10"
+    android:paddingEnd="@dimen/margin_10"
+    android:paddingBottom="@dimen/margin_10"
+    android:minWidth="340dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/margin_5"
+        android:layout_marginRight="@dimen/margin_5"
+        android:gravity="center|top"
+        android:text="@string/discontinue_pee_s_club_membership"
+        android:textColor="@color/app_background"
+        android:textSize="@dimen/size_6"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:id="@+id/discontinueTextTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/margin_6"
+        android:layout_marginTop="@dimen/margin_5"
+        android:layout_marginRight="@dimen/margin_6"
+        android:layout_marginBottom="@dimen/margin_5"
+        android:gravity="center"
+        android:text="@string/discontinue_text"
+        android:textColor="#ffffff"
+        android:textSize="@dimen/size_6"
+        android:textStyle="normal" />
+
+
+    <LinearLayout
+        android:id="@+id/ll_keep_my_membership"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/margin_5"
+        android:background="@drawable/yellow_rectangle_shape"
+        android:orientation="horizontal"
+        android:padding="@dimen/margin_3">
+
+        <TextView
+            android:id="@+id/llCancelBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:lineSpacingExtra="25.3sp"
+            android:paddingLeft="@dimen/margin_10"
+            android:paddingRight="@dimen/margin_10"
+            android:text="keep my membership"
+            android:textAllCaps="true"
+            android:textColor="@color/application_background"
+            android:textSize="@dimen/size_8"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/margin_6"
+        android:layout_marginBottom="@dimen/margin_6"
+        android:gravity="center"
+        android:lineSpacingExtra="25.3sp"
+        android:paddingLeft="@dimen/margin_10"
+        android:paddingRight="@dimen/margin_10"
+        android:text="@string/or"
+        android:textColor="@color/white"
+        android:textSize="@dimen/size_8" />
+
+    <LinearLayout
+        android:id="@+id/ll_continue_to_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/margin_5"
+        android:background="@drawable/yellow_rectangle_shape"
+        android:orientation="horizontal"
+        android:padding="@dimen/margin_3">
+
+        <TextView
+            android:id="@+id/llOkayBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:paddingLeft="@dimen/margin_10"
+            android:paddingRight="@dimen/margin_10"
+            android:text="@string/continue_to_cancle"
+            android:textAllCaps="true"
+            android:textColor="@color/application_background"
+            android:textSize="@dimen/size_8"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+</LinearLayout>
+

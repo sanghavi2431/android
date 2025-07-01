@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/trendBlogHorMainRel"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:layout_margin="@dimen/margin_1">
+
+    <RelativeLayout
+        android:id="@+id/rel_blog_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/circular_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_margin="4dp"
+            android:id="@+id/imageOfBlog"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true"
+            android:scaleType="fitXY"
+            tools:src="@drawable/ic_check_box"
+            />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/blogTextRcyhor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rel_blog_horizontal"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="sans-serif"
+        android:text="Wellness"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        tools:textColor="@color/transparent_40"
+        android:textSize="@dimen/size_6"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/rel_blog_horizontal"
+        app:layout_constraintStart_toStartOf="@+id/rel_blog_horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/rel_blog_horizontal" />
+
+    <View
+        android:id="@+id/textUnderline"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="2dp"
+        android:background="#414042"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="@+id/blogTextRcyhor"
+        app:layout_constraintStart_toStartOf="@+id/blogTextRcyhor"
+        app:layout_constraintTop_toBottomOf="@+id/blogTextRcyhor" />
+</androidx.constraintlayout.widget.ConstraintLayout>

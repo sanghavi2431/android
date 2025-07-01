@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".dashboard.ui.wah_certificate.WahCertificateActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/margin_2">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="@dimen/margin_12"
+            android:layout_height="@dimen/margin_20"
+            android:layout_marginLeft="@dimen/margin_5"
+            android:alpha="0.8"
+            android:src="@drawable/ic_left_arrow"
+            app:tint="@color/application_background" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="WAH Certificate"
+            android:textColor="@color/application_background"
+            android:textSize="@dimen/size_7"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="@dimen/margin_12"
+            android:layout_height="@dimen/margin_20"
+            android:layout_marginLeft="@dimen/margin_5"
+            android:alpha="0.8"
+            android:src="@drawable/ic_left_arrow"
+            android:visibility="invisible"
+            app:tint="@color/application_background" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/margin_10"
+                        android:layout_marginTop="@dimen/margin_15"
+                        android:background="@color/application_background" />
+
+                    <ImageView
+                        android:layout_width="@dimen/margin_30"
+                        android:layout_height="@dimen/margin_30"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/margin_5"
+                        android:layout_marginBottom="@dimen/margin_10"
+                        android:src="@drawable/wah_icon" />
+
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Certificate Of Assurance"
+                    android:textColor="@color/text_color_one"
+                    android:textSize="@dimen/size_10" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/margin_20"
+                            android:layout_marginBottom="@dimen/margin_3"
+                            android:text="M/s"
+                            android:textColor="@color/text_color_one"
+                            android:textSize="@dimen/size_8" />
+
+                        <TextView
+                            android:id="@+id/wolooNameTv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/margin_10"
+                            android:layout_marginBottom="@dimen/margin_3"
+                            android:text=""
+                            android:textColor="@color/text_color_one"
+                            android:textSize="@dimen/size_8" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="@dimen/margin_20"
+                        android:layout_marginRight="@dimen/margin_20"
+                        android:background="@color/application_background" />
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:gravity="center"
+                    android:text="@string/wah_certificate_text"
+                    android:textColor="@color/text_color_one"
+                    android:textSize="@dimen/size_8" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_10"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:gravity="bottom"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginRight="@dimen/margin_5"
+                                android:gravity="center"
+                                android:text="Certificate No : "
+                                android:textSize="@dimen/size_7" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="left"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/CertificateTv"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="left"
+                                    android:gravity="left"
+                                    android:text=""
+                                    android:textSize="@dimen/size_7" />
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:layout_gravity="bottom"
+                                    android:background="@color/application_background" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_marginTop="@dimen/margin_10"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:text="@string/wah_certificate_text2"
+                                android:textSize="@dimen/size_6" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="left"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/DateOfCreationTv"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="left"
+                                    android:layout_weight="1"
+                                    android:gravity="left|bottom"
+                                    android:text=""
+                                    android:textSize="@dimen/size_5" />
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:layout_gravity="bottom"
+                                    android:background="@color/application_background" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Certification Body"
+                    android:textColor="@color/application_background"
+                    android:textSize="@dimen/size_10" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:layout_marginRight="@dimen/margin_10"
+                    android:layout_marginBottom="@dimen/margin_10"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/margin_30"
+                        android:layout_marginRight="@dimen/margin_5"
+                        android:layout_weight="1"
+                        android:padding="@dimen/margin_5"
+                        android:src="@drawable/gray_logo" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/margin_30"
+                        android:layout_weight="1"
+                        android:src="@drawable/toilet_logo" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="bottom"
+                    android:gravity="bottom">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:gravity="center"
+                        android:text="@string/WAH_text3"
+                        android:textSize="@dimen/size_4" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+</LinearLayout>

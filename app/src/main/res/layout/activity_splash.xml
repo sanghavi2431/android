@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/application_background"
+    tools:context=".login.SplashActivity">
+
+    <LinearLayout
+        android:id="@+id/rlSplashLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+    android:gravity="center"
+        android:background="@color/application_background">
+
+        <ImageView
+            android:id="@+id/ivAppLogo"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_35"
+            android:src="@drawable/ic_wl_logo" />
+
+
+        <TextView
+            android:id="@+id/tvSplashText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="normal"
+            android:textSize="@dimen/size_10"
+            android:layout_gravity="center"
+            android:fontFamily="@font/maven_pro_semi_bold"
+            android:layout_marginTop="@dimen/margin_15"
+            android:layout_marginStart="@dimen/margin_10"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:textColor="@color/text_color_five"
+            android:lineSpacingExtra="6.7sp"
+            android:gravity="center_horizontal"
+            android:text="@string/splash_text"/>
+
+    </LinearLayout>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/loading_animation"
+        android:layout_width="@dimen/margin_20"
+        android:layout_height="@dimen/margin_20"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/margin_3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/margin_3"
+        android:layout_above="@+id/frm_splash"
+        app:lottie_fileName="trail_loading.json"
+        app:lottie_loop="true"
+        android:visibility="visible"
+        app:lottie_colorFilter="@color/app_background"
+        app:lottie_autoPlay="true"
+        tools:ignore="MissingClass" />
+
+    <FrameLayout
+        android:id="@+id/frm_splash"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_60"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_splash_bottom_background" />
+
+        <TextView
+            android:id="@+id/tvPoweredBy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margin_10"
+            android:gravity="center"
+            android:fontFamily="@font/open_sans_regular"
+            android:text="@string/powered_by_text"
+            android:visibility="gone"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="@dimen/size_8" />
+
+        <ImageView
+            android:layout_width="@dimen/margin_100"
+            android:layout_height="@dimen/margin_25"
+            android:layout_marginTop="@dimen/margin_10"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_powered_by"/>
+
+        <LinearLayout
+            android:id="@+id/llNextSkip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:animateLayoutChanges="true"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:layout_marginRight="@dimen/margin_10"
+            android:orientation="horizontal"
+            android:visibility="invisible">
+            <TextView
+                android:id="@+id/tv_skip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:text="@string/skip"
+                android:padding="@dimen/margin_3"
+                android:fontFamily="@font/open_sans_regular"
+                android:textColor="@color/skip_text_color"
+                android:textSize="@dimen/size_7" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/tvNext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:text="@string/next"
+                android:padding="@dimen/margin_3"
+                android:textStyle="bold"
+                android:fontFamily="@font/open_sans_regular"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/size_7" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</RelativeLayout>
