@@ -30,7 +30,6 @@ jobs:
         run: ./gradlew detekt
         continue-on-error: true
 
-      # Optional: Save reports as artifacts
       - name: Upload Detekt Report
         uses: actions/upload-artifact@v4
         with:
@@ -42,3 +41,9 @@ jobs:
         with:
           name: ktlint-report
           path: app/build/reports/detekt/
+
+      - name: Run Snyk Scan
+        run: npx snyk test --all-sub-projects
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        continue-on-error: true
