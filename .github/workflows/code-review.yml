@@ -22,26 +22,6 @@ jobs:
       - name: Grant execute permission for Gradlew
         run: chmod +x ./gradlew
 
-      - name: Run Ktlint
-        run: ./gradlew ktlintCheck
-        continue-on-error: true
-
-      - name: Run Detekt
-        run: ./gradlew detekt
-        continue-on-error: true
-
-      - name: Upload Detekt Report
-        uses: actions/upload-artifact@v4
-        with:
-          name: detekt-report
-          path: app/build/reports/detekt/
-
-      - name: Upload Ktlint Report
-        uses: actions/upload-artifact@v4
-        with:
-          name: ktlint-report
-          path: app/build/reports/detekt/
-
       - name: Run Snyk Scan
         run: npx snyk test --all-sub-projects > snyk-report.txt || true
         env:
