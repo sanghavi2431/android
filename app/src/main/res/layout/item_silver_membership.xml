@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/clCard"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_10sdp"
+    android:elevation="@dimen/_5sdp"
+    android:orientation="vertical"
+    android:background="@drawable/yellow_border_white_rect"
+    >
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/card_silver"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_15sdp"
+        />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+        android:id="@+id/tv_upgrade"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/yello_rectangle_shape"
+        style="@style/button_text_style"
+        android:layout_marginLeft="@dimen/_15sdp"
+        android:layout_marginRight="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:text="Buy Now"
+        android:textAllCaps="true"
+        android:elevation="@dimen/_4sdp"
+        android:layout_weight="1"/>
+
+    <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+        android:id="@+id/renew_now"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/yello_rectangle_shape"
+        style="@style/button_text_style"
+        android:layout_marginLeft="@dimen/_15sdp"
+        android:layout_marginRight="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:text="Renew Now"
+        android:textAllCaps="true"
+        android:elevation="@dimen/_4sdp"
+        android:layout_weight="1"/>
+
+
+</LinearLayout>
+
+    <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+        android:id="@+id/tvSubscriptionDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        style="@style/button_text_style"
+        android:layout_marginLeft="@dimen/_15sdp"
+        android:layout_marginRight="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:lines="4"
+        android:maxLines="4"
+        />
+
+
+
+</LinearLayout>

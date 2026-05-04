@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:backgroundTint="@color/white"
+    app:cardCornerRadius="@dimen/_4sdp"
+    android:elevation="@dimen/_4sdp"
+    android:layout_margin="@dimen/_5sdp"
+    >
+
+    <LinearLayout
+        android:id="@+id/ivBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/_5sdp"
+       >
+
+        <ImageView
+            android:layout_width="@dimen/_12sdp"
+            android:layout_height="@dimen/_12sdp"
+            android:adjustViewBounds="true"
+            android:rotation="90"
+            android:layout_gravity="center"
+            android:src="@drawable/recent_search"
+            android:id="@+id/iv_close"
+            />
+        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/pop_up_search"
+            android:text="Shampoo"
+            android:gravity="center"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:id="@+id/recent_text_item"
+            android:maxLines="1"
+            />
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

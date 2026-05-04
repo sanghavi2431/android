@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@color/transparent_background"
+    android:orientation="vertical"
+    android:layout_margin="@dimen/_15sdp">
+
+    <LinearLayout
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/rectangle_shape"
+        android:layout_margin="@dimen/_15sdp"
+        android:padding="@dimen/_5sdp"
+        android:elevation="@dimen/_4sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            >
+
+            <CheckBox
+                android:id="@+id/confirm_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"/>
+
+            <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+            android:id="@+id/message_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            style="@style/dialog_style"
+                android:layout_weight="1"
+            android:text="I confirm that product is used condition" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llStartFreeTrial"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            >
+
+
+
+
+            <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                android:id="@+id/cancel_button"
+                style="@style/button_text_style"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/red_bg"
+                android:elevation="@dimen/_4sdp"
+                android:gravity="center"
+                android:paddingLeft="@dimen/_15sdp"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingRight="@dimen/_15sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:text="@string/cancel"
+                android:textColor="@color/black"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:layout_weight="1"/>
+
+            <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                android:id="@+id/confirm_button"
+                style="@style/button_text_style"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/yellow_rectangle_shape"
+                android:elevation="@dimen/_4sdp"
+                android:gravity="center"
+                android:paddingLeft="@dimen/_15sdp"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingRight="@dimen/_15sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:text="@string/subscription_validation_okay"
+                android:textColor="@color/black"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:layout_weight="1"/>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

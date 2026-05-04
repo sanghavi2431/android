@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".store.screens.StoreAddressMapActivity">
+
+    <FrameLayout
+        android:id="@+id/frm_home_map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_15sdp"
+            android:layout_weight="1"
+            android:elevation="@dimen/_4sdp"
+            android:background="@drawable/new_button_background"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_18sdp"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/_5sdp"
+                android:src="@drawable/search_icon_home" />
+
+            <in.woloo.www.application_kotlin.utilities.CenturiGhoticAutoComplete
+                android:id="@+id/search_auto_complete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:completionThreshold="2"
+                android:hint="Search your location here"
+                android:textColorHint="@color/application_background"
+                android:singleLine="true"
+                android:padding="@dimen/margin_3" />
+
+
+        </LinearLayout>
+
+     <!--   <ImageView
+            android:layout_width="@dimen/_28sdp"
+            android:layout_height="@dimen/_28sdp"
+            android:src="@drawable/ic_store_mark_dest"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_110sdp"/>-->
+
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

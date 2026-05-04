@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:elevation="@dimen/_2sdp"
+    android:layout_margin="@dimen/_3sdp"
+    android:background="@color/transparent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_87sdp"
+        >
+        <ImageView
+            android:layout_width="@dimen/_87sdp"
+            android:layout_height="@dimen/_87sdp"
+            android:background="@drawable/new_button_background_eleven"
+            android:scaleType="fitXY"
+            android:clipToOutline="true"
+            android:id="@+id/brand_image"
+            android:elevation="@dimen/_4sdp"
+            android:layout_margin="@dimen/_5sdp"
+            />
+        <RelativeLayout
+            android:layout_width="@dimen/_92sdp"
+            android:layout_height="@dimen/_92sdp"
+            android:elevation="@dimen/_5sdp"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_15sdp">
+        <ImageView
+            android:id="@+id/service_category_image"
+            android:layout_width="@dimen/_32sdp"
+            android:layout_height="@dimen/_32sdp"
+            android:src="@drawable/service_category"
+           android:layout_centerHorizontal="true"/>
+        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Brand \nName"
+            style="@style/ten_black_center"
+            android:id="@+id/brand_name"
+            android:layout_below="@+id/service_category_image"
+            android:lines="2"
+            android:maxLines="2"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/_10sdp"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+</LinearLayout>

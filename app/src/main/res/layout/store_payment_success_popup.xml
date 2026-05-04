@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/dialog_bg"
+   android:layout_gravity="center"
+    android:elevation="@dimen/_4sdp"
+    android:layout_margin="@dimen/_10sdp">
+
+    <LinearLayout
+        android:paddingTop="@dimen/margin_10"
+        android:paddingBottom="@dimen/margin_10"
+        android:layout_centerInParent="true"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        >
+
+        <ImageView
+            android:layout_width="@dimen/_65sdp"
+            android:layout_height="@dimen/_65sdp"
+            android:layout_marginTop="@dimen/margin_10"
+            android:layout_marginBottom="@dimen/margin_10"
+            android:layout_gravity="center"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/succuss_img"/>
+
+
+        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+            android:id="@+id/tv_expiredate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:layout_marginRight="@dimen/margin_10"
+            android:gravity="center_horizontal"
+            android:text="Your Order has been \n placed successfully."
+            android:visibility="visible"
+            style="@style/dialog_style_big" />
+
+        <TextView
+            android:id="@+id/tv_expired"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:layout_marginRight="@dimen/margin_10"
+            android:gravity="center"
+            android:text="@string/expired_text"
+            android:textColor="@color/application_background"
+            android:textSize="@dimen/size_8"
+            android:textStyle="normal" />
+
+        <LinearLayout
+            android:id="@+id/ll_renew"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margin_3"
+            android:layout_marginTop="@dimen/margin_5"
+            android:layout_marginBottom="@dimen/margin_5"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                android:id="@+id/check_order_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/yello_rectangle_shape"
+                style="@style/button_text_style"
+                android:paddingLeft="@dimen/_35sdp"
+                android:paddingRight="@dimen/_35sdp"
+                android:paddingTop="@dimen/_8sdp"
+                android:paddingBottom="@dimen/_8sdp"
+                android:text="Check Order Details"
+               />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

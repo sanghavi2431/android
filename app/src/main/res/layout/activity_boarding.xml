@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".application_kotlin.presentation.activities.login.BoardingActivity">
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/boardingViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_above="@+id/skipTextSlider"
+        android:layout_weight="0.5"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="@dimen/_15sdp"
+        android:layout_marginRight="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+       >
+   <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+       android:id="@+id/skipTextSlider"
+       android:layout_width="0dp"
+       android:layout_height="match_parent"
+       android:background="@drawable/new_button_background"
+       style="@style/button_text_style"
+       android:text="@string/skip_button"
+       android:elevation="@dimen/_5sdp"
+       android:layout_weight="1"
+       android:layout_marginRight="@dimen/_5sdp"
+       android:layout_marginBottom="@dimen/_15sdp"
+       />
+    <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+        android:id="@+id/nextSliderButton"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/yello_rectangle_shape"
+       style="@style/button_text_style"
+        android:text="@string/next_button"
+        android:layout_weight="1"
+        android:elevation="@dimen/_5sdp"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_15sdp"
+        />
+    </LinearLayout>
+    <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+        android:id="@+id/boardingActivityAuthenticate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/yello_rectangle_shape"
+        style="@style/button_text_style"
+        android:text="@string/next_button"
+        android:elevation="@dimen/_5sdp"
+        android:layout_margin="@dimen/_15sdp"
+        android:visibility="gone"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/dotRel"
+        android:layout_margin="@dimen/_15sdp">
+
+        <LinearLayout
+            android:id="@+id/dotSliderLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:gravity="center"
+            android:orientation="horizontal" />
+    </RelativeLayout>
+
+</LinearLayout>

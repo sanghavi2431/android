@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <in.woloo.www.utils.CapitalizedTextView
+        android:id="@+id/moods_Tv"
+        android:layout_width="@dimen/margin_20"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/margin_5"
+        android:layout_marginTop="@dimen/margin_5"
+        android:layout_marginEnd="@dimen/margin_5"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="@string/bleeding"
+        android:textColor="@color/text_color_seven"
+        android:textSize="@dimen/margin_5" />
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/margin_3"
+        >
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imgRel"
+            android:paddingBottom="@dimen/margin_2"
+            android:orientation="vertical">
+            <View
+                android:id="@+id/imgViewBackground"
+                android:layout_width="@dimen/_55sdp"
+                android:layout_height="@dimen/_55sdp"
+                android:background="@drawable/imagecircle"
+                android:backgroundTint="@color/purple_daily_log"
+                android:layout_gravity="center"/>
+            <ImageView
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:src="@drawable/all_like"
+                android:layout_gravity="center"
+                android:id="@+id/moods_Imv"
+                />
+
+        </FrameLayout>
+
+
+
+        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+            android:id="@+id/multipleMoods_Imv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|end"
+            android:gravity="center"
+            android:background="@color/transparent"
+            android:includeFontPadding="false"
+            tools:text="+2"
+            android:elevation="@dimen/_2sdp"
+            android:layout_margin="@dimen/_1sdp"
+            style="@style/twelve_black_nomargin_center"/>
+    </FrameLayout>
+
+
+</LinearLayout>

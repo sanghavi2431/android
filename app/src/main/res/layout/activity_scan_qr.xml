@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".more.payment.fragments.PaymentFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ivBack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:gravity="center">
+
+            <ImageView
+
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/_7sdp"
+                android:adjustViewBounds="true"
+                android:rotation="90"
+                android:layout_gravity="center"
+                android:src="@drawable/down_arrow_bottom_bar"
+                />
+            <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/small_gray_style"
+                android:text="@string/back"
+                android:gravity="center"
+                />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+            android:id="@+id/screen_header"
+            style="@style/screen_header_text_style_big_center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Scan QR Code"  />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:visibility="gone"
+                android:id="@+id/content_frame"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+
+            </FrameLayout>
+
+
+
+            <FrameLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center">
+
+               <!-- <com.budiyev.android.codescanner.CodeScannerView
+                    android:id="@+id/scanner_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:autoFocusButtonColor="@android:color/white"
+                    app:autoFocusButtonVisible="true"
+                    app:flashButtonColor="@android:color/white"
+                    app:flashButtonVisible="true"
+                    app:frameColor="@android:color/white"
+                    app:frameCornersSize="50dp"
+                    app:frameCornersRadius="0dp"
+                    app:frameAspectRatioWidth="1"
+                    app:frameAspectRatioHeight="1"
+                    app:frameSize="0.75"
+                    app:frameThickness="2dp"
+                    app:maskColor="#77000000"/>-->
+
+                <com.journeyapps.barcodescanner.DecoratedBarcodeView
+                    android:id="@+id/zxing_barcode_scanner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:autoFocusButtonColor="@android:color/white"
+                    app:autoFocusButtonVisible="true"
+                    app:flashButtonColor="@android:color/white"
+                    app:flashButtonVisible="true"
+                    app:frameColor="@android:color/white"
+                    app:frameCornersSize="@dimen/_70sdp"
+                    app:frameCornersRadius="@dimen/_70sdp"
+                    app:frameAspectRatioWidth="1"
+                    app:frameAspectRatioHeight="1"
+                    app:frameSize="0.75"
+                    app:frameThickness="2dp"
+                    app:maskColor="@color/white_95"
+                    android:layout_margin="20dp"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    />
+
+            </FrameLayout>
+
+
+            <WebView
+                android:id="@+id/help_webview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

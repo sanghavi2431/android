@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:cardview="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:id="@+id/cardViewParent"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+    android:orientation="vertical"
+>
+
+
+   <!-- <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Order id"
+        style="@style/refer_3_host_style"
+        android:maxLines="1"
+        android:id="@+id/order_id"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginLeft="@dimen/_5sdp"
+        />-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/orders_recycler"
+        tools:itemCount="2"
+        android:layout_marginVertical="@dimen/_2sdp"
+        tools:listitem="@layout/order_details_items_list_item"/>
+
+</LinearLayout>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_bg"
+    android:orientation="vertical"
+    android:elevation="@dimen/_4sdp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+       android:paddingHorizontal="@dimen/_10sdp"
+        android:paddingVertical="@dimen/_30sdp"
+        android:layout_centerInParent="true"
+      >
+
+        <ImageView
+            android:id="@+id/wah_Imv"
+            android:layout_width="@dimen/margin_50"
+            android:layout_height="@dimen/margin_50"
+            android:layout_gravity="center"
+            android:paddingBottom="@dimen/margin_10"
+            android:src="@drawable/woloo_logo_new_black"/>
+
+        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+            android:id="@+id/title_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="You already have an active Voucher/Membership. If you want to use Scanned Voucher the Current Will be Cancelled"
+           style="@style/screen_header_text_style_big_center_nomargin" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/_10sdp"
+            android:paddingVertical="@dimen/_20sdp">
+
+        <LinearLayout
+            android:id="@+id/llCancelBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/new_button_background"
+            android:orientation="horizontal"
+            android:elevation="@dimen/_4sdp"
+            android:layout_margin="@dimen/_5sdp">
+
+            <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/button_text_style"
+                android:paddingVertical="@dimen/_10sdp"
+                android:paddingHorizontal="@dimen/_20sdp"
+                android:maxLines="1"
+                android:text="Cancel" />
+
+
+        </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llOkayBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:elevation="@dimen/_4sdp"
+                android:layout_margin="@dimen/_5sdp">
+
+                <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/yello_rectangle_shape"
+                    style="@style/button_text_style"
+                    android:paddingVertical="@dimen/_10sdp"
+                    android:paddingHorizontal="@dimen/_20sdp"
+                    android:text="@string/okay" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/application_background"
+            android:layout_gravity="center"
+           style="@style/ten_black_center"
+            android:text="*Remaining number of days from the current Membership will be void"/>
+
+    </LinearLayout>
+
+
+
+
+
+</RelativeLayout>

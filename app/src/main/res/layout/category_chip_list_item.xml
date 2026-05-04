@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/ivBack"
+        android:orientation="horizontal"
+        android:padding="@dimen/_5sdp"
+    android:layout_margin="@dimen/_5sdp"
+    android:elevation="@dimen/_3sdp"
+        android:background="@drawable/new_button_background_smallest"
+        >
+
+        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/screen_sub_header_text_left"
+            android:text="Shampoo"
+            android:layout_centerInParent="true"
+            android:id="@+id/recent_text_item"
+            android:maxLines="1"
+
+            />
+</RelativeLayout>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/product_image"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_123sdp"
+                android:layout_marginLeft="@dimen/_6sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_6sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:background="@drawable/new_button_background"
+                android:src="@drawable/booking_express_img"
+                android:clipToOutline="true"
+                android:scaleType="centerCrop"
+                android:elevation="@dimen/_4sdp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:elevation="@dimen/_4sdp"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginVertical="@dimen/_8sdp">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent">
+
+            <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Deep Cleaning \n Services for \nyour home"
+                style="@style/white_text_center_big"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:id="@+id/header_text"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_weight="1"
+                />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:text="Book Now"
+                        android:layout_centerHorizontal="true"
+                        style="@style/ten_black_center"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:backgroundTint="@color/white_75"
+                        android:background="@drawable/dialog_bg"
+                        android:paddingHorizontal="@dimen/_30sdp"
+                        android:paddingVertical="@dimen/_12sdp"/>
+
+
+                </RelativeLayout>
+
+
+                <ImageView
+                    android:layout_width="@dimen/_94sdp"
+                    android:layout_height="@dimen/_90sdp"
+                    android:src="@drawable/express_image"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:clipToOutline="true"
+                    android:scaleType="fitXY"
+                    android:id="@+id/service_express_image"
+                    />
+
+
+            </LinearLayout>
+        </FrameLayout>
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

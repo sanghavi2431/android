@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:id="@+id/ivBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:gravity="center">
+
+        <ImageView
+
+            android:layout_width="@dimen/_10sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/_7sdp"
+            android:adjustViewBounds="true"
+            android:rotation="90"
+            android:layout_gravity="center"
+            android:src="@drawable/down_arrow_bottom_bar"
+            />
+        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/small_gray_style"
+            android:text="@string/back"
+            android:gravity="center"
+            />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_15sdp">
+        <ImageView
+            android:id="@+id/screen_image"
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="@dimen/_45sdp"
+            android:src="@drawable/refere_woloo_host_icon"
+            android:layout_marginRight="@dimen/_15sdp"
+            android:layout_gravity="center"
+            />
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            >
+
+            <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                android:id="@+id/screen_header_needed"
+                style="@style/screen_header_text_style_big_left"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Refer a Woloo Host"  />
+            <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+                android:id="@+id/screen_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/screen_header_needed"
+                android:text="@string/refer_note"
+                style="@style/screen_sub_header_text_left"
+                android:paddingVertical="@dimen/_2sdp"
+                />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+
+            <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/margin_10"
+                android:gravity="center"
+                android:text="Benefits of Referring"
+                android:textColor="@color/black"
+                android:visibility="gone"
+                android:textSize="@dimen/size_10"/>
+
+            <ImageView
+                android:id="@+id/gifImageView"
+                android:layout_width="@dimen/_235sdp"
+                android:layout_height="@dimen/_272sdp"
+                android:src="@drawable/refer_host_gif"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/_10sdp"/>
+
+
+           <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                android:id="@+id/referWolooTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/refer_content"
+               style="@style/twelve_black_nomargin_center"
+               android:layout_marginHorizontal="@dimen/_10sdp"
+               android:layout_marginVertical="@dimen/_15sdp"
+               />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="@dimen/_15sdp"
+                android:paddingLeft="@dimen/_15sdp"
+                android:paddingRight="@dimen/_15sdp"
+                android:background="@drawable/rectangle_shape"
+                android:elevation="@dimen/_4sdp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingVertical="@dimen/_10sdp"
+                    android:gravity="center">
+            <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/_25sdp"
+                style="@style/refer_3_host_style"
+                android:text="@string/Benefits_of_referring_text2"
+                />
+                <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/_25sdp"
+                    android:text="3 Hosts"
+                    style="@style/refer_3_host_style"
+                    />
+                </LinearLayout>
+
+            <ImageView
+                android:id="@+id/referWolooImv"
+                android:layout_width="@dimen/_42sdp"
+                android:layout_height="@dimen/_42sdp"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/margin_5"
+                android:src="@drawable/add_more_icon" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="@dimen/_75sdp"
+                android:layout_marginRight="@dimen/_75sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:background="@color/start_theme_color"/>
+
+           <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+               android:layout_marginTop="@dimen/_5sdp"
+                android:gravity="center"
+                android:text="@string/referred_woloo_host"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/referred_Woloo_host_rv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/margin_5"
+                tools:listitem="@layout/referred_woloo_host_listing_details"
+               />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

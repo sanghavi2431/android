@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:elevation="@dimen/_4sdp"
+    android:layout_margin="@dimen/_5sdp"
+    android:background="@drawable/new_button_background"
+    android:padding="@dimen/_15sdp">
+
+    <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="8:00 AM - 9:00 AM"
+        android:layout_gravity="center"
+        style="@style/ten_black_center"
+        android:id="@+id/select_service_time"
+        />
+
+</LinearLayout>

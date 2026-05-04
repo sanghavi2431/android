@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/_85sdp"
+    android:layout_height="@dimen/_85sdp"
+android:background="@drawable/new_button_background_square"
+    android:elevation="@dimen/_4sdp"
+    android:gravity="center"
+    android:id="@+id/relative_card"
+    android:orientation="vertical"
+    android:layout_marginHorizontal="@dimen/_8sdp"
+    android:layout_marginVertical="@dimen/_7sdp"
+    >
+
+
+
+        <ImageView
+            android:id="@+id/checkboxItem"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:scaleType="fitXY"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/ic__01_hormones"
+            android:layout_marginTop="@dimen/_9sdp"/>
+
+
+
+
+        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+            android:id="@+id/itemNameText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:text=""
+            android:maxLines="2"
+            android:lines="2"
+            android:gravity="center"
+            style="@style/screen_sub_header_text_center"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/_4sdp"/>
+
+</LinearLayout>

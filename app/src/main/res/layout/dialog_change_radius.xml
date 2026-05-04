@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_20sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/_5sdp"
+            android:background="@drawable/dialog_mirror_background"
+            android:elevation="@dimen/_4sdp"
+            android:orientation="vertical"
+            >
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:paddingBottom="@dimen/_20sdp"
+                >
+
+
+                <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                    style="@style/fifteen_black_center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginVertical="@dimen/_10sdp"
+                    android:layout_marginHorizontal="@dimen/_5sdp"
+                    android:backgroundTint="@color/white_95"
+                    android:gravity="center"
+                    android:maxLines="2"
+                    android:lines="2"
+                    android:text="Distance Alert" />
+
+
+
+                <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+                    android:id="@+id/tv_logout"
+                    style="@style/twelve_black_nomargin_center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="@dimen/_5sdp"
+                    android:backgroundTint="@color/white_95"
+                    android:gravity="center"
+                    android:maxLines="3"
+                    android:lines="3"
+                    android:text="Entered distance is more than 30 km. Please reduce your destination/source location to under 30 km" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/llStartFreeTrial"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_logout"
+                android:layout_gravity="bottom"
+                android:orientation="vertical">
+
+
+                <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                    android:id="@+id/tv_shop_now"
+                    style="@style/dialog_button_text_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginRight="@dimen/_15sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:background="@drawable/yello_rectangle_shape"
+                    android:elevation="@dimen/_4sdp"
+                    android:visibility="gone"
+                    android:text="Shop Now" />
+
+
+                <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                    android:id="@+id/tv_go_back_to_home"
+                    style="@style/ten_black_center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_25sdp"
+                    android:layout_gravity="center"
+                    android:paddingVertical="@dimen/_5sdp"
+                    android:paddingHorizontal="@dimen/_30sdp"
+                    android:maxLines="2"
+                    android:lines="2"
+                    android:background="@drawable/yello_rectangle_shape"
+                    android:text="Okay" />
+
+
+            </LinearLayout>
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/gifImageView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_185sdp"
+            android:layout_gravity="center"
+            android:elevation="@dimen/_5sdp"
+            />
+
+    </FrameLayout>
+
+
+</LinearLayout>

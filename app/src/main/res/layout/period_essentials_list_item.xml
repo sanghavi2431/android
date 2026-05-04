@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/transparent"
+    android:layout_marginHorizontal="@dimen/_1sdp"
+    android:layout_marginVertical="@dimen/_10sdp">
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/period_category_image"
+            android:layout_width="@dimen/_84sdp"
+            android:layout_height="@dimen/_84sdp"
+            android:padding="@dimen/_16sdp"
+            android:src="@drawable/period_essentials_img"
+            android:layout_gravity="center"
+            android:background="@drawable/imagecircle"
+            android:backgroundTint="@color/ovalution_cycle"
+            android:elevation="@dimen/_4sdp"
+            android:layout_margin="@dimen/_5sdp"/>
+    </FrameLayout>
+    <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+        android:id="@+id/period_category_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sanitory Pad"
+        style="@style/ten_black_center"/>
+
+</LinearLayout>

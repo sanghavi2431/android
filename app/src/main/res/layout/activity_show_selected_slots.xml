@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/top_corner_dialog_bg"
+    android:orientation="vertical"
+    app:behavior_peekHeight="@dimen/_350sdp"
+    app:layout_behavior="@string/bottom_sheet_behavior"
+    android:elevation="@dimen/_4sdp">
+
+    <View
+        android:id="@+id/back_dialog"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_3sdp"
+        android:background="@color/chip_color"
+        android:padding="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_gravity="center_horizontal"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginHorizontal="@dimen/_15sdp">
+        <ImageView
+            android:id="@+id/back_button"
+            android:layout_width="@dimen/_10sdp"
+            android:layout_height="@dimen/_10sdp"
+            android:background="@drawable/ic_back"
+            android:backgroundTint="@color/black"
+            android:layout_centerVertical="true"
+            />
+
+        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Booking Schedule"
+            style="@style/shop_header_text"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:id="@+id/cart_header_text"/>
+        <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select or Edit your Addresses"
+            android:layout_below="@+id/cart_header_text"
+            style="@style/screen_sub_header_text_left"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:visibility="gone"
+            android:paddingBottom="@dimen/_5sdp"/>
+
+    </RelativeLayout>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll_bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:elevation="@dimen/_4sdp"
+                    android:layout_marginHorizontal="@dimen/_15sdp"
+                    android:layout_marginVertical="@dimen/_5sdp"
+                    style="@style/ten_black_left"
+                    android:maxLines="1"
+                    android:text="Your Booked Date and Time"
+                    android:id="@+id/apartment_road_area"
+                    android:paddingVertical="@dimen/_5sdp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/date_recycler_view"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:spanCount="2"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    tools:listitem="@layout/date_time_view_recycler_item"
+                    tools:itemCount="3"/>
+
+
+            </LinearLayout>
+
+
+            <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/yello_rectangle_shape"
+                android:text="Proceed"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginVertical="@dimen/_10sdp"
+                style="@style/screen_header_text_style_big_center_nomargin"
+                android:paddingVertical="@dimen/_5sdp"
+                android:id="@+id/proceed_button"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

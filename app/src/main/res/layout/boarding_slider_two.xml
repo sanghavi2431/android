@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_240sdp"
+            android:src="@drawable/boarding_image_2"
+            android:layout_marginBottom="@dimen/margin_5"
+            android:scaleType="fitXY"/>
+
+        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/track_periods"
+           style="@style/screen_header_text_style"
+            />
+
+        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/boarding_text_style"
+            android:text="@string/boarding_slider_two_para"
+             />
+
+
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/login_background">
+
+    <FrameLayout
+        android:id="@+id/flTopLaypout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true">
+
+        <ImageView
+            android:layout_width="@dimen/margin_80"
+            android:layout_height="@dimen/margin_30"
+            android:background="@drawable/ic_otp_skip"/>
+
+        <TextView
+            android:id="@+id/txtSkip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/size_7"
+            android:padding="@dimen/margin_3"
+            android:layout_marginStart="@dimen/margin_20"
+            android:layout_gravity="center"
+            android:textColor="@color/text_color"
+            android:textAllCaps="true"
+            android:fontFamily="@font/open_sans_semi_bold"
+            android:text="@string/skip"/>
+
+    </FrameLayout>
+    <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_above="@+id/fl_bottom"
+    android:layout_below="@+id/flTopLaypout"
+    android:id="@+id/nestedscroll"
+    android:fillViewport="true"
+    android:scrollbars="vertical">
+    <LinearLayout
+        android:id="@+id/linLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="@dimen/margin_70"
+            android:layout_height="@dimen/margin_35"
+            android:layout_marginTop="@dimen/margin_15"
+            android:src="@drawable/ic_wl_logo"
+            android:layout_gravity="center"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/maven_pro_regular"
+            android:textStyle="bold"
+            android:textSize="14.7sp"
+            android:textColor="#ffffff"
+            android:lineSpacingExtra="15.3sp"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/margin_12"
+            android:text="@string/welcome_woloo" />
+
+        <EditText
+            android:id="@+id/etEmailMobile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+             android:padding="@dimen/margin_5"
+            android:background="@drawable/rounded_white"
+            android:textColor="@color/app_background"
+            android:textSize="@dimen/size_5"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLines="1"
+            android:visibility="visible"
+            android:singleLine="true"
+            android:textColorHint="@color/white"
+            android:layout_marginTop="@dimen/margin_8"
+            android:layout_marginLeft="@dimen/margin_15"
+            android:layout_marginRight="@dimen/margin_15"
+            android:fontFamily="@font/open_sans_regular"
+            android:hint="@string/enter_email_mobile"/>
+
+        <TextView
+            android:id="@+id/txtSendOtp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/margin_5"
+            android:paddingBottom="@dimen/margin_5"
+            android:paddingLeft="@dimen/margin_5"
+            android:paddingRight="@dimen/margin_5"
+            android:textSize="@dimen/size_7"
+            android:textStyle="bold"
+            android:background="@drawable/rounded_corner_button"
+            android:textColor="@color/text_color_five"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/margin_15"
+            android:layout_marginLeft="@dimen/margin_15"
+            android:layout_marginRight="@dimen/margin_15"
+            android:fontFamily="@font/open_sans_semi_bold"
+            android:text="@string/send_otp"/>
+
+        <TextView
+            android:id="@+id/tv_loginwith"
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/margin_5"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/open_sans_semi_bold"
+            android:gravity="center"
+            android:text="@string/login_with"
+            android:textColor="@color/login_with_color"
+            android:textSize="@dimen/size_5"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/ll_sociallogin"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_15"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:weightSum="2"
+            android:layout_marginLeft="@dimen/margin_15"
+            android:layout_marginRight="@dimen/margin_15"
+            android:layout_marginTop="@dimen/margin_5"
+            >
+
+            <com.facebook.login.widget.LoginButton
+                android:id="@+id/loginButton"
+                android:layout_width="0dp"
+                android:visibility="gone"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_corner_white"
+                android:paddingLeft="@dimen/margin_3" />
+
+            <LinearLayout
+                android:id="@+id/ll_facebooklogin"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:paddingTop="@dimen/margin_2"
+                android:paddingBottom="@dimen/margin_2"
+                android:paddingLeft="@dimen/margin_5"
+                android:background="@drawable/rounded_corner_white"
+                >
+
+                <ImageView
+
+                    android:layout_width="@dimen/margin_10"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_facebook"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/facebook"
+                    android:textSize="@dimen/size_5"
+                    android:textColor="@color/white"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/margin_4"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_gmaillogin"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:paddingTop="@dimen/margin_2"
+                android:paddingBottom="@dimen/margin_2"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:paddingLeft="@dimen/margin_5"
+                android:background="@drawable/rounded_corner_white"
+                >
+
+                <ImageView
+                    android:layout_width="@dimen/margin_10"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_google"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/google"
+                    android:textSize="@dimen/size_5"
+                    android:textColor="@color/white"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/margin_4"
+                    />
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+
+            <Button
+                android:id="@+id/logout_button"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:visibility="gone"
+                android:layout_weight="1"
+                android:textColor="@color/white"
+                android:text="LOG-OUT" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+    <FrameLayout
+        android:id="@+id/fl_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_60"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_splash_bottom_background" />
+
+        <TextView
+            android:id="@+id/tvPoweredBy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:layout_marginTop="@dimen/margin_10"
+            android:gravity="center"
+            android:fontFamily="@font/open_sans_regular"
+            android:textStyle="bold"
+            android:text="@string/powered_by_text"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size_8" />
+
+        <ImageView
+            android:layout_width="@dimen/margin_100"
+            android:layout_height="@dimen/margin_25"
+            android:layout_marginTop="@dimen/margin_10"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_powered_by"/>
+
+    </FrameLayout>
+
+</RelativeLayout>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".application_kotlin.presentation.fragments.login.NotificationPermissionDialog">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:background="@drawable/dialog_bg"
+        android:backgroundTint="@color/white_95"
+        android:layout_marginLeft="@dimen/_15sdp"
+        android:layout_marginRight="@dimen/_15sdp"
+        android:layout_marginVertical="@dimen/_15sdp"
+        app:cardCornerRadius="@dimen/_18sdp"
+        android:elevation="@dimen/_4sdp">
+
+        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+            android:id="@+id/tv_logout"
+            style="@style/dialog_style_big"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:gravity="center"
+            android:backgroundTint="@color/white_95"
+            android:text="Notification Permission \nRequired." />
+
+        <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_93sdp"
+            android:layout_gravity="center"
+            android:src="@drawable/notification_permission_icon"
+            android:layout_marginTop="@dimen/_15sdp"/>
+
+        <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+            style="@style/dialog_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:gravity="center"
+            android:text=" Please enable notifications\nfor this app to \n receive important updates."/>
+
+        <LinearLayout
+            android:id="@+id/llStartFreeTrial"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:layout_below="@+id/tv_logout"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            >
+
+
+            <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                android:id="@+id/tvCancel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/new_button_background"
+                android:text="Deny"
+                style="@style/button_text_style"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:elevation="@dimen/_4sdp"
+                />
+
+
+            <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                android:id="@+id/tvLogout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/yello_rectangle_shape"
+                android:text="Allow"
+                style="@style/button_text_style"
+                android:layout_marginRight="@dimen/_15sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:elevation="@dimen/_4sdp"
+                />
+
+
+        </LinearLayout>
+
+
+
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/_61sdp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginBottom="@dimen/margin_2">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/circular_background"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/rel">
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imgRel"
+            android:paddingBottom="@dimen/margin_2"
+            android:orientation="vertical">
+            <View
+                android:id="@+id/imgViewBackground"
+                android:layout_width="@dimen/_55sdp"
+                android:layout_height="@dimen/_55sdp"
+                android:background="@drawable/imagecircle"
+                android:backgroundTint="@color/purple_daily_log"
+                android:layout_gravity="center"/>
+            <ImageView
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:id="@+id/groupItemImage"
+                android:src="@drawable/all_like"
+                android:layout_gravity="center"
+                />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:id="@+id/chekedImage"
+            android:src="@drawable/check_daily_log"
+            android:visibility="visible"
+            android:layout_gravity="center"/>
+
+        <View
+            android:layout_width="@dimen/_55sdp"
+            android:layout_height="@dimen/_55sdp"
+            android:background="@drawable/imagecircle"
+            android:backgroundTint="@color/trans_purple"/>
+        </FrameLayout>
+
+    </RelativeLayout>
+
+    <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+        android:id="@+id/imgNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rel"
+        android:layout_centerHorizontal="true"
+        android:text="ImageName"
+        android:textAlignment="center"
+       style="@style/very_small_center"
+        android:maxLines="3"
+      />
+</RelativeLayout>

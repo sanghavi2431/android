@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/white"
+    >
+
+    <LinearLayout
+        android:id="@+id/ivBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/_5sdp"
+        android:gravity="center">
+
+        <ImageView
+
+            android:layout_width="@dimen/_10sdp"
+            android:layout_height="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/margin_3"
+            android:layout_marginTop="@dimen/margin_3"
+            android:layout_marginBottom="@dimen/margin_3"
+            android:adjustViewBounds="true"
+            android:rotation="90"
+            android:src="@drawable/down_arrow_bottom_bar"
+            />
+        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            style="@style/small_gray_style"
+            android:text="@string/back"
+            android:gravity="center"
+            android:layout_margin="@dimen/_2sdp"/>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/description_layout"
+            >
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/_4sdp"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_marginVertical="@dimen/_5sdp"
+        android:id="@+id/image_frame"
+        android:background="@drawable/new_button_twenty"
+        >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_61sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:elevation="@dimen/_8sdp"
+            android:layout_marginLeft="@dimen/_20sdp">
+
+            <ImageView
+                android:id="@+id/woloo_powderroom_icon"
+                android:layout_width="@dimen/_51sdp"
+                android:layout_height="@dimen/_51sdp"
+                android:src="@drawable/woloo_powder_room_logo"
+                android:background="@drawable/new_button_background_fifty"
+                android:paddingVertical="@dimen/_8sdp"
+                android:paddingHorizontal="@dimen/_4sdp"
+                android:elevation="@dimen/_4sdp"
+                android:layout_margin="@dimen/_5sdp"
+                />
+
+            <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Woloo Powder Room"
+                android:layout_toRightOf="@+id/woloo_powderroom_icon"
+                android:id="@+id/blog_name"
+                style="@style/white_twelve_left"
+                android:paddingHorizontal="@dimen/_5sdp"
+                android:gravity="center_vertical"/>
+
+
+        </RelativeLayout>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/product_details_image"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_445sdp"
+            />
+
+
+    </FrameLayout>
+
+
+
+
+            <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:text="Shop Now"
+                android:id="@+id/shop_now"
+                style="@style/screen_header_text_style_big_center_nomargin"
+                android:background="@drawable/yello_rectangle_shape"
+                android:paddingVertical="@dimen/_10sdp"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:visibility="gone"
+                />
+
+
+
+    <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+        android:id="@+id/blogText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/reltopImg"
+        android:layout_marginStart="@dimen/_25sdp"
+        android:layout_marginEnd="@dimen/_25sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:text="10 Simple changesthat leads to weight loss in a short period of time"
+        style="@style/ten_black_left"
+        android:ellipsize="end"
+        android:textColor="@color/black"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_marginTop="@dimen/_10sdp"
+        />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="@dimen/_10sdp">
+
+
+
+        <ImageView
+            android:id="@+id/heartimg"
+            android:layout_width="@dimen/_21sdp"
+            android:layout_height="@dimen/_21sdp"
+            android:layout_marginStart="@dimen/_25sdp"
+            android:src="@drawable/like_blog" />
+
+        <ImageView
+            android:id="@+id/commentimg"
+            android:layout_width="@dimen/_21sdp"
+            android:layout_height="@dimen/_21sdp"
+            android:layout_marginStart="@dimen/_25sdp"
+            android:src="@drawable/comment_blog"
+            />
+
+
+        <ImageView
+            android:id="@+id/shareimg"
+            android:layout_width="@dimen/_21sdp"
+            android:layout_height="@dimen/_21sdp"
+            android:layout_marginStart="@dimen/_25sdp"
+            android:src="@drawable/share_blog"
+            />
+
+
+        <ImageView
+            android:id="@+id/starimg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_star_blog_outline"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/new_button_background_smallest"
+                    android:backgroundTint="@color/start_theme_color"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="@dimen/_10sdp">
+                    
+                    <ImageView
+                        android:layout_width="@dimen/_18sdp"
+                        android:layout_height="@dimen/_18sdp"
+                        android:src="@drawable/coins_points"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:layout_gravity="center_vertical"/>
+                    <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="10"
+                        android:layout_marginVertical="@dimen/_5sdp"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        style="@style/grey_text_center_big"
+                        android:layout_gravity="center_vertical"/>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

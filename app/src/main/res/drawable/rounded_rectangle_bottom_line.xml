@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Bottom Shape -->
+    <item>
+        <shape
+            android:shape="rectangle">
+            <corners
+                android:bottomLeftRadius="@dimen/_15sdp"
+                android:bottomRightRadius="@dimen/_15sdp" />
+            <solid android:color="@color/marker_pop_up_light_gray" />
+        </shape>
+    </item>
+
+    <!-- Top Shape (with padding to avoid full overlap) -->
+    <item android:bottom="@dimen/_5sdp" android:left="@dimen/_5sdp" android:right="@dimen/_5sdp">
+        <shape
+            android:shape="rectangle">
+            <corners
+                android:bottomLeftRadius="@dimen/_15sdp"
+                android:bottomRightRadius="@dimen/_15sdp" />
+            <solid android:color="@color/subscription_dialog_button_color" />
+        </shape>
+    </item>
+</layer-list>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".more.shopping.fragments.CartFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/places_autocomplete_list_background"
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/title_bar_with_cart"/>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:fillViewport="true"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+
+
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                   android:padding="10dp"
+                    android:background="@color/white"
+
+                    >
+                  <TextView
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:text="Delivery Address"
+                      android:textColor="@color/black"
+                      android:textSize="20dp"
+
+                      />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/places_autocomplete_list_background"
+                    android:orientation="vertical"
+                    android:layout_margin="10dp"
+
+
+                    >
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycler_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        />
+
+
+
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/add_new_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="+ Add New Address"
+                    android:textColor="@color/black"
+                    android:layout_marginLeft="20dp"
+                    />
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+
+
+    </LinearLayout>
+</RelativeLayout>

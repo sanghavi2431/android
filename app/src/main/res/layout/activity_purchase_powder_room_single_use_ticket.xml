@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".application_kotlin.presentation.activities.loo_discovery.PurchasePowderRoomSingleUseTicketActivity">
+    
+<LinearLayout
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/pay_per_curve_bg"
+  >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:background="@drawable/ticket_bg"
+        android:padding="@dimen/_10sdp">
+        <LinearLayout
+           android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:layout_weight="1"
+            android:layout_marginBottom="@dimen/_10sdp">
+
+            <ImageView
+                android:layout_width="@dimen/_91sdp"
+                android:layout_height="@dimen/_65sdp"
+                android:scaleType="fitXY"
+                android:background="@drawable/woloo_black_new"
+                android:layout_marginHorizontal="@dimen/_10sdp"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginEnd="@dimen/_10sdp">
+                <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                    android:id="@+id/header_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="POWDER ROOM PASS"
+                    style="@style/screen_header_text_style_big_left"
+                   />
+                <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="One Time Use"
+                    style="@style/ten_black_left"
+                    android:layout_below="@+id/header_text"
+                    />
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_2sdp"
+            android:layout_marginHorizontal="@dimen/_25sdp"
+            android:visibility="gone"
+            android:background="@drawable/dotted_line_pay_per_use" />
+
+        <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="One Visit"
+            style="@style/twelve_black_nomargin_center"
+            android:layout_marginTop="@dimen/_20sdp"
+            />
+        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ANY WOLOO POWDER ROOM"
+            style="@style/screen_header_text_style_15_center"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="@dimen/_25sdp"
+            android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="@dimen/_30sdp"
+            android:layout_marginVertical="@dimen/_5sdp">
+            <ImageView
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:background="@drawable/certified_icon"
+               android:layout_marginEnd="@dimen/_10sdp"/>
+            <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:text="Certified Hygiene &amp; Comfort"
+                style="@style/refer_3_host_style"
+                android:gravity="center_vertical"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="@dimen/_30sdp"
+            android:layout_marginVertical="@dimen/_5sdp">
+            <ImageView
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:background="@drawable/personal_care_icon"
+                android:layout_marginEnd="@dimen/_10sdp"/>
+            <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:text="Personal Care &amp; Convenience"
+                style="@style/refer_3_host_style"
+                android:gravity="center_vertical"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="@dimen/_30sdp"
+            android:layout_marginVertical="@dimen/_5sdp">
+            <ImageView
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:background="@drawable/affordable_price_icon"
+                android:layout_marginEnd="@dimen/_10sdp"/>
+            <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+                android:id="@+id/display_text_three"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:text="Affordable Access At Just \u20B910/-"
+                style="@style/refer_3_host_style"
+                android:gravity="center_vertical"
+                />
+        </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_10sdp">
+        <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Facing issues?"
+            style="@style/twelve_black_nomargin_center"
+            />
+        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+            android:id="@+id/contact_help_powderroom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contact Help"
+            style="@style/twelve_black_nomargin_center"
+            />
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_2sdp"
+            android:layout_marginHorizontal="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:visibility="gone"
+            android:background="@drawable/dotted_line_pay_per_use" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:gravity="bottom"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginBottom="@dimen/_35sdp">
+
+            <ImageView
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:background="@drawable/crown_logo"
+                android:layout_marginEnd="@dimen/_5sdp"
+                />
+            <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_30sdp"
+                android:text="Get Exclusive Access"
+                style="@style/twelve_black_nomargin_center"
+                android:layout_gravity="bottom"
+                />
+
+            <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+               android:id="@+id/show_amount_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="\u20B910/-"
+                style="@style/big_price_text_black_center"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:gravity="right"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+    <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Get One Time Instant Access After Payment"
+        style="@style/ten_black_center"
+        android:layout_gravity="center"
+        />
+    <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+        android:id="@+id/buy_10_rs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginHorizontal="@dimen/_25sdp"
+        android:paddingVertical="@dimen/_10sdp"
+        android:text="Buy Pass For \u20B910/-"
+        android:elevation="@dimen/_4sdp"
+        style="@style/twelve_black_nomargin_center"
+        android:background="@drawable/yello_rectangle_shape"
+        android:layout_marginBottom="@dimen/_5sdp"
+        />
+
+    <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+        android:id="@+id/buy_woloo_subscription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_25sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:text="Buy Subscription"
+        android:elevation="@dimen/_4sdp"
+        android:paddingVertical="@dimen/_4sdp"
+        style="@style/very_small_right"
+        android:visibility="gone"
+        />
+
+</LinearLayout>
+</LinearLayout>

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".application_kotlin.presentation.fragments.profile.SayItWithWolooFragment">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/parent_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ivBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/_5sdp"
+        android:gravity="center">
+
+        <ImageView
+
+            android:layout_width="@dimen/_10sdp"
+            android:layout_height="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/margin_3"
+            android:layout_marginTop="@dimen/margin_3"
+            android:layout_marginBottom="@dimen/margin_3"
+            android:adjustViewBounds="true"
+            android:rotation="90"
+            android:src="@drawable/down_arrow_bottom_bar"
+            />
+        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            style="@style/small_gray_style"
+            android:text="@string/back"
+            android:gravity="center"
+            android:layout_margin="@dimen/_2sdp"/>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_97sdp"
+        android:src="@drawable/say_it_with_woloo_logo"
+        android:layout_marginHorizontal="@dimen/_25sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        />
+
+
+
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:layout_marginVertical="@dimen/_10sdp"
+        android:paddingHorizontal="@dimen/_20sdp"
+        android:paddingVertical="@dimen/_10sdp"
+        android:background="@drawable/sya_it_with_edit_text_bg">
+
+
+    <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularEditText
+        android:id="@+id/receiver_phone_number"
+        style="@style/boarding_text_style_left"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+       android:layout_weight="1"
+        android:hint="@string/mobile_number"
+        android:maxLines="1"
+        android:background="@color/transparent"
+        android:singleLine="true" />
+        
+        <ImageView
+            android:id="@+id/select_contact"
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:src="@drawable/contact_book_icon"
+            android:layout_gravity="center"
+           />
+
+    </LinearLayout>
+
+            <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularEditText
+                android:id="@+id/receiver_name"
+                style="@style/boarding_text_style_left"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:layout_marginVertical="@dimen/_10sdp"
+                android:background="@drawable/sya_it_with_edit_text_bg"
+                android:hint="Receiver's Name"
+                android:paddingHorizontal="@dimen/_20sdp"
+                android:paddingVertical="@dimen/_10sdp"
+                android:maxLines="1"
+                android:singleLine="true" />
+
+            <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+        android:id="@+id/receiver_name_from_contacts"
+        style="@style/very_small_right"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:layout_marginRight="@dimen/_30sdp"
+        android:layout_marginTop="-10dp"
+        android:visibility="gone"
+       />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:layout_marginVertical="@dimen/_10sdp"
+        android:paddingHorizontal="@dimen/_20sdp"
+        android:paddingVertical="@dimen/_10sdp"
+        android:background="@drawable/sya_it_with_edit_text_bg">
+
+
+    <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+        android:id="@+id/select_image_to_send"
+        style="@style/boarding_text_style_left"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sya_it_with_edit_text_bg"
+        android:hint="Select Image"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:layout_weight="1"/>
+        <ImageView
+            android:id="@+id/delete_image"
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:src="@drawable/delete_icon"
+            android:layout_gravity="center"
+            />
+        <ImageView
+            android:id="@+id/show_image"
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:src="@drawable/show_img_icon"
+            android:layout_gravity="center"
+            />
+    </LinearLayout>
+
+    <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularEditText
+        android:id="@+id/message_for_receiver"
+        style="@style/boarding_text_style_left"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:layout_marginVertical="@dimen/_10sdp"
+        android:background="@drawable/sya_it_with_edit_text_bg"
+        android:hint="@string/entermessage"
+        android:paddingHorizontal="@dimen/_20sdp"
+        android:paddingVertical="@dimen/_10sdp"
+        android:maxLines="5"
+        android:minLines="5"
+        android:inputType="textMultiLine"
+        android:ellipsize="none"
+        android:scrollbars="vertical"
+        android:overScrollMode="always"
+        />
+
+
+    <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+        android:id="@+id/save_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_20sdp"
+        android:background="@drawable/yello_rectangle_shape"
+        android:gravity="center"
+        android:text="Preview"
+        android:paddingHorizontal="@dimen/_30sdp"
+        android:paddingVertical="@dimen/_10sdp"
+        android:layout_gravity="center"
+        style="@style/button_text_style"/>
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

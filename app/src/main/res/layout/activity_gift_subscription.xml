@@ -1,0 +1,634 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:focusable="true" android:focusableInTouchMode="true"
+    tools:context=".more.giftSubscription.GiftSubscriptionActivity">
+
+    <include layout="@layout/title_bar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/llParentLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:layout_marginRight="@dimen/margin_10"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/size_65"
+                        android:layout_marginTop="@dimen/margin_10"
+                        android:background="@drawable/rectangle_shape"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/margin_51"
+                            android:layout_marginTop="@dimen/margin_5"
+                            android:orientation="vertical">
+
+
+                             <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="start"
+                                android:text="Enjoy Woloo's Peer Club Membership."
+                                android:textColor="@color/application_background"
+                                android:textSize="@dimen/size_5" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="@dimen/margin_10"
+                                android:orientation="horizontal">
+
+                                 <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Start Date On "
+                                    android:textColor="@color/text_color_one"
+                                    android:textSize="@dimen/size_5" />
+
+                                 <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+                                    android:id="@+id/tv_startDate"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="16-06-2021"
+                                    android:textColor="@color/text_color_one"
+                                    android:textSize="@dimen/size_5" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="@dimen/margin_5"
+                                android:orientation="horizontal">
+
+                                 <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="End Date On "
+                                    android:textColor="@color/text_color_one"
+                                    android:textSize="@dimen/size_5" />
+
+                                 <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+                                    android:id="@+id/tv_endDate"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="16-07-2021 "
+                                    android:textColor="@color/text_color_one"
+                                    android:textSize="@dimen/size_5" />
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/margin_51"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                             <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+                                android:id="@+id/tvSubscriptionDetails"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/margin_2"
+                                android:text=""
+                                android:textColor="@color/text_color_one"
+                                android:textSize="@dimen/size_4"
+                                android:textStyle="bold" />
+
+                             <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/what_we_offer"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/size_4"
+                                android:textStyle="normal" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/margin_2"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="@dimen/margin_5"
+                                    android:layout_height="@dimen/margin_5"
+                                    android:src="@drawable/ic_toilet_premium" />
+
+                                 <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="@dimen/margin_3"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:text="@string/clean_hygienic_toilets"
+                                    android:textColor="@color/text_color_one"
+                                    android:textSize="@dimen/size_4"
+                                    android:textStyle="normal" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="@dimen/margin_5"
+                                    android:layout_height="@dimen/margin_5"
+                                    android:src="@drawable/ic_assisted_facility_one" />
+
+                                 <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="@dimen/margin_3"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:text="@string/assisted_facility_for_abled"
+                                    android:textColor="@color/text_color_one"
+                                    android:textSize="@dimen/size_4"
+                                    android:textStyle="normal" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="@dimen/margin_5"
+                                    android:layout_height="@dimen/margin_5"
+                                    android:src="@drawable/ic_mom_feeding_baby_premium" />
+
+                                 <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="@dimen/margin_3"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:text="@string/feeding_room"
+                                    android:textColor="@color/text_color_one"
+                                    android:textSize="@dimen/size_4"
+                                    android:textStyle="normal" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="@dimen/margin_5"
+                                    android:layout_height="@dimen/margin_5"
+                                    android:src="@drawable/ic_diaper_changing_facility" />
+
+                                 <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="@dimen/margin_3"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:text="@string/diaper_changing_room"
+                                    android:textColor="@color/text_color_one"
+                                    android:textSize="@dimen/size_4"
+                                    android:textStyle="normal" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="@dimen/margin_5"
+                                    android:layout_height="@dimen/margin_5"
+                                    android:src="@drawable/ic_makeup_premium" />
+
+                                 <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="@dimen/margin_3"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:text="@string/beauty_and_changing_room"
+                                    android:textColor="@color/text_color_one"
+                                    android:textSize="@dimen/size_4"
+                                    android:textStyle="normal" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/margin_2"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="@dimen/margin_5"
+                                    android:layout_height="@dimen/margin_5"
+                                    android:src="@drawable/ic_safe" />
+
+                                 <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="@dimen/margin_3"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:text="@string/safe_space"
+                                    android:textColor="@color/text_color_one"
+                                    android:textSize="@dimen/size_4"
+                                    android:textStyle="normal" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/ll_subscription"
+                        android:layout_width="@dimen/margin_40"
+                        android:layout_height="@dimen/margin_85"
+                        android:layout_marginLeft="@dimen/margin_5"
+                        android:background="@drawable/ic_monthly_subscription_bg"
+                        android:orientation="vertical"
+                        android:padding="@dimen/size_3">
+
+                        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                            android:id="@+id/frequency"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/margin_6"
+                            android:gravity="center_horizontal"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:text="@string/monthly"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/size_6"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/appLogo_tv"
+                            android:layout_width="@dimen/margin_25"
+                            android:layout_height="@dimen/margin_15"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_logo_text" />
+
+                         <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:text="@string/peer_club"
+                            android:textColor="@color/peer_club"
+                            android:textSize="@dimen/size_6"
+                            android:textStyle="normal" />
+
+                         <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+                            android:id="@+id/tv_class"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Classsic"
+                            android:textColor="@color/text_color_one"
+                            android:textSize="@dimen/size_6"
+                            android:textStyle="normal" />
+
+                        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                            android:id="@+id/tv_price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center_horizontal"
+                            android:text="₹99"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/size_12"
+                            android:textStyle="bold" />
+
+                         <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+                            android:id="@+id/tv_price_info"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center_horizontal"
+                            android:text=""
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/size_5"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_Voucher"
+                        android:layout_width="@dimen/margin_40"
+                        android:layout_height="@dimen/margin_85"
+                        android:layout_marginLeft="@dimen/margin_5"
+                        android:background="@drawable/ic_monthly_subscription_bg"
+                        android:orientation="vertical"
+                        android:padding="@dimen/size_3"
+                        android:paddingTop="@dimen/margin_20"
+                        android:paddingBottom="@dimen/margin_20"
+                        android:visibility="gone">
+
+                         <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+                            android:id="@+id/voucherNameTv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/margin_6"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:text="@string/monthly"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/size_6"
+                            android:textStyle="bold" />
+
+
+                         <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+                            android:id="@+id/voucherTV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:text="Test ASda"
+                            android:textColor="@color/peer_club"
+                            android:textSize="@dimen/size_6"
+                            android:textStyle="normal" />
+
+                        <ImageView
+                            android:id="@+id/voucher_Logo_tv"
+                            android:layout_width="@dimen/margin_25"
+                            android:layout_height="@dimen/margin_15"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_logo_text"
+                            android:visibility="gone" />
+
+
+                         <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:text="Voucher"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/size_6"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ivSubscriptionMark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginTop="@dimen/margin_5"
+                        android:background="@drawable/background_subscription"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                         <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+                            android:id="@+id/tvSubscriptionTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/margin_2"
+                            android:gravity="center"
+                            android:text="Active"
+                            android:textColor="@color/black" />
+
+                        <ImageView
+                            android:layout_width="@dimen/margin_10"
+                            android:layout_height="@dimen/margin_10"
+                            android:layout_gravity="right"
+                            android:src="@drawable/ic_subscription_mark" />
+                    </LinearLayout>
+
+                </FrameLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_expanded"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:background="@color/white"
+                    android:orientation="vertical">
+
+                     <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+                        android:id="@+id/tvSubscriptionDetail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_2"
+                        android:text=""
+                        android:textColor="@color/text_color_eight"
+                        android:textSize="@dimen/size_6"
+                        android:textStyle="bold" />
+
+                     <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/what_we_offer"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/size_6"
+                        android:textStyle="normal" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/margin_2"
+                        android:orientation="horizontal">
+
+                        <WebView
+                            android:id="@+id/description_Wb"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/margin_10"
+                            android:background="@color/transparent" />
+
+                    </LinearLayout>
+
+                     <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+                        android:id="@+id/tv_upgrade"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="@dimen/margin_5"
+                        android:text="upgrade"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/margin_6"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_20"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_marginRight="@dimen/margin_10"
+                android:background="@drawable/rectangle_shape"
+                android:orientation="horizontal"
+                android:padding="@dimen/margin_5">
+
+                <ImageView
+                    android:layout_width="@dimen/margin_8"
+                    android:layout_height="@dimen/margin_8"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_rupee"
+                    android:visibility="gone" />
+
+                <EditText
+                    android:id="@+id/etAmount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_3"
+                    android:background="@android:color/transparent"
+                    android:hint="Enter Your Name"
+                    android:lineSpacingExtra="6.7sp"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="@color/text_color_one"
+                    android:textColorHint="@color/text_color_one"
+                    android:textSize="@dimen/size_8"
+                    android:textStyle="normal" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_marginRight="@dimen/margin_10"
+                android:background="@drawable/rectangle_shape"
+                android:orientation="horizontal"
+                android:padding="@dimen/margin_5">
+
+                <ImageView
+                    android:layout_width="@dimen/margin_8"
+                    android:layout_height="@dimen/margin_8"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_smartphone" />
+
+                 <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+                    android:id="@+id/etMobileNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_3"
+                    android:hint="@string/mobile_number"
+                    android:lineSpacingExtra="6.7sp"
+                    android:maxLines="5"
+                    android:ellipsize="end"
+                    android:singleLine="false"
+                    android:overScrollMode="always"
+                    android:scrollbarStyle="insideInset"
+                    android:scrollbars="vertical"
+                    android:textColor="@color/text_color_one"
+                    android:textColorHint="@color/text_color_one"
+                    android:textSize="@dimen/size_8"
+                    android:textStyle="normal" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_marginRight="@dimen/margin_10"
+                android:background="@drawable/rectangle_shape"
+                android:orientation="horizontal"
+                android:padding="@dimen/margin_5">
+
+                <EditText
+                    android:id="@+id/etMessage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_3"
+                    android:background="@android:color/transparent"
+                    android:gravity="left"
+                    android:hint="Enter Message*"
+                    android:lineSpacingExtra="6.7sp"
+                    android:maxLines="5"
+                    android:minLines="3"
+                    android:overScrollMode="always"
+                    android:scrollbarStyle="insideInset"
+                    android:scrollbars="vertical"
+                    android:textColor="@color/text_color_one"
+                    android:textColorHint="@color/text_color_one"
+                    android:textSize="@dimen/size_8"
+                    android:textStyle="normal" />
+
+            </LinearLayout>
+
+
+
+
+                <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                    android:id="@+id/llsendButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                   style="@style/button_text_style"
+                    android:gravity="center_horizontal"
+                    android:background="@drawable/new_button_background"
+                    android:padding="@dimen/margin_5"
+                    android:text="@string/send"
+                    android:layout_margin="@dimen/_20sdp"
+                   />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

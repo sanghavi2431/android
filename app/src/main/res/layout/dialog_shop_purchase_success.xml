@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/dialog_bg"
+    android:padding="@dimen/margin_1"
+    android:elevation="@dimen/_4sdp"
+    android:orientation="vertical"
+    android:layout_gravity="center_horizontal"
+    android:layout_margin="@dimen/_10sdp"
+    >
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        >
+
+        <ImageView
+            android:layout_width="@dimen/_65sdp"
+            android:layout_height="@dimen/_65sdp"
+            android:src="@drawable/verified_purchase"
+            android:layout_marginTop="@dimen/_10sdp"/>
+
+
+    <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your Order has been \nplaced successfully"
+        style="@style/dialog_style_big"
+       />
+
+        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Check Order Details"
+            style="@style/twelve_black_nomargin_center"
+            android:background="@drawable/yello_rectangle_shape"
+            android:layout_gravity="bottom|right"
+            android:layout_marginHorizontal="@dimen/_25sdp"
+            android:layout_marginBottom="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:padding="@dimen/_10sdp"
+            android:id="@+id/check_order_details"
+            />
+
+</LinearLayout>
+
+        <ImageView
+            android:id="@+id/gifImageView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_150sdp"
+            android:layout_gravity="center"
+            android:elevation="@dimen/_5sdp"
+            />
+
+    </FrameLayout>
+
+</LinearLayout>
+

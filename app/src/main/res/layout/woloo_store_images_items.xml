@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/margin_2"
+    android:background="@color/clr_414042"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:text=""
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:lineSpacingExtra="1.7sp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/size_8"
+        android:paddingHorizontal="@dimen/margin_3"
+        android:textStyle="bold" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_store_image"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_45"
+        android:layout_marginTop="@dimen/margin_2"
+        android:layout_below="@+id/tv_name"
+        android:nestedScrollingEnabled="true" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/iv_banner_recycle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:layout_below="@+id/rv_store_image" />
+
+    <LinearLayout
+        android:id="@+id/ll_details"
+        android:layout_below="@+id/rv_store_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_2"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/cibil_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:text="@string/hygiene_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="1.7sp"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/size_8"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/cibil_image"
+                android:layout_marginHorizontal="@dimen/size_30" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_2"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/margin_10"
+                android:layout_height="@dimen/size_10"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_location" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/txt_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="normal"
+                    android:textSize="@dimen/size_8"
+                    android:singleLine="true"
+                    android:textColor="@color/seperator_line_color"
+                    android:lineSpacingExtra="6sp"
+                    android:text="Marigold Complex, Kalyani Nagar, Pune,  Maharashtra 411006"
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_bottom"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="@dimen/margin_2"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_marginTop="@dimen/margin_3">
+
+            <ImageView
+                android:id="@+id/ivTransportMode"
+                android:layout_width="@dimen/margin_8"
+                android:layout_height="@dimen/size_8"
+                android:adjustViewBounds="true"
+                app:tint="@color/white"
+                android:src="@drawable/ic_car" />
+
+            <TextView
+                android:layout_marginLeft="@dimen/margin_2"
+                android:id="@+id/tv_distance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="@dimen/size_8"
+                android:layout_gravity="center"
+                android:textColor="@color/seperator_line_color"
+              />
+
+            <ImageView
+                android:layout_width="@dimen/margin_8"
+                android:layout_height="@dimen/margin_8"
+                android:adjustViewBounds="true"
+                android:layout_marginLeft="@dimen/size_8"
+                android:src="@drawable/ic_clock" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="@dimen/size_8"
+                android:id="@+id/tv_time"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/margin_2"
+                android:textColor="@color/seperator_line_color"
+               />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:gravity="center_vertical"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/ivToilet"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/margin_7"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/margin_2"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_toilet" />
+
+                <ImageView
+                    android:id="@+id/ivWheelChair"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/margin_7"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/margin_2"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_physically_disable" />
+
+                <ImageView
+                    android:id="@+id/ivSanitizer"
+                    android:src="@drawable/ic_hand_sanitizer"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="@dimen/margin_2"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/margin_7" />
+
+                <ImageView
+                    android:id="@+id/ivSafeSpace"
+                    android:src="@drawable/ic_safe_chip"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="@dimen/margin_2"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/margin_7"/>
+
+                <ImageView
+                    android:id="@+id/ivFeedingRoom"
+                    android:layout_height="@dimen/margin_7"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="@dimen/margin_2"
+                    android:layout_width="0dp"
+                    android:src="@drawable/ic_mom_feeding_baby" />
+
+                <ImageView
+                    android:id="@+id/ivCoffee"
+                    android:src="@drawable/ic_coffee"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="@dimen/margin_2"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/margin_7"/>
+
+                <ImageView
+                    android:id="@+id/ivMakeupRoom"
+                    android:src="@drawable/ic_makeup"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="@dimen/margin_2"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/margin_7"/>
+
+                <ImageView
+                    android:id="@+id/ivSanitaryPads"
+                    android:src="@drawable/ic_diaper"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="@dimen/margin_2"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/margin_7"
+                    app:tint="@color/white" />
+
+                <ImageView
+                    android:id="@+id/ivCleanHygiene"
+                    android:src="@drawable/ic_clean_hygienic_icon"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="@dimen/margin_2"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/margin_7"/>
+
+
+                <ImageView
+                    android:id="@+id/ivCovidFree"
+                    android:src="@drawable/ic_covid_free"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="@dimen/margin_2"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/margin_7" />
+
+
+                <ImageView
+                    android:id="@+id/ivSegregatedWashroom"
+                    android:layout_width="@dimen/margin_5"
+                    android:layout_height="17dp"
+                    android:layout_gravity="center"
+                    android:visibility="gone"
+                    android:layout_marginLeft="@dimen/margin_2"
+                    android:src="@drawable/ic_separate_toilet" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_5"
+            android:weightSum="3"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_direction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="@dimen/size_5"
+                android:textColor="@color/text_color_one"
+                android:padding="@dimen/margin_2"
+                android:drawablePadding="@dimen/margin_1"
+                android:gravity="center"
+                android:singleLine="true"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/details_location_layer_list"
+                android:background="@drawable/yellow_rectangle_shape"
+                android:text="Directions" />
+
+
+            <TextView
+                android:id="@+id/tv_start"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="@dimen/size_5"
+                android:textColor="@color/white"
+                android:padding="@dimen/margin_2"
+                android:drawablePadding="@dimen/margin_1"
+                android:layout_marginStart="@dimen/margin_2"
+                android:gravity="center"
+                android:singleLine="true"
+                android:layout_weight="0"
+                android:visibility="gone"
+                android:drawableLeft="@drawable/details_start_layer_list"
+                android:background="@drawable/transparent_rectangle"
+                android:text="Start" />
+
+            <TextView
+                android:id="@+id/tvShare"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="@dimen/size_5"
+                android:textColor="@color/white"
+                android:padding="@dimen/margin_2"
+                android:drawablePadding="@dimen/margin_1"
+                android:layout_marginStart="@dimen/margin_2"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:singleLine="true"
+                android:drawableLeft="@drawable/details_share_layer_list"
+                android:background="@drawable/transparent_rectangle"
+                android:text="@string/share" />
+
+            <TextView
+                android:id="@+id/tv_like"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="@dimen/size_5"
+                android:textColor="@color/white"
+                android:padding="@dimen/margin_2"
+                android:layout_marginStart="@dimen/margin_2"
+                android:drawablePadding="@dimen/margin_1"
+                android:gravity="center"
+                android:singleLine="true"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/details_like_layer_list"
+                android:background="@drawable/transparent_rectangle"
+                android:text="@string/bookmark" />
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/margin_5"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/margin_6"
+                android:layout_height="@dimen/margin_6"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/margin_2"
+                android:src="@drawable/ic_info"
+                app:tint="@color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_2"
+                android:ellipsize="end"
+                android:includeFontPadding="false"
+                android:maxLines="2"
+                android:text="Please use direction to earn Woloo Points"
+                android:textColor="@color/text_color_six"
+                android:textSize="@dimen/size_6"
+                android:textStyle="normal" />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>

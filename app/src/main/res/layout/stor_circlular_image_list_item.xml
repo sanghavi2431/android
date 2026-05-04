@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+
+>
+
+
+    <FrameLayout
+        android:id="@+id/color_frame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       >
+
+        <ImageView
+            android:id="@+id/color_image"
+            android:layout_width="@dimen/_27sdp"
+            android:layout_height="@dimen/_27sdp"
+            android:src="@drawable/imagecircle"
+            android:scaleType="fitXY"
+            android:background="@drawable/imagecircle"
+            android:backgroundTint="@color/start_theme_color"
+            android:clipToOutline="true"
+            android:layout_margin="@dimen/_5sdp"/>
+
+        <ImageView
+            android:id="@+id/color_selected_image"
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_15sdp"
+            android:src="@drawable/check_color"
+            android:layout_gravity="center"/>
+
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/size_frame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+android:visibility="gone"
+        >
+
+        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+            android:id="@+id/size_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/new_button_background_smallest"
+            style="@style/ten_black_center"
+            android:elevation="@dimen/_4sdp"
+            android:layout_margin="@dimen/_5sdp"
+           android:paddingVertical="@dimen/_5sdp"
+            android:paddingHorizontal="@dimen/_10sdp"/>
+
+
+
+
+    </FrameLayout>
+
+
+
+</LinearLayout>

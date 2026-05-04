@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+        android:id="@+id/tv_show_more"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_100sdp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginHorizontal="@dimen/margin_5"
+        android:background="@drawable/circlular_background"
+        android:gravity="center"
+        android:paddingHorizontal="@dimen/margin_5"
+        android:paddingVertical="@dimen/margin_4"
+        android:text="Show More\nWoloos"
+        android:textColor="@color/text_color_one"
+        android:textSize="@dimen/size_8"
+        android:textStyle="bold"
+        android:layout_margin="@dimen/_10sdp"
+        tools:ignore="MissingConstraints" />
+</androidx.constraintlayout.widget.ConstraintLayout>

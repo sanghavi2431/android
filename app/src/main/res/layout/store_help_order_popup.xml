@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@drawable/top_corner_dialog_bg"
+    app:layout_behavior="@string/bottom_sheet_behavior"
+    android:elevation="@dimen/_4sdp"
+    android:layout_marginTop="@dimen/_5sdp"
+    android:paddingEnd="@dimen/_5sdp"
+    >
+
+    <View
+        android:id="@+id/back_dialog"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_3sdp"
+        android:background="@color/chip_color"
+        android:padding="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_gravity="center_horizontal"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll_bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+    <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/cart_header_icon"
+        android:text="Order - #31233546"
+        style="@style/screen_header_text_style_big_left"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_35sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:id="@+id/cart_header_text"/>
+
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        cardview:cardCornerRadius="@dimen/_25sdp"
+        cardview:cardElevation="@dimen/_4sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingVertical="@dimen/_10sdp">
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginVertical="@dimen/_8sdp">
+                <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Report an issue"
+                    style="@style/refer_3_host_style"
+                    android:maxLines="1"
+                    android:layout_marginLeft="@dimen/_10sdp"/>
+
+                <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="5"
+                    android:lines="5"
+                    android:background="@drawable/new_button_background_square"
+                    android:backgroundTint="@color/review_text_bg"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:imeOptions="actionDone"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    style="@style/review_twelve_left"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:layout_marginVertical="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp">
+
+                <ImageView
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:src="@drawable/payment_edit"
+                    android:layout_gravity="top|right"
+                    />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/_10sdp">
+        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+            android:id="@+id/submit_help_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/yello_rectangle_shape"
+            android:text="Submit"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginVertical="@dimen/_10sdp"
+            android:elevation="@dimen/_4sdp"
+            style="@style/screen_header_text_style_big_center_nomargin"
+            android:paddingVertical="@dimen/_5sdp"/>
+
+
+    </LinearLayout>
+
+    </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

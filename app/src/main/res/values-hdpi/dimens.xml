@@ -1,0 +1,81 @@
+<resources>
+
+    <!-- mdpi x 1.65 (Our case Multiply by 1.75)-->
+    <!-- Margins and height, width -->
+    <!-- Margins and height, width -->
+
+    <dimen name="margin_1">1.65dp</dimen>
+    <dimen name="margin_2">3.3dp</dimen>
+    <dimen name="margin_3">4.95dp</dimen>
+    <dimen name="margin_4">6.6dp</dimen>
+    <dimen name="margin_5">8.25dp</dimen>
+    <dimen name="margin_6">9.9dp</dimen>
+    <dimen name="margin_7">11.55dp</dimen>
+    <dimen name="margin_8">13.2dp</dimen>
+    <dimen name="margin_9">14.85dp</dimen>
+    <dimen name="margin_10">16.5dp</dimen>
+    <dimen name="margin_11">18.15dp</dimen>
+    <dimen name="margin_12">19.8dp</dimen>
+    <dimen name="margin_13">21.45dp</dimen>
+    <dimen name="margin_14">23.1dp</dimen>
+    <dimen name="margin_15">24.75dp</dimen>
+    <dimen name="margin_17">28.05dp</dimen>
+    <dimen name="margin_18">29.7dp</dimen>
+    <dimen name="margin_20">33dp</dimen>
+    <dimen name="margin_22">36.3dp</dimen>
+    <dimen name="margin_25">41.25dp</dimen>
+    <dimen name="margin_26">42.9dp</dimen>
+    <dimen name="margin_27">44.55dp</dimen>
+    <dimen name="margin_30">49.5dp</dimen>
+    <dimen name="margin_32">52.8dp</dimen>
+    <dimen name="margin_35">57.75dp</dimen>
+    <dimen name="margin_40">66dp</dimen>
+    <dimen name="margin_43">70.95dp</dimen>
+    <dimen name="margin_45">74.25dp</dimen>
+    <dimen name="margin_50">82.5dp</dimen>
+    <dimen name="margin_51">84.15dp</dimen>
+    <dimen name="margin_53">87.45dp</dimen>
+    <dimen name="margin_55">90.75dp</dimen>
+    <dimen name="margin_60">99dp</dimen>
+    <dimen name="margin_64">105.6dp</dimen>
+    <dimen name="margin_70">115.5dp</dimen>
+    <dimen name="margin_80">132dp</dimen>
+    <dimen name="margin_85">140.25dp</dimen>
+    <dimen name="margin_90">148.5dp</dimen>
+    <dimen name="margin_95">156.75dp</dimen>
+    <dimen name="margin_100">165dp</dimen>
+    <dimen name="margin_110">181.5dp</dimen>
+    <dimen name="margin_115">189.75dp</dimen>
+    <dimen name="margin_120">198dp</dimen>
+    <dimen name="margin_130">214.5dp</dimen>
+    <dimen name="margin_150">247.5dp</dimen>
+
+    <!-- Text Size -->
+    <dimen name="textSize_14sp">14sp</dimen>
+    <dimen name="size_1">1.5sp</dimen>
+    <dimen name="size_2">3sp</dimen>
+    <dimen name="size_3">4.5sp</dimen>
+    <dimen name="size_4">6sp</dimen>
+    <dimen name="size_5">7.5sp</dimen>
+    <dimen name="size_6">9sp</dimen>
+    <dimen name="size_7">10.5sp</dimen>
+    <dimen name="size_8">12sp</dimen>
+    <dimen name="size_9">13.5sp</dimen>
+    <dimen name="size_10">15sp</dimen>
+    <dimen name="size_11">16.5sp</dimen>
+    <dimen name="size_12">18sp</dimen>
+    <dimen name="size_14">21sp</dimen>
+    <dimen name="size_15">22.5sp</dimen>
+    <dimen name="size_17">25.5sp</dimen>
+    <dimen name="size_20">30sp</dimen>
+    <dimen name="size_21">31.5sp</dimen>
+    <dimen name="size_30">45sp</dimen>
+    <dimen name="size_33">49.5sp</dimen>
+    <dimen name="size_50">75sp</dimen>
+    <dimen name="size_65">97.5sp</dimen>
+
+
+    <!--Temp ToolTip Layout Dialog-->
+
+    <integer name="curve_radius">2</integer>
+</resources>

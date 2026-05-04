@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".store.screens.StoreListingFragment"
+    android:background="@color/white"
+    android:layout_marginHorizontal="@dimen/_10sdp"
+   >
+
+    <LinearLayout
+        android:id="@+id/ivBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/_5sdp">
+
+        <ImageView
+            android:layout_width="@dimen/_10sdp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:rotation="90"
+            android:layout_gravity="center"
+            android:src="@drawable/down_arrow_bottom_bar"
+            />
+        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/small_gray_style"
+            android:text="@string/back"
+            android:gravity="center"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            />
+    </LinearLayout>
+
+<LinearLayout
+    android:id="@+id/search_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@drawable/new_button_background"
+    android:elevation="@dimen/_4sdp"
+    android:layout_marginHorizontal="@dimen/_5sdp"
+    android:layout_marginVertical="@dimen/_5sdp">
+    <ImageView
+        android:id="@+id/search_products"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_18sdp"
+        android:src="@drawable/search_icon_home"
+        android:layout_gravity="center_vertical"
+        android:layout_margin="@dimen/_5sdp"/>
+    <in.woloo.www.application_kotlin.utilities.CenturiGhoticAutoComplete
+        android:id="@+id/search_product_auto_complete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Search Products"
+        style="@style/host_details_header_style"
+        android:layout_gravity="center"
+        android:maxLines="1"
+        android:imeOptions="actionDone"
+        android:background="@color/transparent"/>
+</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recently Searched"
+                style="@style/host_details_sub_header_style"
+                />
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true">
+                <TextView
+                    android:id="@+id/clear_list"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Clear"
+                    android:layout_marginHorizontal="@dimen/_10sdp"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/recent_items_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:chipSpacing="@dimen/_5sdp"
+            />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Based on your recent Searches"
+                style="@style/host_details_sub_header_style"
+                />
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true">
+                <TextView
+                    android:id="@+id/view_all_products_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="View All"
+                    android:visibility="gone"
+                    android:layout_marginHorizontal="@dimen/_10sdp"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/collection_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/store_product_collection_list_item"
+            tools:itemCount="3"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="3"/>
+    </LinearLayout>
+
+</LinearLayout>

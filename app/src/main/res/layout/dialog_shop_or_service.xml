@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_bg"
+    android:orientation="vertical"
+    android:layout_margin="@dimen/_5sdp"
+    android:elevation="@dimen/_4sdp">
+
+    <LinearLayout
+        android:id="@+id/ivBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingHorizontal="@dimen/_15sdp"
+        android:paddingVertical="@dimen/_35sdp">
+
+        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Store"
+            style="@style/screen_header_text_style_big_center"
+            android:layout_marginTop="@dimen/_15sdp"
+            />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="@dimen/_4sdp"
+            android:layout_margin="@dimen/_5sdp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_120sdp"
+            android:src="@drawable/shop_go_img"
+            android:scaleType="centerCrop"
+            android:background="@drawable/image_bg"
+            android:clipToOutline="true"
+            />
+
+            <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Go"
+                style="@style/twelve_black_nomargin_center"
+                android:background="@drawable/yello_rectangle_shape"
+                android:paddingVertical="@dimen/_10sdp"
+                android:paddingHorizontal="@dimen/_40sdp"
+                android:layout_gravity="bottom|right"
+                android:layout_marginHorizontal="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:id="@+id/go_to_store"
+                />
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="@dimen/_4sdp"
+            android:layout_margin="@dimen/_5sdp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_120sdp"
+            android:src="@drawable/service_go_img"
+            android:scaleType="centerCrop"
+            android:background="@drawable/image_bg"
+            android:clipToOutline="true"/>
+
+            <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Go"
+                style="@style/twelve_black_nomargin_center"
+                android:background="@drawable/yello_rectangle_shape"
+                android:paddingVertical="@dimen/_10sdp"
+                android:paddingHorizontal="@dimen/_40sdp"
+                android:layout_gravity="bottom|left"
+                android:layout_marginHorizontal="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:id="@+id/go_to_services"
+                />
+        </FrameLayout>
+
+    </LinearLayout>
+</LinearLayout>

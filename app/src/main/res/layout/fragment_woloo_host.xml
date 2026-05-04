@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/text_color_one"
+    tools:context=".more.woloo_host.WolooHostFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/rlHeaderInclude"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_45">
+
+                <include layout="@layout/item_details_header" />
+
+            </RelativeLayout>
+
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/margin_10"
+                        android:layout_marginRight="@dimen/margin_10"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/open_sans_regular"
+                            android:lineSpacingExtra="11.3sp"
+                            android:text="@string/become_a_woloo_host"
+                            android:textColor="@color/text_color_five"
+                            android:textSize="@dimen/margin_12"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/open_sans_semi_bold"
+                            android:lineSpacingExtra="8.7sp"
+                            android:text="Dear Woloo Host,\n
+Woloo offers you a great opportunity to earn extra money &amp; also provide loads of customers if you have a Clean &amp; Hygienic washroom facility at your oulet.\n\n
+Woloo, an app for women to locate curated and aggregated Clean &amp; hygienic washrooms (Powder Rooms) hosted by QSR, Premium Restaurants, Cafes or any other retail business with safe and hygienic washrooms."
+                            android:textColor="#f4f4f4"
+                            android:textSize="@dimen/margin_7"
+                            android:textStyle="normal" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/margin_70"
+                        android:layout_marginTop="@dimen/margin_5"
+                        android:layout_marginBottom="@dimen/margin_5"
+                        android:background="@color/white">
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/margin_10"
+                        android:layout_marginRight="@dimen/margin_10"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/open_sans_regular"
+                            android:lineSpacingExtra="6.7sp"
+                            android:text="Benefits for Woloo-Host\n
+- Additional Customers &amp; business\n
+- Additional income\n
+- Brand image enhancement as a socially responsible brand."
+                            android:textColor="#f4f4f4"
+                            android:textSize="@dimen/size_7"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/margin_50"
+                        android:layout_marginTop="@dimen/margin_15"
+                        android:layout_marginBottom="@dimen/margin_5"
+                        android:background="@color/white">
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/margin_10"
+                        android:layout_marginRight="@dimen/margin_10"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/open_sans_semi_bold"
+                            android:lineSpacingExtra="8.7sp"
+                            android:text="Woloo Assurance of Hygiene (WAH) is symbol of commitment to every Woloo customer to provide Safe, Hygienic &amp; Accessible wash room.\n\n
+WAH is a Global Hygiene Standard Guide for Woloo-Hosts to comply for a uniform &amp; very high standard of Hygiene offered to customers consistently."
+                            android:textColor="#f4f4f4"
+                            android:textSize="@dimen/size_7"
+                            android:textStyle="normal" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/margin_100"
+                        android:layout_marginTop="@dimen/margin_15"
+                        android:layout_marginBottom="@dimen/margin_5"
+                        android:background="@color/white">
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/margin_10"
+                        android:layout_marginRight="@dimen/margin_10"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/open_sans_regular"
+                            android:lineSpacingExtra="6.7sp"
+                            android:text="Woloo Assurance Of Hygiene Compliance Criteria\n\n
+1. Location accessibility : Woloo-Host retail facility location must be easily located. The access to washroom must be easy &amp; convenient.\n
+2. Safety &amp; Security : The location of Woloo-Host facility must be safe and secure for women customers.\n
+3. Hygiene &amp; Cleanliness : Hygiene &amp; Cleanliness of the washroom must be the top priority of Woloo Host.\n
+4. Quality of Fitting &amp; Facilities : The quality &amp; Condition of the fitting at Loo Host washrooms must be top class &amp; well maintained.\n
+5. Hospitality &amp; Courtesy : Woloo-Host must ensure courteous &amp; comfortable hospitality standards towards customers.\n\n"
+                            android:textColor="#f4f4f4"
+                            android:textSize="@dimen/size_7"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </ScrollView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

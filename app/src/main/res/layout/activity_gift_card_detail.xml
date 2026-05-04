@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".more.my_account.GiftCardDetailActivity">
+
+    <include layout="@layout/title_bar"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_80"
+            android:background="@drawable/rounded_corner_background"
+            android:layout_margin="@dimen/margin_5">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/margin_5"
+                android:gravity="center_horizontal"
+                android:background="@drawable/layout_border_black">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="@dimen/margin_30"
+                        android:src="@drawable/logo"/>
+
+                    <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                        android:id="@+id/sentOReceived_Tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/size_10"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:gravity="center"
+                        android:text="Gift Card Received"/>
+
+                    <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                        android:id="@+id/gift_card_amount_Tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/size_15"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:gravity="center"
+                        android:text="1,000"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+                    android:id="@+id/sentTO_BY_TV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/size_6"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:text="Sent By"/>
+
+                <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+                    android:id="@+id/seen_date_time_Tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:layout_marginRight="@dimen/margin_10"
+                    android:layout_alignParentRight="true"
+                    android:text="21 Jan, 04:37 PM"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:background="@color/transparent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="@dimen/margin_5"
+                    android:layout_marginBottom="@dimen/margin_5"
+                    android:orientation="vertical">
+
+                    <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                        android:id="@+id/user_name_Tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/size_10"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="@dimen/margin_10"
+                        android:text="Preeti Patil"/>
+
+                    <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                        android:id="@+id/user_mobile_no_Tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/size_8"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="@dimen/margin_10"
+                        android:text="9876543210"/>
+
+                </LinearLayout>
+
+                <in.woloo.www.utils.CircleImageView
+                    android:id="@+id/user_image_Imv"
+                    android:layout_width="@dimen/margin_20"
+                    android:layout_height="@dimen/margin_20"
+                    android:background="@color/transparent"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/margin_10"
+                    android:layout_marginTop="@dimen/margin_3" />
+
+            </RelativeLayout>
+
+            <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+                android:id="@+id/description_Tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/size_7"
+                android:textColor="@color/black"
+                android:gravity="start"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:layout_marginRight="@dimen/margin_10"
+                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."/>
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="@dimen/margin_8"
+            android:background="@color/black"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/size_6"
+                    android:text="Gift Card Id : "/>
+
+                <TextView
+                    android:id="@+id/gift_card_id_Tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/size_6"
+                    android:text="121684596"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/size_6"
+                    android:text="Expiry : "/>
+
+                <TextView
+                    android:id="@+id/expiry_date_Tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/size_6"
+                    android:text="14 May 20201"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

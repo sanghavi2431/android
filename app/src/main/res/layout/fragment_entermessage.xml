@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".more.fragments.contacts.EnterMessage">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/application_background"
+        android:orientation="vertical"
+        android:padding="@dimen/size_10">
+
+        <include layout="@layout/title_bar" />
+
+
+        <EditText
+            android:id="@+id/edt_message"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_gravity="center"
+            android:background="@drawable/rounded_bg"
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:ellipsize="end"
+            android:focusable="false"
+            android:gravity="top"
+            android:hint="Enter Your Message"
+            android:imeOptions="actionNext"
+            android:inputType="text|textMultiLine"
+            android:padding="10dp"
+            android:scrollbars="vertical"
+            android:scrollHorizontally="true"
+            android:singleLine="false"
+            android:textSize="14sp" />
+
+
+        <TextView
+            android:id="@+id/tv_msgpartener"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll_msg"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="right|center"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="15dp"
+            android:layout_toLeftOf="@+id/iv_bottomarrow"
+            android:layout_toRightOf="@+id/iv_dob"
+            android:background="@null"
+            android:gravity="right|center"
+            android:imeOptions="actionNext"
+            android:inputType="textNoSuggestions|textVisiblePassword"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="0/150"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            android:visibility="gone" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="20sp"
+        android:gravity="center"
+        android:padding="@dimen/size_10">
+
+        <TextView
+            android:id="@+id/tv_submitpartner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/timer"
+            android:layout_centerInParent="true"
+            android:background="@drawable/rounded_yellow_bg"
+            android:gravity="center"
+            android:padding="@dimen/size_6"
+            android:text="SUBMIT"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context=".shopping.fragments.ShoppingFragment">
+
+    <LinearLayout
+        android:id="@+id/toolbar_shopping"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/color_primary"
+        android:layout_alignParentTop="true"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_2"
+            android:layout_marginBottom="@dimen/margin_2"
+            >
+
+            <in.woloo.www.utils.CircleImageView
+                android:id="@+id/ivProfile"
+                android:layout_width="@dimen/margin_15"
+                android:layout_height="@dimen/margin_15"
+                android:scaleType="centerCrop"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_profile_placeholder"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_toRightOf="@+id/ivProfile"
+                android:layout_centerVertical="true"
+                >
+                <TextView
+                    android:id="@+id/txtPoint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1000 Point"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/size_5"
+                    />
+
+                <TextView
+                    android:id="@+id/txtName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Welcome Name"
+                    android:capitalize="sentences"
+
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/size_5"
+                    />
+
+
+            </LinearLayout>
+
+
+
+
+            <ImageView
+                android:id="@+id/imgWlLogo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_wl_logo"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/margin_2"
+                android:layout_marginBottom="@dimen/margin_2"
+                />
+
+
+
+            <LinearLayout
+                android:id="@+id/pincodeLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_toLeftOf="@+id/imgSearch"
+                android:layout_marginRight="10dp"
+
+                android:layout_centerVertical="true"
+                >
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@drawable/ic_location"
+                    />
+
+                <TextView
+                    android:id="@+id/pincodeTextview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" Pincode"
+                    android:capitalize="sentences"
+
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/size_5"
+                    />
+
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/imgSearch"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/ic_search"
+                android:layout_toLeftOf="@+id/imgInvit"
+                android:layout_toStartOf="@+id/imgCart"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/margin_7"
+                />
+
+            <ImageView
+                android:id="@+id/imgCart"
+                android:layout_width="14dp"
+                android:layout_height="18dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/margin_7"
+                android:src="@drawable/ic_my_cart" />
+
+            <TextView
+                android:id="@+id/cart_count_textview"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:gravity="center"
+                android:text="0"
+                android:textSize="12dp"
+                android:background="@drawable/circle_shape"
+                android:backgroundTint="@color/quantum_yellow"
+                android:layout_alignParentEnd="true"
+                 android:layout_marginRight="5dp"
+                android:layout_gravity="top"
+                android:layout_marginTop="10dp"
+
+                />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:fillViewport="true"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:paddingBottom="@dimen/margin_50"
+
+            android:orientation="vertical">
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    >
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycler_view_cat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+
+                        />
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:paddingBottom="10dp"
+                        android:layout_height="200dp">
+
+
+
+                        <androidx.viewpager.widget.ViewPager
+                            android:id="@+id/pager"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_alignParentTop="true" />
+
+                        <me.relex.circleindicator.CircleIndicator
+                            android:id="@+id/indicator"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:layout_alignParentBottom="true"/>
+
+
+
+                    </LinearLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycler_view_home_cat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

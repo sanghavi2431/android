@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".application_kotlin.presentation.activities.web_view.WebActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="@dimen/margin_20"
+            android:layout_height="@dimen/margin_20"
+            android:src="@drawable/left_icon"
+            app:tint="@color/gray"
+            android:padding="@dimen/margin_4"/>
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:text="Maximum length of the title upto this size title upto this size" />
+    </LinearLayout>
+
+<WebView
+    android:id="@+id/webview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none" />
+
+</LinearLayout>

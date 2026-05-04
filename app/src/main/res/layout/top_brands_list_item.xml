@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:elevation="@dimen/_4sdp"
+    android:layout_margin="@dimen/_5sdp"
+    android:background="@color/transparent">
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       >
+        <ImageView
+            android:layout_width="@dimen/_89sdp"
+            android:layout_height="@dimen/_89sdp"
+            android:background="@drawable/image_woloo_host_bg"
+            android:scaleType="fitXY"
+            android:clipToOutline="true"
+            android:id="@+id/brand_image"
+            android:backgroundTint="@color/search_background"
+            android:src="@drawable/top_brands_img"
+           />
+        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="[Brand Name]"
+            android:layout_gravity="bottom|center"
+            style="@style/small_button_style"
+            android:id="@+id/brand_name"
+            android:visibility="gone"
+            android:layout_marginBottom="@dimen/_10sdp"/>
+    </FrameLayout>
+
+
+</LinearLayout>

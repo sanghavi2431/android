@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".more.dailylogscreen.DailyLogsScreenActivity">
+
+    <LinearLayout
+        android:id="@+id/ivBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/_5sdp"
+        android:gravity="center">
+
+        <ImageView
+
+            android:layout_width="@dimen/_10sdp"
+            android:layout_height="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/margin_3"
+            android:layout_marginTop="@dimen/margin_3"
+            android:layout_marginBottom="@dimen/margin_3"
+            android:adjustViewBounds="true"
+            android:rotation="90"
+            android:src="@drawable/down_arrow_bottom_bar"
+            />
+        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            style="@style/small_gray_style"
+            android:text="@string/back"
+            android:gravity="center"
+            android:layout_margin="@dimen/_2sdp"/>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+
+        <ImageView
+            android:id="@+id/screen_image"
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_margin="@dimen/_15sdp"
+            android:src="@drawable/my_history_icon"
+            android:visibility="gone"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                android:id="@+id/screen_header"
+                style="@style/screen_header_text_style_big_center_nomargin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_2sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginEnd="@dimen/_2sdp"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:text="Menstruation Log" />
+            <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" Wanna get super in tune with your body and period cycle? Tracking your symptoms is key!"
+                android:textSize="@dimen/_9ssp"
+                android:textColor="@color/black"
+                android:layout_below="@+id/screen_header"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:minLines="2"
+                android:gravity="center"
+                android:id="@+id/screen_description"
+                />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrolldailyLog"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_below="@+id/toptitle">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/dailyLogRel">
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/dailyLogRecycler"
+                android:layout_marginTop="@dimen/margin_5" />
+
+        </RelativeLayout>
+    </ScrollView>
+    <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/dailyLogSave"
+        android:text="Save"
+        android:layout_below="@+id/dailyLogRecycler"
+        android:textAlignment="center"
+       style="@style/button_text_style"
+        android:layout_margin="@dimen/_20sdp"
+        android:background="@drawable/yello_rectangle_shape"
+        />
+</LinearLayout>

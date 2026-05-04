@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".store.screens.ShoppingCartActivity">
+
+    <LinearLayout
+        android:id="@+id/ivBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:gravity="center"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/new_button_background_smallest"
+        android:backgroundTint="@color/start_theme_color"
+        android:elevation="@dimen/_1sdp"
+        android:paddingVertical="@dimen/_6sdp"
+        android:paddingHorizontal="@dimen/_12sdp"
+        >
+
+        <ImageView
+
+            android:layout_width="@dimen/_10sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/_7sdp"
+            android:adjustViewBounds="true"
+            android:rotation="90"
+            android:layout_gravity="center"
+            android:src="@drawable/down_arrow_bottom_bar"
+            />
+        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/small_gray_style"
+            android:text="@string/back"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/_10sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="@dimen/_7sdp"
+                android:layout_marginBottom="@dimen/_10sdp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:itemCount="1"
+                android:id="@+id/product_image_recycler"
+                tools:listitem="@layout/product_image_recycler"
+               />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginHorizontal="@dimen/_20sdp">
+                <ImageView
+                    android:id="@+id/ivVeryBad"
+                    android:layout_width="@dimen/_13sdp"
+                    android:layout_height="@dimen/_13sdp"
+                    android:src="@drawable/filled_star_new"
+                    android:layout_marginEnd="@dimen/_2sdp"
+                    android:layout_gravity="center"
+                    />
+                <ImageView
+                    android:id="@+id/ivBad"
+                    android:layout_width="@dimen/_13sdp"
+                    android:layout_height="@dimen/_13sdp"
+                    android:src="@drawable/filled_star_new"
+                    android:layout_marginEnd="@dimen/_2sdp"
+                    android:layout_gravity="center"
+                    />
+                <ImageView
+                    android:id="@+id/ivAverage"
+                    android:layout_width="@dimen/_13sdp"
+                    android:layout_height="@dimen/_13sdp"
+                    android:src="@drawable/filled_star_new"
+                    android:layout_marginEnd="@dimen/_2sdp"
+                    android:layout_gravity="center"
+                    />
+                <ImageView
+                    android:id="@+id/ivGood"
+                    android:layout_width="@dimen/_13sdp"
+                    android:layout_height="@dimen/_13sdp"
+                    android:src="@drawable/filled_star_new"
+                    android:layout_marginEnd="@dimen/_2sdp"
+                    android:layout_gravity="center"
+                    />
+                <ImageView
+                    android:id="@+id/ivLovedIt"
+                    android:layout_width="@dimen/_13sdp"
+                    android:layout_height="@dimen/_13sdp"
+                    android:src="@drawable/filled_star_new"
+                    android:layout_marginEnd="@dimen/_2sdp"
+                    android:layout_gravity="center"
+                    />
+                <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                    android:id="@+id/review_count_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(0)"
+                    style="@style/screen_sub_header_text_center"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_4sdp"
+                    />
+                <ImageView
+                    android:layout_width="@dimen/_12sdp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/down_navigate_arrow"
+                    android:rotation="270"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="@dimen/_2sdp"
+                    android:visibility="gone"
+
+                    />
+
+            </LinearLayout>
+
+            <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+                android:id="@+id/product_details_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Feather Toilet Seat"
+                style="@style/pop_up_left"
+                android:maxLines="1"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_12sdp"/>
+
+
+            <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                android:id="@+id/product_details_vender_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Seller Feather Industries"
+                style="@style/grey_twelve_left"
+                android:maxLines="1"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                />
+
+
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:background="@color/bg_gray"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:layout_marginVertical="@dimen/_15sdp"/>
+
+            <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Description"
+                style="@style/pop_up_left"
+                android:maxLines="1"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                />
+
+
+
+            <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                android:id="@+id/product_details_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="[Product Description]"
+                style="@style/ten_black_left"
+                android:maxLines="4"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:background="@color/bg_gray"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_15sdp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                tools:listitem="@layout/options_parent_adapter"
+                android:id="@+id/options_parent_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                tools:itemCount="1"
+               />
+
+          <!--  <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                cardview:cardCornerRadius="@dimen/_13sdp"
+                android:elevation="@dimen/_4sdp"
+                android:visibility="gone"
+                android:layout_margin="@dimen/_10sdp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Size"
+                        style="@style/refer_3_host_style"
+                        android:maxLines="1"
+                        android:layout_marginHorizontal="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_5sdp"/>
+
+                    <View
+                        android:layout_width="@dimen/_100sdp"
+                        android:layout_height="@dimen/_1sdp"
+                        android:background="@color/line_color"
+                        android:layout_marginHorizontal="@dimen/_10sdp"
+                        android:layout_marginVertical="@dimen/_4sdp"/>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/size_recycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:itemCount="1"
+                        tools:listitem="@layout/stor_circlular_image_list_item"/>
+
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>-->
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:background="@color/bg_gray"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:layout_marginVertical="@dimen/_15sdp"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                cardview:cardCornerRadius="@dimen/_13sdp"
+                android:elevation="@dimen/_4sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:layout_marginHorizontal="@dimen/_20sdp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_10sdp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                       >
+
+                    <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Address - Home"
+                        style="@style/refer_3_host_style"
+                        android:maxLines="1"
+                        android:id="@+id/address_name"
+                        android:layout_marginHorizontal="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_5sdp"/>
+
+                        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                            android:id="@+id/change_address"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Change"
+                            style="@style/policy_text_style_left"
+                            android:maxLines="1"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="@dimen/_15sdp"
+                            />
+
+
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="@dimen/_100sdp"
+                        android:layout_height="@dimen/_1sdp"
+                        android:background="@color/line_color"
+                        android:layout_marginHorizontal="@dimen/_15sdp"
+                        android:layout_marginVertical="@dimen/_5sdp"/>
+
+                    <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="1234 Lane road, Area, Location, Landmark"
+                        style="@style/policy_text_style_left"
+                        android:maxLines="3"
+                        android:id="@+id/full_address"
+                        android:layout_marginHorizontal="@dimen/_15sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"/>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:background="@color/bg_gray"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:layout_marginVertical="@dimen/_15sdp"/>
+
+            <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Based on your recent Searches"
+                style="@style/refer_3_host_style"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/product_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/store_product_collection_list_item"
+                tools:itemCount="3"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="3"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:background="@color/bg_gray"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:layout_marginVertical="@dimen/_15sdp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reviews And Ratings"
+                style="@style/refer_3_host_style"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="@dimen/_10sdp"
+                />
+            <TextView
+                android:id="@+id/view_all_products_reviews"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="View All"
+                android:visibility="gone"
+                android:layout_marginHorizontal="@dimen/_10sdp"/>
+            </RelativeLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/review_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/reviews_item"
+                tools:itemCount="2"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                />
+
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <RelativeLayout
+        android:id="@+id/button_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/top_corener_image_bg"
+        android:layout_alignParentBottom="true"
+        android:elevation="@dimen/_4sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:paddingVertical="@dimen/_10sdp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+            android:id="@+id/buy_now_direct_payment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/yello_rectangle_shape"
+            android:text="Buy Now"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:paddingHorizontal="@dimen/_10sdp"
+            style="@style/screen_header_text_style_big_center_nomargin"
+            android:paddingVertical="@dimen/_10sdp"
+            android:visibility="gone"
+            />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginStart="@dimen/_20sdp">
+
+                <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="80 ML"
+                    style="@style/refer_3_host_style"
+                    android:maxLines="1"
+                    android:id="@+id/size_text"
+                   />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+                    <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/screen_header_text_style_big"
+                        android:gravity="center_vertical"
+                        android:layout_gravity="center"
+                        android:maxLines="1"
+                        android:layout_marginEnd="@dimen/_4sdp"
+                        android:id="@+id/product_price"/>
+                    <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        style="@style/grey_twelve_left"
+                        android:maxLines="1"
+                        android:id="@+id/product_price_original"/>
+                </LinearLayout>
+                <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Inclusive of all taxes"
+                    style="@style/mrp_right"
+                    android:maxLines="1"
+                   />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/add_cart_view"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/yello_rectangle_shape"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:paddingVertical="@dimen/_10sdp"
+                android:layout_weight="1"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                >
+
+                <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Add To Cart"
+                    style="@style/screen_header_text_style_big_center_nomargin"
+                    android:layout_centerInParent="true"
+                    android:maxLines="1"
+                    android:id="@+id/add_cart_view_text"
+                    />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/yello_rectangle_shape"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:paddingVertical="@dimen/_10sdp"
+                android:id="@+id/quantity_layout"
+                android:layout_weight="1"
+                android:visibility="gone"
+                >
+
+                <ImageView
+                    android:id="@+id/remove_cart_item_image"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:src="@drawable/remove_cart_item"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    >
+
+                    <ImageView
+                        android:id="@+id/cart_icon_image"
+                        android:layout_width="@dimen/_13sdp"
+                        android:layout_height="@dimen/_13sdp"
+                        android:src="@drawable/cart_icon"
+                        android:layout_centerVertical="true"
+                        />
+                    <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                        android:id="@+id/cart_count_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:layout_toRightOf="@+id/cart_icon_image"
+                        style="@style/refer_3_host_style"
+                        android:layout_centerVertical="true"
+
+                        />
+                </RelativeLayout>
+
+
+                <ImageView
+                    android:id="@+id/add_cart_item_image"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:src="@drawable/add_cart_item"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

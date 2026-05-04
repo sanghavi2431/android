@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#ffffff"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/ivBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/_5sdp"
+        android:gravity="center">
+
+        <ImageView
+
+            android:layout_width="@dimen/_10sdp"
+            android:layout_height="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/margin_3"
+            android:layout_marginTop="@dimen/margin_3"
+            android:layout_marginBottom="@dimen/margin_3"
+            android:adjustViewBounds="true"
+            android:rotation="90"
+            android:src="@drawable/down_arrow_bottom_bar"
+            />
+        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            style="@style/small_gray_style"
+            android:text="@string/back"
+            android:gravity="center"
+            android:layout_margin="@dimen/_2sdp"/>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="@dimen/_70sdp"
+        android:src="@drawable/say_it_with_woloo_logo"
+        android:layout_gravity="center"
+        />
+
+
+    <ImageView
+        android:id="@+id/popupImagePostCard"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_270sdp"
+        app:lottie_loop="true"
+        app:lottie_autoPlay="true"
+        android:layout_centerHorizontal="true"
+        android:scaleType="fitXY"
+        android:background="@drawable/new_button_background_fifty"
+        android:backgroundTint="@color/edit_text_become_host_bg"
+        android:elevation="@dimen/_4sdp"
+        android:clipToOutline="true"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginVertical="@dimen/_20sdp"/>
+
+    <TextView
+        android:id="@+id/popupTextPostcard"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_158sdp"
+        android:textSize="@dimen/_24sdp"
+        android:gravity="center"
+        android:textColor="@color/chip_color"
+        android:background="@drawable/new_button_background_fifty"
+        android:backgroundTint="@color/edit_text_become_host_bg"
+        android:elevation="@dimen/_4sdp"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:fontFamily="@font/cherry_swash"
+        />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                    android:id="@+id/edit_btn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:background="@drawable/yello_rectangle_shape"
+                    android:gravity="center"
+                    android:backgroundTint="@color/line_host_details"
+                    android:text="Edit"
+                    android:layout_weight="1"
+                    style="@style/button_text_style"/>
+                <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                    android:id="@+id/save_btn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:background="@drawable/yello_rectangle_shape"
+                    android:gravity="center"
+                    android:text="Save"
+                    android:layout_weight="1"
+                    style="@style/button_text_style"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

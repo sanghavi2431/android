@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <ImageView
+        android:id="@+id/product_details_image"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_195sdp"
+        android:src="@drawable/img_serives_default"
+        android:scaleType="centerCrop"
+        android:background="@drawable/new_button_background_fifty"
+        android:clipToOutline="true"
+        android:elevation="@dimen/_4sdp"
+        android:layout_margin="@dimen/_10sdp"
+        />
+
+    <ImageView
+        android:id="@+id/heart_image"
+        android:layout_width="@dimen/_18sdp"
+        android:layout_height="@dimen/_18sdp"
+        android:src="@drawable/like_blog"
+        android:layout_gravity="top|right"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:elevation="@dimen/_5sdp"
+        android:layout_marginRight="@dimen/_40sdp"
+        android:visibility="gone"/>
+
+</FrameLayout>

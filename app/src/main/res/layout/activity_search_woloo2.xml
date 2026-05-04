@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include android:id="@+id/search_bar" layout="@layout/search_bar" />
+
+        <CheckBox
+            android:id="@+id/cbWolooWithOffers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="16dp"
+            android:text="Woloo with Offers"
+            android:textColor="@color/black" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvSearchResults"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvGoogleNearbyPlaces"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/text_color_one"
+                android:visibility="gone" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <LinearLayout
+                    android:id="@+id/ll_nodatafound"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_20"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Sorry, we could not found a Woloo host around you, Inconvenience Regretted."
+                        android:textColor="@color/text_color_five" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/search_no_found_revard_Tv_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ll_nodatafound"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="@dimen/margin_5"
+                        android:layout_marginTop="@dimen/margin_10"
+                        android:layout_marginRight="@dimen/margin_5"
+                        android:background="@color/gray" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_10"
+                        android:gravity="center"
+                        android:text="“We appreciate your understanding and as a token of thanks, your account has been credited with Woloo points which can be redeemed at Woloo Shop.”"
+                        android:textColor="@color/text_color_four" />
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/margin_10">
+
+                        <ImageView
+                            android:layout_width="@dimen/margin_40"
+                            android:layout_height="@dimen/margin_40"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_50_woloo_points" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="vertical"
+                            android:padding="@dimen/margin_8">
+
+                            <TextView
+                                android:id="@+id/woloo_points_Tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="50"
+                                android:textColor="@color/text_color_five"
+                                android:textSize="@dimen/size_12" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="woloo points"
+                                android:textColor="@color/text_color_five"
+                                android:textSize="@dimen/size_5" />
+
+                        </LinearLayout>
+
+                    </FrameLayout>
+
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/margin_20">
+
+                        <TextView
+                            android:id="@+id/shop_Tv"
+                            android:layout_width="@dimen/margin_40"
+                            android:layout_height="@dimen/margin_15"
+                            android:background="@drawable/rounded_yellow_bg"
+                            android:drawablePadding="100dp"
+                            android:gravity="center"
+                            android:paddingLeft="@dimen/margin_5"
+                            android:text="shop"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:layout_width="@dimen/margin_10"
+                            android:layout_height="@dimen/margin_10"
+                            android:layout_margin="@dimen/margin_2"
+                            android:src="@drawable/ic_shop" />
+
+                    </FrameLayout>
+
+
+                </LinearLayout>
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="#C1C1C1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="@dimen/margin_40"
+                    android:layout_height="@dimen/margin_30"
+                    android:layout_gravity="center"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/ic_cloudnew"></ImageView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_5"
+                    android:alpha="0.5"
+                    android:padding="@dimen/margin_5"
+                    android:text="Sorry, we could not found a Woloo host around you, Inconvenience Regretted."
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/margin_6"
+                    android:textStyle="bold"></TextView>
+            </LinearLayout>
+
+        </FrameLayout>
+
+    </LinearLayout>
+</RelativeLayout>

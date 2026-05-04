@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/dialog_bg"
+    android:layout_margin="@dimen/_10sdp"
+    android:elevation="@dimen/_4sdp"
+    android:paddingVertical="@dimen/_20sdp"
+    >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+       android:orientation="vertical"
+        android:paddingTop="@dimen/margin_10"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginVertical="@dimen/_30sdp"
+        android:paddingBottom="@dimen/margin_10">
+
+        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/margin_5"
+            android:layout_marginRight="@dimen/margin_5"
+            android:gravity="center|top"
+            android:text="@string/cancel_subscription"
+            style="@style/screen_header_text_style_big"
+          />
+
+        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:layout_marginTop="@dimen/margin_10"
+            android:text="@string/reason_to_cancel"
+           style="@style/ten_black_center"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:layout_marginTop="@dimen/margin_5"
+            android:layout_marginRight="@dimen/margin_10"
+            android:background="@drawable/circle_shape_background_grey"
+            android:padding="@dimen/margin_5"
+            android:text="@string/comment_remark"
+            android:textSize="@dimen/size_6"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_15sdp"
+            android:elevation="@dimen/_4sdp"
+            android:background="@drawable/new_button_background"
+            android:orientation="vertical"
+            android:padding="@dimen/margin_5">
+
+            <Spinner
+                android:id="@+id/cancel_reason_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:spinnerMode="dropdown"
+                />
+        </LinearLayout>
+
+        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:layout_marginTop="@dimen/margin_10"
+            android:text="@string/comment_remark"
+            style="@style/ten_black_center" />
+
+
+        <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularEditText
+            android:id="@+id/etRemark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+           android:layout_margin="@dimen/_15sdp"
+            android:background="@drawable/new_button_background"
+            android:elevation="@dimen/_4sdp"
+            android:gravity="top"
+            android:hint="@string/write_your_comment_remark"
+            android:lines="4"
+            android:maxLines="4"
+            android:overScrollMode="always"
+            android:padding="@dimen/margin_5"
+            android:scrollbarStyle="insideInset"
+            android:scrollbars="vertical"
+            android:textSize="@dimen/size_5" />
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_gravity="center_vertical">
+        <LinearLayout
+            android:id="@+id/ll_keep_my_membership"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/_10sdp"
+            android:background="@drawable/yello_rectangle_shape"
+            android:orientation="horizontal"
+            android:elevation="@dimen/_4sdp"
+            android:padding="@dimen/margin_3"
+            android:layout_weight="1">
+
+            <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                android:id="@+id/llOkayBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:lineSpacingExtra="25.3sp"
+                android:paddingLeft="@dimen/margin_10"
+                android:paddingRight="@dimen/margin_10"
+                android:text="Submit"
+                android:textAllCaps="true"
+                android:textColor="@color/application_background"
+                android:textSize="@dimen/size_8"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_continue_to_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/_10sdp"
+            android:background="@drawable/yello_rectangle_shape"
+            android:orientation="horizontal"
+            android:elevation="@dimen/_4sdp"
+            android:padding="@dimen/margin_3"
+            android:layout_weight="1">
+
+            <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                android:id="@+id/llCancelBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:lineSpacingExtra="25.3sp"
+                android:paddingLeft="@dimen/margin_10"
+                android:paddingRight="@dimen/margin_10"
+                android:text="Close"
+                android:textAllCaps="true"
+                android:textColor="@color/application_background"
+                android:textSize="@dimen/size_8"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+</LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>

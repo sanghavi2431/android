@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/start_theme_color"
+    tools:context=".application_kotlin.presentation.activities.login.TermsAndConditionsActivity">
+
+
+    <LinearLayout
+        android:id="@+id/header_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:id="@+id/ivBack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/_5sdp"
+            android:gravity="center">
+
+            <ImageView
+
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/margin_3"
+                android:layout_marginTop="@dimen/margin_3"
+                android:layout_marginBottom="@dimen/margin_3"
+                android:adjustViewBounds="true"
+                android:rotation="90"
+                android:src="@drawable/down_arrow_bottom_bar"
+                />
+            <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                style="@style/small_gray_style"
+                android:text="@string/back"
+                android:gravity="center"
+                android:layout_margin="@dimen/_2sdp"/>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:layout_width="@dimen/_45sdp"
+                android:layout_height="@dimen/_45sdp"
+                android:layout_margin="@dimen/_15sdp"
+                android:src="@drawable/terms_icon"/>
+              <RelativeLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content">
+        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+            android:id="@+id/screen_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Terms &amp; Conditions"
+            style="@style/screen_header_text_style_big"
+            />
+                  <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:text="@string/terms_note"
+                      android:textSize="@dimen/_9ssp"
+                      android:textColor="@color/black"
+                      android:layout_below="@+id/screen_header"
+                      android:layout_marginRight="@dimen/_15sdp"
+                     />
+
+              </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+    <ScrollView
+        android:layout_below="@+id/header_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/_15sdp">
+
+        <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+            android:id="@+id/terms_condi"
+            style="@style/paragraph_text_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/terms_details_one" />
+
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/check_condition"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="@dimen/margin_2"
+        android:layout_above="@+id/buttons_layout"
+        android:visibility="gone">
+
+        <CheckBox
+            android:id="@+id/check_agree"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="@dimen/margin_2"
+            >
+
+            <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+                android:id="@+id/terms_one"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/terms_one"
+                tools:ignore="MissingConstraints"
+                app:layout_constraintEnd_toStartOf="@+id/terms_two"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                style="@style/paragraph_text_style"
+                />
+            <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+                android:id="@+id/terms_two"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/terms_two"
+                tools:ignore="MissingConstraints"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/terms_one"
+                style="@style/hyperlink_text_style"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                />
+            <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+                android:id="@+id/terms_three"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/terms_three"
+                app:layout_constraintStart_toEndOf="@+id/terms_two"
+                app:layout_constraintTop_toBottomOf="@id/terms_one"
+                tools:ignore="MissingConstraints"
+                android:textSize="12dp"
+                android:textColor="@color/edit_text"
+                />
+            <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+                android:id="@+id/terms_four"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/terms_four"
+                app:layout_constraintStart_toEndOf="@+id/terms_three"
+                app:layout_constraintTop_toBottomOf="@id/terms_one"
+                tools:ignore="MissingConstraints"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                style="@style/hyperlink_text_style"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/buttons_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="@dimen/margin_2">
+        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+            android:id="@+id/tv_disagree"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/disagree"
+            style="@style/button_text_style"
+            android:background="@drawable/new_button_background"
+            android:layout_margin="@dimen/_15sdp"
+            android:layout_weight="1"
+            android:elevation="@dimen/_5sdp"
+            />
+
+        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+            android:id="@+id/tv_agree"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/agree"
+            style="@style/button_text_style"
+            android:background="@drawable/new_button_background"
+            android:layout_margin="@dimen/_15sdp"
+            android:layout_weight="1"
+            android:elevation="@dimen/_5sdp"
+           />
+    </LinearLayout>
+</RelativeLayout>

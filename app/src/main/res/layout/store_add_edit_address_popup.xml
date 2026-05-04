@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/top_corner_dialog_bg_transperent"
+    android:orientation="vertical"
+    app:behavior_peekHeight="@dimen/_350sdp"
+    app:layout_behavior="@string/bottom_sheet_behavior"
+    android:elevation="@dimen/_4sdp">
+
+    <View
+        android:id="@+id/back_dialog"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_3sdp"
+        android:background="@color/chip_color"
+        android:padding="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_gravity="center_horizontal"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginHorizontal="@dimen/_20sdp">
+        <ImageView
+            android:id="@+id/back_button"
+            android:layout_width="@dimen/_10sdp"
+            android:layout_height="@dimen/_10sdp"
+            android:background="@drawable/ic_back"
+            android:backgroundTint="@color/black"
+            android:layout_centerVertical="true"
+            />
+
+        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Address"
+            style="@style/shop_header_text"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:id="@+id/cart_header_text"/>
+        <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select or Edit your Addresses"
+            android:layout_below="@+id/cart_header_text"
+            style="@style/screen_sub_header_text_left"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:visibility="gone"
+            android:paddingBottom="@dimen/_5sdp"/>
+
+    </RelativeLayout>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll_bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="@dimen/_10sdp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/yello_rectangle_shape"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="@dimen/_11sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:id="@+id/use_current_location_layout">
+                <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Choose your Location"
+                    style="@style/ten_black_left"
+                    android:paddingVertical="@dimen/_5sdp"
+                    android:paddingHorizontal="@dimen/_20sdp"
+                    android:visibility="gone"
+                    android:id="@+id/use_my_current_location"/>
+            </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="@dimen/_5sdp">
+
+        <in.woloo.www.application_kotlin.utilities.CenturiGothicBoldEditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/new_button_background"
+            android:hint="@string/first_name"
+            android:textColorHint="@color/hint_text"
+            android:elevation="@dimen/_4sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginVertical="@dimen/_5sdp"
+            style="@style/review_twelve_left"
+            android:padding="@dimen/_10sdp"
+            android:layout_weight="1"
+            android:maxLines="1"
+            android:id="@+id/first_name_addresser"/>
+
+        <in.woloo.www.application_kotlin.utilities.CenturiGothicBoldEditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/new_button_background"
+            android:hint="@string/last_name"
+            android:textColorHint="@color/hint_text"
+            android:elevation="@dimen/_4sdp"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginVertical="@dimen/_5sdp"
+            style="@style/review_twelve_left"
+            android:padding="@dimen/_10sdp"
+            android:layout_weight="1"
+            android:maxLines="1"
+            android:id="@+id/last_name_addresser"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="@dimen/_10sdp">
+
+    <in.woloo.www.application_kotlin.utilities.CenturiGothicBoldEditText
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/new_button_background"
+        android:hint="@string/flat_num"
+        android:textColorHint="@color/hint_text"
+        android:elevation="@dimen/_4sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_5sdp"
+        android:layout_marginVertical="@dimen/_5sdp"
+        style="@style/review_twelve_left"
+        android:padding="@dimen/_10sdp"
+        android:layout_weight="1"
+        android:maxLines="1"
+        android:id="@+id/flat_num"/>
+
+    <in.woloo.www.application_kotlin.utilities.CenturiGothicBoldEditText
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/new_button_background"
+        android:hint="@string/locality"
+        android:textColorHint="@color/hint_text"
+        android:elevation="@dimen/_4sdp"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginVertical="@dimen/_5sdp"
+        style="@style/review_twelve_left"
+        android:padding="@dimen/_10sdp"
+        android:layout_weight="1"
+        android:maxLines="1"
+        android:id="@+id/locality"
+       />
+
+    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/_5sdp">
+
+    <in.woloo.www.application_kotlin.utilities.CenturiGothicBoldEditText
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/new_button_background"
+        android:hint="@string/street_address"
+        android:textColorHint="@color/hint_text"
+        android:elevation="@dimen/_4sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginVertical="@dimen/_5sdp"
+        style="@style/review_twelve_left"
+        android:padding="@dimen/_10sdp"
+        android:maxLines="2"
+        android:layout_weight="1"
+        android:id="@+id/apartment_road_area"
+       />
+
+            <in.woloo.www.application_kotlin.utilities.CenturiGothicBoldEditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/new_button_background"
+                android:hint="Locality"
+                android:textColorHint="@color/hint_text"
+                android:elevation="@dimen/_4sdp"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:padding="@dimen/_5sdp"
+                style="@style/ten_black_left"
+                android:maxLines="2"
+                android:layout_weight="1"
+                android:visibility="gone"
+                android:id="@+id/apartment_road_area_two"
+                android:paddingVertical="@dimen/_5sdp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/_5sdp">
+
+
+
+    <in.woloo.www.application_kotlin.utilities.CenturiGothicBoldAutoComplete
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/new_button_background"
+        android:hint="@string/city"
+        android:textColorHint="@color/hint_text"
+        android:elevation="@dimen/_4sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:layout_marginVertical="@dimen/_5sdp"
+        android:id="@+id/city_addresser"
+        android:maxLines="1"
+        android:layout_weight="1"
+        style="@style/review_twelve_left"
+        android:padding="@dimen/_10sdp"/>
+
+            <in.woloo.www.application_kotlin.utilities.CenturiGothicBoldAutoComplete
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/new_button_background"
+                android:hint="@string/state"
+                android:textColorHint="@color/hint_text"
+                android:elevation="@dimen/_4sdp"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginVertical="@dimen/_5sdp"
+                style="@style/review_twelve_left"
+                android:padding="@dimen/_10sdp"
+                android:id="@+id/state_addresser"
+                android:layout_weight="1"
+                android:singleLine="true"
+                />
+
+
+        </LinearLayout>
+
+
+
+    <in.woloo.www.application_kotlin.utilities.CenturiGothicBoldEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/new_button_background"
+        android:hint="@string/zip"
+        android:id="@+id/pincode_address"
+        android:textColorHint="@color/hint_text"
+        android:elevation="@dimen/_4sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        style="@style/review_twelve_left"
+        android:padding="@dimen/_10sdp"
+        android:maxLength="6"
+        android:digits="0123456789"
+        android:inputType="phone"
+        android:maxLines="1"
+        />
+
+
+
+    <in.woloo.www.application_kotlin.utilities.CenturiGothicBoldEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/new_button_background"
+        android:hint="@string/phone"
+        android:textColorHint="@color/hint_text"
+        android:elevation="@dimen/_4sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        style="@style/review_twelve_left"
+        android:padding="@dimen/_10sdp"
+        android:maxLength="10"
+        android:digits="0123456789"
+        android:inputType="phone"
+        android:maxLines="1"
+        android:id="@+id/phone_addresser"
+        />
+
+    <in.woloo.www.application_kotlin.utilities.CenturiGothicBoldEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/new_button_background"
+        android:hint="@string/address_name"
+        android:textColorHint="@color/hint_text"
+        android:elevation="@dimen/_4sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        style="@style/review_twelve_left"
+        android:padding="@dimen/_10sdp"
+        android:id="@+id/address_name"
+        android:maxLines="1"
+       />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:paddingVertical="@dimen/_10sdp">
+
+            <ImageView
+                android:id="@+id/default_address_image"
+                android:layout_width="@dimen/_23sdp"
+                android:layout_height="@dimen/_23sdp"
+                android:background="@drawable/checkbox_square"
+                android:padding="@dimen/_2sdp"
+                android:clipToOutline="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginHorizontal="@dimen/_8sdp"/>
+            <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Make it as a Default Address"
+                android:maxLines="1"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/_5sdp"
+                style="@style/review_twelve_left"
+                android:padding="@dimen/_10sdp"
+                android:id="@+id/default_address"/>
+
+
+        </LinearLayout>
+
+            <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/yello_rectangle_shape"
+        android:text="Submit"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginVertical="@dimen/_30sdp"
+        style="@style/screen_header_text_style_big_center_nomargin"
+        android:paddingVertical="@dimen/_5sdp"
+        android:id="@+id/add_address_button"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

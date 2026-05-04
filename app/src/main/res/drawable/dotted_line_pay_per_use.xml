@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="line">
+
+    <!-- set the visible thickness of the line -->
+    <size android:height="@dimen/_1sdp" />
+
+    <stroke
+        android:width="@dimen/_1sdp"
+        android:color="@color/dotted_line_pay_per"
+        android:dashWidth="@dimen/_1sdp"
+        android:dashGap="@dimen/_2sdp" />
+
+
+</shape>
+

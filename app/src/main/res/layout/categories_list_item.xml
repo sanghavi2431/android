@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/transparent"
+    android:layout_marginHorizontal="@dimen/_6sdp"
+    android:layout_marginVertical="@dimen/_12sdp">
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    <View
+        android:id="@+id/category_background_color"
+        android:layout_width="@dimen/_55sdp"
+        android:layout_height="@dimen/_55sdp"
+
+       />
+    <ImageView
+        android:id="@+id/category_image"
+        android:layout_width="@dimen/_55sdp"
+        android:layout_height="@dimen/_55sdp"
+        android:background="@drawable/imagecircle"
+        android:backgroundTint="@color/ovalution_cycle"
+        android:src="@drawable/lotus_try_img"
+        android:padding="@dimen/_8sdp"
+        android:layout_gravity="center"
+        />
+    </FrameLayout>
+    <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+        android:id="@+id/category_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="wellness"
+        android:maxLines="1"
+        android:layout_gravity="center"
+        style="@style/small_button_style"/>
+
+</LinearLayout>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".store.screens.OrdersListActivity">
+    <LinearLayout
+        android:id="@+id/ivBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/_10sdp"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:rotation="90"
+            android:layout_gravity="center"
+            android:src="@drawable/down_arrow_bottom_bar"
+            />
+        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/small_gray_style"
+            android:text="@string/back"
+            android:paddingVertical="@dimen/_2sdp"
+            android:gravity="center"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:layout_marginVertical="@dimen/_15sdp">
+        <ImageView
+            android:id="@+id/cart_header_icon"
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="@dimen/_45sdp"
+            android:src="@drawable/shop_bag_orders"
+            />
+
+        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/cart_header_icon"
+            android:text="Orders"
+            style="@style/shop_header_text"
+            android:id="@+id/cart_header_text"/>
+        <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/cart_header_icon"
+            android:text="Check your recent orders here"
+            android:layout_below="@+id/cart_header_text"
+            style="@style/screen_sub_header_text_left"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_5sdp"/>
+
+    </RelativeLayout>
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="@dimen/_10sdp">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/order_details_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/order_details_list_item"
+        android:layout_marginVertical="@dimen/_10sdp"
+        tools:itemCount="3"/>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</LinearLayout>

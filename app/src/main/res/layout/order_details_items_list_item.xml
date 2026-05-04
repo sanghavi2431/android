@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardViewParent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:backgroundTint="@color/white"
+    cardview:cardCornerRadius="@dimen/_19sdp"
+    cardview:cardElevation="@dimen/_4sdp"
+    android:layout_marginTop="@dimen/_5sdp"
+    android:layout_marginBottom="@dimen/_5sdp"
+    android:layout_marginHorizontal="@dimen/_10sdp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/item_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/bottom_host_image"
+            android:layout_width="@dimen/_57sdp"
+            android:layout_height="@dimen/_57sdp"
+            android:background="@drawable/image_woloo_bg_small"
+            android:scaleType="centerCrop"
+            android:clipToOutline="true"
+            android:src="@drawable/feather_img"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:layout_marginVertical="@dimen/_8sdp"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginVertical="@dimen/_8sdp">
+            <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Feather Toilet Seat"
+                style="@style/refer_3_host_style"
+                android:maxLines="1"
+                android:id="@+id/product_name"
+                android:layout_marginLeft="@dimen/_5sdp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:background="@color/line_color"
+                android:layout_marginRight="@dimen/_35sdp"
+                android:layout_marginLeft="@dimen/_5sdp"/>
+            <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Size : M"
+                android:id="@+id/variant_name"
+                android:maxLines="1"
+                style="@style/policy_text_style_left"
+                android:layout_marginLeft="@dimen/_5sdp"/>
+
+            <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="₹ 799"
+                style="@style/pop_up_left"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:gravity="bottom"
+                android:id="@+id/product_price"
+                android:maxLines="1"
+                android:layout_gravity="center_vertical"/>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_marginVertical="@dimen/_8sdp"
+            android:layout_marginRight="@dimen/_5sdp">
+
+
+
+            <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Order Date"
+                android:id="@+id/order_date"
+                style="@style/order_date"
+                android:layout_marginHorizontal="@dimen/_5sdp"
+                android:layout_above="@+id/check_status_layout"
+                android:maxLines="1"
+                />
+
+
+            <LinearLayout
+                android:id="@+id/check_status_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/_1sdp"
+                android:paddingVertical="@dimen/_5sdp"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:background="@drawable/yello_rectangle_shape">
+                <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Check Status"
+                    android:layout_centerVertical="true"
+                    android:paddingHorizontal="@dimen/_1sdp"
+                    android:id="@+id/order_status"
+                    style="@style/refer_3_host_style"
+                    android:maxLines="1"
+                    />
+
+                <ImageView
+                    android:id="@+id/add_cart_item_image"
+                    android:layout_width="@dimen/_11sdp"
+                    android:layout_height="@dimen/_11sdp"
+                    android:src="@drawable/next_screen_arrow"
+                   android:layout_gravity="center_vertical"
+                    />
+            </LinearLayout>
+
+
+
+        </RelativeLayout>
+    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="@dimen/_5sdp"
+
+          >
+
+            <ImageView
+                android:id="@+id/ivVeryBad"
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:src="@drawable/filled_star_new"
+                />
+
+            <ImageView
+                android:id="@+id/ivBad"
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_marginLeft="@dimen/margin_5"
+                android:src="@drawable/filled_star_new"/>
+
+            <ImageView
+                android:id="@+id/ivAverage"
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_marginLeft="@dimen/margin_5"
+                android:src="@drawable/filled_star_new"/>
+
+            <ImageView
+                android:id="@+id/ivGood"
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_marginLeft="@dimen/margin_5"
+                android:src="@drawable/empty_star_new"/>
+
+            <ImageView
+                android:id="@+id/ivLovedIt"
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_marginLeft="@dimen/margin_5"
+                android:src="@drawable/empty_star_new"/>
+
+        </LinearLayout>
+
+        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rate this product now"
+            android:id="@+id/rate_this_product"
+            style="@style/ten_black_left"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:paddingVertical="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:layout_marginBottom="@dimen/_10sdp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/service_date_time_cart_list_item"
+            tools:itemCount="1"
+            android:layout_marginHorizontal="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:id="@+id/service_date_time_recycler"
+            />
+
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

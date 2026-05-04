@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+        android:id="@+id/size_frame"  xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+
+   >
+
+    <in.woloo.www.utils.CircleImageView
+        android:id="@+id/size_image"
+        android:layout_width="@dimen/_27sdp"
+        android:layout_height="@dimen/_27sdp"
+        android:clipToOutline="true"
+        android:src="@drawable/imagecircle"
+        android:elevation="@dimen/_2sdp"
+        android:layout_margin="@dimen/_5sdp"
+        />
+
+        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="S"
+            style="@style/ten_black_center"
+            android:maxLines="1"
+            android:layout_gravity="center"
+            android:id="@+id/size_text"
+            android:elevation="@dimen/_3sdp"
+            />
+    </FrameLayout>
+

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@color/transparent_background"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/rectangle_shape"
+        android:layout_margin="@dimen/_10sdp"
+        android:elevation="@dimen/_4sdp"
+        android:orientation="vertical">
+
+        <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+            android:id="@+id/message_text"
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="wrap_content"
+            android:text=""
+           style="@style/dialog_style" />
+
+        <LinearLayout
+            android:id="@+id/llStartFreeTrial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/margin_10"
+            android:padding="@dimen/margin_5">
+
+
+            <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                android:id="@+id/tvOkayPincode"
+                style="@style/button_text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/yellow_rectangle_shape"
+                android:elevation="@dimen/_4sdp"
+                android:gravity="center"
+                android:paddingLeft="@dimen/_15sdp"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingRight="@dimen/_15sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:text="@string/subscription_validation_okay"
+                android:textColor="@color/black" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

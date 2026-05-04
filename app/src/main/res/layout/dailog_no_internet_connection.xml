@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view_internet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/white_95"
+        card_view:cardCornerRadius="@dimen/_50sdp"
+        card_view:cardElevation="@dimen/_4sdp"
+        android:layout_margin="@dimen/_10sdp"
+        card_view:cardMaxElevation="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/margin_8"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:background="@color/no_internet"
+        android:paddingRight="@dimen/margin_8"
+        android:layout_height="wrap_content">
+
+        <in.woloo.www.application_kotlin.utilities.CenturyGothicRegularTextView
+            android:id="@+id/tv_connection_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/no_internet_connection_"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:gravity="center"
+           style="@style/twelve_black_nomargin_center"
+            />
+
+         <RelativeLayout
+             android:layout_width="match_parent"
+             android:layout_gravity="center"
+             android:layout_marginBottom="@dimen/margin_5"
+             android:layout_height="wrap_content">
+
+             <ImageView
+                 android:id="@+id/img_connection"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:src="@drawable/ic_no_internet"
+                 android:visibility="visible"
+                 android:layout_centerHorizontal="true"
+                 android:layout_margin="@dimen/_10sdp"
+                 android:adjustViewBounds="true"/>
+
+
+             <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                 android:id="@+id/btn_tap_to_retry"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:background="@drawable/yello_rectangle_shape"
+                 android:gravity="center"
+                 android:layout_centerHorizontal="true"
+                 android:layout_below="@+id/img_connection"
+                 android:drawableLeft="@drawable/ic_retry"
+                 android:drawable="@drawable/ic_retry"
+                 android:drawablePadding="@dimen/margin_5"
+                 android:textColor="@color/no_internet_text"
+                 android:paddingVertical="@dimen/_10sdp"
+                 android:paddingHorizontal="@dimen/_35sdp"
+                 android:text="@string/tap_to_retry"
+                 android:layout_marginTop="@dimen/_10sdp"
+                 android:layout_marginBottom="@dimen/_20sdp"/>
+
+         </RelativeLayout>
+
+
+
+
+    </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>

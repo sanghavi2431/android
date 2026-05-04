@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_top_rounded"
+    android:clipToPadding="false"
+    tools:context=".application_kotlin.presentation.fragments.loo_discovery.WolooStoreInfoFragment">
+
+    <TextView
+        android:id="@+id/tv_woloo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|bottom"
+        android:background="@drawable/bg_top_rounded"
+        android:paddingTop="@dimen/margin_3"
+        android:drawableTop="@drawable/rounded_yellow_bg"
+        android:textColor="@color/app_background"
+        android:textSize="@dimen/size_6"
+        android:gravity="center"
+        android:text="Click Here"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvWolooStoreImages"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+</LinearLayout>

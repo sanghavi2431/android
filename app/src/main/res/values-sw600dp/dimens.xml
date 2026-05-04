@@ -1,0 +1,79 @@
+<resources>
+          <!--xhdpi Folder value-->
+
+    <!-- Margins and height, width -->
+    <dimen name="margin_1">2.1dp</dimen>
+    <dimen name="margin_2">4.2dp</dimen>
+    <dimen name="margin_3">6.3dp</dimen>
+    <dimen name="margin_4">8.4dp</dimen>
+    <dimen name="margin_5">10.5dp</dimen>
+    <dimen name="margin_6">12.6dp</dimen>
+    <dimen name="margin_7">14.7dp</dimen>
+    <dimen name="margin_8">16.8dp</dimen>
+    <dimen name="margin_9">18.9dp</dimen>
+    <dimen name="margin_10">21dp</dimen>
+    <dimen name="margin_11">23.1dp</dimen>
+    <dimen name="margin_12">25.2dp</dimen>
+    <dimen name="margin_13">27.3dp</dimen>
+    <dimen name="margin_14">29.4dp</dimen>
+    <dimen name="margin_15">31.5dp</dimen>
+    <dimen name="margin_17">35.7dp</dimen>
+    <dimen name="margin_18">37.8dp</dimen>
+    <dimen name="margin_20">42dp</dimen>
+    <dimen name="margin_22">46.2dp</dimen>
+    <dimen name="margin_25">52.5dp</dimen>
+    <dimen name="margin_26">54.6dp</dimen>
+    <dimen name="margin_27">56.7dp</dimen>
+    <dimen name="margin_30">63dp</dimen>
+    <dimen name="margin_32">67.2dp</dimen>
+    <dimen name="margin_35">73.5dp</dimen>
+    <dimen name="margin_40">84dp</dimen>
+    <dimen name="margin_43">90.3dp</dimen>
+    <dimen name="margin_45">94.5dp</dimen>
+    <dimen name="margin_50">105dp</dimen>
+    <dimen name="margin_51">107.1dp</dimen>
+    <dimen name="margin_53">111.3dp</dimen>
+    <dimen name="margin_55">115.5dp</dimen>
+    <dimen name="margin_60">126dp</dimen>
+    <dimen name="margin_64">134.4dp</dimen>
+    <dimen name="margin_70">147dp</dimen>
+    <dimen name="margin_80">168dp</dimen>
+    <dimen name="margin_85">178.5dp</dimen>
+    <dimen name="margin_90">189dp</dimen>
+    <dimen name="margin_95">199.5dp</dimen>
+    <dimen name="margin_100">210dp</dimen>
+    <dimen name="margin_110">231dp</dimen>
+    <dimen name="margin_115">241.5dp</dimen>
+    <dimen name="margin_120">252dp</dimen>
+    <dimen name="margin_130">273dp</dimen>
+    <dimen name="margin_150">315dp</dimen>
+
+    <!-- Text Size -->
+    <dimen name="textSize_14sp">14sp</dimen>
+    <dimen name="size_1">2.1sp</dimen>
+    <dimen name="size_2">4.2sp</dimen>
+    <dimen name="size_3">6.3sp</dimen>
+    <dimen name="size_4">8.4sp</dimen>
+    <dimen name="size_5">10.5sp</dimen>
+    <dimen name="size_6">12.6sp</dimen>
+    <dimen name="size_7">14.7sp</dimen>
+    <dimen name="size_8">16.8sp</dimen>
+    <dimen name="size_9">18.9sp</dimen>
+    <dimen name="size_10">21sp</dimen>
+    <dimen name="size_11">23.1sp</dimen>
+    <dimen name="size_12">25.2sp</dimen>
+    <dimen name="size_14">29.4sp</dimen>
+    <dimen name="size_15">31.5sp</dimen>
+    <dimen name="size_17">35.7sp</dimen>
+    <dimen name="size_20">42sp</dimen>
+    <dimen name="size_21">44.1sp</dimen>
+    <dimen name="size_30">63sp</dimen>
+    <dimen name="size_33">69.3sp</dimen>
+    <dimen name="size_50">105sp</dimen>
+    <dimen name="size_65">136.5sp</dimen>
+
+    <!--Temp ToolTip Layout Dialog-->
+
+    <integer name="curve_radius">3</integer>
+
+</resources>

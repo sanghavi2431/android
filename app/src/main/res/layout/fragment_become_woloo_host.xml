@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/margin_27"
+    tools:context=".more.woloo_host.BecomeWolooHostFragment">
+
+<include
+    layout="@layout/profile_tab_header"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+       >
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/VP_viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_above="@+id/intrested_Btn"
+            android:layout_margin="@dimen/_10sdp"
+            android:layout_weight="1"/>
+
+        <LinearLayout
+            android:id="@+id/ivSwipe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/_5sdp"
+            android:gravity="center">
+
+            <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/twelve_black_nomargin_center"
+                android:text="Swipe"
+                android:gravity="center"
+                android:paddingVertical="@dimen/_10sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginVertical="@dimen/_2sdp"/>
+
+            <ImageView
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/margin_3"
+                android:layout_marginBottom="@dimen/margin_3"
+                android:adjustViewBounds="true"
+                android:src="@drawable/swipe_arrow"
+                />
+
+
+        </LinearLayout>
+
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tutorial_slider_tab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            app:tabBackground="@drawable/tab_selector_tutorial_slider"
+            app:tabGravity="center"
+            app:tabPadding="@dimen/size_1"
+            app:tabIndicatorHeight="0dp"
+            android:visibility="gone"/>
+
+
+    </LinearLayout>
+
+    <in.woloo.www.application_kotlin.utilities.CenturyGoticBoldTextView
+        android:id="@+id/intrested_Btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/big_center_nomargin"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_15sdp"
+        android:paddingVertical="@dimen/_10sdp"
+        android:background="@drawable/yello_rectangle_shape"
+        android:elevation="@dimen/_5sdp"
+        android:text="@string/yes_i_am_intrested"/>
+
+</LinearLayout>
