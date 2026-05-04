@@ -3,14 +3,14 @@ name: Android CI
 on:
   push:
     branches:
-      - dev   # your branch name
+      - dev
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v3
 
       - name: Setup Java
@@ -19,8 +19,10 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Give permission
-        run: chmod +x ./gradlew
+      - name: Fix gradlew
+        run: |
+          chmod +x gradlew
+          sed -i 's/\r$//' gradlew
 
       - name: Build AAB
         run: ./gradlew bundleRelease
