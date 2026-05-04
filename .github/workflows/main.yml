@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v3
 
       - name: Setup Java
@@ -19,10 +19,21 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Fix gradlew
+      # 🔥 Fix gradlew (Windows → Linux issue)
+      - name: Fix gradlew issues
         run: |
+          sudo apt-get update
+          sudo apt-get install -y dos2unix
+          dos2unix gradlew
           chmod +x gradlew
-          sed -i 's/\r$//' gradlew
 
+      # 🔥 Build AAB (Play Store file)
       - name: Build AAB
         run: ./gradlew bundleRelease
+
+      # ✅ Upload build file (so you can download)
+      - name: Upload AAB
+        uses: actions/upload-artifact@v3
+        with:
+          name: app-release
+          path: app/build/outputs/bundle/release/*.aab
