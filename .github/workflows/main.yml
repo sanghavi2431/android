@@ -7,29 +7,21 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest   # 👈 IMPORTANT (Windows)
+    runs-on: windows-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Java
-        uses: actions/setup-java@v4
+      - uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
           java-version: '17'
 
-      # Give permission (Windows safe)
-      - name: Grant permission
-        run: git update-index --chmod=+x gradlew
+      - name: Build Debug APK
+        run: .\gradlew.bat assembleDebug
 
-      # Build using gradlew (will now work)
-      - name: Build AAB
-        run: .\gradlew.bat bundleRelease
-
-      # Upload AAB
-      - name: Upload AAB
+      - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: app-release
-          path: app/build/outputs/bundle/release/*.aab
+          name: app-debug
+          path: app/build/outputs/apk/debug/*.apk
