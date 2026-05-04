@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest   # 👈 IMPORTANT (Windows)
 
     steps:
       - name: Checkout code
@@ -19,19 +19,15 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      # Fix gradlew issue
-      - name: Fix gradlew issues
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y dos2unix
-          dos2unix gradlew
-          chmod +x gradlew
+      # Give permission (Windows safe)
+      - name: Grant permission
+        run: git update-index --chmod=+x gradlew
 
-      # Build AAB
+      # Build using gradlew (will now work)
       - name: Build AAB
-        run: ./gradlew bundleRelease
+        run: .\gradlew.bat bundleRelease
 
-      # Upload artifact (UPDATED VERSION)
+      # Upload AAB
       - name: Upload AAB
         uses: actions/upload-artifact@v4
         with:
