@@ -13,28 +13,23 @@ jobs:
       # Checkout code
       - uses: actions/checkout@v4
 
-      # Setup Java 
-      - name: Setup Java
-        uses: actions/setup-java@v4
+      # Setup Java
+      - uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
           java-version: '17'
 
-      # Build Debug APK
+      # Build APK
       - name: Build Debug APK
         run: .\gradlew.bat assembleDebug
 
-      # Debug: show APK location
-      - name: Find APK files
-        run: Get-ChildItem -Recurse -Filter *.apk
-
-      #  FLATTEN: copy APK to root
+      #  Copy APK to root (CLEAN OUTPUT)
       - name: Copy APK to root
         run: |
           $apk = Get-ChildItem -Recurse -Filter *.apk | Select-Object -First 1
           Copy-Item $apk.FullName -Destination app-debug.apk
 
-      # Upload APK
+      # Upload only single APK
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
