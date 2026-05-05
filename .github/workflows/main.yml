@@ -1,4 +1,4 @@
-name: Android Staging Build
+name: Android Release Build
 
 on:
   push:
@@ -19,19 +19,19 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      # Build APK
-      - name: Build Debug APK
-        run: .\gradlew.bat assembleDebug
+      # Build Release AAB
+      - name: Build Release AAB
+        run: .\gradlew.bat bundleRelease
 
-      #  Copy APK to root (CLEAN OUTPUT)
-      - name: Copy APK to root
+      #  Copy AAB to root (clean output)
+      - name: Copy AAB to root
         run: |
-          $apk = Get-ChildItem -Recurse -Filter *.apk | Select-Object -First 1
-          Copy-Item $apk.FullName -Destination app-debug.apk
+          $aab = Get-ChildItem -Recurse -Filter *.aab | Select-Object -First 1
+          Copy-Item $aab.FullName -Destination app-release.aab
 
-      # Upload only single APK
-      - name: Upload APK
+      # Upload only single AAB
+      - name: Upload AAB
         uses: actions/upload-artifact@v4
         with:
-          name: staging-apk
-          path: app-debug.apk
+          name: release-aab
+          path: app-release.aab
