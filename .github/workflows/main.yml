@@ -10,23 +10,33 @@ jobs:
     runs-on: windows-latest
 
     steps:
+      # Checkout code
       - uses: actions/checkout@v4
 
+      # Setup Java 
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
           java-version: '17'
 
+      # Build Debug APK
       - name: Build Debug APK
         run: .\gradlew.bat assembleDebug
 
-      # ✅ FIXED STEP
+      # Debug: show APK location
       - name: Find APK files
         run: Get-ChildItem -Recurse -Filter *.apk
 
+      #  FLATTEN: copy APK to root
+      - name: Copy APK to root
+        run: |
+          $apk = Get-ChildItem -Recurse -Filter *.apk | Select-Object -First 1
+          Copy-Item $apk.FullName -Destination app-debug.apk
+
+      # Upload APK
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: staging-apk
-          path: "**/*.apk"
+          path: app-debug.apk
