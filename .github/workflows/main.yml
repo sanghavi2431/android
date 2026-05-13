@@ -1,4 +1,4 @@
-name: Android Release Build
+name: Android Staging Build
 
 on:
   push:
@@ -10,28 +10,18 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      # Checkout code
       - uses: actions/checkout@v4
 
-      # Setup Java
       - uses: actions/setup-java@v4
         with:
-          distribution: 'temurin'
+          distribution: temurin
           java-version: '17'
 
-      # Build Release AAB
-      - name: Build Release AAB
-        run: .\gradlew.bat bundleRelease
+      - name: Build APK
+        run: .\gradlew.bat assembleDebug
 
-      #  Copy AAB to root (clean output)
-      - name: Copy AAB to root
-        run: |
-          $aab = Get-ChildItem -Recurse -Filter *.aab | Select-Object -First 1
-          Copy-Item $aab.FullName -Destination app-release.aab
-
-      # Upload only single AAB
-      - name: Upload AAB
+      - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: release-aab
-          path: app-release.aab
+          name: powderroom-apk
+          path: app/build/outputs/apk/debug/app-debug.apk
